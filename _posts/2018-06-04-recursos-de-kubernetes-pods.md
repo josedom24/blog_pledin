@@ -41,7 +41,7 @@ comments: []
 <p><!--more--></p>
 <h2>Esqueleto YAML de un pod</h2>
 <p>Podemos describir la estructura de un pod en un fichero con formato Yaml, por ejemplo el fichero <code>nginx.yaml</code>:</p>
-  
+  ```
   apiVersion: v1
   kind: Pod
   metadata:
@@ -53,7 +53,7 @@ comments: []
     containers:
       - image:  nginx
         name:  nginx
-  
+  ```
 <p>Donde indicamos:</p>
 <ul>
 <li><code>apiVersion: v1</code>: La versi&oacute;n de la API que vamos a usar.</li>
