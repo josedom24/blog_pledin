@@ -1,0 +1,109 @@
+---
+layout: post
+status: publish
+published: true
+title: 'flask: Enrutamiento (2&ordf; parte)'
+author:
+  display_name: admin
+  login: admin
+  email: josedom24@gmail.com
+  url: ''
+author_login: admin
+author_email: josedom24@gmail.com
+wordpress_id: 1928
+wordpress_url: https://www.josedomingo.org/pledin/?p=1928
+date: '2018-03-20 09:16:56 +0000'
+date_gmt: '2018-03-20 08:16:56 +0000'
+categories:
+- General
+tags:
+- Web
+- Python
+- Flask
+comments: []
+---
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/flask.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/flask.png" alt="" width="460" height="180" class="aligncenter size-full wp-image-1919" /></a></p>
+<h1>Enrutamiento: rutas</h1>
+<p>El objeto Flask <code>app</code> nos proporciona un decorador <code>router</code> que es capaz de filtrar la funci&oacute;n <em>vista</em> que se va ejecutar analizando la petici&oacute;n HTTP, fundamentalmente por la ruta y el m&eacute;todo que se hace la petici&oacute;n.</p>
+<h2>Trabajando con rutas</h2>
+<p>Veamos un ejemplo:</p>
+<pre><code>...
+@app.route('/')
+def inicio():
+    return 'P&aacute;gina principal'   
+
+@app.route('/articulos/')
+def articulos():
+    return 'Lista de art&iacute;culos' 
+
+@app.route('/acercade')
+def acercade():
+    return 'P&aacute;gina acerca de...'
+</code></pre>
+<p>En este caso se comprueba la ruta de la petici&oacute;n HTTP, y cuando coincide con alguna indicada en las rutas se ejecuta la funci&oacute;n correspondiente devolviendo una respuesta HTTP.</p>
+<p><!--more--></p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/rutas1.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/rutas1.png" alt="" width="399" height="106" class="aligncenter size-full wp-image-1934" /></a> Si declaramos rutas terminando en <code>/</code> son consideradas como un directorio de un sistema de fichero, en este caso si se accede a la ruta sin la barra final se producir&aacute; una redirecci&oacute;n a la ruta correcta.</p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta2.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta2.png" alt="" width="474" height="112" class="aligncenter size-full wp-image-1933" /></a></p>
+<p>Si declaramos la rutas sin <code>/</code> final, se consideran un fichero del sistema de fichero, si accedemos a la ruta con el <code>/</code> nos devolver&aacute; una respuesta con c&oacute;digo 404.</p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta3.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta3.png" alt="" width="469" height="112" class="aligncenter size-full wp-image-1932" /></a> <a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta4.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta4.png" alt="" width="1031" height="157" class="aligncenter size-full wp-image-1931" /></a></p>
+<p>Si la ruta de la petici&oacute;n HTTP no corresponde con ninguna que hayamos indicado se devolver&aacute; una respuesta con c&oacute;digo de estado 404 indicando que no se ha encontrado el recurso.</p>
+<h2>Rutas din&aacute;micas</h2>
+<p>Podemos gestionar rutas variables, es decir que correspondan a un determinado patr&oacute;n o expresi&oacute;n regular, por ejemplo:</p>
+<pre><code>@app.route("/articulos/<int:id>")
+def mostrar_ariculo(id):
+    return 'Vamos a mostrar el art&iacute;culo con id:{}'.format(id)
+</code></pre>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta5.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta5.png" alt="" width="487" height="108" class="aligncenter size-full wp-image-1942" /></a></p>
+<p>Otro ejemplo:</p>
+<pre><code>@app.route("/hello/")
+@app.route("/hello/<string:nombre>")
+@app.route("/hello/<string:nombre>/<int:edad>")
+def hola(nombre=None,edad=None):
+    if nombre and edad:
+        return 'Hola, {0} tienes {1} a&ntilde;os.'.format(nombre,edad)
+    elif nombre:
+        return 'Hola, {0}'.format(nombre)
+    else:
+        return 'Hola mundo'
+</code></pre>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta6.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta6.png" alt="" width="433" height="107" class="aligncenter size-large wp-image-1945" /></a> <a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta7.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta7.png" alt="" width="481" height="109" class="aligncenter size-full wp-image-1944" /></a> <a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta8.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta8.png" alt="" width="507" height="114" class="aligncenter size-full wp-image-1943" /></a></p>
+<p>La parte din&aacute;mica de la ruta la podemos obtener como variable que recibe la funci&oacute;n correspondiente. En el segundo ejemplo, adem&aacute;s observamos que varias rutas pueden ejecutar una misma funci&oacute;n. Aunque no es obligatorio podemos especificar el tipo de la variable capturada:</p>
+<ul>
+<li><code>string</code>: Acepta cualquier texto sin barras (por defecto)</li>
+<li><code>int</code>: Acepta enteros</li>
+<li><code>float</code>: Acepta valores reales</li>
+<li><code>path</code>: Acepta cadena de caracteres con barras</li>
+</ul>
+<h2>Construcci&oacute;n de rutas</h2>
+<p>Podemos importar la funci&oacute;n <code>url_for</code> que nos permite construir rutas a partir del nombre de la funci&oacute;n asociada. De esta manera en la siguiente ruta voy a generar tres enlaces a las rutas din&aacute;micas que hemos visto anteriormente:</p>
+<pre><code>from flask import Flask, url_for
+...
+@app.route("/enlaces")
+def enlaces():
+        cad='<a href="{0}">Decir hola</a>({0})<br/>'.format(url_for("hola"))
+        cad=cad+'<a href="{0}">Decir hola a pepe</a>({0})<br/>'.format(url_for("hola",nombre="pepe"))
+        cad=cad+'<a href="{0}">Decir hola a pepe de 16 a&ntilde;os</a>({0})'.format(url_for("hola",nombre="pepe",edad=16))
+        return cad
+...
+</code></pre>
+<p>Si accedemos a la URL observamos los enlaces y las URL a las que se enlazan: <a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta9.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/03/ruta9.png" alt="" width="471" height="136" class="aligncenter size-full wp-image-1946" /></a></p>
+<h1>Enrutamiento: M&eacute;todos</h1>
+<p>Para acceder a las distintas URLs podemos utilizar varios m&eacute;todos en nuestra petici&oacute;n HTTP. En nuestros ejemplos vamos a trabajar con el m&eacute;todo GET y POST, que son los m&eacute;todos que normalmente podemos utilizar desde un navegador web.</p>
+<ul>
+<li>GET: Se realiza una petici&oacute;n para obtener un recurso del servidor web. Es el m&eacute;todo m&aacute;s utilizado.</li>
+<li>POST: Aunque con el m&eacute;todo GET tambi&eacute;n podemos mandar informaci&oacute;n al servidor (por medio de par&aacute;metros escritas en la URL), utilizamos el m&eacute;todo POST para enviar informaci&oacute;n a una determinada URL. Normalmente utilizamos los formularios HTML para enviar informaci&oacute;n al servidor por medio del m&eacute;todo POST.</li>
+</ul>
+<p>Por defecto las rutas indicadas en la funciones <code>route</code> s&oacute;lo son accesibles utilizando el m&eacute;todo GET. Si una URL recibe informaci&oacute;n por medio del m&eacute;todo POST y no queremos que se acceda a ella con un m&eacute;todo GET, se definir&aacute; de la siguiente manera:</p>
+<pre><code>@app.route('/articulos/new',methods=["POST"])
+def articulos_new():
+    return 'Est&aacute; URL recibe informaci&oacute;n de un formulario con el m&eacute;todo POST'
+</code></pre>
+<p>Tambi&eacute;n en muchas ocasiones es deseable acceder a una URL con los dos m&eacute;todos, de tal manera que haremos una cosa cuando acedemos con GET y haremos otra cuando se acceda con POST. Ejemplo:</p>
+<pre><code>@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return 'Hemos accedido con POST'
+    else:
+        return 'Hemos accedido con GET'
+</code></pre>
+<p>En la pr&oacute;xima entrada estudiaremos como Flask gestiona las peticiones HTTP y genera las respuestas.</p>
