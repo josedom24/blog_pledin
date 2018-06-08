@@ -1,4 +1,5 @@
 ---
+layout: post
 status: publish
 published: true
 title: Configuraci&oacute;n de un proxy inverso con Apache 2.4
