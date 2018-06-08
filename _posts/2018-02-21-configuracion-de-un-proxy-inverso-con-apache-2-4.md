@@ -13,7 +13,7 @@ tags:
 ---
 Un proxy inverso es un tipo de servidor proxy que recupera recursos en nombre de un cliente desde uno o más servidores. Por lo tanto el cliente hace la petición al puerto 80 del proxy, y éste es el que hace la petición al servidor web que normalmente está en una red interna no accesible desde el cliente.
 
-[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy.png" alt="" width="280" height="105" class="aligncenter size-full wp-image-1898" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy.png){.thumbnail}
+[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy.png" alt="" width="280" height="105" class="aligncenter size-full wp-image-1898" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy.png)
 
 ## Apache como proxy inverso
 
@@ -73,7 +73,7 @@ Evidentemente debe funcionar la resolución de nombre para que el proxy pueda ac
 
 De esta manera al acceder desde el cliente la URL `http://proxy.example.org/web/` se mostraría la página que se encuentra en el servidor interno.
 
-[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy1.png" alt="" width="701" height="273" class="aligncenter size-full wp-image-1900" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy1.png){.thumbnail}
+[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy1.png" alt="" width="701" height="273" class="aligncenter size-full wp-image-1900" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy1.png)
 
 Como vemos una imagen no se ha cargado, además no todos los enlaces funcionan, pero antés vamos a solucionar el problema de las redirecciones.
 
@@ -83,7 +83,7 @@ Cuando creamos una redirección en un servidor web y el cliente intenta acceder 
 
 Si hemos configurado una redirección en el servidor interno, cuando se accede al recurso a través del proxy, la redirección se realiza pero la cabecera `Location` viene referencia la dirección del servidor interno, por lo que el cliente es incapaz de acceder a la nueva ubicación. Al acceder a ´http://proxy.example.org/web/directorio´ se produce una redirección pero como vemos la nueva url hace referencia al servidor interno por lo que no funciona:
 
-[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy2.png" alt="" width="734" height="402" class="aligncenter size-full wp-image-1902" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy2.png){.thumbnail}
+[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy2.png" alt="" width="734" height="402" class="aligncenter size-full wp-image-1902" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy2.png)
 
 Para solucionarlo utilizamos la directiva [`ProxyPassReverse`](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxypassreverse) que se encarga de reescribir la URL de la cabecera `Location`.
 
@@ -103,7 +103,7 @@ O de esta otra forma:
 
 Por lo que ya podemos hacer la redirección de forma correcta:
 
-[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy3.png" alt="" width="433" height="155" class="aligncenter size-full wp-image-1903" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy3.png){.thumbnail}
+[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy3.png" alt="" width="433" height="155" class="aligncenter size-full wp-image-1903" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy3.png)
 
 ### El problema de las rutas HTML
 
@@ -115,7 +115,7 @@ La página que servimos a través del proxy que se guarda en el servidor interno
 
 Si tenemos una ruta relativa, el cliente la va a poder seguir sin problema cuando accede a través del proxy, pero si tenemos una ruta como la segunda no lo va a poder hacer, porque en el `DocumentRoot` del proxy no existe este recurso. Al acceder al segundo enlace:
 
-[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy4.png" alt="" width="746" height="372" class="aligncenter size-full wp-image-1904" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy4.png){.thumbnail}
+[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy4.png" alt="" width="746" height="372" class="aligncenter size-full wp-image-1904" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy4.png)
 
 Para solucionar este problema debemos reescribir el HTML para cambiar la referencia del enlace. Para ello necesitamos activar un nuevo módulo:
 
@@ -146,7 +146,7 @@ Es importante no poner la barra final, cuando se encuentra una ruta que coincide
 
 Después de iniciar comprobamos que al intentar acceder al proxy obtenemos un error en el navegador del cliente &#8220;Error de codificación de contenido&#8221;.
 
-[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy5.png" alt="" width="724" height="342" class="aligncenter size-full wp-image-1905" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy5.png){.thumbnail}
+[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy5.png" alt="" width="724" height="342" class="aligncenter size-full wp-image-1905" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy5.png)
 
 ### Sirviendo contenido multimedia
 
@@ -178,7 +178,7 @@ Y usamos la directiva `RequestHeader` dentro del la sección `Location`:
 
 Ahora si podemos acceder a la página completa a través del proxy.
 
-[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy6.png" alt="" width="696" height="275" class="aligncenter size-full wp-image-1906" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy6.png){.thumbnail}
+[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy6.png" alt="" width="696" height="275" class="aligncenter size-full wp-image-1906" />](https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy6.png)
 
 ### Sirviendo contenido con HTTPS
 
