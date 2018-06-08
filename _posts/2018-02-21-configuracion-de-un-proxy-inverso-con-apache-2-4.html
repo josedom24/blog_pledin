@@ -1,0 +1,140 @@
+---
+status: publish
+published: true
+title: Configuraci&oacute;n de un proxy inverso con Apache 2.4
+author:
+  display_name: admin
+  login: admin
+  email: josedom24@gmail.com
+  url: ''
+author_login: admin
+author_email: josedom24@gmail.com
+wordpress_id: 1896
+wordpress_url: https://www.josedomingo.org/pledin/?p=1896
+date: '2018-02-21 19:45:07 +0000'
+date_gmt: '2018-02-21 18:45:07 +0000'
+categories:
+- General
+tags:
+- Apache
+- Proxy
+comments: []
+---
+<p>Un proxy inverso es un tipo de servidor proxy que recupera recursos en nombre de un cliente desde uno o m&aacute;s servidores. Por lo tanto el cliente hace la petici&oacute;n al puerto 80 del proxy, y &eacute;ste es el que hace la petici&oacute;n al servidor web que normalmente est&aacute; en una red interna no accesible desde el cliente.</p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy.png" alt="" width="280" height="105" class="aligncenter size-full wp-image-1898" /></a></p>
+<h2>Apache como proxy inverso</h2>
+<p>Apache2.4 puede funcionar como proxy inverso usando el m&oacute;dulo <code>proxy</code> junto a otros m&oacute;dulos, por ejemplo:</p>
+<ul>
+<li>proxy_http: Para trabajar con el protocolo HTTP.</li>
+<li>proxy_ftp: Para trabajar con el protocolo FTP.</li>
+<li>proxy_html: Permite reescribir los enlaces HTML en el espacio de direcciones de un proxy.</li>
+<li>proxy_ajp: Para trabajar con el protocolo AJP para Tomcat.</li>
+<li>...</li>
+</ul>
+<p>Por lo tanto, para empezar, vamos activar los m&oacute;dulos que necesitamos:</p>
+<pre><code># a2enmod proxy proxy_http
+</code></pre>
+<p><!--more--></p>
+<h2>Ejemplo de utilizaci&oacute;n de proxy inverso</h2>
+<p>Tenemos a nuestra disposici&oacute;n un servidor interno (no accesible desde el cliente) en la direcci&oacute;n privada, con el nombre de <code>interno.example.org</code>. Tenemos un servidor que va a funcionar de proxy, llamado <code>proxy.example.org</code> con dos interfaces de red: una p&uacute;blica conectada a la red donde se encuentra el cliente, y otra interna conectada a la red donde se encuentra el servidor interno.</p>
+<h3>Sirviendo una p&aacute;gina est&aacute;tica</h3>
+<p>En nuestro servidor interno hemos creado un virtual host para servir una p&aacute;gina est&aacute;tica, <code>index.html</code>, con este contenido:</p>
+<pre><code><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Probando proxy inverso con Apache2</title>
+</head>
+<body>
+        <h1>Probando proxy inverso con Apache2</h1>
+        <img src="img.jpg"/>
+        <img src="/img.jpg"/>
+        <br/>
+        <a href="http://10.0.0.6/carpeta/index.html">Enlace tipo 1</a><br/>
+        <a href="/carpeta/index.html">Enlace tipo 2</a><br/>
+        <a href="carpeta/index.html">Enlace tipo 3</a>
+</body>
+</code></pre>
+<p>Vamos a utilizar la directiva <a href="https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxypass"><code>ProvyPass</code></a> en el fichero de configuraci&oacute;n del virtual host, de la siguiente forma:</p>
+<pre><code>ProxyPass "/web/" "http://interno.example.org/"
+</code></pre>
+<p>Tambi&eacute;n lo podemos configurar de forma similar con:</p>
+<pre><code><Location "/web/">
+    ProxyPass "http://interno.example.org/"
+</Location>
+</code></pre>
+<p>Evidentemente debe funcionar la resoluci&oacute;n de nombre para que el proxy pueda acceder al servidor interno.</p>
+<p>De esta manera al acceder desde el cliente la URL <code>http://proxy.example.org/web/</code> se mostrar&iacute;a la p&aacute;gina que se encuentra en el servidor interno.</p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy1.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy1.png" alt="" width="701" height="273" class="aligncenter size-full wp-image-1900" /></a></p>
+<p>Como vemos una imagen no se ha cargado, adem&aacute;s no todos los enlaces funcionan, pero ant&eacute;s vamos a solucionar el problema de las redirecciones.</p>
+<h3>El probelma de las redirecciones</h3>
+<p>Cuando creamos una redirecci&oacute;n en un servidor web y el cliente intenta acceder al recurso, el servidor manda una respuesta con c&oacute;digo de estado <code>301</code> o <code>302</code>, e indica la URL de la nueva ubicaci&oacute;n del recurso en una cabecera HTTP llamada <code>Location</code>.</p>
+<p>Si hemos configurado una redirecci&oacute;n en el servidor interno, cuando se accede al recurso a trav&eacute;s del proxy, la redirecci&oacute;n se realiza pero la cabecera <code>Location</code> viene referencia la direcci&oacute;n del servidor interno, por lo que el cliente es incapaz de acceder a la nueva ubicaci&oacute;n. Al acceder a &acute;http://proxy.example.org/web/directorio&acute; se produce una redirecci&oacute;n pero como vemos la nueva url hace referencia al servidor interno por lo que no funciona:</p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy2.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy2.png" alt="" width="734" height="402" class="aligncenter size-full wp-image-1902" /></a></p>
+<p>Para solucionarlo utilizamos la directiva <a href="https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxypassreverse"><code>ProxyPassReverse</code></a> que se encarga de reescribir la URL de la cabecera <code>Location</code>.</p>
+<p>La configuraci&oacute;n quedar&iacute;a:</p>
+<pre><code>ProxyPass "/web/" "http://interno.example.org/"
+ProxyPassReverse "/web/" "http://interno.example.org/"
+</code></pre>
+<p>O de esta otra forma:</p>
+<pre><code><Location "/web/">
+    ProxyPass "http://interno.example.org/"
+    ProxyPassReverse "http://interno.example.org/"
+</Location>
+</code></pre>
+<p>Por lo que ya podemos hacer la redirecci&oacute;n de forma correcta:</p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy3.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy3.png" alt="" width="433" height="155" class="aligncenter size-full wp-image-1903" /></a></p>
+<h3>El problema de las rutas HTML</h3>
+<p>La p&aacute;gina que servimos a trav&eacute;s del proxy que se guarda en el servidor interno puede tener declarada rutas, por ejemplo en im&aacute;genes o enlaces. Nos podemos encontrar con diferentes tipos de rutas:</p>
+<ul>
+<li><code>http://10.0.0.6/carpeta/index.html</code>: Una ruta absoluta donde aparece la direcci&oacute;n del servidor interno y que evidentemente el cliente no va a poder seguir.</li>
+<li><code>/carpeta/index.html</code>: Una ruta absoluta, referenciada a la ra&iacute;z del <code>DocumentRoot</code>.</li>
+<li><code>carpeta/index.html</code>: Una ruta relativa.</li>
+</ul>
+<p>Si tenemos una ruta relativa, el cliente la va a poder seguir sin problema cuando accede a trav&eacute;s del proxy, pero si tenemos una ruta como la segunda no lo va a poder hacer, porque en el <code>DocumentRoot</code> del proxy no existe este recurso. Al acceder al segundo enlace:</p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy4.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy4.png" alt="" width="746" height="372" class="aligncenter size-full wp-image-1904" /></a></p>
+<p>Para solucionar este problema debemos reescribir el HTML para cambiar la referencia del enlace. Para ello necesitamos activar un nuevo m&oacute;dulo:</p>
+<pre><code># a2enmod proxy_html
+</code></pre>
+<p>Y realizar la siguiente configuraci&oacute;n:</p>
+<pre><code>ProxyPass "/web/"  "http://interno.example.org/"
+ProxyPassReverse "/web/"  "http://interno.example.org/"
+ProxyHTMLURLMap http://interno.example.org /web
+<Location /web/>
+    ProxyPassReverse /
+    ProxyHTMLEnable On
+    ProxyHTMLURLMap / /web/
+</Location>
+</code></pre>
+<p>Como vemos hemos configurado un proxy para HTML, que ser&aacute; responsable de reescribir todos las rutas que contiene el HYML, utilizando la directiva <a href="https://httpd.apache.org/docs/2.4/mod/mod_proxy_html.html#proxyhtmlurlmap"><code>ProxyHTMLURLMap</code></a>:</p>
+<pre><code>ProxyHTMLURLMap http://interno.example.org /web
+</code></pre>
+<p>Es importante no poner la barra final, cuando se encuentra una ruta que coincide con el primer patr&oacute;n se reescribe con el segundo, esta regla reescribe las ruta del tipo de la primera opci&oacute;n que hemos visto anteriormente. Para arreglar la rutas de la segunda opci&oacute;n, utilizamos dentro de la secci&oacute;n <code>Location</code>:</p>
+<pre><code>ProxyHTMLURLMap / /web/
+</code></pre>
+<p>Despu&eacute;s de iniciar comprobamos que al intentar acceder al proxy obtenemos un error en el navegador del cliente "Error de codificaci&oacute;n de contenido".</p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy5.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy5.png" alt="" width="724" height="342" class="aligncenter size-full wp-image-1905" /></a></p>
+<h3>Sirviendo contenido multimedia</h3>
+<p>Acabamos de configurar un proxy que examina y reescribe el HTML de nuestro sitio web, pero evidentemente existe m&aacute;s contenido en nuestro sitio que no es HTML y no deber&iacute;a ser procesado por <code>proxy_html</code>. Esto se soluciona verificando la cabecera del contenido y rechazando todos los contenidos que no tengan el tipo MIME adecuado.</p>
+<p>Pero tenemos un problema: normalmente se comprime el contenido HTML, y encontramos cabeceras de este tipo:</p>
+<pre><code>Content-Type: text/html
+Content-Encoding: gzip
+</code></pre>
+<p>Este contenido no deber&iacute;a pasar por el analizador de <code>proxy_html</code>. Para solucionar esto podemos negarnos a admitir la compresi&oacute;n. La eliminaci&oacute;n de cualquier cabecera de petici&oacute;n <code>Accept-Encoding</code> hace el trabajo. Para ello podemos utilizar la directiva <a href="http://httpd.apache.org/docs/current/mod/mod_headers.html#requestheader"><code>RequestHeader</code></a> del m&oacute;dulos <code>headers</code>, por lo tanto activamos el m&oacute;dulo:</p>
+<pre><code># a2enmod headers
+</code></pre>
+<p>Y usamos la directiva <code>RequestHeader</code> dentro del la secci&oacute;n <code>Location</code>:</p>
+<pre><code>ProxyPass "/web/"  "http://interno.example.org/"
+ProxyPassReverse "/web/"  "http://interno.example.org/"
+ProxyHTMLURLMap http://interno.example.org /web
+<Location /web/>
+    ProxyPassReverse /
+    ProxyHTMLEnable On
+    ProxyHTMLURLMap / /web/
+    RequestHeader unset Accept-Encoding
+</Location>
+</code></pre>
+<p>Ahora si podemos acceder a la p&aacute;gina completa a trav&eacute;s del proxy.</p>
+<p><a class="thumbnail" href="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy6.png"><img src="https://www.josedomingo.org/pledin/wp-content/uploads/2018/02/proxy6.png" alt="" width="696" height="275" class="aligncenter size-full wp-image-1906" /></a></p>
+<h3>Sirviendo contenido con HTTPS</h3>
+<p>Una situaci&oacute;n similar surge en el caso del contenido encriptado (https). En este caso, usando el m&oacute;dulo <code>ssl</code> y un certificado en el proxy, de modo que la sesi&oacute;n segura real se encuentre entre el navegador y el proxy, no al servidor interno.</p>
