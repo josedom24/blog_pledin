@@ -13,8 +13,11 @@ tags:
   - Seguridad
 ---
 <p style="text-align: justify;">
-  <a href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/12/unoaldia.png"><img class="size-full wp-image-387 alignleft" title="unoaldia" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/12/unoaldia.png" alt="" width="153" height="199" /></a>Desde hace años, <a href="http://www.hispasec.com/">Hispasec</a> tiene una lista de correos llamada &#8220;Una al día&#8221; donde publica vulnerabilidades e información importante de seguridad. Han ido sacando libros con las experiencias de estas notificaciones, y el de este año, <a href="http://www.hispasec.com/uad/archivos/UADv2.0.pdf">Una al día: Once años de seguridad informática (1998-2009)</a> está disponible en PDF para descarga, con licencia Creative Commons (Reconocimiento-No comercial-Sin obras derivadas).
-</p>
+  <a href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/12/unoaldia.png"><img class="size-full wp-image-387 alignleft" title="unoaldia" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/12/unoaldia.png" alt="" width="153" height="199" /></a></p>
+  
+  
+Desde hace años, <a href="http://www.hispasec.com/">Hispasec</a> tiene una lista de correos llamada &#8220;Una al día&#8221; donde publica vulnerabilidades e información importante de seguridad. Han ido sacando libros con las experiencias de estas notificaciones, y el de este año, <a href="http://www.hispasec.com/uad/archivos/UADv2.0.pdf">Una al día: Once años de seguridad informática (1998-2009)</a> está disponible en PDF para descarga, con licencia Creative Commons (Reconocimiento-No comercial-Sin obras derivadas).
+
 
 <p style="text-align: justify;">
   Cómo presentan en la misma página de Hispasec:
