@@ -325,7 +325,7 @@ Del mismo modo lo tendrás que hacer en el fichero: `/var/lib/tomcat6/webapps/sh
 
 Si vamos ahora a `http://localhost/alfresco` veremos, por fin, la página de alfresco funcionando.
 
-[<img class="aligncenter size-medium wp-image-535" title="Pantallazo-Mi Alfresco - Google Chrome" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/11/Pantallazo-Mi-Alfresco-Google-Chrome-300x240.png" alt="" width="300" height="240" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2011/11/Pantallazo-Mi-Alfresco-Google-Chrome-300x240.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2011/11/Pantallazo-Mi-Alfresco-Google-Chrome-1024x819.png 1024w, https://www.josedomingo.org/pledin/wp-content/uploads/2011/11/Pantallazo-Mi-Alfresco-Google-Chrome.png 1280w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/11/Pantallazo-Mi-Alfresco-Google-Chrome.png)
+![alfreesco]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/11/Pantallazo-Mi-Alfresco-Google-Chrome.png)
 
 Recomiendo que en los últimos pasos de la instalación se vayan monitorizando los ficheros de logs: catalina.out y alfresco.log. Si surge algún error la mejor manera de solucionar es buscar en internet donde he encontrado mucha información sobre la instalación de alfresco. Espero quele sirva a alguien.
 
