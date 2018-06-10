@@ -46,7 +46,7 @@ plugins:
 #   - vendor/ruby/
 
 locale: "es-ES"
-minimal_mistakes_skin: "dirt" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 name: "José Domingo Muñoz"
 search: true
 
