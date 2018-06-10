@@ -5,8 +5,7 @@ date: 2018-02-21T19:45:07+00:00
 author: admin
 guid: https://www.josedomingo.org/pledin/?p=1896
 permalink: /2018/02/configuracion-de-un-proxy-inverso-con-apache-2-4/
-categories:
-  - General
+
 tags:
   - Apache
   - Proxy
