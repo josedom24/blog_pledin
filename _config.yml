@@ -25,6 +25,7 @@ twitter_username: pledin_jd
 github_username:  josedom24
 permalink: /:year/:month/:title/
 paginate_path: /blog/page:num
+breadcrumbs: true 
 
 # Build settings
 markdown: kramdown

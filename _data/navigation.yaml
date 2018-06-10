@@ -1,4 +1,8 @@
 main:
+  - title: Blog
+    children:
+      - title: "Historial"
+        url: /posts/
   - title: "Acerca de"
     url: /about/
   
