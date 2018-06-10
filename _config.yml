@@ -25,7 +25,7 @@ twitter_username: pledin_jd
 github_username:  josedom24
 permalink: /:year/:month/:title/
 paginate_path: /blog/page:num
-breadcrumbs: true 
+
 
 # Build settings
 markdown: kramdown
@@ -59,7 +59,7 @@ author:
   bio    : "Profesor..."
   email  : "josedom24@gmail.com"
   uri    : "https://www.josedomingo.org"
-  home   : "Utrera, Sevill,ES"# null (default), "absolute or relative url to link to author home"
+  home   : "Utrera, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
 
 defaults:
   # _posts
@@ -75,13 +75,4 @@ defaults:
       share: true
       related: true
 
-
-
-sidebar:
-  - title: "Title"
-    image: http://placehold.it/350x250
-    image_alt: "image"
-    text: "Some text here."
-  - title: "Another Title"
-    text: "More text here."
 
