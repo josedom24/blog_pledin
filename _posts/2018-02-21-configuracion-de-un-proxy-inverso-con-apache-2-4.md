@@ -13,7 +13,7 @@ tags:
 ---
 Un proxy inverso es un tipo de servidor proxy que recupera recursos en nombre de un cliente desde uno o más servidores. Por lo tanto el cliente hace la petición al puerto 80 del proxy, y éste es el que hace la petición al servidor web que normalmente está en una red interna no accesible desde el cliente.
 
-[<img src="{{site.url}}/assets/wp-content/uploads/2018/02/proxy.png" alt="" width="280" height="105" class="aligncenter size-full wp-image-1898" />]({{site.url}}/assets/wp-content/uploads/2018/02/proxy.png)
+[<img src="{{ base_path }}/assets/wp-content/uploads/2018/02/proxy.png" alt="" width="280" height="105" class="aligncenter size-full wp-image-1898" />]({{ base_path }}/assets/wp-content/uploads/2018/02/proxy.png)
 
 ## Apache como proxy inverso
 
