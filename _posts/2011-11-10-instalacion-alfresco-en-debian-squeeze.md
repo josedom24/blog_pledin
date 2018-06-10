@@ -15,7 +15,7 @@ tags:
   - Manuales
   - Tomcat
 ---
-[<img class="aligncenter size-medium wp-image-518" title="alfresco1" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/11/alfresco1-300x86.jpg" alt="" width="300" height="86" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2011/11/alfresco1-300x86.jpg 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2011/11/alfresco1-1024x294.jpg 1024w, https://www.josedomingo.org/pledin/wp-content/uploads/2011/11/alfresco1.jpg 1600w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/11/alfresco1.jpg)
+![alfresco]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/11/alfresco1.jpg)
 
 Este artículo está basado en este [otro](http://widget.linkwithin.com/redirect?url=http%3A//yoadminsis.blogspot.com/2010/04/instalacion-alfresco-33-community-war_15.html&vars=%5B%22http%3A//yoadminsis.blogspot.com/search/label/alfresco%22%2C%20290792%2C%201%2C%20%22http%3A//yoadminsis.blogspot.com/2010/04/03-instalacion-alfresco-33-community.html%22%2C%2044707827%2C%200%2C%2044707835%5D&ts=1320959033698), y sobre todo en mi propia experiencia instalando Alfresco Comunity 4.0 en  Debian Squeeze. La instalación se ha realizado sobre una máquina virtual con 3 gigabytes de memoria RAM. Empecemos...
 
@@ -159,7 +159,7 @@ Y reiniciamos apache2.
 
 En la siguiente imagen vemos como el conector, apache y tomcat están funcionando. No usamos directamente el puerto 8080 de tomcat si no el 80 de apache. El error de Alfresco es simplemente debido a que todavía no lo hemos instalado en su sitio.
 
-[<img class="aligncenter size-medium wp-image-532" title="Pantallazo-Apache Tomcat-6.0.28 - Informe de Error - Google Chrome" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/11/Pantallazo-Apache-Tomcat-6.0.28-Informe-de-Error-Google-Chrome-300x157.png" alt="" width="300" height="157" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2011/11/Pantallazo-Apache-Tomcat-6.0.28-Informe-de-Error-Google-Chrome-300x157.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2011/11/Pantallazo-Apache-Tomcat-6.0.28-Informe-de-Error-Google-Chrome-1024x538.png 1024w, https://www.josedomingo.org/pledin/wp-content/uploads/2011/11/Pantallazo-Apache-Tomcat-6.0.28-Informe-de-Error-Google-Chrome.png 1366w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/11/Pantallazo-Apache-Tomcat-6.0.28-Informe-de-Error-Google-Chrome.png)
+![alfresco]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/11/Pantallazo-Apache-Tomcat-6.0.28-Informe-de-Error-Google-Chrome.png)
 
 ### Instalación de herramientas adicionales
 
