@@ -1,5 +1,5 @@
 main:
-  - title: Blog
+  - title: "Blog"
     url: /blog/
   - title: "Acerca de"
     url: /about/
