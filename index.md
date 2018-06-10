@@ -8,7 +8,7 @@ sidebar:
 
 # PLEDIN 3.0
 
-Bienvenido a la página personal de José Domingo Muñoz
+Bienvenido a la página personal de José Domingo Muñoz, 
 
 <ul>
   {% for post in site.posts offset: 0 limit: 5%}
