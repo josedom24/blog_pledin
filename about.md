@@ -8,7 +8,7 @@ permalink: /about/
 author_profile: true
 classes: wide
 sidebar:
-  nav: "blog"
+  nav: "all"
 ---
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/04/logo_3.gif)
 
