@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=321
 permalink: /2010/09/de-vuelta-con-las-revistas/
-categories:
-  - General
+
+  
 tags:
   - Linux
   - Python

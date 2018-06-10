@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=150
 permalink: /2010/05/nuevo-curso_servicios_gnu_linux_portal_educativo/
-categories:
-  - General
+
+  
 tags:
   - Cursos
   - Educación

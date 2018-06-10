@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=272
 permalink: /2010/07/los-profesores-ante-el-fracaso-educativo/
-categories:
-  - General
+
+  
 tags:
   - Educación
 ---

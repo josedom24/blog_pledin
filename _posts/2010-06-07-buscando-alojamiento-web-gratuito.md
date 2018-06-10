@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=168
 permalink: /2010/06/buscando-alojamiento-web-gratuito/
-categories:
-  - General
+
+  
 tags:
   - Redes
   - Web

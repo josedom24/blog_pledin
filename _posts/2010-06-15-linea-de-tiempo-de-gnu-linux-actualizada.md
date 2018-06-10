@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=203
 permalink: /2010/06/linea-de-tiempo-de-gnu-linux-actualizada/
-categories:
-  - General
+
+  
 tags:
   - Linux
 ---

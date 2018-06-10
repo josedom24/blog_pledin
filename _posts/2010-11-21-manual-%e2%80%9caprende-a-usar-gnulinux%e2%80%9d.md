@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=368
 permalink: '/2010/11/manual-%e2%80%9caprende-a-usar-gnulinux%e2%80%9d/'
-categories:
-  - General
+
+  
 tags:
   - Linux
   - Manuales

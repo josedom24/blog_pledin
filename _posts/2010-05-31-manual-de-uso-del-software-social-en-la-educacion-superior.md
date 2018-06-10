@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=159
 permalink: /2010/05/manual-de-uso-del-software-social-en-la-educacion-superior/
-categories:
-  - General
+
+  
 tags:
   - Educación
   - Libros

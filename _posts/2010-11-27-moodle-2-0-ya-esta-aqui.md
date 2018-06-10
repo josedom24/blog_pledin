@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=379
 permalink: /2010/11/moodle-2-0-ya-esta-aqui/
-categories:
-  - General
+
+  
 tags:
   - Educación
   - Moodle

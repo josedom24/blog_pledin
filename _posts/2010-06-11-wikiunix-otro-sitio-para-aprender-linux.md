@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=194
 permalink: /2010/06/wikiunix-otro-sitio-para-aprender-linux/
-categories:
-  - General
+
+  
 tags:
   - Educación
   - Linux

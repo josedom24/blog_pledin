@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=217
 permalink: /2010/06/manual-del-buen-uso-de-los-medios-informaticos/
-categories:
-  - General
+
+  
 tags:
   - Educación
   - Internet

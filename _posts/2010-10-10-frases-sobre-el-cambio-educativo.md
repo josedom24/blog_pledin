@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=343
 permalink: /2010/10/frases-sobre-el-cambio-educativo/
-categories:
-  - General
+
+  
 tags:
   - Educación
 ---

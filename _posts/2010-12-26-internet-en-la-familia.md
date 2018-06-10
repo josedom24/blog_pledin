@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=391
 permalink: /2010/12/internet-en-la-familia/
-categories:
-  - General
+
+  
 tags:
   - Internet
   - Libros

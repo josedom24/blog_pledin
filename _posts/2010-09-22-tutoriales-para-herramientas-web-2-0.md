@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=306
 permalink: /2010/09/tutoriales-para-herramientas-web-2-0/
-categories:
-  - General
+
+  
 tags:
   - Cursos
   - Educación

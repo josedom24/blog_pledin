@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=138
 permalink: /2010/05/nuevas-revistas-informaticas/
-categories:
-  - General
+
+  
 tags:
   - Revistas
   - Software Libre

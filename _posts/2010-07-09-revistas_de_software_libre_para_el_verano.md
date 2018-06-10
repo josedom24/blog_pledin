@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=287
 permalink: /2010/07/revistas_de_software_libre_para_el_verano/
-categories:
-  - General
+
+  
 tags:
   - Linux
   - Revistas

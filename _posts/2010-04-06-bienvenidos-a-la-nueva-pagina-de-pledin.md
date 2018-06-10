@@ -6,10 +6,10 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=30
 permalink: /2010/04/bienvenidos-a-la-nueva-pagina-de-pledin/
-categories:
-  - General
+
+  
 tags:
-  - General
+  
   - Plataforma
   - Pledin
 ---

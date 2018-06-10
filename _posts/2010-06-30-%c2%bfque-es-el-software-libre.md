@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=238
 permalink: '/2010/06/%c2%bfque-es-el-software-libre/'
-categories:
-  - General
+
+  
 tags:
   - Educación
   - Software Libre

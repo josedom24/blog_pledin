@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=81
 permalink: /2010/04/cursos-de-formacion-de-profesores-del-isftic-antiguo-cnice/
-categories:
-  - General
+
+  
 tags:
   - Cursos
   - Educación

@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=260
 permalink: /2010/07/hojas-de-ayuda-para-programadores-y-disenadores-web/
-categories:
-  - General
+
+  
 tags:
   - html
   - Javascript

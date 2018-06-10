@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=314
 permalink: /2010/09/recursos-educativos-y-entornos-de-colaboracion-para-docentes/
-categories:
-  - General
+
+  
 tags:
   - Educación
   - TIC

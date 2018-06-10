@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=252
 permalink: /2010/07/publicada-guadalinex-v7/
-categories:
-  - General
+
+  
 tags:
   - Guadalinex
   - Linux

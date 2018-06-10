@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=133
 permalink: /2010/04/tutoriales-y-cursos-sobre-gimp/
-categories:
-  - General
+
+  
 tags:
   - Cursos
   - Imagen

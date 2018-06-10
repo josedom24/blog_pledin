@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=386
 permalink: /2010/12/libro-sobre-seguridad-informatica-una-al-dia/
-categories:
-  - General
+
+  
 tags:
   - Libros
   - Seguridad

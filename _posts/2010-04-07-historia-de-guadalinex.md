@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=44
 permalink: /2010/04/historia-de-guadalinex/
-categories:
-  - General
+
+  
 tags:
   - Cursos
   - Guadalinex

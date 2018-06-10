@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=185
 permalink: /2010/06/las-tic-en-la-educacion-obligatoria-de-la-teoria-a-la-politica-y-la-practica/
-categories:
-  - General
+
+  
 tags:
   - Educación
   - Software Libre

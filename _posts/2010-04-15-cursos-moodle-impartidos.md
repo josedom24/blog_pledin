@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=88
 permalink: /2010/04/cursos-moodle-impartidos/
-categories:
-  - General
+
+  
 tags:
   - Cursos
   - Educación

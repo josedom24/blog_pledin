@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=210
 permalink: /2010/06/planetix-otra-revista-de-software-libre/
-categories:
-  - General
+
+  
 tags:
   - Linux
   - Revistas

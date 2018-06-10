@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=96
 permalink: /2010/04/revistas-libres-de-software-libre/
-categories:
-  - General
+
+  
 tags:
   - Linux
   - Revistas

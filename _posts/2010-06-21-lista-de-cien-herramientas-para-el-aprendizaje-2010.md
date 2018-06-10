@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=224
 permalink: /2010/06/lista-de-cien-herramientas-para-el-aprendizaje-2010/
-categories:
-  - General
+
+  
 tags:
   - CMS
   - Educación

@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=163
 permalink: /2010/06/cursos-sobre-joomla/
-categories:
-  - General
+
+  
 tags:
   - CMS
   - Cursos

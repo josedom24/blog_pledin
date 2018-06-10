@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=361
 permalink: /2010/11/ccursos-sobre-rede/
-categories:
-  - General
+
+  
 tags:
   - Cursos
   - Internet

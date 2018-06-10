@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=247
 permalink: /2010/07/actualizando-a-wordpress-3-0/
-categories:
-  - General
+
+  
 tags:
   - CMS
   - Pledin

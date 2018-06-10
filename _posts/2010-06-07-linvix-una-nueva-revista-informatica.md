@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=177
 permalink: /2010/06/linvix-una-nueva-revista-informatica/
-categories:
-  - General
+
+  
 tags:
   - Revistas
   - Software Libre

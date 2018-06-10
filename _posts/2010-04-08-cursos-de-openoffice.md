@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=58
 permalink: /2010/04/cursos-de-openoffice/
-categories:
-  - General
+
+  
 tags:
   - Cursos
   - openOffice

@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=232
 permalink: /2010/06/identifica-que-quieren-decir-los-pitidos-del-ordenador/
-categories:
-  - General
+
+  
 tags:
   - Hardware
 ---

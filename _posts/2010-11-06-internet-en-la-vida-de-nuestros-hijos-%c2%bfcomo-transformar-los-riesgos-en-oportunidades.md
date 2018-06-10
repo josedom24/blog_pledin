@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=352
 permalink: '/2010/11/internet-en-la-vida-de-nuestros-hijos-%c2%bfcomo-transformar-los-riesgos-en-oportunidades/'
-categories:
-  - General
+
+  
 tags:
   - Internet
   - Libros

@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=267
 permalink: /2010/07/revista-dim/
-categories:
-  - General
+
+  
 tags:
   - Educación
   - Revistas

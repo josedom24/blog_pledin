@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=143
 permalink: /2010/05/sufiendo-spam-en-wordpress/
-categories:
-  - General
+
+  
 tags:
   - Pledin
   - Web

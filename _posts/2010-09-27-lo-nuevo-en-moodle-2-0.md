@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=311
 permalink: /2010/09/lo-nuevo-en-moodle-2-0/
-categories:
-  - General
+
+  
 tags:
   - CMS
   - Educación

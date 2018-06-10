@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=100
 permalink: /2010/04/colecciones_de_libros_manuales_libros/
-categories:
-  - General
+
+  
 tags:
   - css
   - Educación

@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=382
 permalink: /2010/12/mapa-conceptual-del-software-libre/
-categories:
-  - General
+
+  
 tags:
   - Software Libre
 ---

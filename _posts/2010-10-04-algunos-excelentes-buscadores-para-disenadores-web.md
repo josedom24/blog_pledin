@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=333
 permalink: /2010/10/algunos-excelentes-buscadores-para-disenadores-web/
-categories:
-  - General
+
+  
 tags:
   - Web
 ---

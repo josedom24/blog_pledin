@@ -6,8 +6,8 @@ author: admin
 
 guid: http://www.josedomingo.org/pledin/?p=72
 permalink: /2010/04/utilidad-educativa-de-las-aplicaciones-de-google/
-categories:
-  - General
+
+  
 tags:
   - Cursos
   - Educación
