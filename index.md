@@ -16,7 +16,7 @@ Bienvenido a la página personal de José Domingo Muñoz,
       <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
-      <p>({{ post.date | date: "%d-%m-%Y" }})</p>
+      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
     </li>
   {% endfor %}
 </ul>
