@@ -11,7 +11,7 @@ sidebar:
 Bienvenido a la página personal de José Domingo Muñoz
 
 <ul>
-  {% for post in site.posts[:5] %}
+  {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">
         {{ post.title }}
