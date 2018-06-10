@@ -61,19 +61,21 @@ author:
   uri    : "https://www.josedomingo.org"
   home   : "Utrera, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
 
-    
-     
 defaults:
   # _posts
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
       author_profile: true
+      layout: single
+      classes: wide
       read_time: true
       comments: true
       share: true
       related: true
+      sidebar:
+        nav: "blog"
+     
 
 
