@@ -25,63 +25,63 @@ Alfresco es un gestor de Documentación profesional y Open Source. Tiene dos ver
   
 En mi caso voy a usar el Java de Oracle, recuerda que debes tener los repositorios non-free configurados:
 
-<pre class="brush: bash; gutter: false; first-line: 1">aptitude install sun-java6-bin sun-java6-jre sun-java6-jdk sun-java6-plugin sun-java6-fonts libcommons-el-java</pre>
+  aptitude install sun-java6-bin sun-java6-jre sun-java6-jdk sun-java6-plugin sun-java6-fonts libcommons-el-java
 
 Cuando nos lo pida en la consola aceptamos la licencia. Si tuviéramos ya instalado otro java podríamos hacer que se use por defecto el de Sun con:
 
-<pre class="brush: bash; gutter: false; first-line: 1">update-alternatives --set java /usr/lib/jvm/java-6-sun/jre/bin/java</pre>
+  update-alternatives --set java /usr/lib/jvm/java-6-sun/jre/bin/java
 
 **Instalación de MySQL**
   
 Instalamos el servidor mysql:
 
-<pre class="brush: bash; gutter: false; first-line: 1">aptitude install mysql-server-5.1 mysql-client-5.1 libmysql-java</pre>
+  aptitude install mysql-server-5.1 mysql-client-5.1 libmysql-java
 
 libmysql-java es el controlador JDBC de MySQL version 5.1.10. Lo configuramos en la instalación de tomcat6.
 
 **Instalamos el servidor de aplicaciones Tomcat 6.**
 
-<pre class="brush: bash; gutter: false; first-line: 1">aptitude install tomcat6 tomcat6-admin tomcat6-docs tomcat6-examples tomcat6-user</pre>
+  aptitude install tomcat6 tomcat6-admin tomcat6-docs tomcat6-examples tomcat6-user
 
 Para manejar el gestor de aplicaciones y el gestor de hosts de tomcat desde el explorador web debemos añadir nuestro usuario a los roles manager y admin de tomcat. Para ello configuramos el fichero /etc/tomcat6/tomcat-user.xml y añadimos el usuario a la sección tomcat-users. Sustituimos usuario y contraseña por los nuestros.
 
-<pre class="brush: xml; gutter: false; first-line: 1">&lt;tomcat-users&gt;
-&lt;user username="usuario" password="contraseña" roles="admin,manager"/&gt;
-&lt;/tomcat-users&gt;</pre>
+  &lt;tomcat-users&gt;
+  &lt;user username="usuario" password="contraseña" roles="admin,manager"/&gt;
+  &lt;/tomcat-users&gt;
 
 Para configurar el conector AJP y que así el servidor web Apache envíe las peticiones a Tomcat configuramos el siguiente fichero y descomentamos la linea del conector.
 
-<pre class="brush: bash; gutter: false; first-line: 1">nano /etc/tomcat6/server.xml
+  nano /etc/tomcat6/server.xml
 
 &lt;!-- Define an AJP 1.3 Connector on port 8009 --&gt;
-&lt;Connector port="8009" protocol="AJP/1.3" redirectPort="8443" /&gt;</pre>
+&lt;Connector port="8009" protocol="AJP/1.3" redirectPort="8443" /&gt;
 
 Creamos el directorio endorsed en /var/lib/tomcat6/common
 
-<pre class="brush: bash; gutter: false; first-line: 1">mkdir /var/lib/tomcat6/common/endorsed
-chown -R tomcat6:tomcat6 /var/lib/tomcat6/common/endorsed</pre>
+  mkdir /var/lib/tomcat6/common/endorsed
+chown -R tomcat6:tomcat6 /var/lib/tomcat6/common/endorsed
 
 Para que podamos usar alfresco correctamente debemos cambiar unos parámetros en el fichero /etc/default/tomcat6
 
 Pra resolver el problema de &#8220;Out of Memory&#8221; que nos puede surgir con alfresco lo cambiamos dependiendo de la memoria que tengamos, se recomienda tener al menos 3G.
 
-<pre class="brush: bash; gutter: false; first-line: 1">JAVA_OPTS="-Djava.awt.headless=true  -Dfile.encoding=UTF-8 -server -Xms1536m -Xmx1536m -XX:NewSize=256m -XX:MaxNewSize=256m -XX:PermSize=256m -XX:MaxPermSize=256m -XX:+DisableExplicitGC  -Xmx3G  -Djava.endorsed.dirs=/usr/share/tomcat6/endorsed:/var/lib/tomcat6/common/endorsed"</pre>
+  JAVA_OPTS="-Djava.awt.headless=true  -Dfile.encoding=UTF-8 -server -Xms1536m -Xmx1536m -XX:NewSize=256m -XX:MaxNewSize=256m -XX:PermSize=256m -XX:MaxPermSize=256m -XX:+DisableExplicitGC  -Xmx3G  -Djava.endorsed.dirs=/usr/share/tomcat6/endorsed:/var/lib/tomcat6/common/endorsed"
 
 Habilitamos esta opción para que tomcat o sus aplicaciones puedan usar puertos por debajo de 1024 con usuarios no privilegiados (como tomcat6).
 
-<pre class="brush: bash; gutter: false; first-line: 1">AUTHBIND=yes</pre>
+  AUTHBIND=yes
 
 Hemos terminado con ese fichero, por otro lado indicar que libmysql-java es el controlador JDBC de MySQL y libcommons-el-java son componentes reusables opensource de java. Esta instalación instala los jar JDBC de mysql y commons en java pero para que funcione correctamente con tomcat debemos incluirlo en el classpath de tomcat. Esto lo hacemos añadiendo un link simbólico al jar de mysql y commons en java en el directorio /usr/share/tomcat6/lib.
 
-<pre class="brush: bash; gutter: false; first-line: 1">cd /usr/share/tomcat6/lib
+  cd /usr/share/tomcat6/lib
 ln -s ../../java/mysql.jar mysql.jar
-ln -s ../../java/commons-el.jar commons-el.jar</pre>
+ln -s ../../java/commons-el.jar commons-el.jar
 
 En /usr/share/java tenemos un link simbólico llamado mysql.jar que apunta al jdbc de mysql (mysql-connector-java-5.1.10.jar) en el mismo directorio. Por eso apuntamos mysql.jar en el directorio de tomcat a mysql.jar en el directorio de java. Un link a otro link.
 
 Reiniciamos tomcat
 
-<pre class="brush: bash; gutter: false; first-line: 1">/etc/init.d/tomcat6 restart</pre>
+  /etc/init.d/tomcat6 restart
 
 Y vemos que funciona en http://localhost:8080 y que podemos acceder al manager y al hostmanager con el usuario y contraseña que pusimos.
 
@@ -89,7 +89,7 @@ Y vemos que funciona en http://localhost:8080 y que podemos acceder al manager y
 
 Instalamos el servidor web de apache. No es necesario en principio pero lo haremos para que sea apache el que se encargue de las peticiones web.
 
-<pre class="brush: applescript; gutter: false; first-line: 1">aptitude install apache2 apache2-utils</pre>
+  aptitude install apache2 apache2-utils
 
 No voy a entrar en la configuración de apache, solo configuraremos el conector de apache a tomcat.
 
@@ -97,9 +97,9 @@ Para conectar el servidor web con el servidor de aplicaciones (contenedor de ser
 
 En la instalación de Tomcat ya configuramos el conector AJP para que funcionara correctamente. Ahora nos ocupamos de la parte de configuración de apache. Para configurar el conector editamos el fichero de configuración de mod proxy y lo dejamos así (Cambia la dirección ip del servidor tomcat):
 
-<pre class="brush: bash; gutter: false; first-line: 1">nano /etc/apache2/mods-available/proxy.conf</pre>
+  nano /etc/apache2/mods-available/proxy.conf
 
-<pre class="brush: bash; gutter: true; first-line: 1">&lt;IfModule mod_proxy.c&gt;
+    <IfModule mod_proxy.c>
         #turning ProxyRequests on and allowing proxying from all may allow
         #spammers to use your proxy to send email.
         # Con esta directiva en Off hacemos que se deshabilite la redirección del
@@ -149,11 +149,11 @@ En la instalación de Tomcat ya configuramos el conector AJP para que funcionara
                 Allow from all
         &lt;/Location&gt;
 
-&lt;/IfModule&gt;</pre>
+    &lt;/IfModule&gt;
 
 Activamos los módulos proxy (se configuran en el mismo archivo anterior)
 
-<pre class="brush: applescript; gutter: false; first-line: 1">a2enmod proxy_balancer proxy_ajp proxy</pre>
+<pre class="brush: applescript; gutter: false; first-line: 1">a2enmod proxy_balancer proxy_ajp proxy
 
 Y reiniciamos apache2.
 
@@ -170,31 +170,31 @@ Para un correcto funcionamiento necesitamos instalar las siguientes herramientas
 
 Las herramientas que están en los repositorios de Debian las instalamos:
 
-<pre class="brush: bash; gutter: false; first-line: 1">aptitude install  flashplugin-nonfree openoffice.org imagemagick</pre>
+  aptitude install  flashplugin-nonfree openoffice.org imagemagick
 
 Sin embargo no existe en Debian un paquete para instalar SWF Tools, por lo tanto es necesario compilarlas, para ello:
 
 Descargate la última versión de la herramienta con:
 
-<pre class="brush: bash; gutter: false; first-line: 1">wget http://www.swftools.org/swftools-2011-10-10-1647.tar.gz</pre>
+  wget http://www.swftools.org/swftools-2011-10-10-1647.tar.gz
 
 Antes de compilarla instala algunas herramientas necesarias:
 
-<pre class="brush: bash; gutter: false; first-line: 1">apt-get install libjpeg62-dev libfreetype6-dev libpng3-dev libt1-dev libungif4-dev make build-essential</pre>
+  apt-get install libjpeg62-dev libfreetype6-dev libpng3-dev libt1-dev libungif4-dev make build-essential
 
 Descomprimimos el fichero que hemos bajado y lo compilamos:
 
-<pre class="brush: bash; gutter: false; first-line: 1">./configure
+  ./configure
 make
-make install</pre>
+make install
 
 Puedes probar que se ha instalado de manera adecuada ejecuntando:
 
-<pre class="brush: bash; gutter: false; first-line: 1">pdf2swf -V</pre>
+  pdf2swf -V
 
 Por último crea el siguinete enlace símbolico para que se pueda localizar el programa:
 
-<pre class="brush: bash; gutter: false; first-line: 1">ln -s /usr/local/bin/pdf2swf /usr/bin/pdf2swf</pre>
+  ln -s /usr/local/bin/pdf2swf /usr/bin/pdf2swf
 
 **Instalación de Alfresco 4.0**
 
@@ -217,32 +217,32 @@ En principio, para la configuración inicial usaremos el primero de la lista que
 
 Una vez descomprimidos vamos a crear la base de datos en MySQL. Para ello debemos usar el script
 
-<pre class="brush: bash; gutter: false; first-line: 1">nano db_setup.sql
+  nano db_setup.sql
 create database alfresco default character set utf8 collate utf8_bin;
 grant all on alfresco.* to 'alfresco'@'localhost' identified by 'alfresco' with grant option;
-grant all on alfresco.* to 'alfresco'@'localhost.localdomain' identified by 'alfresco' with grant option;</pre>
+grant all on alfresco.* to 'alfresco'@'localhost.localdomain' identified by 'alfresco' with grant option;
 
 Vemos que lo que hace es crear la base de datos para utf8 por defecto y los usuarios por defecto alfresco y contraseña alfresco. Lo dejamos así por ahora y creamos la base de datos y comprobamos que existe. Si queremos podemos poner nuestra contraseña ahora y luego acordarnos de cambiarla en el fichero de propiedades (más adelante) También comprobamos que existen los usuarios nuevos y recargamos las tablas de permisos.
 
-<pre class="brush: bash; gutter: false; first-line: 1">mysql -u root -p &lt; db_setup.sql
+  mysql -u root -p &lt; db_setup.sql
 mysql -u root -p -e "select user,host,password from user where user like 'alfresco'" mysql
-mysqladmin -u root -p flush-privileges</pre>
+mysqladmin -u root -p flush-privileges
 
 Creamos el directorio donde vamos a guardar el repositorio de alfresco que es donde se van a guardar los índices y los ficheros que subamos (documentos, etc.). Después cambiamos los permisos para que tomcat pueda leer los datos.
 
-<pre class="brush: bash; gutter: false; first-line: 1">mkdir /srv/alfresco/alf_data
-chown -R tomcat6:tomcat6 /srv/alfresco</pre>
+  mkdir /srv/alfresco/alf_data
+chown -R tomcat6:tomcat6 /srv/alfresco
 
 Copiamos todos los ficheros del directorio endorsed al directorio de tomcat, endorsed.
 
-<pre class="brush: bash; gutter: false; first-line: 1">cd web-server
+  cd web-server
 cp endorsed/* /var/lib/tomcat6/common/endorsed/
-chown -R tomcat6:tomcat6 /var/lib/tomcat6/common/endorsed</pre>
+chown -R tomcat6:tomcat6 /var/lib/tomcat6/common/endorsed
 
 Copiamos los ficheros .war al directorio de aplicaciones de tomcat donde se autodesplegarán simplemente copiándolos en el directorio.
 
-<pre class="brush: bash; gutter: false; first-line: 1">cd webapps
-cp alfresco.war share.war /var/lib/tomcat6/webapps/</pre>
+  cd webapps
+cp alfresco.war share.war /var/lib/tomcat6/webapps/
 
 **Configuración básica de Alfresco**
 
@@ -313,13 +313,13 @@ mail.port=25
 #mail.password=
 mail.encoding=UTF-8
 mail.from.default=admin@dominio.com
-#mail.smtp.auth=false</pre>
+#mail.smtp.auth=false
 
 **Últimos pasos**
 
 Vamos terminando. Tenemos que indicar en que fichero se van a guardar los log de alfresco. Para ello modificamos el fichero /var/lib/tomcat6/webapps/alfresco/WEB-INF/classes/log4j.properties y modificar la siguiente línea:
 
-<pre class="brush: bash; gutter: false; first-line: 1">log4j.appender.File.File=/var/log/tomcat6/alfresco.log</pre>
+  log4j.appender.File.File=/var/log/tomcat6/alfresco.log
 
 Del mismo modo lo tendrás que hacer en el fichero: /var/lib/tomcat6/webapps/share/WEB-INF/classes/log4j.properties
 
