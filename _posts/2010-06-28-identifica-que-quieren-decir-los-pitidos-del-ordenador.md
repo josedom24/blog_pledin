@@ -11,7 +11,7 @@ permalink: /2010/06/identifica-que-quieren-decir-los-pitidos-del-ordenador/
 tags:
   - Hardware
 ---
-[<img class="aligncenter size-medium wp-image-233" title="captura-de-pantalla-2010-06-23-a-las-175719" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/06/captura-de-pantalla-2010-06-23-a-las-175719-300x261.jpg" alt="" width="300" height="261" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2010/06/captura-de-pantalla-2010-06-23-a-las-175719-300x261.jpg 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2010/06/captura-de-pantalla-2010-06-23-a-las-175719.jpg 514w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/06/captura-de-pantalla-2010-06-23-a-las-175719.jpg)
+![hardware]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/06/captura-de-pantalla-2010-06-23-a-las-175719.jpg)
 
 <p style="text-align: justify;">
   En muchas ocasiones nos encontramos con ordenadores que no arrancan y no sabemos muy bien por qué. Ni si quiera se ve nada en la pantalla, simplemente sale un pitido desagradable de dentro y nada más. Gracias a <strong>Rizone Beep Codes Viewer</strong> podremos comprender lo que significan esos pitidos y si es posible solucionar el problema.
