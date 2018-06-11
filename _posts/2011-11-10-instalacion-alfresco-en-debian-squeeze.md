@@ -93,7 +93,7 @@ Instalamos el servidor web de apache. No es necesario en principio pero lo harem
 
 No voy a entrar en la configuración de apache, solo configuraremos el conector de apache a tomcat.
 
-Para conectar el servidor web con el servidor de aplicaciones (contenedor de servlets y JSP) se usa el protocolo AJP. Para configurar esto se pueden usar, o el módulo de apache mod\_jk o el módulo mod\_proxy. La recomendación es usar el módulo mod_proxy ya que es más moderno y es el que configuraremos. También se puede usar para balanceo de carga, clusters... Por defecto, ya viene instalado con apache2.
+Para conectar el servidor web con el servidor de aplicaciones (contenedor de servlets y JSP) se usa el protocolo AJP. Para configurar esto se pueden usar, o el módulo de apache mod\_jk o el módulo mod\_proxy. La recomendación es usar el módulo `mod_proxy` ya que es más moderno y es el que configuraremos. También se puede usar para balanceo de carga, clusters... Por defecto, ya viene instalado con apache2.
 
 En la instalación de Tomcat ya configuramos el conector AJP para que funcionara correctamente. Ahora nos ocupamos de la parte de configuración de apache. Para configurar el conector editamos el fichero de configuración de mod proxy y lo dejamos así (Cambia la dirección ip del servidor tomcat):
 
