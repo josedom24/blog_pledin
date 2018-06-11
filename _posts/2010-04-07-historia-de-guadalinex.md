@@ -15,9 +15,7 @@ tags:
   - Software Libre
   - TIC
 ---
-<p style="text-align: center;">
-  <a href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/04/gl.gif"><img class="alignnone size-full wp-image-55" title="gl" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/04/gl.gif" alt="" width="236" height="80" /></a>
-</p>
+![tic]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/04/gl.gif)
 
 Uno de lo temas que más se ha tratado en PLEDIN ha sido el sistema operativo Guadalinex, que la Junta de Andalucía, a través de distintas empresas, ha desarrollado para la puesta en marcha de los centros TIC.
 
