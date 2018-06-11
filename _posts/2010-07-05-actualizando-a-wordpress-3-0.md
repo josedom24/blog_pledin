@@ -13,7 +13,8 @@ tags:
   - Pledin
 ---
 <p style="text-align: justify;">
-  <img class="alignleft" title="wp" src="http://t0.gstatic.com/images?q=tbn:crmIf8c8G3kngM:http://secuoyas.com/blog/wp-content/uploads/2009/12/23-wordpress_logo.png" alt="" width="118" height="118" />Esta noche me ha dado por realizar la actualización automática del blog a la última versión WordPress 3.0 (no tendría otra cosa que hacer!!!). Al terminar la actualización, he detectado un fallo: al acceder a cualquier página me salía el mensaje de actualización: <strong>&#8220;No disponible por mantenimiento programado. Vuelve a comprobarlo en unos minutos. Gracias&#8221;.</strong>
+  <img class="alignleft" title="wp" src="http://t0.gstatic.com/images?q=tbn:crmIf8c8G3kngM:http://secuoyas.com/blog/wp-content/uploads/2009/12/23-wordpress_logo.png" alt="" width="118" height="118" />
+  Esta noche me ha dado por realizar la actualización automática del blog a la última versión WordPress 3.0 (no tendría otra cosa que hacer!!!). Al terminar la actualización, he detectado un fallo: al acceder a cualquier página me salía el mensaje de actualización: <strong>&#8220;No disponible por mantenimiento programado. Vuelve a comprobarlo en unos minutos. Gracias&#8221;.</strong>
 </p>
 
 <p style="text-align: justify;">

@@ -13,9 +13,10 @@ tags:
   - Linux
   - Software Libre
 ---
-<p style="text-align: justify;">
-  <a href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/07/image_mini.jpeg"><img class="alignleft size-full wp-image-253" title="image_mini" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/07/image_mini.jpeg" alt="" width="200" height="200" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2010/07/image_mini.jpeg 200w, https://www.josedomingo.org/pledin/wp-content/uploads/2010/07/image_mini-150x150.jpg 150w" sizes="(max-width: 200px) 100vw, 200px" /></a>La Consejería de Economía, Innovación y Ciencia de la Junta de Andalucía publica la versión definitiva de Guadalinex V7, el sistema operativo libre que incluye docenas de aplicaciones para sacar partido del ordenador sin necesidad de invertir en costosas licencias.
-</p>
+
+![guadalinex]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/07/image_mini.jpeg)
+
+La Consejería de Economía, Innovación y Ciencia de la Junta de Andalucía publica la versión definitiva de Guadalinex V7, el sistema operativo libre que incluye docenas de aplicaciones para sacar partido del ordenador sin necesidad de invertir en costosas licencias.
 
 <p style="text-align: justify;">
   Un treinta por ciento más rápida que sus antecesoras, esta nueva edición de Guadalinex mejora la experiencia del usuario en Internet, facilitando la conexión con redes sociales así como la publicación de &#8220;blogs&#8221;. Además de los programas típicos para navegar, escribir correo electrónico o chatear, cuenta con el nuevo sistema de control parental &#8220;Nanny&#8221; -desarrollado por la Junta de Andalucía- que asistirá a padres y madres en la protección de los menores ante contenidos de la web maliciosos o inapropiados.
