@@ -11,7 +11,7 @@ permalink: /2011/02/aprender-a-estudiar/
 tags:
   - Educación
 ---
-[<img class="aligncenter size-full wp-image-435" title="aprender-440x147" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/aprender-440x147.jpg" alt="" width="440" height="147" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2011/02/aprender-440x147.jpg 440w, https://www.josedomingo.org/pledin/wp-content/uploads/2011/02/aprender-440x147-300x100.jpg 300w" sizes="(max-width: 440px) 100vw, 440px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/aprender-440x147.jpg)
+![educación]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/aprender-440x147.jpg)
 
 <p style="text-align: justify;">
   <a href="http://www.isftic.mepsyd.es/w3/eos/MaterialesEducativos/mem2006/aprender_estudiar/index2.html" target="_blank">Aprender a estudiar</a> se presenta como una alternativa a la tradicional web que tratan el tema de las técnicas de estudio de forma excesivamente técnica y teórica, que puede utilizarse<strong> tanto on-line, como off-line, descargándola en un archivo zip</strong>.

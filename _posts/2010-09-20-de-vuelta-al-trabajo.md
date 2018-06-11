@@ -14,7 +14,7 @@ tags:
   
 ---
 <p style="text-align: justify;">
-  Hola a todos, después de un periodo de vacaciones, hoy vuelvo a escribir en este blog. Ha sido un verano muy intenso para mí y he vivido unos de los momentos más importantes en mi vida: me he &#8220;encontrado&#8221; con mi hija Victoria. Eso y el principio de curso , que ha sido un poco complicado, me ha impedido escribir y me ha hecho olvidarme un poco de esta página.
+  Hola a todos, después de un periodo de vacaciones, hoy vuelvo a escribir en este blog. Ha sido un verano muy intenso para mí y he vivido unos de los momentos más importantes en mi vida: me he &#8220;encontrado&#8221; con mi hija Victoria. Eso y el principio de curso, que ha sido un poco complicado, me ha impedido escribir y me ha hecho olvidarme un poco de esta página.
 </p>
 
 <p style="text-align: justify;">

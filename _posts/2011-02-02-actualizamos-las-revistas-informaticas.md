@@ -14,9 +14,9 @@ tags:
   - Software Libre
 ---
 <p style="text-align: justify;">
-  <a href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg"><img class="alignleft size-full wp-image-427" title="revistas" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg" alt="" width="250" height="224" /></a>Después de varios meses sin actualizar nuestra colección de Revistas Informáticas Libres, actualizamos los últimos números de las siguientes revistas:
+  <a href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg"><img class="alignleft size-full wp-image-427" title="revistas" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg" alt="" width="250" height="224" /></a>
 </p>
-
+Después de varios meses sin actualizar nuestra colección de Revistas Informáticas Libres, actualizamos los últimos números de las siguientes revistas:
 <ul style="text-align: justify;">
   <li>
     Hemos añadido los tres últimos números de la revista <a href="http://www.tuxinfo.com.ar/tuxinfo/">TuxInfo</a> y ya van 33 números de esta interesante revista de Software libre y GNU/Linux.
