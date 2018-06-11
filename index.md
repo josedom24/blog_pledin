@@ -6,8 +6,7 @@ sidebar:
   nav: "all"
 ---
 
-{% include figure image_path="/assets/images/logo3.png" alt="pledin" %}
-
+![pledin({{ site.url }}{{ site.baseurl }}/assets/images/logo3.png)
 
 Bienvenido a la página personal de José Domingo Muñoz, 
 
