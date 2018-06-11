@@ -14,7 +14,9 @@ tags:
   - TIC
 ---
 <p style="text-align: justify;">
-  <img class="alignleft" title="dim" src="http://dim.pangea.org/fotos/revistadim.jpg" alt="" width="295" height="126" />Es la revista del Grupo de Investigación &#8220;Didàctica y Multimèdia&#8221;, de la Universidad Autónoma de Barcelona. Está dirigida al profesorado de todos los ámbitos y demás profesionales de la educación (gestores, investigadores, creadores de recursos&#8230;). Sus objetivos son: seleccionar buenas prácticas y recursos educativos, fomentar la investigación sobre el uso innovador de las TIC en los entornos formativos y compartir conocimientos y experiencias.
+  <img class="alignleft" title="dim" src="http://dim.pangea.org/fotos/revistadim.jpg" alt="" width="295" height="126" />
+  
+  Es la revista del Grupo de Investigación &#8220;Didàctica y Multimèdia&#8221;, de la Universidad Autónoma de Barcelona. Está dirigida al profesorado de todos los ámbitos y demás profesionales de la educación (gestores, investigadores, creadores de recursos&#8230;). Sus objetivos son: seleccionar buenas prácticas y recursos educativos, fomentar la investigación sobre el uso innovador de las TIC en los entornos formativos y compartir conocimientos y experiencias.
 </p>
 
 <p style="text-align: justify;">
