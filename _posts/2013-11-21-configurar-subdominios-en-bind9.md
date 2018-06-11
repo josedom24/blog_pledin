@@ -11,7 +11,6 @@ permalink: /2013/11/configurar-subdominios-en-bind9/
 tags:
   - dns
   - Manuales
-  - Redes Sociales
 ---
 
 El objetivo de este artículo es estudiar las distintas formas que tenemos en el servidor dns bind9 para gestionar la creación de un subdominio de nuestro dominio principal.
