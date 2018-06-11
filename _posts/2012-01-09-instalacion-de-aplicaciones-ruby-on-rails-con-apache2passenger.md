@@ -12,44 +12,41 @@ tags:
   - Ruby on Rails
   - Web 2.0
 ---
-Siguiendo con la serie de artículos introductorios a la programación con Ruby on Rails vamos a mostrar como implantar una aplicación ya desarrollada usando el servidor web Apache2 y el módulos passenger que nos permite que Apache ejecute código Ruby. Este tutorial mostrará la instalación y configuración del servidor web Apache2 par que sea capaz de servir la aplicación &#8220;videoclub&#8221; que habíamos construido en este [otro artículo](http://www.josedomingo.org/pledin/2012/01/introduccion-a-ruby-on-rails-con-debian-squeeze/).
+Siguiendo con la serie de artículos introductorios a la programación con Ruby on Rails vamos a mostrar como implantar una aplicación ya desarrollada usando el servidor web Apache2 y el módulo `passenger` que nos permite que Apache ejecute código Ruby. Este tutorial mostrará la instalación y configuración del servidor web Apache2 par que sea capaz de servir la aplicación "videoclub" que habíamos construido en este [otro artículo](http://www.josedomingo.org/pledin/2012/01/introduccion-a-ruby-on-rails-con-debian-squeeze/).
 
-<!--more-->Lo primero que vamos a hacer es instalar el servidor y el módulo passenger que nos permite la ejecución de aplicaciones implementadas con Ruby, para ello:
+Lo primero que vamos a hacer es instalar el servidor y el módulo `passenger` que nos permite la ejecución de aplicaciones implementadas con Ruby, para ello:
 
-<pre class="brush: bash; gutter: false; first-line: 1">aptitude install apache2 libapache2-mod-passenger</pre>
+    aptitude install apache2 libapache2-mod-passenger
 
 A continuación copiamos nuestro proyecto al directorio de trabajo del servidor web:
 
-<pre class="brush: bash; gutter: false; first-line: 1">cp -R ~/proyectos/videoclub /var/www</pre>
+    cp -R ~/proyectos/videoclub /var/www
 
-Hacemos que dicho directorio sea propiedad del usuario ww-data:
+Hacemos que dicho directorio sea propiedad del usuario `www-data`:
 
-<pre class="brush: bash; gutter: false; first-line: 1">chown -R www-data:www-data /var/www/videoclub</pre>
+    chown -R www-data:www-data /var/www/videoclub
 
-Por último editamos el fichero /etc/apache2/sites-available/default, donde encontramos la configuración del sitio web definido por defecto, y lo editamos dejándolo similar al siguiente:
+Por último editamos el fichero `/etc/apache2/sites-available/default`, donde encontramos la configuración del sitio web definido por defecto, y lo editamos dejándolo similar al siguiente:
 
-<pre class="brush: bash; gutter: false; first-line: 1">&lt;VirtualHost *:80&gt;
-SetEnv RAILS_ENV development
-
+    <VirtualHost *:80>
+        SetEnv RAILS_ENV development
         ServerAdmin webmaster@localhost
-
         DocumentRoot /var/www/videoclub/public
-        &lt;Directory /&gt;
+        <Directory />
                 Options FollowSymLinks
                 AllowOverride None
-        &lt;/Directory&gt;
-        &lt;Directory /var/www/videoclub/public&gt;
+        </Directory>
+        <Directory /var/www/videoclub/public>
                 Order allow,deny
                 allow from all
-        &lt;/Directory&gt;
-....</pre>
+        </Directory>
+        ....
 
 Reiniciamos el servidor web:
 
-<pre class="brush: bash; gutter: false; first-line: 1">/etc/init.d/apache2 restart</pre>
+    /etc/init.d/apache2 restart
 
-Y ya podemos acceder a nuestra aplicación, por ejemplo, desde el mismo servidor visitando la URL hhtp://localhost/peliculas
+Y ya podemos acceder a nuestra aplicación, por ejemplo, desde el mismo servidor visitando la URL:
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
+    http://localhost/peliculas
 
-<!-- AddThis Share Buttons generic via filter on the_content -->
