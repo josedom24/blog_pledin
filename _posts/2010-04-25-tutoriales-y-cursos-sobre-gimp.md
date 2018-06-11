@@ -14,7 +14,7 @@ tags:
   - Software Libre
   - TIC
 ---
-[<img class="aligncenter size-medium wp-image-134" title="gimp" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/04/gimp-300x58.jpg" alt="" width="300" height="58" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2010/04/gimp-300x58.jpg 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2010/04/gimp.jpg 330w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/04/gimp.jpg)
+![gimp]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/04/gimp.jpg)
 
 En PLEDIN también hemos ido recopilando distintos manulaes, tutoriales y cursos sobre Gimp. **GIMP** (**GNU Image Manipulation Program**) es un programa de [edición de imágenes](http://es.wikipedia.org/wiki/Edici%C3%B3n_de_im%C3%A1genes "Edición de imágenes") digitales en forma de mapa de bits, tanto dibujos como fotografías. Es un programa [libre](http://es.wikipedia.org/wiki/Software_libre "Software libre") y gratuito. Está englobado en el proyecto [GNU](http://es.wikipedia.org/wiki/GNU "GNU") y disponible bajo la [Licencia pública general de GNU](http://es.wikipedia.org/wiki/Licencia_p%C3%BAblica_general_de_GNU "Licencia pública general de GNU").
 
