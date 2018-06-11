@@ -37,6 +37,7 @@ Como se puede observar utilizo la versión de 64 bits de dynamips. Durante este 
 ## Configuración de GNS3
 
 La primera vez que ejecutamos el programa, nos aparece un asistente para realizar la configuración básica de programa: establecer el idioma, los directorios de trabajo, comprobar que la instalación es correcta, y subir las imágenes de IOS que tengamos a nuestra disposición de los distintos modelos de router. En este último punto es muy importante establecer la variable IDLE PC que nos permite la optimización del consumo de recursos de sistema, para tener más información sobre este tema os sugiero la lectura del siguiente <a href="http://roastedrouter.wordpress.com/2010/02/01/optimizacion-y-configuracion-de-gns3-como-mejorar-el-consumo-de-recursos-del-sistema/">artículo</a>. Una vez realizado esta configuración tenemos nuestro sistema totalmente funcional:
+
 [<img class="size-medium wp-image-807 aligncenter" t="screenshot-console-600x422" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/11/screenshot-console-600x422-300x211.png" width="300" height="211" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/11/screenshot-console-600x422-300x211.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/11/screenshot-console-600x422.png 600w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/11/screenshot-console-600x422.png)
 
 ## Virtual PC Simulator
@@ -114,6 +115,7 @@ Y podemos guardar la configuración de todas las máquinas con el comando save, 
 ## Comunicando GNS3 con VPCS
 
 Ahora es el momento de crear una nueva topología en GNS3 donde vamos a añadir un host y un router, (al cual le hemos añadido un slot FastEthernet 0/0). Si observamos la configuración del host, y nos vamos a la pestaña NIO UDP, observamos que tenemos una interfaz virtual de red que corresponde con cada una de las 9 máquinas que nos ofrece VPCS.
+
 [<img class="aligncenter size-medium wp-image-813" t="img1" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/11/img1-300x261.png" width="300" height="261" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/11/img1-300x261.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/11/img1.png 693w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/11/img1.png)
 
 
