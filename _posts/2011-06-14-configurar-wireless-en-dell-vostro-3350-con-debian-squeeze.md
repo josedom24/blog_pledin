@@ -19,11 +19,11 @@ tags:
 
 Lo primero que tenemos que hacer es determinar que tarjeta wirelless trae l ordenador, para ello ejecutamos la siguiente instrucción:
 
-<pre class="brush: bash; gutter: false; first-line: 1">lspci | grep Network</pre>
+    lspci | grep Network
 
 El dispositivo que tenemos instalado viene nombrado como:
 
-<pre class="brush: bash; gutter: false; first-line: 1">09:00.0 Network controller: Intel Corporation Device 008a (rev 34)</pre>
+    09:00.0 Network controller: Intel Corporation Device 008a (rev 34)
 
 <p style="text-align: justify;">
   <a href="http://wiki.debianchile.org/IntelWirelessAGN?action=fullsearch&context=180&value=linkto%3A%22IntelWirelessAGN%22">Buscando un poco por internet</a> podemos determinar que el modelo de la tarjaeta Wirelees es Centrino Wireless-N 1030, para que funcione esta tarjeta necesitamos instalar el módulo iwlagn que viene en el paquete firmware-iwlwifi, este paquete no es libre, por lo que tenemos que modificar nuestros repositorios y poner las secciones contrib y non-free.
@@ -31,26 +31,26 @@ El dispositivo que tenemos instalado viene nombrado como:
 
 Edita /etc/apt/sources.list y agrega la sección non-free:
 
-<pre class="brush: bash; gutter: false; first-line: 1">deb http://ftp.cl.debian.org/debian squeeze main contrib non-free</pre>
+    deb http://ftp.cl.debian.org/debian squeeze main contrib non-free
 
 <p style="text-align: justify;">
   luego actualiza con la lista de paquetes:
 </p>
 
 <p style="text-align: justify;">
-  <pre class="brush: bash; gutter: false; first-line: 1">aptitude update</pre>
+      aptitude update
   
   <p>
     Instala el paquete firmware-iwlwifi con:
   </p>
   
-  <pre class="brush: bash; gutter: false; first-line: 1">aptitude install firmware-iwlwifi</pre>
+      aptitude install firmware-iwlwifi
   
   <p>
     antes de cargar el módulo:
   </p>
   
-  <pre class="brush: bash; gutter: false; first-line: 1">modprobe iwlagn</pre>
+      modprobe iwlagn
   
   <p style="text-align: justify;">
     Después de esto debería funcionar, pero no es así. <a href="http://intellinuxwireless.org/">Seguimos investigando</a> y nos damos cuenta que nuestro dispositivo necesita como mínimo para funcionar el kernel 2.6.37, actualmente en Debian Squeeze tenemos instalado el 2.6.32. ¿Cuál es la solución? La solución es tener un sistema híbrido para poder instalar un núcleo superior que esta en la rama inestable sid.
@@ -64,7 +64,7 @@ Edita /etc/apt/sources.list y agrega la sección non-free:
     En /aetc/apt/apt.conf.d creo un fichero (lo puedeo llamar 00apt) y pongo la siguiente linea:
   </p>
   
-  <pre class="brush: bash; gutter: false; first-line: 1">APT::Default-Release "stable";</pre>
+      APT::Default-Release "stable";
   
   <p>
     Indicando que para las actualizaciones y las instalaciones que no se indique lo contrario la rama por defecto es la estable.
@@ -74,19 +74,19 @@ Edita /etc/apt/sources.list y agrega la sección non-free:
     A continuación pongo el repositorio de la rama inestable en /etc/apt/source.list
   </p>
   
-  <pre class="brush: bash; gutter: false; first-line: 1">deb http://ftp.es.debian.org/debian/ sid main contrib non-free</pre>
+      deb http://ftp.es.debian.org/debian/ sid main contrib non-free
   
   <p>
     Actualizo los repositorios
   </p>
   
-  <pre class="brush: bash; gutter: false; first-line: 1">aptitude update</pre>
+      aptitude update
   
   <p>
     Y a continuación busco los núcleos que puedo instalar:
   </p>
   
-  <pre class="brush: bash; gutter: false; first-line: 1">aptitude serach linux-image</pre>
+      aptitude serach linux-image
   
   <p>
     Ahora aparece el 2.6.39-2, elegimos el de nuestra arquitectura (en mi caso amd64) y lo instalamos. Reinicimos y debe aparecer una interfaz inalámbrica.
