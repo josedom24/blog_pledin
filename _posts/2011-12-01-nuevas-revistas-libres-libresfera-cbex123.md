@@ -12,7 +12,7 @@ tags:
   - Revistas
   - Software Libre
 ---
-[<img class="aligncenter size-medium wp-image-574" title="Libresfera" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/12/Libresfera-300x73.png" alt="" width="300" height="73" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2011/12/Libresfera-300x73.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2011/12/Libresfera.png 402w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/12/Libresfera.png)
+![revistas]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/12/Libresfera.png)
 
 <p style="text-align: justify;">
   Libresfera es una nueva revista que tiene como finalidad la promoción y difusión de la cultura libre. Como se indica en su <a href="http://www.libresfera.com">página web</a>:
