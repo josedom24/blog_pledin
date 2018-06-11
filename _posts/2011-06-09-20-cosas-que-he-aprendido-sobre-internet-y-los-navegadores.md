@@ -13,7 +13,7 @@ tags:
   - Internet
   - Libros
 ---
-[<img class="aligncenter size-medium wp-image-472" title="google" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/06/google1-300x167.png" alt="" width="300" height="167" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2011/06/google1-300x167.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2011/06/google1.png 758w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/06/google1.png)
+![goo]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/06/google1.png)
 
 <div>
   Google ha publicado en español el libro &#8220;<strong><a href="http://www.20thingsilearned.com/es-ES/home">20 cosas que he aprendido sobre Internet y los navegadores</a></strong>&#8220;, disponible en la web (www.20thingsilearned.com/es-ES) y creado en HTML5.
