@@ -50,9 +50,9 @@ Por lo tanto podemos resumir el algoritmo que sigue el `refresh_pattern` de la s
 En la directiva refresh_pattern también podemos indicar distintas opciones, como las que estudiamos a continuación:
 
 * `override-expire`: fuerza el tiempo mínimo que puede estar almacenada y que se considera válida, aunque el servidor envíe explícitamente un tiempo de caducidad con la cabecera `Expires` o `Cache-control:max-age`.
-  * `ignore-no-cache`: Ignora cualquier cabecera `Pragma: no-cache` o `Cache-control:no-cache` enviada por el servidor.
-  * `ignore-no-store`: Ignora cualquier cabecera `Cache-control:no-store` enviada por el servidor.
-  * `ignore-private`: Ignora cualquier cabecera `Cache-control: private`  enviada por el servidor.
+* `ignore-no-cache`: Ignora cualquier cabecera `Pragma: no-cache` o `Cache-control:no-cache` enviada por el servidor.
+* `ignore-no-store`: Ignora cualquier cabecera `Cache-control:no-store` enviada por el servidor.
+* `ignore-private`: Ignora cualquier cabecera `Cache-control: private`  enviada por el servidor.
   
 En todo caso, hay que recordar que sólo almacenará los archivos cuyo tamaño sea menor que le indicado en el parámetro `maximum_object_size`.
 
