@@ -1,2 +1,2 @@
 git pull
-bundle exec jekyll b -d _site/pledin
+bundle exec jekyll b -d _site/pledin --incremental
