@@ -14,7 +14,9 @@ tags:
   - Linux
   - Pledin
 ---
-[<img class="aligncenter size-medium wp-image-151" title="titulo" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/05/titulo-300x75.jpg" alt="" width="300" height="75" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2010/05/titulo-300x75.jpg 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2010/05/titulo.jpg 400w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/05/titulo.jpg)Os presento un nuevo curso on-line que hemos impartidos recientemente en el CEP de Lora del Río para profesores de Informática. Este curso ha sido realizado junto a [Alberto Molina](http://albertomolina.wordpress.com/), compañero del [IES Gonzalo Nazareno](http://informatica.gonzalonazareno.org) y José Luis Rodríguez, compañero del IES Jacaranda de Brenes. Accede al curso en el siguiente enlace:
+![curso]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/05/titulo.jpg)
+
+Os presento un nuevo curso on-line que hemos impartidos recientemente en el CEP de Lora del Río para profesores de Informática. Este curso ha sido realizado junto a [Alberto Molina](http://albertomolina.wordpress.com/), compañero del [IES Gonzalo Nazareno](http://informatica.gonzalonazareno.org) y José Luis Rodríguez, compañero del IES Jacaranda de Brenes. Accede al curso en el siguiente enlace:
 
 <h3 style="text-align: center;">
   <a href="http://www.josedomingo.org/web/course/view.php?id=65">Servicios en GNU/Linux: Puesta en marcha de un portal educativo</a>
