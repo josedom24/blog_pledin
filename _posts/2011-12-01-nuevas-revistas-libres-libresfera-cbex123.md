@@ -2,17 +2,14 @@
 id: 573
 title: Nuevas revistas libres; Libresfera, CBEX123
 date: 2011-12-01T09:13:08+00:00
-
-
 guid: http://www.josedomingo.org/pledin/?p=573
 permalink: /2011/12/nuevas-revistas-libres-libresfera-cbex123/
-
-  
 tags:
   - Revistas
   - Software Libre
 ---
-![revistas]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/12/Libresfera.png)
+
+![revistas]({{site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/12/Libresfera.png)
 
 <p style="text-align: justify;">
   Libresfera es una nueva revista que tiene como finalidad la promoción y difusión de la cultura libre. Como se indica en su <a href="http://www.libresfera.com">página web</a>:
