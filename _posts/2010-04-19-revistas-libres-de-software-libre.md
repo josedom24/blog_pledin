@@ -13,7 +13,7 @@ tags:
   - Revistas
   - Software Libre
 ---
-<img class="aligncenter" title="Revistas" src="http://www.josedomingo.org/web/file.php/1/imagenes/revistas.jpg" alt="" width="313" height="300" />
+![revistas]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg)
 
 Desde hace unos años me he dedicado a ir coleccionando distintas publicaciones y revistas libres que tratan temas de Software Libre. Actualmente la colección cuenta con números de doce revistas distintas, aunque una gran mayoría en la actualidad ya no se publican, siempre puede ser bueno echarles un vistazo a algún artículo interesante.
 
