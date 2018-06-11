@@ -102,26 +102,26 @@ Como vemos en la documentación podemos preguntar por varios parámetros , entre
   
   Por ejemplo, podemos mostrar una página distinta para cada navegador:
 
-    RewriteCond %{HTTP\_USER\_AGENT} ^Mozilla
-    RewriteRule ^/$ /index.max.html [L]
-    RewriteCond %{HTTP\_USER\_AGENT} ^Lynx
-    RewriteRule ^/$ /index.min.html [L]
-    RewriteRule ^/$ /index.html [L]
+      RewriteCond %{HTTP\_USER\_AGENT} ^Mozilla
+      RewriteRule ^/$ /index.max.html [L]
+      RewriteCond %{HTTP\_USER\_AGENT} ^Lynx
+      RewriteRule ^/$ /index.min.html [L]
+      RewriteRule ^/$ /index.html [L]
 
 * `%{QUERY_STRING}`: Guarda la cadena de parámetros de una URL dinámica.Por ejemplo:
 
   Teníamos un fichero index.php que recibía un parámetro lang, para traducir el mensaje de bienvenida.
 
-    http://localhost/index.php?lang=es
+      http://localhost/index.php?lang=es
 
   Actualmente hemos cambiado la forma de traducir, y se han creado distintos directorios para cada idioma y dentro un index.php con el mensaje traducido.
 
-    http://localhost/es/index.php
+      http://localhost/es/index.php
 
   Sin embargo se quiere seguir utilizando la misma forma de traducir.
 
-    RewriteCond %{QUERY_STRING} lang=(.*)
-    RewriteRule ^index\.php$ /%1/$1
+      RewriteCond %{QUERY_STRING} lang=(.*)
+      RewriteRule ^index\.php$ /%1/$1
 
 * `%{REMOTE_ADDR}`: Dirección de destino. Por ejemplo puedo denegar el acceso a una dirección:
 
