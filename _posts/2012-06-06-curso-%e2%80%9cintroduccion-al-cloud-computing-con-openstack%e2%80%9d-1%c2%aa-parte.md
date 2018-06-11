@@ -5,7 +5,7 @@ date: 2012-06-06T12:57:22+00:00
 
 
 guid: http://www.josedomingo.org/pledin/?p=678
-permalink: '/2012/06/curso-%e2%80%9cintroduccion-al-cloud-computing-con-openstack%e2%80%9d-1%c2%aa-parte/'
+permalink: '/2012/06/curso-"introduccion-al-cloud-computing-con-openstack"-1ª-parte/'
 
 
 tags:
