@@ -17,28 +17,28 @@ Llevo unos días preparando  la clase de DNS dinámico con bind9. Para ello he 
 
 Sin embargo no había forma de actualizar el servidor DNS cuando un cliente recibía una nueva IP desde el servidor DHCP.
 
-El problema está en la versión de BIND 9.7.2. En esta versión en el momento que configuramos la posibilidad de la actualización del servidor, por ejemplo en el fichero /etc/bind/named.conf
+El problema está en la versión de BIND 9.7.2. En esta versión en el momento que configuramos la posibilidad de la actualización del servidor, por ejemplo en el fichero `/etc/bind/named.conf`:
 
-<pre class="brush: bash; gutter: true; first-line: 1">include "/etc/bind/rndc.key";
-controls
-{
-  inet 127.0.0.1 port 953
-  allow { 127.0.0.1; } keys {"rndc-key";};
-};
-</pre>
+    include "/etc/bind/rndc.key";
+    controls
+    {
+      inet 127.0.0.1 port 953
+      allow { 127.0.0.1; } keys {"rndc-key";};
+    };
+    
 
-Se producía un error que podíamos ver en el fichero de logs /var/log/syslog:
+Se producía un error que podíamos ver en el fichero de logs `/var/log/syslog`:
 
-<pre class="brush: bash; gutter: false; first-line: 1">named[1577]: managed-keys-zone ./IN: loading from master file managed-keys.bind failed: file not found</pre>
+    named[1577]: managed-keys-zone ./IN: loading from master file managed-keys.bind failed: file not found
 
-El problema esta causado porque en la configuración no se ha incluido el fichero /etc/bind/bind.keys que contiene la clave pública para permitir la actualización del servidor por [DNSSEC.](http://es.wikipedia.org/wiki/Usuario:Pabluk/DNSSEC) Para arreglarlo podemosañadir ese fichero a la configuración, en /etc/bind/named.conf:
+El problema esta causado porque en la configuración no se ha incluido el fichero `/etc/bind/bind.keys` que contiene la clave pública para permitir la actualización del servidor por [DNSSEC.](http://es.wikipedia.org/wiki/Usuario:Pabluk/DNSSEC) Para arreglarlo podemos añadir ese fichero a la configuración, en `/etc/bind/named.conf`:
 
-<pre class="brush: applescript; gutter: false; first-line: 1">include "/etc/bind/bind.keys";</pre>
+    include "/etc/bind/bind.keys";
 
 Y para evitar que se se escriban los errores en el registro:
 
-<pre class="brush: applescript; gutter: false; first-line: 1">touch /var/cache/bind/managed-keys.bind
-chown bind:bind /var/cache/bind/managed-keys.bind</pre>
+    touch /var/cache/bind/managed-keys.bind
+    chown bind:bind /var/cache/bind/managed-keys.bind
 
 Espero que sea de utilidad.
 
