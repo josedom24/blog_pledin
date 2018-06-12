@@ -65,7 +65,7 @@ En este caso la plantilla recibe una variable (_nombre_), con el nombre que hemo
 
 1. Vemos como podemos usar la variable en el código html usando los caracteres {% raw %}`{{    }}`{% endraw %}.
 2. Con el símbolo `%` indicamos la inclusión de una línea python. Dentro de las plantillas no funciona el tabulado propio de python, por lo hay que indicar el final de los bucles y las condicionales con una instrucción `end`.
-3. Cómo podemos comprobar podemos hacer uso de los métodos de la clase String (`{{nombre.tittle()}}`)
+3. Cómo podemos comprobar podemos hacer uso de los métodos de la clase String {% raw %}(`{{nombre.tittle()}}`){% endraw %}
 
 ![]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/03/bottle6.png)
 
