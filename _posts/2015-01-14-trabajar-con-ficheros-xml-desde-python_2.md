@@ -101,7 +101,7 @@ Veamos el código que necesitamos para generar el siguiente fichero XML:
     <?xml version="1.0" encoding="UTF-8" ?>
     <album> 
             <autor pais="ES">SABINA Y CIA Nos sobran los motivos</autor> 
-          	<titulo>Joaquín Sabina</titulo> 	
+            <titulo>Joaquín Sabina</titulo> 	
             <formato>MP3</formato>
             <localizacion>Varios CD5 </localizacion>
     </album>
