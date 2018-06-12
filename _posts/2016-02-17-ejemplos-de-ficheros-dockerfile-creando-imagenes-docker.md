@@ -17,11 +17,13 @@ En la entrada: <a href="http://www.josedomingo.org/pledin/2016/02/dockerfile-cre
 
 Tenemos dos imágenes en nuestro sistema, que son las que vamos a utilizar como imágenes base para crear nuestras imágenes:
 
+    ```bash
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     debian              latest              9a02f494bef8        2 weeks ago         125.1 MB
     ubuntu              14.04               3876b81b5a81        3 weeks ago         187.9 MB
-
+    ```
+    
 ## Creación una imagen con el servidor web Apache2
 
 En este caso vamos a crear un directorio nuevo que va a ser el contexto donde podemos guardar los ficheros que se van a enviar al *docker engine*, en este caso el fichero `index.html` que vamos a copiar a nuestro servidor web:
