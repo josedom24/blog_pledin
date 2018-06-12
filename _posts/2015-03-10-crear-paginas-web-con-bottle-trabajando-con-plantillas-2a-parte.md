@@ -47,7 +47,6 @@ En este caso la plantilla recibe una variable (_nombre_), con el nombre que hemo
     <title>Hola, que tal {{nombre}}</title>
     <meta charset="utf-8" />
     </head>
-
     <body>
         <header>
            <h1>Mi sitio web</h1>
