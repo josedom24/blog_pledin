@@ -12,7 +12,7 @@ tags:
   - Cloud Computing
   - OpenStack
 ---
-![]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/07/5dayOpenStack.png){.thumbnail}
+![]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/07/5dayOpenStack.png)
 
 El grupo **OpenStack Sevilla** se une a los eventos de celebración del 5º aniversario del proyecto OpenStack que van a organizar los distintos grupos locales de usuarios de OpenStack con el apoyo de la OpenStack Foundation. En este caso tendrá lugar un encuentro el próximo **1 de Julio a partir de las 19:00** en las oficinas de Bitnami en Sevilla y se impartirán las siguientes charlas:
 
