@@ -12,16 +12,17 @@ tags:
   - Cloud Computing
   - OpenStack
 ---
-[<img class=" size-full wp-image-1375 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/07/5dayOpenStack.png" alt="5dayOpenStack" width="300" height="225" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/07/5dayOpenStack.png){.thumbnail}
+![]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/07/5dayOpenStack.png){.thumbnail}
 
 El grupo **OpenStack Sevilla** se une a los eventos de celebración del 5º aniversario del proyecto OpenStack que van a organizar los distintos grupos locales de usuarios de OpenStack con el apoyo de la OpenStack Foundation. En este caso tendrá lugar un encuentro el próximo **1 de Julio a partir de las 19:00** en las oficinas de Bitnami en Sevilla y se impartirán las siguientes charlas:
 
-  * &#8220;[Despliegue automatizado de OpenStack (demo)](http://www.slideshare.net/DanielRomeroSnchez1/despliegue-automatizado-de-openstack-con-mirantis)&#8221; por [Daniel Romero](http://www.slideshare.net/DanielRomeroSnchez1)
-  * &#8220;[Cloud hibrido, multicloud, cloud bursting con OpenStack, rightscale, amazon aws y azure](http://es.slideshare.net/bn-cloud/5th-birthday-openstack-sevilla-cloud-bursting)&#8221; por [Nicolás Bertet](http://www.slideshare.net/bn-cloud)
-  * &#8220;[Historia y evolución del proyecto OpenStack](http://www.slideshare.net/alberto.molina/open-stack-5th-birthday-slide-deck)&#8221; por Alberto Molina
+  * [Despliegue automatizado de OpenStack (demo)](http://www.slideshare.net/DanielRomeroSnchez1/despliegue-automatizado-de-openstack-con-mirantis) por [Daniel Romero](http://www.slideshare.net/DanielRomeroSnchez1)
+  * [Cloud hibrido, multicloud, cloud bursting con OpenStack, rightscale, amazon aws y azure](http://es.slideshare.net/bn-cloud/5th-birthday-openstack-sevilla-cloud-bursting) por [Nicolás Bertet](http://www.slideshare.net/bn-cloud)
+  * [Historia y evolución del proyecto OpenStack](http://www.slideshare.net/alberto.molina/open-stack-5th-birthday-slide-deck) por Alberto Molina
 
 Puedes ver el reportaje fotográfico del evento:
 
+<iframe src="http://www.flickr.com/slideShow/index.gne?group_id=&user_id=16117002@N00&set_id=&text=" width="700" height="700" frameborder="0" scrolling="no" align="center"></iframe>
 
 
 <!-- AddThis Advanced Settings generic via filter on the_content -->
