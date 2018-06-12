@@ -12,29 +12,29 @@ tags:
   - devstack
   - OpenStack
 ---
-[<img class="alignleft wp-image-1043 size-medium" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/openstack-logo-300x300.jpg" alt="openstack-logo" width="300" height="300" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/openstack-logo-300x300.jpg 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/openstack-logo-150x150.jpg 150w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/openstack-logo.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/openstack-logo.jpg){.thumbnail}[DevStack](http://devstack.org/) es un conjunto de script bash que nos permiten instalar OpenStack de forma automática. En este artículo vamos a a utilizarlo para instalar en nuestro ordenador la última versión de OpenStack que tiene el nombre de Juno y que ha sido [liberada el pasado 16 de octubre](https://www.openstack.org/software/roadmap/).
+![os]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/openstack-logo.jpg)
 
-En otra ocasión explicamos como instalar OpenStack Havana ([Instalando OpenStack en mi portátil (2ª parte): DevStack](http://www.josedomingo.org/pledin/2014/03/instalando-openstack-en-mi-portatil-2a-parte-devstack/ "Instalando OpenStack en mi portátil (2ª parte): DevStack")), en este caso vamos a intalar la última versión de OpenStack teniendo en cuenta que se puede instalar en una máquina física o en una virtual, sin embargo hay que tener en cuenta que en este último caso se usará [qemu](http://es.wikipedia.org/wiki/QEMU) para la emulación de las máquinas virtuales con lo que se perderá rendimiento.
+[DevStack](http://devstack.org/) es un conjunto de script bash que nos permiten instalar OpenStack de forma automática. En este artículo vamos a a utilizarlo para instalar en nuestro ordenador la última versión de OpenStack que tiene el nombre de Juno y que ha sido [liberada el pasado 16 de octubre](https://www.openstack.org/software/roadmap/).
 
-<!--more-->
+En otra ocasión explicamos como instalar OpenStack Havana ([Instalando OpenStack en mi portátil (2ª parte): DevStack](http://www.josedomingo.org/pledin/2014/03/instalando-openstack-en-mi-portatil-2a-parte-devstack/ "Instalando OpenStack en mi portátil (2ª parte): DevStack")), en este caso vamos a instalar la última versión de OpenStack teniendo en cuenta que se puede instalar en una máquina física o en una virtual, sin embargo hay que tener en cuenta que en este último caso se usará [qemu](http://es.wikipedia.org/wiki/QEMU) para la emulación de las máquinas virtuales con lo que se perderá rendimiento.
 
-#### Requisitos mínimos {#requisitos-mnimos}
+## Requisitos mínimos 
 
-  * Equipo necesario: RAM 2Gb y procesador VT-x/AMD-v
-  * Ubuntu 14.04 instalado, con los paquetes actualizados.
-  * Git instalado 
-          $ sudo apt-get upgrade
-          $ sudo apt-get install git
-        
+* Equipo necesario: RAM 2Gb y procesador VT-x/AMD-v
+* Ubuntu 14.04 instalado, con los paquetes actualizados.
+* Git instalado 
 
-#### Instalación {#instalacin}
+        $ sudo apt-get upgrade
+        $ sudo apt-get install git
 
-  1. Tenemos que clonar el repositorio git de Devstack, la rama de la versión juno: 
-         $ git clone -b stable/juno https://github.com/openstack-dev/devstack.git
-         $ cd devstack 
-        
+## Instalación 
 
-  2. A continuación tenemos que configurar la instalación de OpenStack, para ello creamos un  archivo local.conf y lo guardamos en el directorio devstack, con el siguiente contenido: 
+1. Tenemos que clonar el repositorio git de Devstack, la rama de la versión juno: 
+
+        $ git clone -b stable/juno https://github.com/openstack-dev/devstack.git
+        $ cd devstack 
+2. A continuación tenemos que configurar la instalación de OpenStack, para ello creamos un  archivo `local.conf` y lo guardamos en el directorio `devstack`, con el siguiente contenido: 
+
         [[local|localrc]]
         # Default passwords
         ADMIN_PASSWORD=devstack
@@ -56,35 +56,32 @@ En otra ocasión explicamos como instalar OpenStack Havana ([Instalando OpenStac
         disable_service tempest
         enable_service s-proxy s-object s-container s-account
         SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5
-        
 
-  3. Y ya podemos comenzar la instalación: 
-         ~/devstack$./stack.sh
+3. Y ya podemos comenzar la instalación: 
 
-  4. Una vez terminada la instalación, para acceder a la aplicación web Horizon: 
-      * Accedemos a la URL _http://localhost_.
-      * Usuario de prueba: **demo** con contraseña **devstack**.
-      * Usuario de administración: **admin** con contraseña **devstack**.
-      * El usuario **demo** debe trabajar en el proyecto _“demo”_, no en uno que se llama _“invisible\_to\_admin”_.
-  5. Estamos trabajando en un entorno de pruebas, por lo tento si terminamos de trabajar con Openstack y apagamos el ordenador, la próxima vez que queramos trabajar con él los servicios no estarán arrancados. Por lo tanto si queremos seguir trabajando con la sesión anterior, tendremos que ejecutar la siguiente instrucción: 
-         $ cd devstack
-         ~/devstack$ ./rejoin-stack.sh
-        
-    
+        ~/devstack$./stack.sh
+
+4. Una vez terminada la instalación, para acceder a la aplicación web Horizon: 
+    * Accedemos a la URL _http://localhost_.
+    * Usuario de prueba: **demo** con contraseña **devstack**.
+    * Usuario de administración: **admin** con contraseña **devstack**.
+    * El usuario **demo** debe trabajar en el proyecto _“demo”_, no en uno que se llama _“invisible\_to\_admin”_.
+
+5. Estamos trabajando en un entorno de pruebas, por lo tanto si terminamos de trabajar con Openstack y apagamos el ordenador, la próxima vez que queramos trabajar con él los servicios no estarán arrancados. Por lo tanto si queremos seguir trabajando con la sesión anterior, tendremos que ejecutar la siguiente instrucción: 
+         
+        $ cd devstack
+        ~/devstack$ ./rejoin-stack.sh
+
     Si comprobamos que no funciona bien, tendremos que volver a instalar devstack (aunque esta segunda vez la instalación será mucho más rápida) aunque perderemos todos los cambios realizados (instancias, imágenes, grupos de seguridad,…):
     
          $ cd devstack
          ~/devstack$ ./stack.sh
-        
 
-####  Accediendo a OpenStack
+##  Accediendo a OpenStack
 
 Abrimos un navegador y accedemos a _localhost_:
 
-[<img class="aligncenter wp-image-1048 size-medium" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/intro-233x300.png" alt="intro" width="233" height="300" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/intro-233x300.png 233w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/intro.png 487w" sizes="(max-width: 233px) 100vw, 233px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/intro.png){.thumbnail}
+![os]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/intro.png)
 
 En las próximas entradas iremos viendo los distintos conceptos relacionados con OpenStack y algunas prácticas para que veamos cómo funciona.
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
