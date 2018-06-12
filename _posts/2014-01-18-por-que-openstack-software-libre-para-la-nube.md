@@ -17,7 +17,7 @@ tags:
   El pasado jueves impartimos un <a href="http://www.josedomingo.org/pledin/2014/01/openwebinars-por-que-openstack-software-libre-para-la-nube/">webinar</a> titulado: <strong>¿Por qué OpenStack? Software libre para la nube. </strong>Aquí os dejo la <a href="http://www.josedomingo.org/openwebinars">presentación</a> que utilizamos y el vídeo de la charla.
 </p>
 
-
+<iframe src="http://www.josedomingo.org/openwebinars" height="315" width="560"></iframe> <iframe src="//www.youtube.com/embed/3m5LeyI7Bss" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
 
 
 
