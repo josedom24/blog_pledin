@@ -60,10 +60,10 @@ A continuación vamos a crear un nuevo contenedor, con el nombre _servidor_wp_, 
 <p style="text-align: justify;">
   Podemos comprobar los contenedores con los que está asociado un determinado contenedor con la siguiente instrucción:
 </p>
-
+{% raw %}
 <pre>$ docker inspect -f "{{ .HostConfig.Links }}" servidor_wp
  [/servidor_mysql:/servidor_wp/mysql]</pre>
-
+{% endraw %}
 <p style="text-align: justify;">
   En esta situación el contenedor <em>servidor_web</em> puede acceder a información del contenedor <em>servidor_mysql</em>, para hacer esto docker construye un túnel seguro entre los contenedores y no es necesario exponer ningún puerto entre ellos (cuando hemos creado el contenedor <em>servidor_mysql</em> no hemos utilizado el parámetro <em>-p</em>), por lo tanto al <em>servidor_mysql</em> no se expone al exterior. Para facilitar la comunicación entre contenedores, docker utiliza las variables de entrono y modifica el fichero<em> /etc/hosts</em>.
 </p>
