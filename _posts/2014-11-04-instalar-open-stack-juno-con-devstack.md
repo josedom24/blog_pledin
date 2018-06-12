@@ -12,7 +12,7 @@ tags:
   - devstack
   - OpenStack
 ---
-![os]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/openstack-logo.jpg)
+![os]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/10/openstack-logo-300x300.jpg)
 
 [DevStack](http://devstack.org/) es un conjunto de script bash que nos permiten instalar OpenStack de forma automática. En este artículo vamos a a utilizarlo para instalar en nuestro ordenador la última versión de OpenStack que tiene el nombre de Juno y que ha sido [liberada el pasado 16 de octubre](https://www.openstack.org/software/roadmap/).
 
