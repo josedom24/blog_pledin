@@ -22,30 +22,16 @@ En este artículo voy a hacer una introducción a <strong>Amazon Web Service</st
 
 Para la organización de nuestros archivos, tenemos que conocer los siguientes conceptos:
 
-<li style="text-align: justify;">
-  <strong>buckets:</strong> son algo parecido a un directorio o carpeta de nuestro sistema operativo, donde colocaremos nuestros archivos. Los nombres de los buckets están compartidos entre toda la red de Amazon S3, por lo que si creamos un bucket, nadie más podrá usar ese nombre para un nuevo bucket.
-</li>
-<li style="text-align: justify;">
-  <strong>objects:</strong> son las entidades de datos en sí, es decir, nuestros archivos. Un object almacena tanto los datos como los metadatos necesarios para S3, y pueden ocupar entre 1 byte y 5 Gigabytes.
-</li>
-<li style="text-align: justify;">
-  <strong>keys:</strong> son una clave única dentro de un bucket que identifica a los objects de cada bucket. Un object se identifica de manera unívoca dentro de todo S3 mediante su bucket+key.
-</li>
-<li style="text-align: justify;">
-  <strong>ACL: </strong>Podemos indicar el control de acceso a nuestro objetos, podremos dar capacidad de “Lectura”, “Escritura” o “Control Total”.
-</li>
+* **buckets**: son algo parecido a un directorio o carpeta de nuestro sistema operativo, donde colocaremos nuestros archivos. Los nombres de los buckets están compartidos entre toda la red de Amazon S3, por lo que si creamos un bucket, nadie más podrá usar ese nombre para un nuevo bucket.
+* **objects**: son las entidades de datos en sí, es decir, nuestros archivos. Un object almacena tanto los datos como los metadatos necesarios para S3, y pueden ocupar entre 1 byte y 5 Gigabytes.
+* **keys**: son una clave única dentro de un bucket que identifica a los objects de cada bucket. Un object se identifica de manera unívoca dentro de todo S3 mediante su bucket+key.
+* **ACL**: Podemos indicar el control de acceso a nuestro objetos, podremos dar capacidad de “Lectura”, “Escritura” o “Control Total”.
 
 ## Más características de AWS S3
 
-<li style="text-align: justify;">
-  Uso de una API sencilla para la comunicación de nuestras aplicaciones con S3. Estas peticiones HTTP nos permitirán la gestión de los objetos, buckets, … En definitiva, todas las acciones necesarias para administrar nuestro S3. Toda la información en cuanto accesos y códigos de ejemplo se pueden encontrar en la <a href="http://docs.amazonwebservices.com/AmazonS3/2006-03-01/gsg/">documentación oficial</a>.
-</li>
-<li style="text-align: justify;">
-  Para la descargas de los objetos tenemos dos alternativas: si eres el propietario del objeto puedes hacer una llamada a la API para la descarga, sino, si hemos configurado el objeto con una ACL de lectura, podemos utilizar una URL para accder a él. Cada archivo en S3 posee una URL única, lo que nos facilitará mucho el poner a disposición de nuestros clientes todos los datos que almacenemos.
-</li>
-<li style="text-align: justify;">
-  El servicio se paga por distintos conceptos: almacenamiento, transferencia, peticiones GET o PUT,&#8230; pero hay que tener en cuenta, siendo un servicio de Cloud Computing, que el pago se realiza por uso. La tarifas son baratas y las puedes consultar en la siguiente <a href="http://aws.amazon.com/es/s3/pricing/">página</a>.
-</li>
+* Uso de una API sencilla para la comunicación de nuestras aplicaciones con S3. Estas peticiones HTTP nos permitirán la gestión de los objetos, buckets, … En definitiva, todas las acciones necesarias para administrar nuestro S3. Toda la información en cuanto accesos y códigos de ejemplo se pueden encontrar en la <a href="http://docs.amazonwebservices.com/AmazonS3/2006-03-01/gsg/">documentación oficial</a>.
+* Para la descargas de los objetos tenemos dos alternativas: si eres el propietario del objeto puedes hacer una llamada a la API para la descarga, sino, si hemos configurado el objeto con una ACL de lectura, podemos utilizar una URL para accder a él. Cada archivo en S3 posee una URL única, lo que nos facilitará mucho el poner a disposición de nuestros clientes todos los datos que almacenemos.
+* El servicio se paga por distintos conceptos: almacenamiento, transferencia, peticiones GET o PUT,&#8230; pero hay que tener en cuenta, siendo un servicio de Cloud Computing, que el pago se realiza por uso. La tarifas son baratas y las puedes consultar en la siguiente <a href="http://aws.amazon.com/es/s3/pricing/">página</a>.
 
 ## Instalación y configuración del cliente de línea de comando AWS
 
@@ -152,12 +138,8 @@ Amazon S3 Access Control Lists (ACLs) nos permite manejar el acceso a los objeto
 
 En esta entrada nos vamos a conformar en mostrar una ACL que nos permita hacer público un objeto y de esta manera poder acceder a él. Para acceder a un recurso en S3 podemos hacerlo de dos maneras:
 
-<li style="text-align: justify;">
-  Si somos un usuario o pertenecemos a un grupo de AWS y el propietario del recurso nos ha dado permiso para acceder o modificar el recurso.
-</li>
-<li style="text-align: justify;">
-  O, sin necesidad de estar autentificados, que el propietario del recurso haya dado permiso de lectura al recurso para todo el mundo, es decir lo haya hecho público. Esta opción es la que vamos a mostrar a continuación.
-</li>
+* Si somos un usuario o pertenecemos a un grupo de AWS y el propietario del recurso nos ha dado permiso para acceder o modificar el recurso.
+* O, sin necesidad de estar autentificados, que el propietario del recurso haya dado permiso de lectura al recurso para todo el mundo, es decir lo haya hecho público. Esta opción es la que vamos a mostrar a continuación.
 
 Anteriormente hemos subido una imagen (tux.png) como objeto a nuestro bucket, como hemos dicho cuando se crea el objeto, por defecto se declara como privado. Si accedemos a dicho recurso utilizando la siguiente URL:
 
