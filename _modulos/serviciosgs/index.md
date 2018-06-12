@@ -19,16 +19,3 @@ El índice de contenidos que vamos a estudiar será:
 * [Proxy inverso y Balanceador de carga](loadbalancer/index)
 * [Prácticas](practicas/index)
 
-
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-
-
