@@ -18,23 +18,16 @@ tags:
 ---
 <p style="text-align: center;">
   <a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro.png"><img class="aligncenter size-full wp-image-1389" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro.png" alt="intro" width="789" height="231" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro.png 789w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro-300x88.png 300w" sizes="(max-width: 789px) 100vw, 789px" /></a>
-</p>
 
-<p style="text-align: justify;">
-  <a href="https://www.heroku.com/">Heroku</a> es una aplicación que nos ofrece un servicio de Cloud Computing <a href="https://en.wikipedia.org/wiki/Platform_as_a_service">PaaS</a> (Plataforma como servicio). Como leemos en la <a href="https://es.wikipedia.org/wiki/Heroku">Wikipedia</a> es propiedad de <a href="http://www.salesforce.com">Salesforce.com</a> y es una de las primeras plataformas de computación en la nube, que fue desarrollada desde junio de 2007, con el objetivo de soportar solamente el lenguaje de programación Ruby, pero posteriormente se ha extendido el soporte a Java, Node.js, Scala, Clojure y Python y PHP.
-</p>
 
-<h3 id="caractersticas-de-heroku" style="text-align: justify;">
-  Características de heroku
-</h3>
+<a href="https://www.heroku.com/">Heroku</a> es una aplicación que nos ofrece un servicio de Cloud Computing <a href="https://en.wikipedia.org/wiki/Platform_as_a_service">PaaS</a> (Plataforma como servicio). Como leemos en la <a href="https://es.wikipedia.org/wiki/Heroku">Wikipedia</a> es propiedad de <a href="http://www.salesforce.com">Salesforce.com</a> y es una de las primeras plataformas de computación en la nube, que fue desarrollada desde junio de 2007, con el objetivo de soportar solamente el lenguaje de programación Ruby, pero posteriormente se ha extendido el soporte a Java, Node.js, Scala, Clojure y Python y PHP.
 
-<p style="text-align: justify;">
-  La funcionalidad ofrecida por heroku esta disponible con el uso de <em><strong>dynos</strong></em>, que son una adaptación de los contenedores Linux y nos ofrecen la capacidad de computo dentro de la plataforma.
-</p>
+## Características de heroku
 
-<p style="text-align: justify;">
-  Cada dyno ejecuta distintos procesos, por ejemplo ejecuta los servidores web y los servidores de bases de datos, o cualquier otro proceso que le indiquemos en un fichero <a href="https://devcenter.heroku.com/articles/deploying-php#the-procfile"><em>Procfile</em></a>. Las características principales de los dynos son:
-</p>
+La funcionalidad ofrecida por heroku esta disponible con el uso de <em><strong>dynos</strong></em>, que son una adaptación de los contenedores Linux y nos ofrecen la capacidad de computo dentro de la plataforma.
+
+Cada dyno ejecuta distintos procesos, por ejemplo ejecuta los servidores web y los servidores de bases de datos, o cualquier otro proceso que le indiquemos en un fichero <a href="https://devcenter.heroku.com/articles/deploying-php#the-procfile"><em>Procfile</em></a>. Las características principales de los dynos son:
+
 
 <li style="text-align: justify;">
   <strong>Escabilidad</strong>: Si, por ejemplo, tenemos muchas peticiones a nuestra aplicación podemos hacer un escalado horizontal, es decir, podemos crear más dynos que respondan las peticiones. La carga de peticiones se balanceará entre los dynos existentes. Además podemos hacer una escalabilidad vertical, en este caso lo que hacemos es cambiar las características hardware de nuestro dyno, por ejemplo aumentar la cantidad de RAM. Las características de escabilidad no están activadas en el plan gratuito de heroku. Además la escabilidad no es automática, hay que realizarla manualmente.
@@ -55,15 +48,10 @@ tags:
   <strong>Interfaces de red</strong>: Cada dyno tiene una interfaz de red con un direccionamiento privado /30, en el rango 172.16.0.0/12. Por lo tanto cada dyno está conecta a una red independiente que no comparte con ningún otro dyno. Para acceder a él, como hemos indicado anteriormente, habrá que hacerlo a través de la ip pública que tiene asignada el balanceador de carga.
 </li>
 
-<!--more-->
+## Despliegue de la aplicación web drupal en Heroku
 
-<h3 id="despliegue-de-una-aplicacin-web-en-heroku" style="text-align: justify;">
-  Despliegue de la aplicación web drupal en Heroku
-</h3>
+En este ejemplo vamos a utilizar la capa gratuita que nos ofrece Heroku, que tiene las siguientes características:
 
-<p style="text-align: justify;">
-  En este ejemplo vamos a utilizar la capa gratuita que nos ofrece Heroku, que tiene las siguientes características:
-</p>
 
 <ul style="text-align: justify;">
   <li>
@@ -83,311 +71,263 @@ tags:
   </li>
 </ul>
 
-<p style="text-align: justify;">
-  Para ampliar la funcionalidad de nuestra aplicación podemos añadir a nuestro dyno distintos <a href="https://elements.heroku.com/addons">add-ons</a>. Algunos lo podemos usar de forma gratuita y otros son de pago. El add-ons de mysql (ClearDB mysql) no lo podemos usar en el plan gratuito, por lo que vamos a usar una base de datos postgreSQL.
-</p>
+Para ampliar la funcionalidad de nuestra aplicación podemos añadir a nuestro dyno distintos <a href="https://elements.heroku.com/addons">add-ons</a>. Algunos lo podemos usar de forma gratuita y otros son de pago. El add-ons de mysql (ClearDB mysql) no lo podemos usar en el plan gratuito, por lo que vamos a usar una base de datos postgreSQL.
 
-<p style="text-align: justify;">
-  Siguiendo las<a href="https://www.drupal.org/documentation/install"> instrucciones de instalación</a> de la página oficial hemos instalado la última versión del CMS drupal en un servidor local, hemos utilizado como base de datos un servidor postgreSQL (<strong>Recordatorio:</strong> es necesario instalar el paquete <em>php5-pgsql</em> que es la libreria PHP de postgreSQL). Como hemos indicado anteriormente heroku nos ofrece una infraestructura para desplegar nuestra aplicación web cuyo sistema de archivo es efímero, por lo tanto no podemos realizar la instalación de las aplicaciones web directamente en heroku, ya que cada vez que reiniciemos nuestro dyno perderemos los ficheros creados, por ejemplo el fichero de configuración. Vamos a hacer una migración desde el entorno de pruebas (servidor local) a nuestro entorno de producción (dyno de herku).
-</p>
+Siguiendo las<a href="https://www.drupal.org/documentation/install"> instrucciones de instalación</a> de la página oficial hemos instalado la última versión del CMS drupal en un servidor local, hemos utilizado como base de datos un servidor postgreSQL (<strong>Recordatorio:</strong> es necesario instalar el paquete <em>php5-pgsql</em> que es la libreria PHP de postgreSQL). Como hemos indicado anteriormente heroku nos ofrece una infraestructura para desplegar nuestra aplicación web cuyo sistema de archivo es efímero, por lo tanto no podemos realizar la instalación de las aplicaciones web directamente en heroku, ya que cada vez que reiniciemos nuestro dyno perderemos los ficheros creados, por ejemplo el fichero de configuración. Vamos a hacer una migración desde el entorno de pruebas (servidor local) a nuestro entorno de producción (dyno de herku).
 
-<h4 style="text-align: justify;">
-  Instalación de Heroku CLI
-</h4>
+###  Instalación de Heroku CLI
 
-<p style="text-align: justify;">
-  Como podemos ver en esta <a href="https://toolbelt.heroku.com/">página</a>, tenemos que ejecutar un script bash que nos bajamos con la siguiente instrucción y que realizará la instalción de los paquetes necesarios y la configuración inicial.
-</p>
+Como podemos ver en esta <a href="https://toolbelt.heroku.com/">página</a>, tenemos que ejecutar un script bash que nos bajamos con la siguiente instrucción y que realizará la instalación de los paquetes necesarios y la configuración inicial.
 
-<pre>wget -O- <a href="https://toolbelt.heroku.com/install-ubuntu.sh">https://toolbelt.heroku.com/install-ubuntu.sh</a> | sh</pre>
+    wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-<p style="text-align: justify;">
-  Ahora tenemos que iniciar sesión en heroku, utilizando el correo electrónico y la contraseña que hemos indicado durante el registro de la cuenta. La primera vez que ejecutamos la siguiente instrucción, se termina de configurar el cliente heroku:
-</p>
+Ahora tenemos que iniciar sesión en heroku, utilizando el correo electrónico y la contraseña que hemos indicado durante el registro de la cuenta. La primera vez que ejecutamos la siguiente instrucción, se termina de configurar el cliente heroku:
 
-<pre># heroku login
-heroku-cli: Installing Toolbelt v4... done.
-For more information on Toolbelt v4: https://github.com/heroku/heroku-cli
-heroku-cli: Adding dependencies... done
-heroku-cli: Installing core plugins... done
-Enter your Heroku credentials.
-Email: tucorreo@electronico.com
-Password (typing will be hidden):</pre>
+    # heroku login
+    heroku-cli: Installing Toolbelt v4... done.
+    For more information on Toolbelt v4: https://github.com/heroku/heroku-cli
+    heroku-cli: Adding dependencies... done
+    heroku-cli: Installing core plugins... done
+    Enter your Heroku credentials.
+    Email: tucorreo@electronico.com
+    Password (typing will be hidden):
 
-<p style="text-align: justify;">
-  Para ver la versión del cliente que estamos utilizando, además salen los plugins instalados:
-</p>
+Para ver la versión del cliente que estamos utilizando, además salen los plugins instalados:
 
-<pre># heroku version
-heroku-toolbelt/3.42.22 (x86_64-linux-gnu) ruby/2.1.5
-heroku-cli/4.27.6-e59743f (amd64-linux) go1.5.1</pre>
+    # heroku version
+    heroku-toolbelt/3.42.22 (x86_64-linux-gnu) ruby/2.1.5
+    heroku-cli/4.27.6-e59743f (amd64-linux) go1.5.1
 
-<p style="text-align: justify;">
-  Para pedir información de las funciones disponibles podemos pedir la ayuda:
-</p>
+Para pedir información de las funciones disponibles podemos pedir la ayuda:
 
-<pre># heroku help</pre>
+    # heroku help
 
-#### Subir nuestra clave púlica para acceder a nuestro dyno
+### Subir nuestra clave pública para acceder a nuestro dyno
 
-Sguiendo la [documentación oficial](https://devcenter.heroku.com/articles/keys), es necesario subir una clave pública para permitr el acceso por SSH a nuestro dyno:
+Siguiendo la [documentación oficial](https://devcenter.heroku.com/articles/keys), es necesario subir una clave pública para permitir el acceso por SSH a nuestro dyno:
 
-<pre><span class="function"># heroku keys:add
-</span><span class="string">Found existing public key: ~/.ssh/id_rsa.pub
-</span><span class="string">Uploading SSH public key /Users/adam/.ssh/id_rsa.pub... done</span></pre>
+    # heroku keys:add
+    Found existing public key: ~/.ssh/id_rsa.pub
+    Uploading SSH public key /Users/adam/.ssh/id_rsa.pub... done
 
-<h4 style="text-align: justify;">
-  Creación de nuestra primera aplicación
-</h4>
+### Creación de nuestra primera aplicación
 
-<p style="text-align: justify;">
-  Para crear nuestra primera aplicación (dyno) ejecutamos la siguiente instrucción:
-</p>
+Para crear nuestra primera aplicación (dyno) ejecutamos la siguiente instrucción:
 
-<pre># heroku apps:create pledinjd
-Creating pledinjd... done, stack is cedar-14
-https://pledinjd.herokuapp.com/ | https://git.heroku.com/pledinjd.git</pre>
+    # heroku apps:create pledinjd
+    Creating pledinjd... done, stack is cedar-14
+    https://pledinjd.herokuapp.com/ | https://git.heroku.com/pledinjd.git
 
-<p style="text-align: justify;">
-  Se ha creado un nuevo dyno con un repositorio git, que a continuación vamos a clonar. Además se ha generado un FQHN que nos permite acceder a nuestra aplicación:
-</p>
+Se ha creado un nuevo dyno con un repositorio git, que a continuación vamos a clonar. Además se ha generado un FQHN que nos permite acceder a nuestra aplicación:
 
-<p style="text-align: justify;">
-  <a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal1.png"><img class="size-full wp-image-1398 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal1.png" alt="drupal1" width="577" height="250" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal1.png 577w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal1-300x130.png 300w" sizes="(max-width: 577px) 100vw, 577px" /></a>
-</p>
+<a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal1.png"><img class="size-full wp-image-1398 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal1.png" alt="drupal1" width="577" height="250" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal1.png 577w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal1-300x130.png 300w" sizes="(max-width: 577px) 100vw, 577px" /></a>
 
-<p style="text-align: justify;">
-  A continuación vamos a clonar el repositorio y vamos a desplegar un fichero index.php de inicio:
-</p>
+A continuación vamos a clonar el repositorio y vamos a desplegar un fichero index.php de inicio:
 
-<pre># <strong>git clone https://git.heroku.com/pledinjd.git</strong>
-Cloning into 'pledinjd'...
-warning: You appear to have cloned an empty repository.
-Checking connectivity... done.
-# <strong>cd pledinjd/</strong>
-pledinjd# <strong>echo "&lt;h1&gt;pledinjd funcionando&lt;/h1&gt;"&gt;index.php</strong>
-pledinjd# <strong>git add index.php</strong> 
-pledinjd# <strong>git commit -m "El primer fichero"</strong>
-pledinjd# <strong>git push origin master</strong>
-Counting objects: 3, done.
-Writing objects: 100% (3/3), 245 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-remote: Compressing source files... done.
-remote: Building source:
-remote: 
-remote: -----&gt; PHP app detected
-remote: 
-remote: ! WARNING: No 'composer.json' found.
-remote: Using 'index.php' to declare PHP applications is considered legacy
-remote: functionality and may lead to unexpected behavior.
-remote: 
-remote: -----&gt; No runtime required in 'composer.json', defaulting to PHP 5.6.15.
-remote: -----&gt; Installing system packages...
-remote: - PHP 5.6.15
-remote: - Apache 2.4.16
-remote: - Nginx 1.8.0
-remote: -----&gt; Installing PHP extensions...
-remote: - zend-opcache (automatic; bundled)
-remote: -----&gt; Installing dependencies...
-remote: Composer version 1.0.0-alpha11 2015-11-14 16:21:07
-remote: -----&gt; Preparing runtime environment...
-remote: NOTICE: No Procfile, using 'web: vendor/bin/heroku-php-apache2'.
-remote: -----&gt; Discovering process types
-remote: Procfile declares types -&gt; web
-remote: 
-remote: -----&gt; Compressing... done, 72.8MB
-remote: -----&gt; Launching... done, v3
-remote: https://pledinjd.herokuapp.com/ deployed to Heroku
-remote: 
-remote: Verifying deploy... done.
-To https://git.heroku.com/pledinjd.git
- * [new branch] master -&gt; master</pre>
+    # git clone https://git.heroku.com/pledinjd.git
+    Cloning into 'pledinjd'...
+    warning: You appear to have cloned an empty repository.
+    Checking connectivity... done.
+    # cd pledinjd/
+    pledinjd# echo "<h1>pledinjd funcionando</h1>">index.php
+    pledinjd# git add index.php 
+    pledinjd# git commit -m "El primer fichero"
+    pledinjd# git push origin master
+    Counting objects: 3, done.
+    Writing objects: 100% (3/3), 245 bytes | 0 bytes/s, done.
+    Total 3 (delta 0), reused 0 (delta 0)
+    remote: Compressing source files... done.
+    remote: Building source:
+    remote: 
+    remote: -----> PHP app detected
+    remote: 
+    remote: ! WARNING: No 'composer.json' found.
+    remote: Using 'index.php' to declare PHP applications is considered legacy
+    remote: functionality and may lead to unexpected behavior.
+    remote: 
+    remote: -----> No runtime required in 'composer.json', defaulting to PHP 5.6.15.
+    remote: -----> Installing system packages...
+    remote: - PHP 5.6.15
+    remote: - Apache 2.4.16
+    remote: - Nginx 1.8.0
+    remote: -----> Installing PHP extensions...
+    remote: - zend-opcache (automatic; bundled)
+    remote: -----> Installing dependencies...
+    remote: Composer version 1.0.0-alpha11 2015-11-14 16:21:07
+    remote: -----> Preparing runtime environment...
+    remote: NOTICE: No Procfile, using 'web: vendor/bin/heroku-php-apache2'.
+    remote: -----> Discovering process types
+    remote: Procfile declares types -> web
+    remote: 
+    remote: -----> Compressing... done, 72.8MB
+    remote: -----> Launching... done, v3
+    remote: https://pledinjd.herokuapp.com/ deployed to Heroku
+    remote: 
+    remote: Verifying deploy... done.
+    To https://git.heroku.com/pledinjd.git
+     * [new branch] master -> master
 
 Como se puede observar cuando se sube un nuevo fichero, se configura de forma adecuada el entorno de producción, reiniciando los servidores necesarios, y podemos acceder a nuestra nueva página:
 
 [<img class="size-full wp-image-1400 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2.png" alt="drupal2" width="452" height="138" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2.png 452w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2-300x92.png 300w" sizes="(max-width: 452px) 100vw, 452px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2.png){.thumbnail}
 
-#### Migración de la base de datos
+### Migración de la base de datos
 
 A continuación, vamos a instalar un addons en nuestro proyecto que nos proporciona una base de datos postgreSQL:
 
-<pre># <strong>heroku addons:create heroku-postgresql</strong>
-Creating postgresql-amorphous-6708... done, (free)
-Adding postgresql-amorphous-6708 to pledinjd... done
-Setting DATABASE_URL and restarting pledinjd... done, v4
-Database has been created and is available
- ! This database is empty. If upgrading, you can transfer
- ! data from another database with pg:copy
-Use `heroku addons:docs heroku-postgresql` to view documentation.</pre>
+    # heroku addons:create heroku-postgresql
+    Creating postgresql-amorphous-6708... done, (free)
+    Adding postgresql-amorphous-6708 to pledinjd... done
+    Setting DATABASE_URL and restarting pledinjd... done, v4
+    Database has been created and is available
+     ! This database is empty. If upgrading, you can transfer
+     ! data from another database with pg:copy
+    Use `heroku addons:docs heroku-postgresql` to view documentation.
 
 Para ver información de los addons instalados:
 
-<pre># <strong>heroku addons</strong>
-Add-on                                         Plan       Price
-─────────────────────────────────────────────  ─────────  ─────
-heroku-postgresql (postgresql-amorphous-6708)  hobby-dev  free 
- └─ as DATABASE</pre>
+    # heroku addons
+    Add-on                                         Plan       Price
+    ─────────────────────────────────────────────  ─────────  ─────
+    heroku-postgresql (postgresql-amorphous-6708)  hobby-dev  free 
+     └─ as DATABASE
 
 Y comprobamos que nuestra base de datos se identifica con el nombre DATABASE, y podemos pedir las credenciales para conectarnos a ella (nombre de la base de datos, usuario y contraseña y servidor de la base de datos) con el siguiente comando:
 
-<pre># <strong>heroku pg:credentials DATABASE</strong>
-Connection info string:
-   "dbname=d3bo6f4g2gbilu host=ec2-54-83-202-218.compute-1.amazonaws.com port=5432 user=pwcbycuykpmhqb password=1dg2xwsRb6fcMRhHdtkfTlkahw sslmode=require"
-Connection URL:
-    postgres://pwcbycuykpmhqb:1dg2xwsRb6fcMRhHdtkfTlkahw@ec2-54-83-202-218.compute-1.amazonaws.com:5432/d3bo6f4g2gbilu</pre>
+    # heroku pg:credentials DATABASE
+    Connection info string:
+       "dbname=d3bo6f4g2gbilu host=ec2-54-83-202-218.compute-1.amazonaws.com port=5432 user=pwcbycuykpmhqb    password=1dg2xwsRb6fcMRhHdtkfTlkahw sslmode=require"
+    Connection URL:
+            postgres://pwcbycuykpmhqb:1dg2xwsRb6fcMRhHdtkfTlkahw@ec2-54-83-202-218.compute-1.amazonaws.com:5432/d3bo6f4g2gbilu
 
-Nos queda hacer la migración de la base de datos, para ello vamos a seguir las indicaciones de la [documentación oficial](https://devcenter.heroku.com/articles/heroku-postgres-import-export), primero hacemos la copia de seguridad de la base de datos _drupal_ en local y posteriormente la restauramos en heroku:
+Nos queda hacer la migración de la base de datos, para ello vamos a seguir las indicaciones de la [documentación oficial](https://devcenter.heroku.com/articles/heroku-postgres-import-export), primero hacemos la copia de seguridad de la base de datos `drupal` en local y posteriormente la restauramos en heroku:
 
-<pre>pg_dump -Fc --no-acl --no-owner -h localhost -U jose drupal &gt; drupal.dump</pre>
+    pg_dump -Fc --no-acl --no-owner -h localhost -U jose drupal > drupal.dump
 
 Para restaurar la copia de seguridad es necesario que la copia que hemos realizado este accesible desde una URL (por ejemplo lo podemos subir a un almacén de datos como Amazon S3), en este caso para agilizar el ejemplo lo he subido a nuestra aplicación:
 
-<pre>pledinjd# git add drupal.dump 
-pledinjd# git commit -m "Copia de seguridad BD"
-pledinjd# git push
+    pledinjd# git add drupal.dump 
+    pledinjd# git commit -m "Copia de seguridad BD"
+    pledinjd# git push
 
-pledinjd# <strong>heroku pg:backups restore 'http://pledinjd.herokuapp.com/drupal.dump' DATABASE --confirm pledinjd</strong>
-Use Ctrl-C at any time to stop monitoring progress; the backup
-will continue restoring. Use heroku pg:backups to check progress.
-Stop a running restore with heroku pg:backups cancel.
+    pledinjd# heroku pg:backups restore 'http://pledinjd.herokuapp.com/drupal.dump' DATABASE --confirm pledinjd
+    Use Ctrl-C at any time to stop monitoring progress; the backup
+    will continue restoring. Use heroku pg:backups to check progress.
+    Stop a running restore with heroku pg:backups cancel.
 
-r001 ---restore---&gt; DATABASE
-Restore completed</pre>
+    r001 ---restore---> DATABASE
+    Restore completed
 
 Y podemos ver las tablas creadas:
 
-<pre># <strong>heroku pg:psql DATABASE</strong>
----&gt; Connecting to DATABASE_URL
-psql (9.4.5)
-conexión SSL (protocolo: TLSv1.2, cifrado: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compresión: desactivado)
-Digite «help» para obtener ayuda.
+    # heroku pg:psql DATABASE
+    ---> Connecting to DATABASE_URL
+    psql (9.4.5)
+    conexión SSL (protocolo: TLSv1.2, cifrado: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compresión: desactivado)
+    Digite «help» para obtener ayuda.
 
-pledinjd::DATABASE=&gt; \dt</pre>
+    pledinjd::DATABASE=> \dt
 
-#### Despliegue de nuestra aplicación
+### Despliegue de nuestra aplicación
 
 Vamos a copiar los ficheros desde nuestro servidor local, y vamos a modificar el fichero de configuración con las credenciales de la base de datos de heroku:
 
-<pre>pledinjd# cp -r /var/www/pledinjd/drupal .</pre>
+    pledinjd# cp -r /var/www/pledinjd/drupal .
 
-<p style="text-align: justify;">
-  Y el fichero de configuración <em>sites/default/settings.php</em> hay que modificarlo para configurar los parámetros de acceso a la base de datos de nuestro proyecto:
-</p>
+Y el fichero de configuración `sites/default/settings.php` hay que modificarlo para configurar los parámetros de acceso a la base de datos de nuestro proyecto:
 
-<pre>$databases['default']['default'] = array (
-  'database' =&gt; 'd3bo6f4g2gbilu',
-  'username' =&gt; 'pwcbycuykpmhqb',
-  'password' =&gt; '1dg2xwsRb6fcMRhHdtkfTlkahw',
-  'prefix' =&gt; '',
-  'host' =&gt; 'ec2-54-83-202-218.compute-1.amazonaws.com',
-  'port' =&gt; '5432',
-  'namespace' =&gt; 'Drupal\\Core\\Database\\Driver\\pgsql',
-  'driver' =&gt; 'pgsql',
-);</pre>
+    $databases['default']['default'] = array (
+      'database' => 'd3bo6f4g2gbilu',
+      'username' => 'pwcbycuykpmhqb',
+      'password' => '1dg2xwsRb6fcMRhHdtkfTlkahw',
+      'prefix' => '',
+      'host' => 'ec2-54-83-202-218.compute-1.amazonaws.com',
+      'port' => '5432',
+      'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
+      'driver' => 'pgsql',
+    );
 
 Y a continuación hacemos el despliegue:
 
-<pre>pledinjd# git add drupal
-pledinjd# git commit -m "Despliegue de drupal"
-pledinjd# git push</pre>
+    pledinjd# git add drupal
+    pledinjd# git commit -m "Despliegue de drupal"
+    pledinjd# git push
 
-#### Instalando librerias PHP necesarias
+### Instalando librerias PHP necesarias
 
 Si accedemos a nuestra aplicación nos daremos cuenta que no funciona, podemos ver los logs de error de la misma ejecutando la siguente instrucción:
 
-<pre>pledinjd# heroku logs</pre>
+    pledinjd# heroku logs
 
-<p style="text-align: justify;">
-  Necesitamos instalar en nuestro dyno las librerías PHP, la librería gráfica <a href="http://docs.php.net/manual/es/book.image.php">gd</a> y la <a href="http://docs.php.net/mbstring">mbstring</a>. Para definir las librerías que se han de instalar en heroku, siguiendo la<a href="https://devcenter.heroku.com/articles/deploying-php#deploy-your-application-to-heroku"> documentación oficial</a>, tenemos que crear en la raíz de nuestro repositorio git, un fichero <em>composer.json </em>con el siguiente contenido:
-</p>
+Necesitamos instalar en nuestro dyno las librerías PHP, la librería gráfica <a href="http://docs.php.net/manual/es/book.image.php">gd</a> y la <a href="http://docs.php.net/mbstring">mbstring</a>. Para definir las librerías que se han de instalar en heroku, siguiendo la<a href="https://devcenter.heroku.com/articles/deploying-php#deploy-your-application-to-heroku"> documentación oficial</a>, tenemos que crear en la raíz de nuestro repositorio git, un fichero `composer.json`  con el siguiente contenido:
 
-<pre>pledinjd# cat composer.json 
-{
- "require": {
- "ext-gd": "*",
- "ext-mbstring": "*"
- }
-}</pre>
+    pledinjd# cat composer.json 
+    {
+     "require": {
+     "ext-gd": "*",
+     "ext-mbstring": "*"
+     }
+    }
 
-<p style="text-align: justify;">
-  A partir de este fichero hay que crear el fichero <em>composer.lock</em>, utilizando la utilidad <em><a href="https://getcomposer.org/doc/00-intro.md">composer</a>, </em>que nos permite gestionar las dependencias de las librerias. Vamos a intalar la utilidad y generar el fichero pack:
-</p>
+A partir de este fichero hay que crear el fichero `composer.lock`, utilizando la utilidad <a href="https://getcomposer.org/doc/00-intro.md">`composer`</a>,que nos permite gestionar las dependencias de las librerias. Vamos a intalar la utilidad y generar el fichero pack:
 
-<pre>pledinjd# php -r "readfile('https://getcomposer.org/installer');" | php
-pledinjd# php composer.phar update
-pldinjd# git add composer.lock 
-pledinjd# git commit -m "Librerías"
-pledinjd# git push</pre>
+    pledinjd# php -r "readfile('https://getcomposer.org/installer');" | php
+    pledinjd# php composer.phar update
+    pldinjd# git add composer.lock 
+    pledinjd# git commit -m "Librerías"
+    pledinjd# git push
 
-<p style="text-align: justify;">
-  Y ya podemos acceder a nuestra aplicación:
-</p>
+Y ya podemos acceder a nuestra aplicación:
 
-<p style="text-align: justify;">
-  <a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal3.png"><img class="size-full wp-image-1406 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal3.png" alt="drupal3" width="991" height="420" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal3.png 991w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal3-300x127.png 300w" sizes="(max-width: 991px) 100vw, 991px" /></a>
-</p>
+<a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal3.png"><img class="size-full wp-image-1406 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal3.png" alt="drupal3" width="991" height="420" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal3.png 991w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal3-300x127.png 300w" sizes="(max-width: 991px) 100vw, 991px" /></a>
 
-<h3 style="text-align: justify;">
-  Accediendo al dyno
-</h3>
+## Accediendo al dyno
 
 Podemos acceder a nuestro dyno con la siguiente instrucción:
 
-<pre># heroku run bash
-Running bash on pledinjd... up, run.4539
-~ $</pre>
+    # heroku run bash
+    Running bash on pledinjd... up, run.4539
+    ~ $
 
 Accedemos al repositorio git, aunque podemos acceder al directorio padre:
 
-<pre>~ $ ls
-Procfile  composer.json  composer.lock    drupal    drupal.dump  index.php    vendor
-~ $ cd ..
-/ $ ls
-app  bin  dev  etc  home  lib  lib64  lost+found  proc    sbin  sys  tmp    usr  var</pre>
+    ~ $ ls
+    Procfile  composer.json  composer.lock    drupal    drupal.dump  index.php    vendor
+    ~ $ cd ..
+    / $ ls
+    app  bin  dev  etc  home  lib  lib64  lost+found  proc    sbin  sys  tmp    usr  var
 
 Como vimos anteriormente el dyno tiene una dirección en un rango /30:
 
-<pre>$ ip addr show eth0
-27054: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    link/ether 1e:da:76:65:02:a9 brd ff:ff:ff:ff:ff:ff
-    inet 172.18.174.218/30 brd 172.18.174.219 scope global eth0
-       valid_lft forever preferred_lft forever
-    inet6 fe80::1cda:76ff:fe65:2a9/64 scope link 
-       valid_lft forever preferred_lft forever</pre>
+    $ ip addr show eth0
+    27054: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+        link/ether 1e:da:76:65:02:a9 brd ff:ff:ff:ff:ff:ff
+        inet 172.18.174.218/30 brd 172.18.174.219 scope global eth0
+           valid_lft forever preferred_lft forever
+        inet6 fe80::1cda:76ff:fe65:2a9/64 scope link 
+           valid_lft forever preferred_lft forever
 
 Y la puerta de enlace es la otra direción disponible en la red, que debe coincidir con la interfaz en el balanceador de carga/router:
 
-<pre>$ ip route
-default via 172.18.174.217 dev eth0 
-172.18.174.216/30 dev eth0 proto kernel scope link src 172.18.174.218</pre>
+    $ ip route
+    default via 172.18.174.217 dev eth0 
+    172.18.174.216/30 dev eth0 proto kernel scope link src 172.18.174.218
 
 Y para terminar podemos observar que el dyno esta corriendo en una máquina con 60Gb de RAM:
 
-<pre>$ free -h
-             total       used       free     shared    buffers     cached
-Mem:           60G        58G       2.0G        70M       1.3G       6.1G</pre>
+    $ free -h
+                 total       used       free     shared    buffers     cached
+    Mem:           60G        58G       2.0G        70M       1.3G       6.1G
 
-<h3 style="text-align: justify;">
-  Conclusiones
-</h3>
+## Conclusiones
 
-<p style="text-align: justify;">
-  Si queremos usar heroku para desplegar aplicaciones web tradicionales escritas en PHP, como drupal, tenemos que tener en cuenta varias cosas:
-</p>
+Si queremos usar heroku para desplegar aplicaciones web tradicionales escritas en PHP, como drupal, tenemos que tener en cuenta varias cosas:
 
 <li style="text-align: justify;">
-  Tniendo en cuenta que el sistema de ficheros es efímero, tenemos que subir nuestros datos de la aplicación web en un sistema exerno, por ejmplo en un almacen de objetos como Amazon S3, apra ello es muy recomendable utilizar un plugin de drupal de <a href="https://www.drupal.org/project/amazons3">Amazon S3</a>.
+  Teniendo en cuenta que el sistema de ficheros es efímero, tenemos que subir nuestros datos de la aplicación web en un sistema exerno, por ejmplo en un almacen de objetos como Amazon S3, apra ello es muy recomendable utilizar un plugin de drupal de <a href="https://www.drupal.org/project/amazons3">Amazon S3</a>.
 </li>
 <li style="text-align: justify;">
   Heroku no manda correos, por lo tanto necesitamos un servicio externo como <a href="https://www.mandrill.com/">Mandrill</a>, por lo tanto podemos usar el plugin de drupal de <a href="https://www.drupal.org/project/mandrill">Mandrill</a>.
 </li>
 
-<p style="text-align: justify;">
-  El alguna futura entrada del blog se posría realizar un despleigue de alguna aplicgación web utilizado Python o Ruby y estudiar las funcionalidades que nos ofrece Heroku.
-</p>
-
-&nbsp;
-
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
+En alguna futura entrada del blog se podría realizar un despliegue de alguna aplicación web utilizado Python o Ruby y estudiar las funcionalidades que nos ofrece Heroku.
