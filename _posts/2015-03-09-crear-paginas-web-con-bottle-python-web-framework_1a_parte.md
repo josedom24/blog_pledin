@@ -13,7 +13,7 @@ tags:
   - Python
   - Web
 ---
-[<img class=" size-full wp-image-1289 aligncenter" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/03/logo_nav.png" alt="logo_nav" width="200" height="69" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/03/logo_nav.png){.thumbnail}
+![]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/03/logo_nav.png)
 
 En la [entrada anterior](http://www.josedomingo.org/pledin/2015/03/crear-una-pagina-web-con-python/ "Crear una página web con Python") vimos como crear aplicaciones web en python. Un **framework para aplicaciones web** es un _[framework](http://es.wikipedia.org/wiki/Framework "Framework")_ diseñado para apoyar el desarrollo de [sitios web](http://es.wikipedia.org/wiki/Sitio_web "Sitio web") dinámicos, [aplicaciones web](http://es.wikipedia.org/wiki/Aplicaci%C3%B3n_web "Aplicación web") y [servicios web](http://es.wikipedia.org/wiki/Servicio_web "Servicio web"). Y un **framework** es un conjunto de herramientas y programas que nos facilitan la realización y el desarrollo de un producto software. En este artículo vamos a usar un web framework escrito en Python para desarrollar páginas web. Vamos a usar el framework **bottle** que podemos definir cómo indica en su [página oficial](http://bottlepy.org/docs/dev/index.html#):
 
@@ -23,47 +23,45 @@ En la [entrada anterior](http://www.josedomingo.org/pledin/2015/03/crear-una-pag
 
 Para obtener la última versión del framework vamos a usar la utilidad **pip** que nos permita la instalación de aplicaciones python:
 
-<pre># apt-get install python-pip
-# pip install bottle</pre>
+    # apt-get install python-pip
+    # pip install bottle
 
-<!--more-->
-
-## Empezamos con el &#8220;Hola Mundo&#8221;
+## Empezamos con el "Hola Mundo"
 
 Vamos a ir estudiando distintos ejemplos para ir introduciendo los distintos conceptos sobre bottle. El primer ejemplo vamos a realizar una página web que nos de la bienvenida:
 
-<pre>from bottle import route, run
+    from bottle import route, run
 
-@route('/hello')
-def hello():
-    return "&lt;h1&gt;Hola mundo&lt;/h1&gt;"
+    @route('/hello')
+    def hello():
+        return "<h1>Hola mundo</h1>"
 
-run(host='localhost', port=8080, debug=True)
-</pre>
+    run(host='localhost', port=8080, debug=True)
 
-  * La utilidad `@router` (en inglés _framework decorator_) nos permite definir las rutas de la URL que vamos a tratar. En este ejemplo cuando accedemos a _http://localhost:8080/hello_ veremos nuestra página web.
-  * Para cada ruta o conjunto de rutas se define una función que debe devolver el código html que se mostrará al acceder a la ruta especificada.
-  * La función `run()` ejecuta un servidor web, en este caso se puede acceder desde localhost en el puerto 8080, esto nos permite ir probando cómo va quedando nuestra aplicación web. [<img class="aligncenter size-full wp-image-1296" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/03/bottle1.png" alt="bottle1" width="253" height="100" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/03/bottle1.png){.thumbnail}
+* La utilidad `@router` (en inglés _framework decorator_) nos permite definir las rutas de la URL que vamos a tratar. En este ejemplo cuando accedemos a `http://localhost:8080/hello` veremos nuestra página web.
+* Para cada ruta o conjunto de rutas se define una función que debe devolver el código html que se mostrará al acceder a la ruta especificada.
+* La función `run()` ejecuta un servidor web, en este caso se puede acceder desde localhost en el puerto 8080, esto nos permite ir probando cómo va quedando nuestra aplicación web. 
+
+![]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/03/bottle1.png)
 
 ## Trabajando con rutas dinámicas
 
 Una **ruta dinámica** nos permite definir rutas utilizando variables, por lo que podemos filtrar más de una URL. Veamos un ejemplo:
 
-<pre>from bottle import route, run
+    from bottle import route, run
 
-@route('/')
-@route('/hello/&lt;name&gt;')
-def greet(name='Stranger'):
-    return 'Hello %s, how are you?'%name
+    @route('/')
+    @route('/hello/<name>')
+    def greet(name='Stranger'):
+        return 'Hello %s, how are you?'%name
 
-run(host='localhost', port=8080, debug=True)
-</pre>
+    run(host='localhost', port=8080, debug=True)
 
-  * En este ejemplo vemos como definimos dos rutas que van a mostrar la misma página web.
-  * La segunda ruta es dinámica ya que el segundo parámetro es una variable.
-  * El valor de la variable de la ruta hay que enviarla a la función. En este caso hemos utilizado un parámetro con un valor por defecto (&#8220;_Stranger_&#8220;) en la función.
+* En este ejemplo vemos como definimos dos rutas que van a mostrar la misma página web.
+* La segunda ruta es dinámica ya que el segundo parámetro es una variable.
+* El valor de la variable de la ruta hay que enviarla a la función. En este caso hemos utilizado un parámetro con un valor por defecto ("Stranger") en la función.
 
-<table>
+  <table>
   <tr>
     <td>
       <a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/03/bottle2.png"><img class="size-full wp-image-1297" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/03/bottle2.png" alt="bottle2" width="269" height="86" /></a>
@@ -79,29 +77,29 @@ run(host='localhost', port=8080, debug=True)
 
 Si usamos rutas dinámicas estamos accediendo a la página web usando el método **GET** de forma predeterminada. Podemos crear rutas dónde indiquemos que hemos usado el método **POST** para recibir  la información. Veamos un ejemplo:
 
-<pre>from bottle import Bottle,route,run,request
-@route('/login') 
-def login():
-    return '''
-        &lt;form action="/login" method="post"&gt;
-            Username: &lt;input name="username" type="text" /&gt;
-            Password: &lt;input name="password" type="password" /&gt;
-            &lt;input value="Login" type="submit" /&gt;
-        &lt;/form&gt;'''
+    from bottle import Bottle,route,run,request
+    @route('/login') 
+    def login():
+        return '''
+            <form action="/login" method="post">
+                Username: <input name="username" type="text" />
+                Password: <input name="password" type="password" />
+                <input value="Login" type="submit" />
+            </form>'''
 
-@route('/login',method='POST') 
-def do_login():
-    username = request.forms.get('username')
-    password = request.forms.get('password')
-    if username=="pepe" and password=="asdasd":
-        return "&lt;p&gt;Your login information was correct.&lt;/p&gt;"
-    else:
-        return "&lt;p&gt;Login failed.&lt;/p&gt;"
+    @route('/login',method='POST') 
+    def do_login():
+        username = request.forms.get('username')
+        password = request.forms.get('password')
+        if username=="pepe" and password=="asdasd":
+            return "<p>Your login information was correct.</p>"
+        else:
+            return "&lt;p>Login failed.&lt;/p>"
 
-run(host='localhost', port=8080)</pre>
+    run(host='localhost', port=8080)
 
-  * En este ejemplo hemos definido dos rutas que se correponden con la misma URL, pero la segunda será seleccionada cuando se haya enviado información usando el método POST (en este ejemplo se envía la información de un formulario usando ese método).
-  * El objeto `request` almacena la información recibida. Con el método `request.forms.get` podemos obtener el parámetro que indicamos con el atributo _name_ en el elemento _input_ del formulario.
+* En este ejemplo hemos definido dos rutas que se corresponden con la misma URL, pero la segunda será seleccionada cuando se haya enviado información usando el método POST (en este ejemplo se envía la información de un formulario usando ese método).
+* El objeto `request` almacena la información recibida. Con el método `request.forms.get` podemos obtener el parámetro que indicamos con el atributo `name` en el elemento `input` del formulario.
 
 <table>
   <tr>
