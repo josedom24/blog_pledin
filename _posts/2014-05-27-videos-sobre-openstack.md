@@ -21,15 +21,15 @@ Ya hemos concluido las tres sesiones online donde hemos presentado distintos asp
 
 Los vídeos que hemos realizado son los siguientes:
 
-* **Cloud Computing &#8211; OpenStack &#8211; Instancias: **En esta sesión se ven las características esenciales de OpenStack Compute (Nova).
+* **Cloud Computing &#8211; OpenStack &#8211; Instancias**: En esta sesión se ven las características esenciales de OpenStack Compute (Nova).
 <iframe src="//www.youtube.com/embed/XYOme2eNQTg" height="315" width="560" allowfullscreen="" frameborder="0"></iframe> 
 
-* **Cloud Computing - OpenStack - Almacenamiento: **En esta sesión se ven las características esenciales de OpenStack Block Storage (Cinder) y OpenStack Object Storage (Swift).
+* **Cloud Computing - OpenStack - Almacenamiento**: En esta sesión se ven las características esenciales de OpenStack Block Storage (Cinder) y OpenStack Object Storage (Swift).
 <iframe src="//www.youtube.com/embed/XT4elB1DRB4" height="315" width="560" allowfullscreen="" frameborder="0"></iframe> 
 
-* **Cloud Computing - OpenStack - Redes: **En esta sesión se ven las características esenciales de OpenStack Networking (Neutron).
+* **Cloud Computing - OpenStack - Redes**: En esta sesión se ven las características esenciales de OpenStack Networking (Neutron).
 <iframe src="//www.youtube.com/embed/-NAb8pp5E1g" height="315" width="560" allowfullscreen="" frameborder="0"></iframe> 
 
-* **Creación automática de un escenario de red en OpenStack **
+* **Creación automática de un escenario de red en OpenStack**
 <iframe width="560" height="315" src="//www.youtube.com/embed/TBmaBkj0X7M" frameborder="0" allowfullscreen></iframe>
 
