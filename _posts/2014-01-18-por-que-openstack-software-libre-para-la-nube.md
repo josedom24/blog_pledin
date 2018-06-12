@@ -18,4 +18,10 @@ tags:
 </p>
 
 
-{% include video id="3m5LeyI7Bss" provider="youtube" %}
+<iframe src="http://www.josedomingo.org/openwebinars" height="315" width="560"></iframe> <iframe src="//www.youtube.com/embed/" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
+
+
+
+<!-- AddThis Advanced Settings generic via filter on the_content -->
+
+<!-- AddThis Share Buttons generic via filter on the_content -->
