@@ -46,7 +46,7 @@ plugins:
 #   - vendor/ruby/
 
 locale: "es-ES"
-minimal_mistakes_skin: "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+minimal_mistakes_skin: "constrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 name: "José Domingo Muñoz"
 search: true
 repository: "josedom24/blog_pledin"
