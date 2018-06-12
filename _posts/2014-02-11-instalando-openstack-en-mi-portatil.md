@@ -21,101 +21,104 @@ tags:
 
 El objetivo de esta entrada es contar mi experiencia de instalar el software de Cloud Computing OpenStack en mi ordenador a partir del repositorio de GitHub: <https://github.com/openstack-ansible/openstack-ansible>. Se trata de la instalación de un escenario formado por varias máquinas virtuales desplegadas con Vagrant donde se instala OpenStack a partir de recetas desarrolladas en ansible. Las personas que han desarrollado dichas recetas y son los mantenedores del repositorio son [Lorin Hochstein](https://github.com/lorin)  y [Mark Stillwell](https://github.com/marklee77).
 
-<!--more-->
 
 ## ¿Qué necesito para realizar la instalación?
 
-  * En primer lugar tenemos que tener en cuenta la memoria RAM que disponemos. Las cuatro máquinas que se despliegan necesitan 2,5 GB de RAM, por lo que creo que con un ordenador de 4 GB sería suficiente. Por otro lado partimos de que estamos usando un equipo con la extensión de virtualización hardware VT-x/AMD-v activada.
-  * El repositorio que vamos a utilizar se encuentra en GitHub por lo tanto tenemos que tener instalado el paquete git en nuestro ordenador:
+* En primer lugar tenemos que tener en cuenta la memoria RAM que disponemos. Las cuatro máquinas que se despliegan necesitan 2,5 GB de RAM, por lo que creo que con un ordenador de 4 GB sería suficiente. Por otro lado partimos de que estamos usando un equipo con la extensión de virtualización hardware VT-x/AMD-v activada.
+* El repositorio que vamos a utilizar se encuentra en GitHub por lo tanto tenemos que tener instalado el paquete git en nuestro ordenador:
 
-<pre class="brush: bash; gutter: false; first-line: 1"># apt-get install git</pre>
+        # apt-get install git
 
-  * El software que se va a utilizar para ejecutar las máquinas virtuales es VirtualBox que en mi caso está instalado sobre un sistema operativo GNU Linux Debian Wheezy. La versión de VirtualBox que estoy utilizando es 4.1.18. Para la instalación, ejecutamos simplemente:
+* El software que se va a utilizar para ejecutar las máquinas virtuales es VirtualBox que en mi caso está instalado sobre un sistema operativo GNU Linux Debian Wheezy. La versión de VirtualBox que estoy utilizando es 4.1.18. Para la instalación, ejecutamos simplemente:
 
-<pre class="brush: bash; gutter: false; first-line: 1"># apt-get install virtualbox</pre>
+        # apt-get install virtualbox
 
-  * Siguiendo la documentación también necesitamos instalar el paquete [python-netaddr](https://pypi.python.org/pypi/netaddr/), para ello: <pre class="brush: bash; gutter: false; first-line: 1"># apt-get install python-netaddr</pre>
+* Siguiendo la documentación también necesitamos instalar el paquete [python-netaddr](https://pypi.python.org/pypi/netaddr/), para ello: # apt-get install python-netaddr
 
-  * Con [Vagrant](http://www.vagrantup.com/) podemos virtualizar entornos de desarrollo. Esta herramienta nos permite automatizar la creación y gestión de máquinas virtuales. Vamos a utilizar esta herramienta para definir y gestionar las máquinas virtuales que vamos a usar. Estas máquinas serán ejecutadas en VirtualBox. En el momento de escribir esta entrada la versión de vagrant es la 1.4.3, podemos bajarnos el paquete deb de la página oficial e instalarlo en nuestro sistema:
+* Con [Vagrant](http://www.vagrantup.com/) podemos virtualizar entornos de desarrollo. Esta herramienta nos permite automatizar la creación y gestión de máquinas virtuales. Vamos a utilizar esta herramienta para definir y gestionar las máquinas virtuales que vamos a usar. Estas máquinas serán ejecutadas en VirtualBox. En el momento de escribir esta entrada la versión de vagrant es la 1.4.3, podemos bajarnos el paquete deb de la página oficial e instalarlo en nuestro sistema:
 
-<pre class="brush: bash; gutter: false; first-line: 1"># wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_x86_64.deb
-# dpkg -i vagrant_1.4.3_x86_64.deb</pre>
+        # wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_x86_64.deb
+        # dpkg -i vagrant_1.4.3_x86_64.deb
 
-Las máquinas virtuales que se crean tienen el sistema operativo Ubuntu 12.04 amd64, por lo tanto es conveniente descargar el box de vagrant precise64 con el siguiente comando:
+    Las máquinas virtuales que se crean tienen el sistema operativo Ubuntu 12.04 amd64, por lo tanto es conveniente descargar el box de vagrant precise64 con el siguiente comando:
 
-<pre># vagrant box add precise64 http://files.vagrantup.com/precise64.box</pre>
+        # vagrant box add precise64 http://files.vagrantup.com/precise64.box
 
-  * Por último vamos a utilizar [ansible](http://www.ansible.com/home), una herramienta  que nos permite  automatizar y gestionar la configuración de nuestras máquinas. Podemos utilizar la herramienta pip para instalar la última versión de este programa:
+* Por último vamos a utilizar [ansible](http://www.ansible.com/home), una herramienta  que nos permite  automatizar y gestionar la configuración de nuestras máquinas. Podemos utilizar la herramienta pip para instalar la última versión de este programa:
 
-<pre class="brush: bash; gutter: false; first-line: 1"># apt-get install python-pip python-dev
-# pip install ansible</pre>
+        # apt-get install python-pip python-dev
+        # pip install ansible
 
 ## Presentando el escenario que vamos a desplegar
 
 Un vez que tenemos instaladas las herramientas necesarias, vamos a obtener el repositorio desde el que vamos a realizar la instalación, para ello tenemos que clonarlo ejecutando los siguientes comandos:
 
-<pre>git clone https://github.com/openstack-ansible/openstack-ansible
-cd openstack-ansible
-git submodule update --init</pre>
+    git clone https://github.com/openstack-ansible/openstack-ansible
+    cd openstack-ansible
+    git submodule update --init
 
 Para iniciar la instalación simplemente tendremos que ejecutar el comando:
 
-<pre class="brush: bash; gutter: false; first-line: 1">openstack-ansible# make</pre>
+    openstack-ansible# make
 
 Este comando ejecuta los pasos que se encuentran definido en el fichero Makefile, que de forma resumida son los siguientes:
 
-**1) Se crean las máquinas virtuales** con el comando _vagrant up_ utilizando como fichero de configuración Vagranfile, que podemos encontrar en el directorio testcase/standard.
+1. **Se crean las máquinas virtuales** con el comando `vagrant up` utilizando como fichero de configuración `Vagranfile`, que podemos encontrar en el directorio `testcase/standard`.
 
-Es esquema de máquinas que se levantan son las siguientes y la los podemos representar usando el siguiente esquema:
+    Es esquema de máquinas que se levantan son las siguientes y la los podemos representar usando el siguiente esquema:
 
-  * 10.1.0.2, nodo controlador.
-  * 10.1.0.3, nodo de computación.
-  * 10.1.0.4, nodo de red (neutron).
-  * 10.1.0.5, nodo de almacenamiento.
+      * 10.1.0.2, nodo controlador.
+      * 10.1.0.3, nodo de computación.
+      * 10.1.0.4, nodo de red (neutron).
+      * 10.1.0.5, nodo de almacenamiento.
 
-**[<img class="aligncenter size-full wp-image-956" alt="InstalandoOpenStackEnMiPortatil" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/InstalandoOpenStackEnMiPortatil.jpg" width="1000" height="700" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/InstalandoOpenStackEnMiPortatil.jpg 1000w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/InstalandoOpenStackEnMiPortatil-300x210.jpg 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/InstalandoOpenStackEnMiPortatil-800x560.jpg 800w" sizes="(max-width: 1000px) 100vw, 1000px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/InstalandoOpenStackEnMiPortatil.jpg)
+![os]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/InstalandoOpenStackEnMiPortatil.jpg)
   
-** 
 
-###### Nota:Le doy las gracias a mi alumno [@EvaristoGZ](https://twitter.com/EvaristoGZ) por haber diseñado el esquema anterior. Puedes ver el esquema original que diseñé para esta entrada en este [enlace]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/esquema.png).
+{: .notice--danger}
+Nota:Le doy las gracias a mi alumno [@EvaristoGZ](https://twitter.com/EvaristoGZ) por haber diseñado el esquema anterior. Puedes ver el esquema original que diseñé para esta entrada en este [enlace]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/esquema.png).
 
 Además si accedemos a este directorio podemos manejar las máquinas virtuales (pararlas, arrancarlas o destruirlas). Estas tres acciones se harían con los siguientes comandos:
 
-<pre class="brush: bash; gutter: false; first-line: 1">openstack-ansible/testcases/standard#vagrant halt
-openstack-ansible/testcases/standard#vagrant up
-openstack-ansible/testcases/standard#vagrant destroy</pre>
+    openstack-ansible/testcases/standard# vagrant halt
+    openstack-ansible/testcases/standard# vagrant up
+    openstack-ansible/testcases/standard# vagrant destroy
 
-**2) Se instalan los servicios necesarios en cada una de las máquinas que hemos arrancado.** Para ello se ejecuta la receta ansible **openstack-ansible/openstack.yaml** utilizando el fichero de configuración de los hosts que encontramos en el directorio del escenario **openstack-ansible/testcases/standard/ansible_hosts.** Si editamos el fichero de la receta nos daremos cuenta que existe una receta distinta para instalar los distintos servicios: keystone, swift, glance, neutron, cinder, nova, horizon, heat y ceilometer.
+2. **Se instalan los servicios necesarios en cada una de las máquinas que hemos arrancado.** Para ello se ejecuta la receta ansible `openstack-ansible/openstack.yaml` utilizando el fichero de configuración de los hosts que encontramos en el directorio del escenario `openstack-ansible/testcases/standard/ansible_hosts`. Si editamos el fichero de la receta nos daremos cuenta que existe una receta distinta para instalar los distintos servicios: keystone, swift, glance, neutron, cinder, nova, horizon, heat y ceilometer.
 
-**3) Se levanta una instancia de prueba. **Para ello se ejecuta la receta ansible **openstack-ansible/demo.yaml,** utilizando el mismo fichero de configuración de los hosts visto en el punto anterior. Esta receta, sube una imagen cirros al sistema, crea el router y la red necesaria y por último lanza una instancia a la que le asigna una ip flotante.
+3. **Se levanta una instancia de prueba**. Para ello se ejecuta la receta ansible `openstack-ansible/demo.yaml`, utilizando el mismo fichero de configuración de los hosts visto en el punto anterior. Esta receta, sube una imagen cirros al sistema, crea el router y la red necesaria y por último lanza una instancia a la que le asigna una ip flotante.
 
 ## Accediendo a openstack
 
 Si utilizamos la aplicación web horizon para trabajar, debemos acceder a la siguiente URL:
 
-<pre class="brush: bash; gutter: false; first-line: 1">http://10.1.0.2/horizon</pre>
+    http://10.1.0.2/horizon
 
-[<img class="size-full wp-image-938 aligncenter" alt="01" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/01.png" width="263" height="185" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/01.png 956w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/01-300x211.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/01-800x564.png 800w" sizes="(max-width: 263px) 100vw, 263px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/01.png)Durante la instalación se han creado dos usuarios: un usuario de prueba: **demo** con contraseña **secret,** este usuario es el propietario del proyecto demo, en el que se ha creado la instancia de prueba. También podemos acceder con el usuario **admin,** cuya contraseña está guardada en un fichero que luego comentaremos.
+![os]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/01.png)
 
-[<img class="aligncenter size-full wp-image-939" alt="02" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/02.png" width="510" height="162" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/02.png 1423w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/02-300x95.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/02-1024x325.png 1024w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/02-800x254.png 800w" sizes="(max-width: 510px) 100vw, 510px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/02.png)Si queremos trabajar con el cliente **nova** tenemos que instalar el paquete [python-novaclient](http://pypi.python.org/pypi/python-novaclient/), y siguiendo, por ejemplo, este [manual](http://albertomolina.wordpress.com/2013/11/20/how-to-launch-an-instance-on-openstack-ii-openstack-cli/), podemos gestionar las instancias de nuestro cloud. Tenemos que tener en cuenta que en el nodo controlador encontramos dos ficheros de credenciales: _demo.openrc_, donde encontramos las del usuario demo, y _admin.openrc_ donde están las del usuario admin (en este fichero puedes encontrar la password del admin por si quieres acceder a horizon con él).
+Durante la instalación se han creado dos usuarios: un usuario de prueba: **demo** con contraseña **secret**, este usuario es el propietario del proyecto demo, en el que se ha creado la instancia de prueba. También podemos acceder con el usuario **admin**, cuya contraseña está guardada en un fichero que luego comentaremos.
+
+![os]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2014/02/02.png)
+
+Si queremos trabajar con el cliente `nova` tenemos que instalar el paquete [`python-novaclient`](http://pypi.python.org/pypi/python-novaclient/), y siguiendo, por ejemplo, este [manual](http://albertomolina.wordpress.com/2013/11/20/how-to-launch-an-instance-on-openstack-ii-openstack-cli/), podemos gestionar las instancias de nuestro cloud. Tenemos que tener en cuenta que en el nodo controlador encontramos dos ficheros de credenciales: `demo.openrc`, donde encontramos las del usuario demo, y `admin.openrc` donde están las del usuario admin (en este fichero puedes encontrar la password del admin por si quieres acceder a horizon con él).
 
 Ejemplo:
 
-<pre class="brush: bash; gutter: false; first-line: 1">$ source demo.openrc
-$ nova list
-+--------------------------------------+------+--------+------------+-------------+-------------------------------------+
-| ID                                   | Name | Status | Task State | Power State | Networks                            |
-+--------------------------------------+------+--------+------------+-------------+-------------------------------------+
-| 1491f908-42c6-4f7c-a937-5f9ef9a76ba2 | p11  | ACTIVE | None       | Running     | demo-net=192.168.100.2, 10.4.10.101 |
-+--------------------------------------+------+--------+------------+-------------+-------------------------------------+</pre>
+    $ source demo.openrc
+    $ nova list
+    +--------------------------------------+------+--------+------------    +-------------+-------------------------------------+
+    | ID                                   | Name | Status | Task State     | Power State | Networks                            |
+    +--------------------------------------+------+--------+------------    +-------------+-------------------------------------+
+    | 1491f908-42c6-4f7c-a937-5f9ef9a76ba2 | p11  | ACTIVE | None           | Running     | demo-net=192.168.100.2, 10.4.10.101 |
+    +--------------------------------------+------+--------+------------    +-------------+-------------------------------------+
 
 ## Últimas consideraciones
 
-  1. Con la asignación de memoria a cada uno de los nodos se pueden crear pocas instancias, una solución puede ser crear un nuevo sabor que tenga 256 MB de RAM (yo lo he llamado m1.enano).
-  2. Otra opción, si tenemos suficiente RAM en nuestra máquina, es modificar el fichero Vagranfile, y asignar más memoria RAM al nodo de computación.
-  3. Puedes acceder a la instancia cirros por ssh, usando el usuario **cirros**, y la contraseña **cubswin:)**
-  4. Si necesitas entrar en cualquier de las máquinas virtuales, lo puedes hacer con el usuario **vagrant** y contraseña **vagrant**, o usando la clave privada ssh **vagrant\_private\_key**.
-  5. El acceso por ssh a la instancia sólo se puede hacer desde alguna de las máquinas virtuales.
+1. Con la asignación de memoria a cada uno de los nodos se pueden crear pocas instancias, una solución puede ser crear un nuevo sabor que tenga 256 MB de RAM (yo lo he llamado m1.enano).
+2. Otra opción, si tenemos suficiente RAM en nuestra máquina, es modificar el fichero `Vagranfile`, y asignar más memoria RAM al nodo de computación.
+3. Puedes acceder a la instancia cirros por ssh, usando el usuario **cirros**, y la contraseña **cubswin:)**
+4. Si necesitas entrar en cualquier de las máquinas virtuales, lo puedes hacer con el usuario **vagrant** y contraseña **vagrant**, o usando la clave privada ssh `vagrant\private\key`.
+5. El acceso por ssh a la instancia sólo se puede hacer desde alguna de las máquinas virtuales.
 
 **Modificado el 19/03/20014:**
 
@@ -123,18 +126,18 @@ $ nova list
 
 Primero tenemos que entrar a una máquina virtual, por ejemplo el controlador:
 
-<pre class="brush: bash; gutter: false; first-line: 1">$  <strong>vagrant ssh controller</strong>
-Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-60-generic x86_64)
- * Documentation:  https://help.ubuntu.com/
-Welcome to your Vagrant-built virtual machine.
-Last login: Wed Mar 19 16:35:49 2014 from 10.0.2.2
+    $  vagrant ssh controller
+    Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-60-generic x86_64)
+     * Documentation:  https://help.ubuntu.com/
+    Welcome to your Vagrant-built virtual machine.
+    Last login: Wed Mar 19 16:35:49 2014 from 10.0.2.2
 
-vagrant@controller:~$ <strong>ssh cirros@10.4.10.102</strong>
-The authenticity of host '10.4.10.102 (10.4.10.102)' can't be established.
-RSA key fingerprint is e1:c3:6f:5a:6a:f9:5d:c8:5a:85:ec:a7:d4:5e:95:ac.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added '10.4.10.101' (RSA) to the list of known hosts.
-$</pre>
+    vagrant@controller:~$ ssh cirros@10.4.10.102
+    The authenticity of host '10.4.10.102 (10.4.10.102)' can't be     established.
+    RSA key fingerprint is    e1:c3:6f:5a:6a:f9:5d:c8:5a:85:ec:a7:d4:5e:95:ac.
+    Are you sure you want to continue connecting (yes/no)? yes
+    Warning: Permanently added '10.4.10.101' (RSA) to the list of known hosts.
+    $
 
 <!-- AddThis Advanced Settings generic via filter on the_content -->
 
