@@ -16,9 +16,7 @@ tags:
   - PaaS
   - php
 ---
-<p style="text-align: center;">
-  <a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro.png"><img class="aligncenter size-full wp-image-1389" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro.png" alt="intro" width="789" height="231" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro.png 789w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro-300x88.png 300w" sizes="(max-width: 789px) 100vw, 789px" /></a>
-
+<a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro.png"><img class="aligncenter size-full wp-image-1389" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro.png" alt="intro" width="789" height="231" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro.png 789w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/intro-300x88.png 300w" sizes="(max-width: 789px) 100vw, 789px" /></a>
 
 <a href="https://www.heroku.com/">Heroku</a> es una aplicación que nos ofrece un servicio de Cloud Computing <a href="https://en.wikipedia.org/wiki/Platform_as_a_service">PaaS</a> (Plataforma como servicio). Como leemos en la <a href="https://es.wikipedia.org/wiki/Heroku">Wikipedia</a> es propiedad de <a href="http://www.salesforce.com">Salesforce.com</a> y es una de las primeras plataformas de computación en la nube, que fue desarrollada desde junio de 2007, con el objetivo de soportar solamente el lenguaje de programación Ruby, pero posteriormente se ha extendido el soporte a Java, Node.js, Scala, Clojure y Python y PHP.
 
