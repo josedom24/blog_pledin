@@ -205,7 +205,7 @@ Del mismo modo que con la aplicación moodle vamos a instalar el cartridge _**cr
 Vamos a crear diariamente una copia de seguridad de la base de datos con la utilidad mysqldump, para ello usamos una tarea en el cron creando un fichero `cron.sh` en el directorio de nuestro repositorio local `.openshif/cron/daily`, con el siguiente contenido:
 
     #!/bin/bash
-     mysqldump --password=$OPENSHIFT_MYSQL_DB_PASSWORD -h     $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT -u     $OPENSHIFT_MYSQL_DB_USERNAME $OPENSHIFT_GEAR_NAME --add-drop-table >    $OPENSHIFT_DATA_DIR/$OPENSHIFT_GEAR_NAME.sql
+     mysqldump --password=$OPENSHIFT_MYSQL_DB_PASSWORD -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT -u     $OPENSHIFT_MYSQL_DB_USERNAME $OPENSHIFT_GEAR_NAME --add-drop-table > $OPENSHIFT_DATA_DIR/$OPENSHIFT_GEAR_NAME.sql
 
 A continuación le damos permiso de ejecución y lo subimos a nuestro repositorio de openshift:
 
