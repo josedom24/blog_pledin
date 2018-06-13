@@ -24,35 +24,35 @@ Por dependencias al instalar Flask instalamos jinja2. En esta unidad vamos a est
 ## Una plantilla simple
 
 Veamos un ejemplo para entender como funciona jinja2:
-
+    {% raw %}
     from jinja2 import Template
     
     temp1="Hola {{nombre}}"
     print(Template(temp1).render(nombre="Pepe"))
-    
+    {% endraw %}
 
-La salida es `Hola Pepe`. La plantilla se compone de una variable `{{nombre}}` que es sustituida por el valor de la variable `nombre` al renderizar o generar la plantilla.
+La salida es `Hola Pepe`. La plantilla se compone de una variable {% raw %}`{{nombre}}`{% endraw %} que es sustituida por el valor de la variable `nombre` al renderizar o generar la plantilla.
 
 ## Elementos de una plantilla
 
 Una plantilla puede estar formada por texto, y algunos de los siguientes elementos:
 
-  * Variables, se indican con `{{ ... }}`
-  * Instrucciones, se indican con `{% ... %}`
-  * Comentarios, se indican con `{# ... #}`
-
-<!--more-->
+* Variables, se indican con {% raw %}`{{ ... }}`{% endraw %}
+* Instrucciones, se indican con {% raw %}`{% ... %}`{% endraw %}
+* Comentarios, se indican con {% raw %}`{# ... #}`{% endraw %}
 
 ## Variables en las plantillas
 
 Las variables en la plantillas se sustituyen por los valores que se pasan a la plantilla al renderizarlas. Si enviamos una lista o un diccionario puedo acceder los valores de dos maneras:
 
+    {% raw %}
     {{ foo.bar }}
     {{ foo['bar'] }}
-    
+    {% endraw %}
 
 Veamos algunos ejemplos:
 
+    {% raw %}
     temp2='<a href="{{ url }}"> {{ enlace }}</a>'
     print(Template(temp2).render(url="http://www.flask.com",enlace="Flask"))    
     
@@ -61,17 +61,17 @@ Veamos algunos ejemplos:
     
     temp4='<a href="{{ datos.url }}"> {{ datos.enlace }}</a>'
     print(Template(temp4).render(datos={"url":"http://www.flask.com","enlace":"Flask"}))
-    
+    {% endraw %}
 
 El resultado de las tres plantillas es:
 
     <a href="http://www.flask.com"> Flask</a>
     
-
 ## Filtros de variables
 
 Un filtro me permite modificar una variable. Son distintas funciones que me modifican o calculan valores a partir de las variables, se indican separadas de las variables por `|` y si tienen parámetros se indican entre paréntesis. Veamos algunos ejemplos:
 
+    {% raw %}
     temp5='Hola {{nombre|striptags|title}}'
     print(Template(temp5).render(nombre="   pepe  "))   
     
@@ -80,18 +80,18 @@ Un filtro me permite modificar una variable. Son distintas funciones que me modi
     
     temp6="El ultimo elemento tiene {{ lista|last|length}} caracteres"
     print(Template(temp6).render(lista=["amarillo","verde","rojo"]))
-    
+    {% endraw %}
 
 Por defecto los caracteres (`>`, `<`, `&`, `"`) no se escapan, si queremos mostrarlo en nuestra página HTML tenemos que escapar los caracteres:
 
+    {% raw %}
     temp7="La siguiente cadena muestra todos los caracteres: {{ info|e }}"
     print(Template(temp7).render(info="<hola&que&tal>"))
-    
+    {% endraw %}
 
 Y por tanto la salida es:
 
     La siguiente cadena muestra todos los caracteres: &lt;hola&amp;que&amp;tal&gt;
-    
 
 Para ver todos los filtros accede a la [lista de filtros](http://jinja.pocoo.org/docs/2.9/templates/#builtin-filters) en la documentación.
 
@@ -101,6 +101,7 @@ Para ver todos los filtros accede a la [lista de filtros](http://jinja.pocoo.org
 
 Nos permite recorrer una secuencia, veamos un ejemplo sencillo. Es compatible con la sentencia `for` de python.
 
+    {% raw %}
     temp7='''
     <ul>
     {% for elem in elems -%}
@@ -109,7 +110,7 @@ Nos permite recorrer una secuencia, veamos un ejemplo sencillo. Es compatible co
     </ul>
     '''
     print(Template(temp7).render(elems=["amarillo","verde","rojo"]))
-    
+    {% endraw %}
 
 La salida es:
 
@@ -124,11 +125,11 @@ El `-` detrás del bloque `for` evita que se añada una línea en blanco.
 
 En un bloque `for` tenemos acceso a varias variables, veamos las más interesantes:
 
-  * `loop.index`: La iteración actual del bucle (empieza a contar desde 1).
-  * `loop.index0`: La iteración actual del bucle (empieza a contar desde 0).
-  * `loop.first`: True si estamos en la primera iteración.
-  * `loop.last`: True si estamos en la última iteración.
-  * `loop.length`: Número de iteraciones del bucle.
+* `loop.index`: La iteración actual del bucle (empieza a contar desde 1).
+* `loop.index0`: La iteración actual del bucle (empieza a contar desde 0).
+* `loop.first`: True si estamos en la primera iteración.
+* `loop.last`: True si estamos en la última iteración.
+* `loop.length`: Número de iteraciones del bucle.
 
 ### if
 
@@ -136,6 +137,7 @@ Nos permite preguntar por el valor de una variable o si una variable existe. Es 
 
 Ejemplo:
 
+    {% raw %}
     temp9='''
     {% if elems %}
     <ul>
@@ -150,7 +152,7 @@ Ejemplo:
     {% endif %}
     '''
     print(Template(temp9).render(elems=[1,2,3,4]))
-    
+    {% endraw %}
 
 Y la salida será:
 
@@ -183,6 +185,7 @@ Veamos un ejemplo de cómo podemos generar HTML a partir de una plantilla en Fla
 
 La plantilla:
 
+    {% raw %}
     <!DOCTYPE html>
     <html lang="es">
     <head>
@@ -204,11 +207,11 @@ La plantilla:
         {% endif %}
     </body>
     </html>
-    
+    {% endraw %}
 
 Y la salida:
 
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template1.png" alt="" width="264" height="340" class="aligncenter size-full wp-image-1963" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template1.png){.thumbnail}
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template1.png" alt="" width="264" height="340" class="aligncenter size-full wp-image-1963" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template1.png)
 
 ## Envío de varias variables a una plantilla
 
@@ -225,6 +228,7 @@ En este caso veremos un ejemplo donde mandamos varias variables a la plantilla:
 
 La plantilla:
 
+    {% raw %}
     ...
         <h2>Suma</h2>
         {% if resultado>0 %}
@@ -234,11 +238,11 @@ La plantilla:
         {% endif %}
         <h3>{{resultado}}</h3>
     ...
-    
+    {% endraw %}
 
 Y la salida:
 
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template2.png" alt="" width="283" height="323" class="aligncenter size-full wp-image-1964" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template2.png){.thumbnail}
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template2.png" alt="" width="283" height="323" class="aligncenter size-full wp-image-1964" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template2.png)
 
 ## Generando páginas de error con plantillas
 
@@ -251,13 +255,14 @@ Como vemos en el ejemplo anterior, si los números no se pueden sumar se generar
 
 La plantilla:
 
+    {% raw %}
     ...
         <header>
            <h1>{{error}}</h1>
            <img src="{{ url_for('static', filename='img/tux.png')}}"/>
         </header>   
     ...
-    
+    {% endraw %}
 
 ## Uso de for en una plantilla
 
@@ -271,20 +276,20 @@ En este caso vamos a mostrar la tabla de multiplicar de un número, en la planti
             abort(404)
         return render_template("template3.html",num=numero)
     
-
 La plantilla:
 
+    {% raw %}
     ...
         <h2>Tabla de multiplicar</h2>
         {% for i in range(1,11) -%}
           <p>{{num}} * {{i}} = {{num*i}}</p>
         {% endfor -%}
     ...
-    
+    {% endraw %}
 
 Y la salida:
 
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template3.png" alt="" width="266" height="605" class="aligncenter size-full wp-image-1965" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template3.png){.thumbnail}
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template3.png" alt="" width="266" height="605" class="aligncenter size-full wp-image-1965" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template3.png)
 
 ## Envío de diccionario a una plantilla
 
@@ -298,9 +303,9 @@ En realidad vamos a mandar una lista de diccionarios, donde tenemos información
                 ]
         return render_template("template4.html",enlaces=enlaces)
     
-
 La plantilla:
 
+    {% raw %}
     ...
         <h2>Enlaces</h2>
         {% if enlaces %}
@@ -313,11 +318,11 @@ La plantilla:
             <p>No hay enlaces></p>
         {% endif %}
     ...
-    
+    {% endraw %}
 
 Y la salida:
 
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template4.png" alt="" width="261" height="318" class="aligncenter size-full wp-image-1966" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template4.png){.thumbnail}
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template4.png" alt="" width="261" height="318" class="aligncenter size-full wp-image-1966" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/template4.png)
 
 # Herencia de plantillas
 
@@ -329,6 +334,7 @@ En nuestro caso vamos a crear una plantilla base de donde se van a heredar todas
 
 Vamos a crear una plantilla `base.html` donde indicaremos las partes comunes de todas nuestras páginas, e indicaremos los bloques que las otras plantillas pueden reescribir.
 
+    {% raw %}
     <!DOCTYPE html>
     <html lang="es">
     <head>
@@ -345,17 +351,18 @@ Vamos a crear una plantilla `base.html` donde indicaremos las partes comunes de 
         {% block content %}{% endblock %}
     </body>
     </html>
-    
+    {% endraw %}
 
 Algunas consideraciones:
 
-  1. Hemos creado dos bloques (`title` y `content`) en las plantillas hijas vamos a poder rescribir esos dos bloque para poner el título de la página y el contenido. Podríamos indicar todos los bloques que necesitamos.
-  2. Hemos incluido una hoja de estilo que está en nuestro contenido estático (directorio `static`)
+1. Hemos creado dos bloques (`title` y `content`) en las plantillas hijas vamos a poder rescribir esos dos bloque para poner el título de la página y el contenido. Podríamos indicar todos los bloques que necesitamos.
+2. Hemos incluido una hoja de estilo que está en nuestro contenido estático (directorio `static`)
 
 ## Herencia de plantillas
 
 A continuación, veamos la primera plantilla (`tample1.html`) utilizando la técnica de herencia:
 
+    {% raw %}
     {% extends "base.html" %}
     {% block title %}Hola, que tal {{nombre}}{% endblock %}
     {% block content %}
@@ -367,7 +374,7 @@ A continuación, veamos la primera plantilla (`tample1.html`) utilizando la téc
           <p>No has indicado un nombre</p>
         {% endif %}
     {% endblock %}
-    
+    {% endraw %}
 
 Observamos cómo hemos reescrito los dos bloques.
 
