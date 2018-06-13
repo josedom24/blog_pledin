@@ -15,21 +15,27 @@ tags:
   - Python
 ---
 <table>
-  <tr>
-    <td>
-    </td>
+  <tbody>
+    <tr>
+      <td>
+        <iframe src="https://www.youtube.com/embed/9jah5MnRXU0" width="300" height="169" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </td>
+      
+      <td>
+        <iframe src="https://www.youtube.com/embed/5qxjZ84rtpY" width="300" height="169" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </td>
+    </tr>
     
-    <td>
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-    </td>
-    
-    <td>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        <iframe src="https://www.youtube.com/embed/uhwrDZsUjkw" width="300" height="169" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </td>
+      
+      <td>
+        <iframe src="https://www.youtube.com/embed/35ZwqEoF4Ko" width="300" height="169" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- AddThis Advanced Settings generic via filter on the_content -->
