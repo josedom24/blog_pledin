@@ -62,7 +62,7 @@ Por último reiniciamos el servicio:
 
 ## Pruebas de funcionamiento
 
-  1. Suponemos que tenemos configurado por defecto, por lo tanto los procesos están escuchando en un socket UNIX:
+1. Suponemos que tenemos configurado por defecto, por lo tanto los procesos están escuchando en un socket UNIX:
     
         listen = /run/php/php7.0-fpm.sock
         
@@ -120,7 +120,7 @@ Por último reiniciamos el servicio:
         Hola Mundo!!!       
         
 
-  2. Si suponemos que hemos configurado php-fpm para que escuche en un socket TCP:
+2. Si suponemos que hemos configurado php-fpm para que escuche en un socket TCP:
     
         listen = 127.0.0.1:9000
         
