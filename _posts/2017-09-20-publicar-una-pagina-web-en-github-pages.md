@@ -90,7 +90,7 @@ Las plantillas son ficheros de texto con extensión html. Deben estar guardados 
 
   * La etiqueta más importante es {% raw %}`{{ content }}`{% endraw %} que es sustituida por el contenido que definimos en los ficheros de contenido. 
 * La etiqueta {% raw %}`{{ site.path }}`{% endraw %} será sustituida por el path del repositorio.
-* Además se podrá definir en los ficheros de contenidos distintas variables que podrán ser sustituidas con etiquetas del tipo{{% raw %}`{{ page.nombredevariable }}`{% endraw %}.
+* Además se podrá definir en los ficheros de contenidos distintas variables que podrán ser sustituidas con etiquetas del tipo {% raw %}`{{ page.nombredevariable }}`{% endraw %}.
 
 Todas las referencia a ficheros de hojas de estilo, javascripts o imágenes que se definan en la plantilla deben estar guardados en nuestro repositorio.
 
