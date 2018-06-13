@@ -2,19 +2,19 @@
 id: 1779
 title: IV Semana Informática. Universidad de Almería
 date: 2017-03-07T09:53:06+00:00
-author: admin
-layout: post
+
+
 guid: http://www.josedomingo.org/pledin/?p=1779
 permalink: /2017/03/iv-semana-informatica-universidad-de-almeria/
-categories:
-  - General
+
+
 tags:
   - Cloud Computing
   - Educación
   - OpenStack
 ---
 <p style="text-align: justify;">
-  <a class="thumbnail" href="http://www.josedomingo.org/pledin/wp-content/uploads/2017/02/jornadas.png"><img class="aligncenter size-full wp-image-1788" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/02/jornadas.png" alt="" width="573" height="183" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/02/jornadas.png 573w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/02/jornadas-300x96.png 300w" sizes="(max-width: 573px) 100vw, 573px" /></a>
+  <a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/02/jornadas.png"><img class="aligncenter size-full wp-image-1788" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/02/jornadas.png" alt="" width="573" height="183" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/02/jornadas.png 573w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/02/jornadas-300x96.png 300w" sizes="(max-width: 573px) 100vw, 573px" /></a>
 </p>
 
 <h1 style="text-align: center;">

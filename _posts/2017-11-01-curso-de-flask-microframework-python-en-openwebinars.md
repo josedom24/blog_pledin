@@ -2,12 +2,12 @@
 id: 1869
 title: Curso de Flask microframework python en OpenWebinars
 date: 2017-11-01T21:55:21+00:00
-author: admin
-layout: post
+
+
 guid: https://www.josedomingo.org/pledin/?p=1869
 permalink: /2017/11/curso-de-flask-microframework-python-en-openwebinars/
-categories:
-  - General
+
+
 tags:
   - Cursos
   - Flask

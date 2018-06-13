@@ -2,12 +2,12 @@
 id: 1806
 title: Despliegue de una aplicación Python Bottle en Heroku
 date: 2017-04-06T20:34:51+00:00
-author: admin
-layout: post
+
+
 guid: http://www.josedomingo.org/pledin/?p=1806
 permalink: /2017/04/despliegue-de-una-aplicacion-python-bottle-en-heroku/
-categories:
-  - General
+
+
 tags:
   - bottle
   - Heroku
@@ -15,7 +15,7 @@ tags:
   - Python
 ---
 <p style="text-align: justify;">
-  <a class="thumbnail" href="http://www.josedomingo.org/pledin/wp-content/uploads/2017/04/python.png"><img class="size-full wp-image-1820 aligncenter" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/04/python.png" alt="" width="318" height="159" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/04/python.png 318w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/04/python-300x150.png 300w" sizes="(max-width: 318px) 100vw, 318px" /></a>
+  <a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/04/python.png"><img class="size-full wp-image-1820 aligncenter" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/04/python.png" alt="" width="318" height="159" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/04/python.png 318w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/04/python-300x150.png 300w" sizes="(max-width: 318px) 100vw, 318px" /></a>
 </p>
 
 <p style="text-align: justify;">
@@ -84,7 +84,7 @@ Hit Ctrl-C to quit.</pre>
 ## Creamos una nueva aplicación en Heroku
 
 <p style="text-align: left;">
-  <a class="thumbnail" href="http://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku1.png"><img class="aligncenter size-large wp-image-1805" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku1-1024x496.png" alt="" width="770" height="373" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku1-1024x496.png 1024w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku1-300x145.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku1-768x372.png 768w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku1.png 1137w" sizes="(max-width: 770px) 100vw, 770px" /></a>
+  <a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku1.png"><img class="aligncenter size-large wp-image-1805" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku1-1024x496.png" alt="" width="770" height="373" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku1-1024x496.png 1024w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku1-300x145.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku1-768x372.png 768w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku1.png 1137w" sizes="(max-width: 770px) 100vw, 770px" /></a>
 </p>
 
 <p style="text-align: justify;">
@@ -99,13 +99,13 @@ Hit Ctrl-C to quit.</pre>
   El contenido que vamos a desplegar en nuestro proyecto se va a copiar desde el repositorio donde tenemos nuestra aplicación, para ello desde la pestaña <strong>Deploy </strong>vamos a escoger la opción: <strong>Connect to GitHub. </strong>
 </p>
 
-[<img class="aligncenter size-large wp-image-1804" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku2-1024x427.png" alt="" width="770" height="321" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku2-1024x427.png 1024w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku2-300x125.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku2-768x320.png 768w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku2.png 1195w" sizes="(max-width: 770px) 100vw, 770px" />](http://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku2.png){.thumbnail}
+[<img class="aligncenter size-large wp-image-1804" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku2-1024x427.png" alt="" width="770" height="321" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku2-1024x427.png 1024w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku2-300x125.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku2-768x320.png 768w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku2.png 1195w" sizes="(max-width: 770px) 100vw, 770px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku2.png){.thumbnail}
 
 <p style="text-align: justify;">
   A continuación desde GitHub le tenemos que dar permiso a la aplicación Heroku, para que accede a nuestros repositorios:
 </p>
 
-[<img class="aligncenter size-full wp-image-1803" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku3.png" alt="" width="960" height="628" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku3.png 960w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku3-300x196.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku3-768x502.png 768w" sizes="(max-width: 960px) 100vw, 960px" />](http://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku3.png){.thumbnail} Ahora tenemos que conectar el repositorio donde tenemos nuestra aplicación: [<img class="aligncenter size-large wp-image-1802" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku4-1024x467.png" alt="" width="770" height="351" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku4-1024x467.png 1024w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku4-300x137.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku4-768x350.png 768w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku4.png 1306w" sizes="(max-width: 770px) 100vw, 770px" />](http://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku4.png){.thumbnail}Tenemos a nuestra disposición dos maneras de hacer los despliegues:
+[<img class="aligncenter size-full wp-image-1803" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku3.png" alt="" width="960" height="628" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku3.png 960w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku3-300x196.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku3-768x502.png 768w" sizes="(max-width: 960px) 100vw, 960px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku3.png){.thumbnail} Ahora tenemos que conectar el repositorio donde tenemos nuestra aplicación: [<img class="aligncenter size-large wp-image-1802" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku4-1024x467.png" alt="" width="770" height="351" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku4-1024x467.png 1024w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku4-300x137.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku4-768x350.png 768w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku4.png 1306w" sizes="(max-width: 770px) 100vw, 770px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku4.png){.thumbnail}Tenemos a nuestra disposición dos maneras de hacer los despliegues:
 
 <ul style="text-align: justify;">
   <li>
@@ -116,13 +116,13 @@ Hit Ctrl-C to quit.</pre>
   </li>
 </ul>
 
-[<img class="aligncenter size-large wp-image-1801" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku5-1024x518.png" alt="" width="770" height="390" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku5-1024x518.png 1024w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku5-300x152.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku5-768x389.png 768w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku5.png 1231w" sizes="(max-width: 770px) 100vw, 770px" />](http://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku5.png){.thumbnail}
+[<img class="aligncenter size-large wp-image-1801" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku5-1024x518.png" alt="" width="770" height="390" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku5-1024x518.png 1024w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku5-300x152.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku5-768x389.png 768w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku5.png 1231w" sizes="(max-width: 770px) 100vw, 770px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku5.png){.thumbnail}
 
 <p style="text-align: justify;">
   Veamos un ejemplo de despliegue manual:<code></code>
 </p>
 
- <img class="aligncenter size-large wp-image-1800" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku6-1024x285.png" alt="" width="770" height="214" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku6-1024x285.png 1024w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku6-300x84.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku6-768x214.png 768w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku6.png 1313w" sizes="(max-width: 770px) 100vw, 770px" />Si todo ha ido bien podremos acceder a nuestra aplicación: [<img class="aligncenter size-full wp-image-1799" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku7.png" alt="" width="312" height="138" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku7.png 312w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku7-300x133.png 300w" sizes="(max-width: 312px) 100vw, 312px" />](http://www.josedomingo.org/pledin/wp-content/uploads/2017/03/heroku7.png){.thumbnail}
+ <img class="aligncenter size-large wp-image-1800" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku6-1024x285.png" alt="" width="770" height="214" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku6-1024x285.png 1024w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku6-300x84.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku6-768x214.png 768w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku6.png 1313w" sizes="(max-width: 770px) 100vw, 770px" />Si todo ha ido bien podremos acceder a nuestra aplicación: [<img class="aligncenter size-full wp-image-1799" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku7.png" alt="" width="312" height="138" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku7.png 312w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku7-300x133.png 300w" sizes="(max-width: 312px) 100vw, 312px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/heroku7.png){.thumbnail}
 
 ## Conclusiones
 

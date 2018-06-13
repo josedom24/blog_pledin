@@ -2,12 +2,12 @@
 id: 1831
 title: Curso de infraestructura Cloud con OpenStack. Universidad de Almería
 date: 2017-05-22T08:41:19+00:00
-author: admin
-layout: post
+
+
 guid: http://www.josedomingo.org/pledin/?p=1831
 permalink: /2017/05/curso-de-infraestructura-cloud-con-openstack-universidad-de-almeria/
-categories:
-  - General
+
+
 tags:
   - Cloud Computing
   - Cursos
@@ -16,7 +16,7 @@ tags:
   - OpenShift
   - OpenStack
 ---
-[<img class="aligncenter wp-image-1833" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/05/kubernetes_openstack-1024x479.png" alt="" width="293" height="137" srcset="https://www.josedomingo.org/pledin/wp-content/uploads/2017/05/kubernetes_openstack-1024x479.png 1024w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/05/kubernetes_openstack-300x140.png 300w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/05/kubernetes_openstack-768x359.png 768w, https://www.josedomingo.org/pledin/wp-content/uploads/2017/05/kubernetes_openstack.png 1109w" sizes="(max-width: 293px) 100vw, 293px" />](http://www.josedomingo.org/pledin/wp-content/uploads/2017/05/kubernetes_openstack.png){.thumbnail}
+[<img class="aligncenter wp-image-1833" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/05/kubernetes_openstack-1024x479.png" alt="" width="293" height="137" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/05/kubernetes_openstack-1024x479.png 1024w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/05/kubernetes_openstack-300x140.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/05/kubernetes_openstack-768x359.png 768w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/05/kubernetes_openstack.png 1109w" sizes="(max-width: 293px) 100vw, 293px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/05/kubernetes_openstack.png){.thumbnail}
 
 La pasada semana, junto a mi compañero [@alberto_molina](http://www.twitter.com/alberto_molina) hemos impartido en la Universidad de Almería, un curso sobre infraestructura Cloud, donde hemos tratado temas como la instalación automática y la administración de OpenStack, y la relación entre OpenStack y los contenedores, centrándonos principalmente en Kubernetes. Puedes acceder al curso completo en la siguiente dirección:
 

@@ -2,18 +2,18 @@
 id: 1762
 title: Codificación de caracteres en python 2.X
 date: 2017-02-21T16:17:44+00:00
-author: admin
-layout: post
+
+
 guid: http://www.josedomingo.org/pledin/?p=1762
 permalink: /2017/02/codificacion-de-caracteres-en-python2/
-categories:
-  - General
+
+
 tags:
   - Programación
   - Python
 ---
 <p style="text-align: justify;">
-  <a class="thumbnail" href="http://www.josedomingo.org/pledin/wp-content/uploads/2016/11/bart-simpson-utf8.gif"><img class="aligncenter size-full wp-image-1763" src="https://www.josedomingo.org/pledin/wp-content/uploads/2016/11/bart-simpson-utf8.gif" alt="bart-simpson-utf8" width="657" height="352" /></a>
+  <a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/11/bart-simpson-utf8.gif"><img class="aligncenter size-full wp-image-1763" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/11/bart-simpson-utf8.gif" alt="bart-simpson-utf8" width="657" height="352" /></a>
 </p>
 
 <p style="text-align: justify;">

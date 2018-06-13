@@ -2,12 +2,12 @@
 id: 779
 title: Publicar una página web en Github Pages
 date: 2017-09-20T00:12:03+00:00
-author: admin
-layout: post
+
+
 guid: http://www.josedomingo.org/pledin/?p=779
 permalink: /2017/09/publicar-una-pagina-web-en-github-pages/
-categories:
-  - General
+
+
 tags:
   - GitHub
 ---
@@ -50,7 +50,7 @@ tags:
   Mientras que las páginas de usuario son fáciles de crear, ya que simplemente debemos crear el repositorio y clonarlo en nuestro equipo (git clone) y empezar a crear ficheros que estarán guardados en la rama <strong>master</strong>, las páginas de repositorio pueden ser un poco más complejas <span style="text-decoration: line-through;">ya que hay que crear la nueva rama que tenemos que llamar <strong>gh-pages</strong></span>, siguiendo el manual de <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/">Github Pages </a>los pasos a dar son los siguientes:
 </p>
 
-**Actualización 20/9/2017:** En la configuración del repositorio, podemos escoger donde vamos a guardar nuestra página web: la rama `master`, `gh-pages` (si el repositorio tiene dicha rama) o la carpeta `/cod` de la rama `master`. [<img class="aligncenter size-full wp-image-1844" src="https://www.josedomingo.org/pledin/wp-content/uploads/2013/09/githubpages.png" alt="" width="757" height="431" />](https://www.josedomingo.org/pledin/wp-content/uploads/2013/09/githubpages.png){.thumbnail} En el siguiente ejemplo vamos a crear una rama `gh-pages`, aunque como hemos indicado anteriormente nos serviría la rama `master`:
+**Actualización 20/9/2017:** En la configuración del repositorio, podemos escoger donde vamos a guardar nuestra página web: la rama `master`, `gh-pages` (si el repositorio tiene dicha rama) o la carpeta `/cod` de la rama `master`. [<img class="aligncenter size-full wp-image-1844" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/09/githubpages.png" alt="" width="757" height="431" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/09/githubpages.png){.thumbnail} En el siguiente ejemplo vamos a crear una rama `gh-pages`, aunque como hemos indicado anteriormente nos serviría la rama `master`:
 
 <pre class="brush: bash; gutter: false; first-line: 1">$ git clone https://github.com/<em>user</em>/<em>repository</em>.git
 # Clone our repository
@@ -82,7 +82,7 @@ Para publicar nuestra página, cómo indicabamos anteriormente, sólo tendríamo
 
 **GitHub Pages** seleccionado la rama `gh-page`:
 
-## [<img class="aligncenter size-full wp-image-1845" src="https://www.josedomingo.org/pledin/wp-content/uploads/2013/09/githubpage2.png" alt="" width="757" height="531" />](https://www.josedomingo.org/pledin/wp-content/uploads/2013/09/githubpage2.png){.thumbnail}
+## [<img class="aligncenter size-full wp-image-1845" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/09/githubpage2.png" alt="" width="757" height="531" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2013/09/githubpage2.png){.thumbnail}
 
 ## Cómo podemos construir nuestras páginas web
 

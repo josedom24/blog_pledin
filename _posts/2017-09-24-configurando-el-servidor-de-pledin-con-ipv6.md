@@ -2,17 +2,17 @@
 id: 1849
 title: Configurando el servidor de Pledin con IPv6
 date: 2017-09-24T20:09:59+00:00
-author: admin
-layout: post
+
+
 guid: https://www.josedomingo.org/pledin/?p=1849
 permalink: /2017/09/configurando-el-servidor-de-pledin-con-ipv6/
-categories:
-  - General
+
+
 tags:
   - ipv6
   - Pledin
 ---
-<img class="alignleft wp-image-1851" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/09/ipv6-globe-100731106-large.3x2.jpg" alt="" width="209" height="139" />
+<img class="alignleft wp-image-1851" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ipv6-globe-100731106-large.3x2.jpg" alt="" width="209" height="139" />
 
 <p style="text-align: justify;">
   En estos últimos días he migrado mis páginas personales a un nuevo servidor dedicado de OVH. Anteriormente las tenía alojado en OpenShift con un plan de pago muy asequible, pero con el fin del servicio de la versión 2 de OpenShift y la llegada de la última versión, las condiciones del plan gratuito sólo sirven para pruebas y el plan de pago de la nueva versión no me lo puedo permitir. Una de las cosas que me ha gustado del servidor VPS de OVH es que te asignan una dirección ipv6 global para tu máquina y en este artículo voy a explicar cómo he configurado los diferentes servicios para que mi máquina sea accesible con ipv6.
@@ -22,7 +22,7 @@ tags:
 
 En el panel de control de OVH podemos obtener la IPv6 que nos han asignado para nuestra máquina:
 
-[<img class="size-full wp-image-1859 alignnone" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/09/ovh1.png" alt="" width="357" height="166" />](https://www.josedomingo.org/pledin/wp-content/uploads/2017/09/ovh1.png){.thumbnail}
+[<img class="size-full wp-image-1859 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh1.png" alt="" width="357" height="166" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh1.png){.thumbnail}
 
 Aunque la dirección ipv4 la toma por asignación dinámica, la dirección ipv6 la tenemos que configurar de forma estática en nuestro sistema, por lo tanto editamos el fichero `/etc/network/interfaces` de la siguiente manera:
 
@@ -77,7 +77,7 @@ playerone.josedomingo.org has IPv6 address 2001:41d0:302:2200::1c09</pre>
 
 Si necesito enviar correos electrónicos desde mi servidor es muy recomendable tener definido los registros inversos de nuestras direcciones ip, eso lo podemos hacer desde el panel de control de OVH:
 
-[<img class="alignnone size-full wp-image-1862" src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/09/ovh2.png" alt="" width="199" height="44" />](https://www.josedomingo.org/pledin/wp-content/uploads/2017/09/ovh2.png){.thumbnail}
+[<img class="alignnone size-full wp-image-1862" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh2.png" alt="" width="199" height="44" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh2.png){.thumbnail}
 
 Por lo tanto podemos consultar dicho registro inverso para la dirección ipv6:
 

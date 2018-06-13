@@ -2,17 +2,17 @@
 id: 1885
 title: Vistas (views) en el servidor DNS Bind9
 date: 2017-12-28T14:02:13+00:00
-author: admin
-layout: post
+
+
 guid: https://www.josedomingo.org/pledin/?p=1885
 permalink: /2017/12/vistas-views-en-el-servidor-dns-bind9/
-categories:
-  - General
+
+
 tags:
   - bind9
   - dns
 ---
-[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/12/bind9.png" alt="" width="350" height="200" class="aligncenter size-full wp-image-1891" />](https://www.josedomingo.org/pledin/wp-content/uploads/2017/12/bind9.png){.thumbnail}
+[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/12/bind9.png" alt="" width="350" height="200" class="aligncenter size-full wp-image-1891" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/12/bind9.png){.thumbnail}
   
 En alguna circunstancia nos puede interesar que un mismo nombre que resuelve nuestro DNS devuelva direcciones IP distintas según en que red este conectada el cliente que realiza la consulta. Por ejemplo:
 
@@ -25,7 +25,7 @@ Vamos a ver un ejemplo del uso de vistas (views) en bind9 para configurar dos zo
 
 Hemos creado una instancia en OpenStack con el siguiente esquema de red:
 
-[<img src="https://www.josedomingo.org/pledin/wp-content/uploads/2017/12/os.png" alt="" width="363" height="80" class="alignnone size-full wp-image-1888" />](https://www.josedomingo.org/pledin/wp-content/uploads/2017/12/os.png){.thumbnail}
+[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/12/os.png" alt="" width="363" height="80" class="alignnone size-full wp-image-1888" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/12/os.png){.thumbnail}
 
 La red interna tiene como direccionamiento 10.0.0.0/24 y la red externa 172.22.0.0/16. Vamos a configurar bind9 para que cuando se consulte el nombre del servidor desde la red externa devuelva la ip flotante (172.22.0.129) y cuando la consulta se realice desde la red interna se devuelva la ip fija (10.0.0.13).
 
