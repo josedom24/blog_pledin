@@ -4,12 +4,6 @@ author_profile: true
 classes: wide
 sidebar:
   nav: "all"
-  nav2:
-  - title: "Title"
-    image: http://placehold.it/350x250
-    image_alt: "image"
-    text: "Some text here."
-  - title: "Another Title"
 ---
 
 ![pledin]({{ site.url }}{{ site.baseurl }}/assets/images/logo3.png)
