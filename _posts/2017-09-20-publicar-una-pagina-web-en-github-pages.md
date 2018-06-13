@@ -88,9 +88,9 @@ Por lo tanto una vez que tengo definidas mis plantillas, lo único que tengo que
 
 Las plantillas son ficheros de texto con extensión html. Deben estar guardados en un directorio `_layouts` creado en la raíz de nuestro repositorio. Además del contenido html de las páginas que se van a generar, se pueden indicar <a href="http://jekyllrb.com/docs/templates/">distintas etiquetas </a>que se sustituirán por diferentes valores. Veamos algunas etiquetas:
 
-  * La etiqueta más importante es {{% raw %}}`{{ content }}`{{% endraw %}} que es sustituida por el contenido que definimos en los ficheros de contenido. 
-* La etiqueta {{% raw %}}`{{ site.path }}`{{% endraw %}} será sustituida por el path del repositorio.
-* Además se podrá definir en los ficheros de contenidos distintas variables que podrán ser sustituidas con etiquetas del tipo {{% raw %}}`{{ page.nombredevariable }}`{{% endraw %}}.
+  * La etiqueta más importante es {% raw %}`{{ content }}`{% endraw %} que es sustituida por el contenido que definimos en los ficheros de contenido. 
+* La etiqueta {% raw %}`{{ site.path }}`{% endraw %} será sustituida por el path del repositorio.
+* Además se podrá definir en los ficheros de contenidos distintas variables que podrán ser sustituidas con etiquetas del tipo{{% raw %}`{{ page.nombredevariable }}`{% endraw %}.
 
 Todas las referencia a ficheros de hojas de estilo, javascripts o imágenes que se definan en la plantilla deben estar guardados en nuestro repositorio.
 
@@ -109,7 +109,7 @@ Sin entrar a definir la sintaxis del lenguaje, sí nos vamos fijar en la primera
     tagline: CFGM SMR
     ---
 
-Con la variable layout indicamos el nombre del fichero html que corresponde a la plantilla que se va a usar para generar la página. Además hemos definido dos variables cuyo valor es accesible desde la plantilla con las etiquetas {{% raw %}}`{{ page.title }}`{{% endraw %}} y {{% raw %}}`{{ page.tagline }}`{{% endraw %}}.
+Con la variable layout indicamos el nombre del fichero html que corresponde a la plantilla que se va a usar para generar la página. Además hemos definido dos variables cuyo valor es accesible desde la plantilla con las etiquetas {% raw %}`{{ page.title }}`{% endraw %} y {% raw %}`{{ page.tagline }}`{% endraw %}.
 
 Por último indicar como se accede a las distintas páginas, suponiendo que tenemos definido una página de usuario en la URL `josedom24.github.io`, si tenemos un fichero en la raíz `proyecto.md`, sería accesible con la URL `josedom24.github.io/proyecto`. Si el fichero `proyecto.md` esta dentro de una carpeta llamada `ejemplo`, sería accesible con la URL `josedom24.github.io/ejemplo/proyecto`. De forma similar a como funcionan los servidores web si tenemos un fichero `index.md` no será necesario indicar el nombre en la URL.
 
