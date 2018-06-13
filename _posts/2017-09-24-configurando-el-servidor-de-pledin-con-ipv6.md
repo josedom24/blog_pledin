@@ -20,7 +20,7 @@ En estos últimos días he migrado mis páginas personales a un nuevo servidor d
 
 En el panel de control de OVH podemos obtener la IPv6 que nos han asignado para nuestra máquina:
 
-[<img class="size-full wp-image-1859 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh1.png" alt="" width="357" height="166" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh1.png){.thumbnail}
+[<img class="size-full wp-image-1859 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh1.png" alt="" width="357" height="166" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh1.png)
 
 Aunque la dirección ipv4 la toma por asignación dinámica, la dirección ipv6 la tenemos que configurar de forma estática en nuestro sistema, por lo tanto editamos el fichero `/etc/network/interfaces` de la siguiente manera:
 
@@ -75,7 +75,7 @@ Por lo tanto cómo el nombre de nuestra página web es un alias (registro **CNAM
 
 Si necesito enviar correos electrónicos desde mi servidor es muy recomendable tener definido los registros inversos de nuestras direcciones ip, eso lo podemos hacer desde el panel de control de OVH:
 
-[<img class="alignnone size-full wp-image-1862" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh2.png" alt="" width="199" height="44" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh2.png){.thumbnail}
+[<img class="alignnone size-full wp-image-1862" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh2.png" alt="" width="199" height="44" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/09/ovh2.png)
 
 Por lo tanto podemos consultar dicho registro inverso para la dirección ipv6:
 
