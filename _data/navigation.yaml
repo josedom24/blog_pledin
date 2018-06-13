@@ -10,13 +10,6 @@ main:
   - title: "Acerca de"
     url: /about/
 
-sidebar:
-  - title: "Title"
-    image: http://placehold.it/350x250
-    image_alt: "image"
-    text: "Some text here."
-  - title: "Another Title"
-    text: "More text here."
 
 blog:
   - title: Blog
@@ -51,3 +44,9 @@ all:
     children:
       - title: "Máquinas virtuales para la puesta en marcha de un portal educativo (2006)"
         url: #
+  - title: "Title"
+    image: http://placehold.it/350x250
+    image_alt: "image"
+    text: "Some text here."
+  - title: "Another Title"
+    text: "More text here."
