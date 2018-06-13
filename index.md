@@ -4,7 +4,7 @@ author_profile: true
 classes: wide
   
 sidebar:
-  nav: "all"
+  - nav: "all"
   - title: "Title"
     image: http://placehold.it/350x250
     image_alt: "image"
