@@ -134,7 +134,7 @@ Por último reiniciamos el servicio:
 
 ## Conclusiones
 
-En muchas ocasiones cuando se instala apchache2 o ngninx junto a php-fpm nos cuesta entender como funciona la interpretación del código PHP por medio de php-fpm. en este artículo he tratado de hacer una introducción a este servicio de manera independiente al servidor web para que se entienda un poco mejor. Espero que haya sido de utilidad.
+En muchas ocasiones cuando se instala apache2 o nginx junto a php-fpm nos cuesta entender como funciona la interpretación del código PHP por medio de php-fpm. en este artículo he tratado de hacer una introducción a este servicio de manera independiente al servidor web para que se entienda un poco mejor. Espero que haya sido de utilidad.
 
 <!-- AddThis Advanced Settings generic via filter on the_content -->
 
