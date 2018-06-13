@@ -8,10 +8,10 @@
 $monospace  : "Liberation Mono", Consolas, Monaco, "Lucida Console", monospace;
 $text-color: #24292e;
 $link-color: #0366d6;
-$code-background-color-dark: #fafafa 
+$code-background-color-dark: #fafafa;
 
-$intro-transition  : none;
-$global-transition : none;
+$intro-transition: none;
+$global-transition: none;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
