@@ -13,7 +13,7 @@ tags:
   - Python
   - Web
 ---
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask.png" alt="" width="460" height="180" class="aligncenter size-full wp-image-1919" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask.png){.thumbnail}
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask.png" alt="" width="460" height="180" class="aligncenter size-full wp-image-1919" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask.png)
 
 # Trabajando con peticiones HTTP
 
@@ -44,16 +44,15 @@ Veamos los atributos más importante que nos ofrece el objeto `request`:
             cad+="{}:{}<br/>".format(item,value)
         return cad
     
+* `request.url`: La URL a la que accedemos.
+* `request.path`: La ruta de la URL, quitamos el servidor y los parámetros con información.
+* `request.method`: El método HTTP con el qué hemos accedido.
+* `request.headers`: Las cabeceras de la petición HTTP. Tenemos atributos para acceder a cabeceras en concreto, por ejemplo, `request.user_agent`.
+* `request.form`: Información recibida en el cuerpo de la petición cuando se utiliza el método POST, normalmente se utiliza un formulario HTML para enviar esta información.
+* `request.args`: Parámetros con información indicado en la URL en las peticiones GET.
+* `request.files`: Ficheros para subir al servidor en una petición PUT o POST. 
 
-  * `request.url`: La URL a la que accedemos.
-  * `request.path`: La ruta de la URL, quitamos el servidor y los parámetros con información.
-  * `request.method`: El método HTTP con el qué hemos accedido.
-  * `request.headers`: Las cabeceras de la petición HTTP. Tenemos atributos para acceder a cabeceras en concreto, por ejemplo, `request.user_agent`.
-  * `request.form`: Información recibida en el cuerpo de la petición cuando se utiliza el método POST, normalmente se utiliza un formulario HTML para enviar esta información.
-  * `request.args`: Parámetros con información indicado en la URL en las peticiones GET.
-  * `request.files`: Ficheros para subir al servidor en una petición PUT o POST. [<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask3.png" alt="" width="1442" height="361" class="aligncenter size-full wp-image-1954" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask3.png){.thumbnail}
-
-<!--more-->
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask3.png" alt="" width="1442" height="361" class="aligncenter size-full wp-image-1954" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask3.png)
 
 ## Ejemplo: sumar dos números
 
@@ -72,16 +71,15 @@ Veamos los atributos más importante que nos ofrece el objeto `request`:
                     <input type="submit"/>
                     </form>'''
     
-
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask4.png" alt="" width="481" height="155" class="aligncenter size-full wp-image-1955" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask4.png){.thumbnail}[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask5.png" alt="" width="528" height="104" class="aligncenter size-full wp-image-1956" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask5.png){.thumbnail}
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask4.png" alt="" width="481" height="155" class="aligncenter size-full wp-image-1955" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask4.png)[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask5.png" alt="" width="528" height="104" class="aligncenter size-full wp-image-1956" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask5.png)
 
 # Generando respuestas HTTP, respuestas de error y redirecciones
 
 El decorador `router` gestiona la petición HTTP recibida y crea un objeto `reponse` con la respuesta HTTP: el código de estado, las cabaceras y los datos devueltos. Esta respuesta la prepara a partir de lo que devuelve la función _vista_ ejecutada con cada `route`. Estas funciones pueden devolver tres tipos de datos:
 
-  * Una cadena, o la generación de una plantilla (que veremos posteriormente). Por defecto se indica un código 200 y las cabeceras por defecto.
-  * Un objeto de la clase `response` generado con la función `make_repsonse`, que recibe los datos devueltos, el código de estado y las cabeceras.
-  * Una tupla con los mismos datos: datos, cabeceras y código de respuesta.
+* Una cadena, o la generación de una plantilla (que veremos posteriormente). Por defecto se indica un código 200 y las cabeceras por defecto.
+* Un objeto de la clase `response` generado con la función `make_repsonse`, que recibe los datos devueltos, el código de estado y las cabeceras.
+* Una tupla con los mismos datos: datos, cabeceras y código de respuesta.
 
 ## Ejemplo de respuestas
 
@@ -121,14 +119,13 @@ Si queremos realizar una redicirección HTTP a otra URL utilizamos la función `
     def index():
         return redirect(url_for('return_string'))
     
-
 # Contenido estático
 
 Nuestra página web necesita tener contenido estático: hoja de estilo, ficheros javascript, imágenes, documentos pdf, etc. Para acceder a ellos vamos a utilizar la función `url_for`.
 
 ## ¿Dónde guardamos el contenido estático?
 
-Dentro de nuestro directorio vamos a crear un directorio llamado `static`, donde podemos crear la estructura de directorios adecuada para guardas nuestro contenido estático. Por ejemplo para guardar el CSS, el java script y las imágenes podríamos crear una estrucutra como la siguiente:
+Dentro de nuestro directorio vamos a crear un directorio llamado `static`, donde podemos crear la estructura de directorios adecuada para guardas nuestro contenido estático. Por ejemplo para guardar el CSS, el java script y las imágenes podríamos crear una estructura como la siguiente:
 
     aplicacion
         static
@@ -136,21 +133,18 @@ Dentro de nuestro directorio vamos a crear un directorio llamado `static`, donde
             js
             img
     
-
 ## Acceder al contenido estático
 
 Por ejemplo:
 
     url_for('static', filename='css/style.css')
     
-
-Estariamos creando la ruta para acceder al fichero `style.css` que se encuentra en `static/css`.
+Estaríamos creando la ruta para acceder al fichero `style.css` que se encuentra en `static/css`.
 
 Otro ejemplo:
 
     url_for('static', filename='img/tux.png')
     
-
 Estaríamos creando la ruta para acceder al fichero `tux.png` que se encuentra en `static/img`.
 
 ## Mostrar una imagen
@@ -159,10 +153,9 @@ Estaríamos creando la ruta para acceder al fichero `tux.png` que se encuentra e
     def inicio():
         return '<img src="'+url_for('static', filename='img/tux.png')+'"/>'
     
-
 Y comprobamos que se muestra al acceder a la página:
 
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/img1.png" alt="" width="288" height="370" class="aligncenter size-full wp-image-1958" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/img1.png){.thumbnail}
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/img1.png" alt="" width="288" height="370" class="aligncenter size-full wp-image-1958" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/img1.png)
 
 <!-- AddThis Advanced Settings generic via filter on the_content -->
 
