@@ -16,7 +16,7 @@ tags:
   - OpenShift
   - OpenStack
 ---
-![]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/05/kubernetes_openstack.png)
+![]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/05/kubernetes_openstack-150x150.png)
 
 La pasada semana, junto a mi compañero [@alberto_molina](http://www.twitter.com/alberto_molina) hemos impartido en la Universidad de Almería, un curso sobre infraestructura Cloud, donde hemos tratado temas como la instalación automática y la administración de OpenStack, y la relación entre OpenStack y los contenedores, centrándonos principalmente en Kubernetes. Puedes acceder al curso completo en la siguiente dirección:
 
