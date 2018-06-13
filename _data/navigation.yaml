@@ -1,6 +1,10 @@
 main:
   - title: "Blog"
     url: /blog/
+  - title: "Cursos"
+    url: #
+  - title: "Modulos"
+    url: #
   - title: "Acerca de"
     url: /about/
   
