@@ -5,34 +5,7 @@
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
-
-// https://github.com/mmistakes/minimal-mistakes/issues/1219#issuecomment-326809412
-html {
-    font-size: 12px; // originally 16px
-    @include breakpoint($medium) {
-        font-size: 14px; // originally 18px
-    }
-
-    @include breakpoint($large) {
-        font-size: 16px; // originally 20px
-    }
-
-    @include breakpoint($x-large) {
-        font-size: 18px; // originally 22px
-    }
-}
-
-/* ==========================================================================
-   Variables
-   ========================================================================== */
-
-/*
-   Typography
-   ========================================================================== */
-
-   $doc-font-size: 12 !default;
+$doc-font-size: 16 !default;
 
    /* paragraph indention */
    $paragraph-indent: false !default; // true, false (default)
@@ -179,3 +152,9 @@ html {
    $global-transition: all 0.2s ease-in-out !default;
    $intro-transition: intro 0.3s both !default;
    
+
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+
