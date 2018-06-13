@@ -6,7 +6,8 @@
 @charset "utf-8";
 
 $monospace  : "Liberation Mono", Consolas, Monaco, "Lucida Console", monospace;
-
+$text-color: #24292e;
+$link-color: #0366d6;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
