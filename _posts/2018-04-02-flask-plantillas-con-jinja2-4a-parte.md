@@ -13,7 +13,7 @@ tags:
   - Python
   - Web
 ---
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask.png" alt="" width="460" height="180" class="aligncenter size-full wp-image-1919" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask.png){.thumbnail}
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask.png" alt="" width="460" height="180" class="aligncenter size-full wp-image-1919" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/03/flask.png)
 
 # Plantillas con jinja2
 
@@ -24,6 +24,7 @@ Por dependencias al instalar Flask instalamos jinja2. En esta unidad vamos a est
 ## Una plantilla simple
 
 Veamos un ejemplo para entender como funciona jinja2:
+
     {% raw %}
     from jinja2 import Template
     
