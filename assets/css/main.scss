@@ -12,20 +12,16 @@ $code-background-color: #fafafa;
 $muted-text-color: #8e8b82 !default;
 $primary-color: #343434 !default;
 $border-color: #181102 !default;
-$footer-background-color: #e9dcbe !default;
+$footer-background-color: #6074b1 !default;
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: $text-color !default;
-
-
 $link-color-hover: #0272f1;
 $link-color-visited: #4d96eb;
 $masthead-link-color: $primary-color !default;
 $masthead-link-color-hover: $primary-color !default;
 $navicon-link-color-hover: $primary-color !default;
 
-$intro-transition  : none;
-$global-transition : none;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
