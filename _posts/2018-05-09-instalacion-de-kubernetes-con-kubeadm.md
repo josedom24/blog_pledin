@@ -13,7 +13,7 @@ tags:
   - docker
   - kubernetes
 ---
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/05/name_blue.png" alt="" width="1600" height="237" class="aligncenter size-full wp-image-1988" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/05/name_blue.png){.thumbnail}
+![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/05/name_blue.png" alt="" width="1600" height="237" class="aligncenter size-full wp-image-1988" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/05/name_blue.png)
   
 [Kubernetes](https://kubernetes.io/) es un sistema de código abierto que nos permite despliegues automáticos, escabilidad y gestión de contenedores de aplicaiones. [kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/) es una herramienta que nos permite el despliegue de un cluster de kubernetes de manera sencilla. El cluster lo podemos crear en máquinas físicas o virtuales, en nuestro caso, vamos a usar Debian 9 en 3 máquinas virtuales para realizar la instalación.
 
@@ -25,7 +25,6 @@ Lo primero que hacemos, siguiendo las instrucciones de instalación de [página 
 
     $ sudo apt-get update
     
-
 Instalamos los paquetes que nos permiten usar repositorios `apt` con https:
 
     $ sudo apt-get install \
@@ -35,12 +34,10 @@ Instalamos los paquetes que nos permiten usar repositorios `apt` con https:
          gnupg2 \
          software-properties-common
     
-
 Añadimos las clves GPG oficales de Docker:
 
     $ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
     
-
 Añadimos el repositorio para nuestra versión de Debian:
 
     $ sudo add-apt-repository \
@@ -48,26 +45,23 @@ Añadimos el repositorio para nuestra versión de Debian:
        $(lsb_release -cs) \
        stable"
     
-
 Y por último instalamos docker:
 
     $ sudo apt-get update
     $ sudo apt-get install docker-ce
     
-
 Finalmente comprobamos la versión instalada:
 
     $ docker --version
     Docker version 18.03.1-ce, build 9ee9f40
     
-
 ### Instalación de kubeadm, kubelet and kubectl
 
 Vamos a instalar los siguientes pauqetes en nuestras máquinas:
 
-  * `kubeadm`: Instrucción que nos permite crear el cluster.
-  * `kubelet`: Es el componente de kubernetes que se ejecuta en todos los nodos y es responsable de ejecutar los pods y los contenedores.
-  * `kubectl`: La utilidad de línea de comandos que nos permite controlar el cluster.
+* `kubeadm`: Instrucción que nos permite crear el cluster.
+* `kubelet`: Es el componente de kubernetes que se ejecuta en todos los nodos y es responsable de ejecutar los pods y los contenedores.
+* `kubectl`: La utilidad de línea de comandos que nos permite controlar el cluster.
 
 Para la instalación, seguimos los pasos indicados en la documentación:
 
@@ -80,15 +74,12 @@ Para la instalación, seguimos los pasos indicados en la documentación:
     apt-get install -y kubelet kubeadm kubectl
     
 
-<!--more-->
-
 ## Inicializando el nodo master
 
 En el nodo que vamos a usar como master, ejecutamos la siguiente instrucción como superusuario:
 
     $ kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-cert-extra-sans=172.22.201.15
     
-
 Este comando inicializa el cluster, hemos indicado le CIDR de la red por donde se comunican los nodos del cluster.
 
 > Estoy utilizando como instraestructura tres instancias de OpenStack, es necesario indicar el parámetro `--apiserver-cert-extra-sans` con la IP flotante del master para que el certificado que se genera sea válido para esta ip, y se pueda controlar el cluster desde el exterior.
@@ -112,12 +103,11 @@ Cuando termina muestra un mensaje similar a este:
     
       kubeadm join --token <token> <master-ip>:<master-port>
     
-
 Nos indica tres cosas:
 
-  1. Las instrucciones que tenemos que ejecutar en el master, con un usuario sin privilegios para usar el cliente kubectl y manejar el claster.
-  2. La necesidad de instalar un pod para la gestión de la red.
-  3. Y la instrucción que tenemos que ejecutar en los nodos para añadirlos al cluster. Utilizaremos un token para ello.
+1. Las instrucciones que tenemos que ejecutar en el master, con un usuario sin privilegios para usar el cliente kubectl y manejar el claster.
+2. La necesidad de instalar un pod para la gestión de la red.
+3. Y la instrucción que tenemos que ejecutar en los nodos para añadirlos al cluster. Utilizaremos un token para ello.
 
 ## Instalación del pod para gestionar la red
 
@@ -125,12 +115,10 @@ Antes de ello, en el master con un usuario con privilegios podemos usar el clien
 
     export KUBECONFIG=/etc/kubernetes/admin.conf
     
-
 A continuación tenemos que instalar un pod que nos permita la comunicación por red de los distintos pods que vamos a correr en el cluster. `kubeadm` solo soporta plugins de red CNI (Container Network Interface), que es un proyecto que consiste en crear especificaciones y librerías para configure las redes que interconectan los contenedores. De las distintas alternativas vamos a instalar `Calico`, para ello:
 
     $ kubectl apply -f https://docs.projectcalico.org/v3.0/getting-started/kubernetes/installation/hosted/kubeadm/1.7/calico.yaml
     
-
 Y comprobamos que todos los pods del espacio de nombres `kube-system` están funcionando con normalidad:
 
     $ kubectl get pods -n kube-system
@@ -149,7 +137,6 @@ Y comprobamos que todos los pods del espacio de nombres `kube-system` están fun
     kube-proxy-xqsmg                           1/1          Running   0          1d
     kube-scheduler-k8s-1                       1/1          Running   0          1d
     
-
 ## Uniendo los nodos al cluster
 
 En cada nodo que va a formar parte del cluster tenemos que ejecutar, como superusuario, el comando que nos ofreció el comando `kubeadm` al iniciar el cluster en el master:
@@ -163,7 +150,6 @@ En cada nodo que va a formar parte del cluster tenemos que ejecutar, como superu
     
     Run 'kubectl get nodes' on the master to see this machine join.
     
-
 Y finalmente desde el master podemos obtener los nodos que forman el cluster:
 
     # kubectl get nodes
@@ -172,7 +158,6 @@ Y finalmente desde el master podemos obtener los nodos que forman el cluster:
     k8s-2     Ready     <none>    1d        v1.10.2
     k8s-3     Ready     <none>    1d        v1.10.2
     
-
 ## Acceso desde un cliente externo
 
 Normalmente vamos a interactuar con el cluster desde un clinete externo donde tengamos instaldo `kubectl`. Para instalar `kubectl`, siguiendo las [instrucciones oficiales](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-native-package-management), ejecutamos:
@@ -185,15 +170,14 @@ Normalmente vamos a interactuar con el cluster desde un clinete externo donde te
     apt-get update
     apt-get install -y kubectl
     
-
 Y para configurar el acceso al cluster:
 
-  1. Desde el nodo master damos permisos de lectura al fichero `/etc/kubernetes/admin.conf`:
+1. Desde el nodo master damos permisos de lectura al fichero `/etc/kubernetes/admin.conf`:
     
         chmod 644 /etc/kubernetes/admin.conf
         
 
-  2. Desde el cliente:
+2. Desde el cliente:
     
         export IP_MASTER=172.22.201.15
         sftp debian@${IP_MASTER}
@@ -215,10 +199,10 @@ Y comprobamos que tenemos acceso al cluster:
 
 Si instalamos el cluster en instancias de un servicio cloud de infraestuctura hay que tener en cuanta que los siguientes puertos deben estar accesibles:
 
-  * `80`: Para acceder a los servicios con el controlador `Ingress`.
-  * `443`: Para acceder a los servicios con el controlador `Ingress` y HTTPS.
-  * `6443`: Para acceder a la API de Kubernetes.
-  * `30000-40000`: Para acceder a las aplicaciones con el servicio `NodePort`.
+* `80`: Para acceder a los servicios con el controlador `Ingress`.
+* `443`: Para acceder a los servicios con el controlador `Ingress` y HTTPS.
+* `6443`: Para acceder a la API de Kubernetes.
+* `30000-40000`: Para acceder a las aplicaciones con el servicio `NodePort`.
 
 <!-- AddThis Advanced Settings generic via filter on the_content -->
 
