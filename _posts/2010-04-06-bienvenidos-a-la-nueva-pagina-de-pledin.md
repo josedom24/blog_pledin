@@ -5,8 +5,6 @@ date: 2010-04-06T19:32:15+00:00
 guid: http://www.josedomingo.org/pledin/?p=30
 permalink: /2010/04/bienvenidos-a-la-nueva-pagina-de-pledin/
 tags:
-  
-  - Plataforma
   - Pledin
 ---
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/04/logo_3.gif)
