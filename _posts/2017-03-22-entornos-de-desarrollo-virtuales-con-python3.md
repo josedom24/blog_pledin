@@ -13,7 +13,7 @@ tags:
   - Manuales
   - Python
 ---
-[]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/unnamed.jpg)
+![]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/03/unnamed.jpg)
 
 He comenzado un trabajo de colaboración con [OpenWebinars](https://openwebinars.net/) escribiendo artículos para su blog. El primer artículo que he escrito explica las diferentes formas que tenemos en python3 para crear un entorno virtual de desarrollo. Puedes leer el artículo completo en el blog de OpenWebinars:
 
