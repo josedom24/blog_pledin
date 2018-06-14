@@ -40,6 +40,13 @@ feature_row2:
 feature_row3:
   - image_path: http://via.placeholder.com/100x100
     alt: ""
+    title: "Últimos posts..."
+    excerpt: ''
+    #url: "#test-link"
+    #btn_label: "Read More"
+    #btn_class: "btn--primary"
+  - image_path: http://via.placeholder.com/100x100
+    alt: ""
     title: ""
     excerpt: ''
     #url: "#test-link"
@@ -59,6 +66,8 @@ feature_row4:
 
 {% include feature_row %}
 
+{% include feature_row id="feature_row3" %}
+
 Últimos posts...
 <ul>
   {% for post in site.posts offset: 0 limit: 5%}
@@ -71,7 +80,7 @@ feature_row4:
   {% endfor %}
 </ul>
 
-{% include feature_row id="feature_row3" type="right" %}
+
 
 ![](https://www.josedomingo.org/pledin/wp-content/uploads/2010/04/88x31.png){: .align-center}
 {% include feature_row id="feature_row4" type="center" %}
