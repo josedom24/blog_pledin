@@ -53,12 +53,12 @@ feature_row3:
     #btn_label: "Read More"
     #btn_class: "btn--primary"
 feature_row4:
-  - image_path: 
+  - image_path: https://www.josedomingo.org/pledin/wp-content/uploads/2010/04/88x31.png
     alt: "cc"
     title: "Licencia"
-    excerpt: 'Licencia Puedes copiar y modificar todos los contenidos, pero siempre respetando los términos de la licencia CC-BY-SA.'
+    excerpt: 'Licencia: Puedes copiar y modificar todos los contenidos, pero siempre respetando los términos de la licencia CC-BY-SA.'
     url: "https://creativecommons.org/licenses/by-sa/3.0/es/"
-    btn_label: "Licencia"
+    btn_label: "Ver"
     btn_class: "btn--primary"
 ---
 
@@ -77,6 +77,8 @@ feature_row4:
     </li>
   {% endfor %}
 </ul>
+
+
 
 ![](https://www.josedomingo.org/pledin/wp-content/uploads/2010/04/88x31.png){: .align-center}
 {% include feature_row id="feature_row4" type="center" %}
