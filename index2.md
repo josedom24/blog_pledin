@@ -18,7 +18,7 @@ feature_row:
     alt: "placeholder image 1"
     title: "Blog"
     excerpt: "Accede a las entradas de mi blog donde escribo de Informática y Educación."
-  - image_path: http://via.placeholder.com/300x200
+  - image_path: /assets/images/cursos.png
     #image_caption: "Prueba..."
     alt: ""
     title: "Cursos"
@@ -26,7 +26,7 @@ feature_row:
     #url: "#test-link"
     #btn_label: "Read More"
     #btn_class: "btn--primary"
-  - image_path: http://via.placeholder.com/300x200
+  - image_path: /assets/images/modulos.png
     title: "Módulos"
     excerpt: "Accede a los contenido de los módulos de FP que estoy impartiendo en la actualidad."
 feature_row2:
