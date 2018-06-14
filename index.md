@@ -4,7 +4,7 @@ layout: splash
 date: 2016-03-23T11:48:41-04:00
 header:
   overlay_color: "#000"
-  overlay_filter: "0.8"
+  overlay_filter: "0.6"
   overlay_image: /assets/images/ord.png
   #cta_label: "Download"
   #cta_url: "https://github.com/mmistakes/minimal-mistakes/"
@@ -17,6 +17,9 @@ feature_row:
     alt: "placeholder image 1"
     title: "Blog"
     excerpt: "Accede a las entradas de mi blog donde escribo de Informática y Educación."
+    url: "/blog/"
+    btn_label: "Blog"
+    btn_class: "btn--primary"
   - image_path: /assets/images/cursos.png
     #image_caption: "Prueba..."
     alt: ""
