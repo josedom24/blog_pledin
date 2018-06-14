@@ -14,11 +14,11 @@ excerpt: "Plataforma Educativa Informática"
 intro: 
   - excerpt: 'Bienvenidos a la página personal de José Domingo Muñoz Rodríguez, aquí podrás encontrar...'
 feature_row:
-  - image_path: http://via.placeholder.com/250x150
+  - image_path: http://via.placeholder.com/300x200
     alt: "placeholder image 1"
     title: "Blog"
     excerpt: "Accede a las entradas de mi blog donde escribo de Informática y Educación."
-  - image_path: http://via.placeholder.com/250x150
+  - image_path: http://via.placeholder.com/300x200
     #image_caption: "Prueba..."
     alt: ""
     title: "Cursos"
@@ -26,7 +26,7 @@ feature_row:
     #url: "#test-link"
     #btn_label: "Read More"
     #btn_class: "btn--primary"
-  - image_path: http://via.placeholder.com/250x150
+  - image_path: http://via.placeholder.com/300x200
     title: "Módulos"
     excerpt: "Accede a los contenido de los módulos de FP que estoy impartiendo en la actualidad."
 feature_row2:
