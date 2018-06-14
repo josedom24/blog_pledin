@@ -20,16 +20,17 @@ feature_row:
     btn_label: "Blog"
     btn_class: "btn--primary"
   - image_path: /assets/images/cursos.png
-    #image_caption: "Prueba..."
     alt: ""
-    title: "Cursos"
     excerpt: "Accede a los materiales de los cursos que he impartido."
-    #url: "#test-link"
-    #btn_label: "Read More"
-    #btn_class: "btn--primary"
+    url: "#"
+    btn_label: "Cursos"
+    btn_class: "btn--primary"
   - image_path: /assets/images/modulos.png
-    title: "Módulos"
+    alt: ""
     excerpt: "Accede a los contenido de los módulos de FP que estoy impartiendo en la actualidad."
+    url: "#"
+    btn_label: "Módulos"
+    btn_class: "btn--primary"
 feature_row2:
   - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     alt: "placeholder image 2"
