@@ -69,7 +69,7 @@ collections:
     permalink: /:collection/:path
   cursos:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:path
 
 defaults:
   # _posts
