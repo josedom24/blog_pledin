@@ -60,7 +60,7 @@ author:
   bio    : "Plataforma Educativa Informática"
   email  : "josedom24@gmail.com"
   uri    : "https://www.josedomingo.org"
-  home   : "Utrera, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
+  #home   : "Utrera, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
 
 
 collections:
@@ -76,6 +76,7 @@ defaults:
     values:
       layout: single
       classes: wide
+      author_profile: true
       read_time: true
       comments: true
       share: true
