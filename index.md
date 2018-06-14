@@ -1,5 +1,5 @@
 ---
-title: "PLEDIN"
+title: "Plataforma Educativa Informática"
 layout: splash
 date: 2016-03-23T11:48:41-04:00
 header:
@@ -9,7 +9,7 @@ header:
   #cta_label: "Download"
   #cta_url: "https://github.com/mmistakes/minimal-mistakes/"
   caption: "Servidores IESGN"
-excerpt: "Plataforma Educativa Informática"
+excerpt: ""
 intro: 
   - excerpt: 'Bienvenidos a la página personal de José Domingo Muñoz Rodríguez, aquí podrás encontrar...'
 feature_row:
