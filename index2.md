@@ -66,7 +66,7 @@ feature_row4:
 
 {% include feature_row %}
 
-## Últimos posts...
+**Últimos posts...**
 <ul>
   {% for post in site.posts offset: 0 limit: 5%}
     <li>
