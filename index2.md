@@ -14,7 +14,7 @@ excerpt: "Plataforma Educativa Informática"
 intro: 
   - excerpt: 'Bienvenidos a la página personal de José Domingo Muñoz Rodríguez, aquí podrás encontrar...'
 feature_row:
-  - image_path: assets/images/blog.png
+  - image_path: /assets/images/blog.png
     alt: "placeholder image 1"
     title: "Blog"
     excerpt: "Accede a las entradas de mi blog donde escribo de Informática y Educación."
