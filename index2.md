@@ -78,7 +78,4 @@ feature_row4:
   {% endfor %}
 </ul>
 
-
-
-![](https://www.josedomingo.org/pledin/wp-content/uploads/2010/04/88x31.png){: .align-center}
 {% include feature_row id="feature_row4" type="center" %}
