@@ -38,13 +38,25 @@ feature_row2:
     btn_label: "Read More"
     btn_class: "btn--primary"
 feature_row3:
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Right Aligned"
-    excerpt: ''
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
+  - image_path: http://via.placeholder.com/250x150
+    alt: ""
+    title: "Últimos post..."
+    excerpt: '''
+    Últimos posts...
+<ul>
+  {% for post in site.posts offset: 0 limit: 5%}
+    <li>
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
+    </li>
+  {% endfor %}
+</ul>
+    '''
+    #url: "#test-link"
+    #btn_label: "Read More"
+    #btn_class: "btn--primary"
 feature_row4:
   - image_path:
     alt: "cc"
@@ -59,17 +71,7 @@ feature_row4:
 
 {% include feature_row %}
 
-Últimos posts...
-<ul>
-  {% for post in site.posts offset: 0 limit: 5%}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
-    </li>
-  {% endfor %}
-</ul>
+
 {% include feature_row id="feature_row3" type="right" %}
 
 ![](https://www.josedomingo.org/pledin/wp-content/uploads/2010/04/88x31.png){: .align-center}
