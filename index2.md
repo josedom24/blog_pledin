@@ -19,8 +19,8 @@ feature_row:
     title: "Blog"
     excerpt: "Accede a las entradas de mi blog donde escribo de Informática y Educación."
   - image_path: http://via.placeholder.com/250x150
-    image_caption: "Prueba..."
-    alt: "placeholder image 2"
+    #image_caption: "Prueba..."
+    alt: ""
     title: "Cursos"
     excerpt: "Accede a los materiales de los cursos que he impartido."
     #url: "#test-link"
