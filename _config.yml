@@ -74,7 +74,6 @@ defaults:
       path: ""
       type: posts
     values:
-      author_profile: false
       layout: single
       classes: wide
       read_time: true
