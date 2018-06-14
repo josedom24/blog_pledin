@@ -41,7 +41,19 @@ feature_row3:
   - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     alt: "placeholder image 2"
     title: "Placeholder Image Right Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Right aligned with `type="right"`'
+    excerpt: '''
+    Últimos posts...
+<ul>
+  {% for post in site.posts offset: 0 limit: 5%}
+    <li>
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
+    </li>
+  {% endfor %}
+</ul>
+    '''
     url: "#test-link"
     btn_label: "Read More"
     btn_class: "btn--primary"
@@ -55,21 +67,11 @@ feature_row4:
     btn_class: "btn--primary"
 ---
 
-{% include feature_row id="intro" type="center" %}
+
 
 {% include feature_row %}
 
-Últimos posts...
-<ul>
-  {% for post in site.posts offset: 0 limit: 5%}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
-    </li>
-  {% endfor %}
-</ul>
+{% include feature_row3 id="intro" type="left" %}
 
 ![](https://www.josedomingo.org/pledin/wp-content/uploads/2010/04/88x31.png){: .align-center}
 {% include feature_row id="feature_row4" type="center" %}
