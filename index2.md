@@ -38,14 +38,14 @@ feature_row2:
     btn_label: "Read More"
     btn_class: "btn--primary"
 feature_row3:
-  - image_path: http://via.placeholder.com/100x100
+  - image_path: 
     alt: ""
     title: "Últimos posts..."
     excerpt: ''
     #url: "#test-link"
     #btn_label: "Read More"
     #btn_class: "btn--primary"
-  - image_path: http://via.placeholder.com/100x100
+  - image_path: 
     alt: ""
     title: ""
     excerpt: ''
