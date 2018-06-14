@@ -67,6 +67,9 @@ collections:
   modulos:
     output: true
     permalink: /:collection/:path
+  cursos:
+    output: true
+    permalink: /:collection/:path
 
 defaults:
   # _posts
@@ -88,6 +91,17 @@ defaults:
   - scope:
       path: ""
       type: modulos
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      toc: true
+  
+  - scope:
+      path: ""
+      type: cursos
     values:
       layout: single
       read_time: false
