@@ -38,22 +38,10 @@ feature_row2:
     btn_label: "Read More"
     btn_class: "btn--primary"
 feature_row3:
-  - image_path: http://via.placeholder.com/250x150
+  - image_path: http://via.placeholder.com/100x100
     alt: ""
-    title: "Últimos post..."
-    excerpt: '''
-    Últimos posts...
-<ul>
-  {% for post in site.posts offset: 0 limit: 5%}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
-    </li>
-  {% endfor %}
-</ul>
-    '''
+    title: ""
+    excerpt: ''
     #url: "#test-link"
     #btn_label: "Read More"
     #btn_class: "btn--primary"
@@ -71,6 +59,17 @@ feature_row4:
 
 {% include feature_row %}
 
+Últimos posts...
+<ul>
+  {% for post in site.posts offset: 0 limit: 5%}
+    <li>
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
+    </li>
+  {% endfor %}
+</ul>
 
 {% include feature_row id="feature_row3" type="right" %}
 
