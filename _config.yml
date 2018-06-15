@@ -60,6 +60,8 @@ author:
   bio    : "Plataforma Educativa Informática"
   email  : "josedom24@gmail.com"
   uri    : "https://www.josedomingo.org"
+  github : "josedom24"
+  twitter : "pledin_jd"
   #home   : "Utrera, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
 
 
