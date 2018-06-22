@@ -61,16 +61,17 @@ author:
   email  : "josedom24@gmail.com"
   uri    : "https://www.josedomingo.org"
   github : "josedom24"
+  gitlab : "josedom24"
   twitter : "pledin_jd"
   location: "Utrera, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
   
-collections:
-  modulos:
-    output: true
-    permalink: /:collection/:path
-  cursos:
-    output: true
-    permalink: /:collection/:path
+#collections:
+#  modulos:
+#    output: true
+#    permalink: /:collection/:path
+#  cursos:
+#    output: true
+#    permalink: /:collection/:path
 
 defaults:
   # _posts
@@ -89,29 +90,29 @@ defaults:
         nav: "blog"
           
       
-  - scope:
-      path: ""
-      type: modulos
-    values:
-      layout: single
-      read_time: false
-      author_profile: false
-      share: false
-      comments: false
-      toc: true
-  
-  - scope:
-      path: ""
-      type: cursos
-    values:
-      layout: single
-      read_time: false
-      author_profile: false
-      share: false
-      comments: false
-      toc: true
-      sidebar:
-        nav: "cursos"
-     
-
+#  - scope:
+#      path: ""
+#      type: modulos
+#    values:
+#      layout: single
+#      read_time: false
+#      author_profile: false
+#      share: false
+#      comments: false
+#      toc: true
+#  
+#  - scope:
+#      path: ""
+#      type: cursos
+#    values:
+#      layout: single
+#      read_time: false
+#      author_profile: false
+#      share: false
+#      comments: false
+#      toc: true
+#      sidebar:
+#        nav: "cursos"
+#     
+#
 
