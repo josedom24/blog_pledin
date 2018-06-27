@@ -1,2 +1,1 @@
-git pull
-bundle exec jekyll b -d _site/pledin --incremental
+ssh -p2222 -A root@playerone.josedomingo.org ./blog.sh
