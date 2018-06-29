@@ -67,8 +67,10 @@ feature_row4:
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
-
-**Últimos posts...**
+<table>
+<tr>
+<td>
+<h2>Últimos posts...</h2>
 <ul>
   {% for post in site.posts offset: 0 limit: 5%}
     <li>
@@ -79,5 +81,23 @@ feature_row4:
     </li>
   {% endfor %}
 </ul>
+
+
+</td>
+<td>
+<h2>Últimos cursos...</h2>
+<ul>
+  {% for post in site.posts offset: 0 limit: 5%}
+    <li>
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
+    </li>
+  {% endfor %}
+</ul>
+</td>
+</tr>
+</table>
 
 {% include feature_row id="feature_row4" type="center" %}
