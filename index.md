@@ -86,11 +86,13 @@ feature_row4:
 </td>
 <td>
 <h2>Últimos cursos...</h2>
-  * [Introducción a la programación con pseudocódigo (2018)]()
-  * [Curso Apache2.4 (2018)]()
-  * [Curso sobre Flask (Miniframework python para desarrollar páginas web) (2017)](cursos/flask/)
-  * [Curso de python3 (2017)](cursos/python3/)
-  * [Curso de infraestructura Cloud con OpenStack. Universidad de Almería (2017) (github)](https://github.com/iesgn/curso-ual17)
+<ul>
+  <li><a href="">Introducción a la programación con pseudocódigo (2018)</a></li>
+  <li><a href="">Curso Apache2.4 (2018)</a></li>
+  <li><a href="cursos/flask/">Curso sobre Flask (Miniframework python para desarrollar páginas web) (2017)</a></li>
+  <li><a href="cursos/python3/">Curso de python3 (2017)</a></li>
+  <li><a href="https://github.com/iesgn/curso-ual17">Curso de infraestructura Cloud con OpenStack. Universidad de Almería (2017) (github)</a></li>
+  </ul>
 </td>
 </tr>
 </table>
