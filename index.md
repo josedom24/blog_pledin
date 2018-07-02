@@ -22,13 +22,13 @@ feature_row:
   - image_path: /assets/images/cursos.png
     alt: ""
     excerpt: "Accede a los materiales de los cursos que he impartido."
-    url: "#"
+    url: "http://plataforma2.josedomingo.org"
     btn_label: "Cursos"
     btn_class: "btn--primary"
   - image_path: /assets/images/modulos.png
     alt: ""
     excerpt: "Accede a los contenido de los módulos de FP que estoy impartiendo en la actualidad."
-    url: "#"
+    url: "http://fp.josedomingo.org"
     btn_label: "Módulos"
     btn_class: "btn--primary"
 feature_row2:
@@ -86,16 +86,11 @@ feature_row4:
 </td>
 <td>
 <h2>Últimos cursos...</h2>
-<ul>
-  {% for post in site.posts offset: 0 limit: 5%}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
-    </li>
-  {% endfor %}
-</ul>
+  * [Introducción a la programación con pseudocódigo (2018)]()
+  * [Curso Apache2.4 (2018)]()
+  * [Curso sobre Flask (Miniframework python para desarrollar páginas web) (2017)](cursos/flask/)
+  * [Curso de python3 (2017)](cursos/python3/)
+  * [Curso de infraestructura Cloud con OpenStack. Universidad de Almería (2017) (github)](https://github.com/iesgn/curso-ual17)
 </td>
 </tr>
 </table>
