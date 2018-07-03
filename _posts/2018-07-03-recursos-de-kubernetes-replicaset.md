@@ -1,14 +1,14 @@
 ---
 title: 'Recursos de Kubernetes: ReplicaSet'
 date: 2018-07-03T12:05:00+00:00
-permalink: /2018/06/recursos-de-kubernetes-recplicatset/
+permalink: /2018/07/recursos-de-kubernetes-recplicatset/
 tags:
   - Cloud Computing
   - kubernetes
 ---
 # Recursos de Kubernetes: ReplicaSet
 
-[`ReplicaSet`](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) es un recurso de Kubernetes que asegura que siempre se ejecute un número de replicas de un pod determinado. Por lo tanto, nos asegura que un conjunto de pods siempre estñan funcionando y disponibles. Nos proporciona las siguientes características:
+[`ReplicaSet`](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) es un recurso de Kubernetes que asegura que siempre se ejecute un número de replicas de un pod determinado. Por lo tanto, nos asegura que un conjunto de pods siempre están funcionando y disponibles. Nos proporciona las siguientes características:
 
 * Que no haya caída del servicio
 * Tolerancia a errores
