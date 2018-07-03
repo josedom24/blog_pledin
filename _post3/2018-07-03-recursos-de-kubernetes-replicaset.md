@@ -1,7 +1,6 @@
 ---
 id: 2001
 title: 'Recursos de Kubernetes: ReplicaSet'
-date: 2018-07-03T18:36:07+00:00
 
 
 guid: https://www.josedomingo.org/pledin/?p=2001
