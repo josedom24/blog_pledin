@@ -24,7 +24,7 @@ feature_row:
     excerpt: "Accede a los materiales de los cursos que he impartido."
     url: "http://plataforma2.josedomingo.org"
     btn_label: "Cursos"
-    btn_class: "btn--primary"
+    btn_class: "btn--primary center"
   - image_path: /assets/images/modulos.png
     alt: ""
     excerpt: "Accede a los contenido de los módulos de FP que estoy impartiendo en la actualidad."
