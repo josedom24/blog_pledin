@@ -17,20 +17,20 @@ feature_row:
     alt: ""
     excerpt: "Accede a las entradas de mi blog donde escribo de Informática y Educación."
     url: "/blog/"
-    btn_label: "Blog"
-    btn_class: "btn"
+    btn_label: "Blog Pledin"
+    btn_class: "btn--primary btn--large"
   - image_path: /assets/images/cursos.png
     alt: ""
     excerpt: "Accede a los materiales de los cursos que he impartido."
     url: "http://plataforma2.josedomingo.org"
-    btn_label: "Cursos"
-    btn_class: "btn"
+    btn_label: "Cursos Pledin"
+    btn_class: "btn--primary btn--large"
   - image_path: /assets/images/modulos.png
     alt: ""
     excerpt: "Accede a los contenido de los módulos de FP que estoy impartiendo en la actualidad."
     url: "http://fp.josedomingo.org"
-    btn_label: "Módulos"
-    btn_class: "btn"
+    btn_label: "Módulos de FP"
+    btn_class: "btn--primary btn--large"
 feature_row2:
   - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     alt: "placeholder image 2"
