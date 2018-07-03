@@ -1,7 +1,13 @@
 ---
+id: 2001
 title: 'Recursos de Kubernetes: ReplicaSet'
-date: 2018-07-03T12:05:00+00:00
-permalink: /2018/07/recursos-de-kubernetes-replicatset/
+date: 2018-06-04T18:36:07+00:00
+
+
+guid: https://www.josedomingo.org/pledin/?p=2001
+permalink: /2018/06/recursos-de-kubernetes-replicaset/
+
+
 tags:
   - Cloud Computing
   - kubernetes
