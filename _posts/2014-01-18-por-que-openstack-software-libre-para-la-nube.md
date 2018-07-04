@@ -21,7 +21,4 @@ tags:
 <iframe src="//www.youtube.com/embed/3m5LeyI7Bss" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
 
 
-
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include comentarios.html comments=site.data.comments.openstack %}
