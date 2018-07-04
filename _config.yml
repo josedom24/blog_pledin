@@ -81,5 +81,10 @@ defaults:
       related: true
       sidebar:
         nav: "blog"
-          
+
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "pledin"
+
       
