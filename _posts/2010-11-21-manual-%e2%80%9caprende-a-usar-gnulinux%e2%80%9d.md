@@ -22,6 +22,4 @@ tags:
   Lo añado también a la <a href="http://www.josedomingo.org/web/mod/data/view.php?id=1670">biblioteca de libros libres</a>.
 </p>
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include comentarios.html comments=site.data.comments.linux %}
