@@ -66,3 +66,5 @@ Ahora aparece el 2.6.39-2, elegimos el de nuestra arquitectura (en mi caso amd64
 Quiero dar las gracias a mi compañero <a href="http://albertomolina.wordpress.com/">Alberto</a> que me ha ayudado en la parte final.
   
 Espero que os sirva.
+
+{% include comentarios.html comments=site.data.comments.dell %}
