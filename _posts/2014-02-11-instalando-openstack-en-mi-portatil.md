@@ -139,4 +139,4 @@ Primero tenemos que entrar a una máquina virtual, por ejemplo el controlador:
     Warning: Permanently added '10.4.10.101' (RSA) to the list of known hosts.
     $
 
-{% include comentarios.html comments=site.data.comments.aopenstack2 %}
+{% include comentarios.html comments=site.data.comments.openstack2 %}
