@@ -330,3 +330,5 @@ Si vamos ahora a `http://localhost/alfresco` veremos, por fin, la página de alf
 Recomiendo que en los últimos pasos de la instalación se vayan monitorizando los ficheros de logs: catalina.out y alfresco.log. Si surge algún error la mejor manera de solucionar es buscar en internet donde he encontrado mucha información sobre la instalación de alfresco. Espero quele sirva a alguien.
 
 Un saludo.
+
+{% include comentarios.html comments=site.data.comments.alfresco %}

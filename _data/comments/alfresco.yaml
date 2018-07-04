@@ -1,0 +1,14 @@
+- author: Luis Miguel Cabezas
+  date: 18 enero, 2012 at 12:40 pm
+  text: "Buenas, genial el artículo. Muy claro e intuitivo.<br/>
+Sigo los pasos poco a poco y con cuidado, pero al iniciar tomcat alfresco con inicia. En cambio share si puedo verlo.<br/>
+Viendo el log de Catalina creo que es un problema con el Conector de MySQL, pero no se muy bien como corregirlo.<br/>
+¿Alguna idea?<br/>
+Un saludo."
+
+- author: José Domingo Muñoz
+  date: 19 enero, 2012 at 4:11 pm
+  text: "Hola,<br/>
+llevo algunos días buscando información y no se donde puede estar el fallo. Te sugiero que copies el conector directamente en /var/lib/tomcat6/webapps/alfresco/WEB-INF/lib y comprueba si funciona.<br/>
+Espero qhe sirva de algo.<br/>
+Un saludo y gracias por escribir."
