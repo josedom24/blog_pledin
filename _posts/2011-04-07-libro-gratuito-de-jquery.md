@@ -33,6 +33,5 @@ Entre los temas que se ven en este libro, están los conceptos básicos, eventos
   <a href="http://librojquery.com/">Fundamentos de jQuery</a>
 </h1>
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
 
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include comentarios.html comments=site.data.comments.jquery %}
