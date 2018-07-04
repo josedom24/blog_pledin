@@ -1,5 +1,7 @@
 Options FollowSymLinks MultiViews
 RewriteEngine On
 
+RewiteRule ^/$ http://www2.josedomingo.org/pledin/
+
 RewriteCond %{QUERY_STRING} id=65
 RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=16 [R,L]
