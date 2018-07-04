@@ -28,6 +28,5 @@ tags:
   Y, ¿qué es captcha?, <strong>Captcha</strong> es el acrónimo de <strong>Completely Automated Public Turing test to tell Computers and Humans Apart</strong> (<strong>Prueba de Turing pública y automática para diferenciar máquinas y humanos</strong>). Se trata de una prueba desafío-respuesta utilizada en computación para determinar cuándo el usuario es o no humano. Utilizando este sistema nos aseguramos que el que escribe el comentario es una persona. Hay muchos plugins para insertar un sistema captcha en Wordprees, yo he utilizado el plugin <a href="http://wordpress.org/extend/plugins/si-captcha-for-wordpress/"><strong>SI CAPTCHA Anti-Spam</strong></a>.
 </p>
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
 
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include comentarios.html comments=site.data.comments.wordpress %}
