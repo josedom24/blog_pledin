@@ -103,20 +103,7 @@ Por último si borramos un `ReplicaSet` se borraran todos los pods asociados:
     No resources found.
 
 El uso del recurso `ReplicaSet` sustituye al uso del recurso [`ReplicaController`](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/), más concretamente el uso de `Deployment` que define un `ReplicaSet`.
-<section class="page__share">
-     <h4 class="page__share-title">Comentarios antiguos</h4>
-     
-{% for comment in site.data.comments.comentarios %}
-  <div class="comment notice--info">
-      <span class="comment_author">
-        <strong>{{ comment.author }}</strong>
-      </span>
-      <span class="comment_date">
-        ({{ comment.date  | date: "%d-%m-%Y" }})
-      </span>
-    <div>
-      {{ comment.text }}
-    </div>
-  </div>
-{% endfor %}
-</section>
+
+{% include comentarios.html comments=site.data.comments.comentarios %}
+
+
