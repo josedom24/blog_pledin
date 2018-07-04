@@ -41,6 +41,5 @@ tags:
   <a href="http://wwwhatsnew.com/2010/07/06/algunos-excelentes-buscadores-para-disenadores-web/">Fuente</a>
 </p>
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
 
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include comentarios.html comments=site.data.comments.buscadores %}
