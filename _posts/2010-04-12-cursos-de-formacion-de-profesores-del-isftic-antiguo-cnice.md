@@ -28,6 +28,5 @@ En la [Plataforma Educativa](http://www.josedomingo.org/web/), podéis encontrar
   <span style="font-size: medium;"><a href="http://www.josedomingo.org/web/mod/resource/view.php?id=1646">Cursos de Formación de Profesores del ISFTIC (antiguo CNICE)</a><br /> </span>
 </h4>
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
 
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include comentarios.html comments=site.data.comments.cursos %}
