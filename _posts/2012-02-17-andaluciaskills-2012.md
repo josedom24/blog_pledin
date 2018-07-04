@@ -31,6 +31,5 @@ Para más información:
   *  [WorldSkills Londres 2011](http://www.juntadeandalucia.es/educacion/formacionprofesionalindex.php/andaluciaskills/andaluciaskills-2012/1942-worldskills-londres-2011)
   *  [Spainskills 2011](http://www.juntadeandalucia.es/educacion/formacionprofesionalindex.php/andaluciaskills/andaluciaskills-2012/1817-anticipo-sobre-spainskills-2011)
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
 
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include comentarios.html comments=site.data.comments.skill %}
