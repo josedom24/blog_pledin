@@ -23,3 +23,5 @@ Si cualquier material o documento colgado en esta página no tiene la licencia n
 Espero que os guste y que os sea útil, si quereis colaborar con este proyecto o simplemente hacerme cualquier comentario, por favor, [escríbeme](mailto:clasinfo@gmail.com).
 
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/images/logo3.png)
+
+{% include comentarios.html comments=site.data.comments.presentacion %}
