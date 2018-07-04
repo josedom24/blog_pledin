@@ -31,4 +31,5 @@ tags:
   <p style="text-align: justify;">
     <!-- AddThis Advanced Settings generic via filter on the_content -->
     
-    <!-- AddThis Share Buttons generic via filter on the_content -->
+
+{% include comentarios.html comments=site.data.comments.planetix %}
