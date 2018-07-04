@@ -106,7 +106,7 @@ El uso del recurso `ReplicaSet` sustituye al uso del recurso [`ReplicaController
 <section class="page__share">
      <h4 class="page__share-title">Comentarios antiguos</h4>
      
-{% for comment in site.data.comments.{{comenatios}} %}
+{% for comment in site.data.comments.{{comentarios}} %}
   <div class="comment notice--info">
       <span class="comment_author">
         <strong>{{ comment.author }}</strong>
