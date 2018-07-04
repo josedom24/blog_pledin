@@ -139,6 +139,4 @@ Primero tenemos que entrar a una máquina virtual, por ejemplo el controlador:
     Warning: Permanently added '10.4.10.101' (RSA) to the list of known hosts.
     $
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include comentarios.html comments=site.data.comments.aopenstack2 %}
