@@ -107,15 +107,15 @@ El uso del recurso `ReplicaSet` sustituye al uso del recurso [`ReplicaController
      
 {% for comment in site.data.comments.rs %}
   <div class="comment notice--info">
-    <div class="comment_header">
       <span class="comment_author">
-        {{ comment.author }}
+        <strong>{{ comment.author }}</strong>
       </span>
       <span class="comment_date">
-        {{ comment.date  | date: "%Y-%m-%d" }}
+        ({{ comment.date  | date: "%d-%m-%Y" }})
       </span>
     </div>
     <div>
+      <br/>
       {{ comment.text }}
     </div>
   </div>
