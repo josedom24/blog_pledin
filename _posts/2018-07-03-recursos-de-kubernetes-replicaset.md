@@ -113,9 +113,7 @@ El uso del recurso `ReplicaSet` sustituye al uso del recurso [`ReplicaController
       <span class="comment_date">
         ({{ comment.date  | date: "%d-%m-%Y" }})
       </span>
-    </div>
     <div>
-      <br/>
       {{ comment.text }}
     </div>
   </div>
