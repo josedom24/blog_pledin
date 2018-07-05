@@ -15,7 +15,7 @@ RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/cour
 RewriteCond %{QUERY_STRING} id=31
 RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=8 [R,L]
 RewriteCond %{QUERY_STRING} id=43
-RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=9 [R,L]
+RewriteRule ^web/course/view.php$ http://plataforma2.josedomingo.org/pledin/course/view.php?id=9 [R,L]
 RewriteCond %{QUERY_STRING} id=46
 RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=10 [R,L]
 RewriteCond %{QUERY_STRING} id=48
