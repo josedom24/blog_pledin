@@ -44,9 +44,68 @@ RewriteCond %{QUERY_STRING} id=41
 RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=23 [R,L]
 
 
+RewriteCond %{QUERY_STRING} id=2
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=2 [R,L]
+RewriteCond %{QUERY_STRING} id=40
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=3 [R,L]
+RewriteCond %{QUERY_STRING} id=39
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=4 [R,L]
+RewriteCond %{QUERY_STRING} id=38
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=5 [R,L]
+RewriteCond %{QUERY_STRING} id=17
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=6 [R,L]
+RewriteCond %{QUERY_STRING} id=34
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=7 [R,L]
+RewriteCond %{QUERY_STRING} id=56
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=8 [R,L]
+RewriteCond %{QUERY_STRING} id=58
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=9 [R,L]
+RewriteCond %{QUERY_STRING} id=53
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=10 [R,L]
+RewriteCond %{QUERY_STRING} id=52
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=11 [R,L]
+RewriteCond %{QUERY_STRING} id=50
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=12 [R,L]
+RewriteCond %{QUERY_STRING} id=49
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=13 [R,L]
+RewriteCond %{QUERY_STRING} id=5
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=14 [R,L]
+RewriteCond %{QUERY_STRING} id=6
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=15 [R,L]
+RewriteCond %{QUERY_STRING} id=12
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=16 [R,L]
+RewriteCond %{QUERY_STRING} id=14
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=17 [R,L]
+RewriteCond %{QUERY_STRING} id=20
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=18 [R,L]
+RewriteCond %{QUERY_STRING} id=21
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=19 [R,L]
+RewriteCond %{QUERY_STRING} id=37
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=20 [R,L]
+RewriteCond %{QUERY_STRING} id=26
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=21 [R,L]
+RewriteCond %{QUERY_STRING} id=10
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=22 [R,L]
+RewriteCond %{QUERY_STRING} id=9
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=25 [R,L]
+RewriteCond %{QUERY_STRING} id=15
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=27 [R,L]
+RewriteCond %{QUERY_STRING} id=27
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=28 [R,L]
+RewriteCond %{QUERY_STRING} id=44
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=31 [R,L]
+RewriteCond %{QUERY_STRING} id=22
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=32 [R,L]
+RewriteCond %{QUERY_STRING} id=42
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=33 [R,L]
+RewriteCond %{QUERY_STRING} id=13
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=34 [R,L]
+RewriteCond %{QUERY_STRING} id=25
+RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=35 [R,L]
+
 RewriteRule ^$ http://www2.josedomingo.org/pledin/ [L]
 RewriteRule ^web/$ http://www2.josedomingo.org/pledin/ [L]
 RewriteRule ^web/course/$ http://www2.josedomingo.org/pledin/ [L]
-RewriteRule ^web/course/view.php$ http://www2.josedomingo.org/pledin/ [L]
+RewriteRule ^web/course/view.php$ http://www2.josedomingo.org/pledin/? [L]
 
 
