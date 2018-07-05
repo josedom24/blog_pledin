@@ -3,6 +3,50 @@ RewriteEngine On
 
 
 RewriteCond %{QUERY_STRING} id=65
-RewriteRule ^/web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=16 [R,L]
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=16 [R,L]
+RewriteCond %{QUERY_STRING} id=4
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=4 [R,L]
+RewriteCond %{QUERY_STRING} id=18
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=5 [R,L]
+RewriteCond %{QUERY_STRING} id=23
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=6 [R,L]
+RewriteCond %{QUERY_STRING} id=28
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=7 [R,L]
+RewriteCond %{QUERY_STRING} id=31
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=8 [R,L]
+RewriteCond %{QUERY_STRING} id=43
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=9 [R,L]
+RewriteCond %{QUERY_STRING} id=46
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=10 [R,L]
+RewriteCond %{QUERY_STRING} id=48
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=11 [R,L]
+RewriteCond %{QUERY_STRING} id=51
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=12 [R,L]
+RewriteCond %{QUERY_STRING} id=60
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=13 [R,L]
+RewriteCond %{QUERY_STRING} id=63
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=14 [R,L]
+RewriteCond %{QUERY_STRING} id=64
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=15 [R,L]
+RewriteCond %{QUERY_STRING} id=66
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=17 [R,L]
+RewriteCond %{QUERY_STRING} id=67
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=18 [R,L]
+RewriteCond %{QUERY_STRING} id=68
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=19 [R,L]
+RewriteCond %{QUERY_STRING} id=69
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=20 [R,L]
+RewriteCond %{QUERY_STRING} id=70
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=21 [R,L]
+RewriteCond %{QUERY_STRING} id=71
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=22 [R,L]
+RewriteCond %{QUERY_STRING} id=41
+RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=23 [R,L]
+
 
 RewriteRule ^$ http://www2.josedomingo.org/pledin/ [L]
+RewriteRule ^web/$ http://www2.josedomingo.org/pledin/ [L]
+RewriteRule ^web/course/$ http://www2.josedomingo.org/pledin/ [L]
+RewriteRule ^web/course/view.php$ http://www2.josedomingo.org/pledin/ [L]
+
+
