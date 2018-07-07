@@ -71,6 +71,10 @@ feature_row4:
 <tr>
 <td>
 <h2>Últimos posts...</h2>
+{% for post in site.posts limit:1 %}
+    {{ post.title }}
+    {{ post.content }}
+{% endfor %}
 <ul>
   {% for post in site.posts offset: 0 limit: 6%}
     <li>
