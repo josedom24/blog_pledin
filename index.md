@@ -74,7 +74,7 @@ feature_row4:
           {% if post.title %}<h2 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h2>{% endif %}
         </header>
       <section class="page__content" itemprop="text">
-        {{ post.content|truncatewords:400}}
+        {{ post.excerpt}}
         <a href="{{post.url}}>Seguir leyendo...</a>
       </section>
   </div>
