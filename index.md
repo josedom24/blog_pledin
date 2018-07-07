@@ -67,14 +67,25 @@ feature_row4:
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
+{% for post in site.posts limit:1 %}
+<div class="page__inner-wrap">
+        <header>
+          {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+        </header>
+      <section class="page__content" itemprop="text">
+        {{ post.content }}
+      </section>
+  </div>
+
+
+  
+{% endfor %}
+
+
 <table>
 <tr>
 <td>
 <h2>Últimos posts...</h2>
-{% for post in site.posts limit:1 %}
-    {{ post.title }}
-    {{ post.content }}
-{% endfor %}
 <ul>
   {% for post in site.posts offset: 0 limit: 6%}
     <li>
