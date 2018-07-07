@@ -67,13 +67,13 @@ feature_row4:
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
-{% for post in site.posts limit:1 %}
+{% for post in site.posts limit:3 %}
 <div class="page__inner-wrap">
         <header>
           {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
         </header>
       <section class="page__content" itemprop="text">
-        {{ post.content }}
+        {{ post.content|truncatewords:50 | strip_html }}
       </section>
   </div>
 
