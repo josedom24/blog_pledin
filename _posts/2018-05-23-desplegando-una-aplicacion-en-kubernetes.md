@@ -23,6 +23,8 @@ En este escenario tenemos los siguientes elementos:
 * Un número de servidores de bases de datos (**backend**).
 * Un balanceador de carga interno que reparte el acceso a las bases de datos.
 
+<!--more-->
+
 El escenario anterior se podría montar en Kubernetes de la siguiente forma:
 
 [<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/05/deploy2.png" alt="" width="754" height="388" class="aligncenter size-full wp-image-1996" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/05/deploy2.png)

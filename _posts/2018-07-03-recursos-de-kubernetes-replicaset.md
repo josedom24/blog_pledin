@@ -16,6 +16,8 @@ comentarios: rs
 
 ![rs]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/07/rs.png)
 
+<!--more-->
+
 ## Definición yaml de un ReplicaSet
 
 Vamos a ver un ejemplo de definición de ReplicaSet en el fichero [`nginx-rs.yaml`](ejemplo/nginx/nginx-rs.yaml):

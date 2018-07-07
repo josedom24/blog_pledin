@@ -75,7 +75,7 @@ feature_row4:
         </header>
       <section class="page__content" itemprop="text">
         {{ post.excerpt}}
-        <a href="{{ site.baseurl }}{{post.url}}">Seguir leyendo...</a>
+        <a href="{{ site.baseurl }}{{post.url}}">Seguir leyendo...</a><br/><hr/>
       </section>
   </div>
 

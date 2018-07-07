@@ -16,6 +16,8 @@ La unidad más pequeña de kubernetes son los [`Pods`](https://kubernetes.io/doc
 
 ![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/06/pod.png" alt="" width="960" height="384" class="aligncenter size-full wp-image-2002" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/06/pod.png)
 
+<!--more-->
+
 Por lo tanto, aunque Kubernetes es un orquestador de contenedores, la unidad mínima de ejecución son los pods:
 
 * Si seguimos el principio de _un proceso por contenedor_, nos evitamos tener sistemas (como máquinas virtuales) ejecutando docenas de procesos, 
