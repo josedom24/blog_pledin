@@ -71,15 +71,13 @@ feature_row4:
 {% for post in site.posts limit:3 %}
 <div class="page__inner-wrap">
         <header>
-          {% if post.title %}<h2 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h2>{% endif %}
+          {% if post.title %}<a href="{{ site.baseurl }}{{post.url}}"><h2 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h2></a>{% endif %}
         </header>
       <section class="page__content" itemprop="text">
         {{ post.excerpt}}
         <a href="{{ site.baseurl }}{{post.url}}">Seguir leyendo...</a><br/><hr/>
       </section>
   </div>
-
-
   
 {% endfor %}
 
@@ -87,7 +85,7 @@ feature_row4:
 <table>
 <tr>
 <td>
-<h2>Más posts...</h2>
+<h2 id="page-title" class="page__title" itemprop="headline">Más posts...</h2>
 <ul>
   {% for post in site.posts offset: 3 limit: 6%}
     <li>
@@ -102,7 +100,7 @@ feature_row4:
 
 </td>
 <td>
-<h2>Últimos cursos...</h2>
+<h2 id="page-title" class="page__title" itemprop="headline">Últimos cursos...</h2>
 <ul>
   <li><a href="http://plataforma2.josedomingo.org/pledin/cursos/programacion/">Introducción a la programación con pseudocódigo (2018)</a></li>
   <li><a href="http://plataforma2.josedomingo.org/pledin/cursos/apache24/">Curso Apache2.4 (2018)</a></li>
