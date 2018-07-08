@@ -73,20 +73,20 @@ feature_row4:
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
           
 </div>
+<div class="page__inner-wrap">
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1><hr/>
 {% for post in site.posts limit:3 %}
-<div class="page__inner-wrap">
-        <header>
-          {% if post.title %}<h2 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h2>{% endif %}
+
+   <header>
+       {% if post.title %}<h2 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h2>{% endif %}
         </header>
       <section class="page__content" itemprop="text">
         {{ post.excerpt}}
         <a href="{{ site.baseurl }}{{post.url}}">Seguir leyendo...</a><br/><hr/>
       </section>
-  </div>
   
 {% endfor %}
-
+</div>
 </div>
 
 <table>
