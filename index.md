@@ -67,6 +67,12 @@ feature_row4:
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
+<div id="main" role="main">
+<div class="sidebar sticky">
+            <a class="twitter-timeline"  href="https://twitter.com/Pledin_JD" data-widget-id="310016635949940736">Tweets por el @Pledin_JD.</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
+</div>
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1><hr/>
 {% for post in site.posts limit:3 %}
 <div class="page__inner-wrap">
@@ -81,6 +87,7 @@ feature_row4:
   
 {% endfor %}
 
+</div>
 
 <table>
 <tr>
