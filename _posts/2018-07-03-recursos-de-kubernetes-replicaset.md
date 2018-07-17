@@ -19,7 +19,7 @@ tags:
 
 ## Definición yaml de un ReplicaSet
 
-Vamos a ver un ejemplo de definición de ReplicaSet en el fichero [`nginx-rs.yaml`](ejemplo/nginx/nginx-rs.yaml):
+Vamos a ver un ejemplo de definición de ReplicaSet en el fichero `nginx-rs.yaml`:
 
     apiVersion: extensions/v1beta1
     kind: ReplicaSet

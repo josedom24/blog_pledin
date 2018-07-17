@@ -19,7 +19,7 @@ tags:
 
 ## Definición yaml de un Deployment
 
-Vamos a ver un ejemplo de definición de un `Deployment` en el fichero [`nginx-deployment.yaml`](ejemplo/nginx/nginx-deployment.yaml):
+Vamos a ver un ejemplo de definición de un `Deployment` en el fichero `nginx-deployment.yaml`:
 
     apiVersion: extensions/v1beta1
     kind: Deployment
