@@ -143,7 +143,7 @@ Los `Labels` me van a permitir seleccionar un recurso determinado, por ejemplo p
     NAME      READY     STATUS    RESTARTS   AGE
     nginx     1/1       Running   0          13m
     
-También podemos visualizar los valores delos `labels` como una nueva columna:
+También podemos visualizar los valores de los `labels` como una nueva columna:
 
     kubectl get pods -Lservice
     NAME      READY     STATUS    RESTARTS   AGE       SERVICE
