@@ -22,4 +22,4 @@ Empece a escribir en la página en octubre de 2005. Al principio decidí elegir 
 
 ![2008]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/28042008-rect.png)
 
-<center>[Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/28042008.png)</center>
+[Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/28042008.png)
