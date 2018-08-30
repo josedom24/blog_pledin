@@ -23,3 +23,18 @@ Empece a escribir en la página en octubre de 2005. Al principio decidí elegir 
 ![2008]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/28042008-rect.png)
 
 [Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/28042008.png)
+
+Al poco tiempo decidí que tener la página en un servidor personal me daba muchos dolores de cabeza, y en noviembre de 2008 migre la página a un servicio de hosting compartido con la empresa CDMON. Y en abril de 2010 decidí el cambio de la Moodle al Wordpress, en realidad mantuve las dos páginas:
+
+* `www.josedomingo.org`: Estaría creada con el Wordpress y serviría de blog personal donde podía escribir mis artículos.
+* `plataforma.josedomingo.org`: seguiría siendo la moodle pero sólo para guardar los cursos que iba impartiendo.
+
+De esta manera en 2010 y 2011 las páginas se veían de esta manera:
+
+![blog]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/05092010-rect.png)
+
+[Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/05092010.png)
+
+![plataforma]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/29052011-rect.png)
+
+[Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/29052011.png)
