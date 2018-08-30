@@ -1,7 +1,6 @@
 ---
-id: 2001
 title: 'Bienvenidos a PLEDIN 3.0'
-date: 2018-09-01T12:00:00+00:00
+date: 2018-08-30T10:00:00+00:00
 
 tags:
   - Pledin
