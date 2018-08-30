@@ -1,7 +1,7 @@
 ---
 title: 'Bienvenidos a PLEDIN 3.0'
 date: 2018-08-30T10:00:00+00:00
-
+permalink: /2018/08/bienvenidos-a-pledin30/
 tags:
   - Pledin
 ---
