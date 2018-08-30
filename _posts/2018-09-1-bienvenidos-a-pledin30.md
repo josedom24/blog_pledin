@@ -18,4 +18,4 @@ Por todas estas razones os presento la nueva página de PLEDIN desarrollada con 
 
 ## Un poco de historia
 
-Empece a escribir en la página en octubre de 2005. Al principio decidí elegir una moodle para realizar la página, y empece a escribir artículos y a colgar los materiales y cursos que iba encontrando o generando. En esta primera etapa la página estaba alojada en mi ordenador personal de mi casa y recuerdo que lo pasaba muy mal cada vez que se iba la luz o tenía cualquier problema con el ordenador. Podéis ver una captura de pantalla 
+Empece a escribir en la página en octubre de 2005. Al principio decidí elegir una moodle para realizar la página, y empece a escribir artículos y a colgar los materiales y cursos que iba encontrando o generando. En esta primera etapa la página estaba alojada en mi ordenador personal de mi casa y recuerdo que lo pasaba muy mal cada vez que se iba la luz o tenía cualquier problema con el ordenador. Podéis ver una captura de pantalla
