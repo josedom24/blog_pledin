@@ -38,3 +38,27 @@ De esta manera en 2010 y 2011 las páginas se veían de esta manera:
 ![plataforma]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/29052011-rect.png)
 
 [Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/29052011.png)
+
+La plataforma se podía ver en 2012 de la siguiente manera:
+
+![plataforma]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/24112012-rect.png)
+
+[Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/24112012.png)
+
+Y el blog en el año 2014 se veía así:
+
+![blog]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/2014-rect.png)
+
+[Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/2014.png)
+
+En diciembre de 2014 hice otro cambio importante: la migración desde un servidor hosting compartido a un servicio de cloud computing PaaS: OpenShift. La versión anterior de OpenShift nos ofrecía una capa de servicio gratuita muy adecuada para tener alojadas páginas pequeñas, sólo me hizo falta contratar más almacenamiento. Durante estos años cambié otra vez los temas de las páginas, que son los que han tenido hasta la actualidad:
+
+![blog]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/2015-rect.png)
+
+[Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/2015.png)
+
+![plataforma]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/17092016-rect.png)
+
+[Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/17092016.png)
+
+A mediados de 2016 se anunció la nueva versión de OpenShift y por consiguiente el cierre de los servicios ofrecidos por la versión anterior. La nueva versión no ofrecía una capa gratuita tan interesante como la anterior y por lo tanto había que buscar un nuevo alojamiento para las páginas. En noviembre de 2016 me decidir por contratar un servidor dedicado que es donde actualmente se encuentran alojadas las páginas.
