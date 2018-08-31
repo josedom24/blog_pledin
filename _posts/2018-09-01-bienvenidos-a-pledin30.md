@@ -16,6 +16,8 @@ Por todas estas razones os presento la nueva página de PLEDIN desarrollada con 
 * La copia de seguridad ya la tengo con el uso del sistema de control de versiones, pero si quiero hacer la copia de la página sólo tengo que guardar los ficheros del directorio donde se aloja.
 * La puesta en producción es muy sencilla y se puede automatizar de una forma simple.
 
+<!--more-->
+
 ## Un poco de historia
 
 Empece a escribir en la página en octubre de 2005. Al principio decidí elegir una moodle para realizar la página, y empece a escribir artículos y a colgar los materiales y cursos que iba encontrando o generando. En esta primera etapa la página estaba alojada en mi ordenador personal de mi casa y recuerdo que lo pasaba muy mal cada vez que se iba la luz o tenía cualquier problema con el ordenador. Podéis ver una captura de pantalla de la página en abril de 2008:
@@ -62,3 +64,26 @@ En diciembre de 2014 hice otro cambio importante: la migración desde un servido
 [Ver pantalla completa]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/09/17092016.png)
 
 A mediados de 2016 se anunció la nueva versión de OpenShift y por consiguiente el cierre de los servicios ofrecidos por la versión anterior. La nueva versión no ofrecía una capa gratuita tan interesante como la anterior y por lo tanto había que buscar un nuevo alojamiento para las páginas. En noviembre de 2016 me decidir por contratar un servidor dedicado que es donde actualmente se encuentran alojadas las páginas.
+
+## El nuevo blog
+
+como comentaba anteriormente he desarrollado las nuevas páginas con Jekyll, he usado el tema [Minimal Mistake](https://mmistakes.github.io/minimal-mistakes/) que nos da muchos opciones de configuración y que a mí me gusta mucho. 
+
+Al acceder a la nueva web encontramos una página principal desde donde podemos acceder a los distintos sitios: al blog PLEDIN ([www.josedomingo.org/pledin/blog/](http://www.josedomingo.org/pledin/blog/)), a la plataforma con los curso ([plataforma.josedomingo.org](http://plataforma2.josedomingo.org/pledin/)) y a los contenidos de los módulos de Formación Profesional que voy a impartir este año (este apartado lo estrenaré en los próximos días).
+
+Para realizar la migración de los posts he usado el plgin de WordPress: [WordPress2Jekyll](https://es.wordpress.org/plugins/wp2jekyll/) que me ha permitido generar de forma automática los fichero MarkDown con el contenido de los diferentes posts.
+
+Además he configurado Jekyll para que las URL de acceso a las distintas páginas e imágenes sean los mismos, con lo que no voy a tener enlaces rotos, y los posibles enlaces que haya en otras páginas sigan funcionando.
+
+Aunque mi blog no tenía muchos comentarios, los he migrado también a fichero MarkDown y he hecho una modificación en el layout de las páginas donde se muestran los posts para añadir los comentarios.
+
+## La nueva plataforma de cursos
+
+También he migrado los contenidos de la moodle, a la nueva [plataforma Pledin](https://mmistakes.github.io/minimal-mistakes/). Esta migración ha costado un poco más y no encontraba herramientas que lo hicieran de forma automática.
+
+De esta manera me he creado un pequeño programa: [moodle2md](https://github.com/josedom24/moodle2md) que me permite coger una copia de seguridad de un curso de moodle y convertir sus contenidos en fichero MarkDown, además de extraer los ficheros e imágenes del curso. Posteriormente he tenido que editar los ficheros para adaptarlos un poco, pero los resultados han sido muy satisfactorios.
+
+Otro problema que he solucionado es la redirección de las URL de la moodle a la nueva página. En el repositorio podeís encontrar el fichero `reqrite.py` que genera las reglas de reescrituras para el módulo `rewrite` de Apache2 para que todos los recursos de un curso tengan una regla que me lleve a las nuevas URL. Por ejemplo si accedemos a la URL de la moodle: [https://plataforma.josedomingo.org/pledin/mod/resource/view.php?id=1635](https://plataforma.josedomingo.org/pledin/mod/resource/view.php?id=1635) accederemos al documento pdf que se encuntra en nuestra nueva plataforma.
+
+Bueno ha sido un trabajo un poco complejo pero espero que el resultado os guste. Un saludo a todos.
+
