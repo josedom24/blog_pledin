@@ -28,8 +28,8 @@ feature_row:
   - image_path: /assets/images/modulos.png
     alt: ""
     excerpt: "Accede a los contenido de los módulos de FP que estoy impartiendo en la actualidad."
-    url: "http://fp.josedomingo.org"
-    btn_label: "Módulos de FP"
+    url: "#"
+    btn_label: "En construcción..."
     btn_class: "btn--primary btn--small"
 feature_row2:
   - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
@@ -118,7 +118,7 @@ feature_row4:
    <a class="twitter-timeline"  href="https://twitter.com/Pledin_JD" data-widget-id="310016635949940736">Tweets por el @Pledin_JD.</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </td>
-<td><h2>Revistas Informáticas</h2></td>
+<td><h2></h2></td>
 </tr>
 </table>
 
