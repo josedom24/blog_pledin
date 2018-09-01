@@ -115,7 +115,7 @@ feature_row4:
 <table>
 <tr>
 
-<td width="50%"><h2>Blogroll</h2>
+<td style="width: 259px; vertical-align:top"><h2>Blogroll</h2>
 <ul>
   <li><a href="http://www.gonzalonazareno.org">Gonzalo Nazareno</a></li>
   <li><a href="https://albertomolina.wordpress.com/">Desde lo alto del cerro</a></li>
