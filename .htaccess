@@ -103,9 +103,9 @@ RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=34
 RewriteCond %{QUERY_STRING} id=25$
 RewriteRule ^web/course/view.php$ http://pledin.gnomio.com/course/view.php?id=35 [R,L]
 
-RewriteRule ^$ http://www2.josedomingo.org/pledin/ [L]
-RewriteRule ^web/$ http://www2.josedomingo.org/pledin/ [L]
-RewriteRule ^web/course/$ http://www2.josedomingo.org/pledin/ [L]
-RewriteRule ^web/course/view.php$ http://www2.josedomingo.org/pledin/? [L]
+RewriteRule ^$ https://www.josedomingo.org/pledin/ [L]
+RewriteRule ^web/$ https://www.josedomingo.org/pledin/ [L]
+RewriteRule ^web/course/$ https://www.josedomingo.org/pledin/ [L]
+RewriteRule ^web/course/view.php$ https://www.josedomingo.org/pledin/? [L]
 
 
