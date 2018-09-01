@@ -114,10 +114,7 @@ feature_row4:
 </table>
 <table>
 <tr>
-<td>
-   <a class="twitter-timeline"  href="https://twitter.com/Pledin_JD" data-widget-id="310016635949940736">Tweets por el @Pledin_JD.</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</td>
+
 <td><h2>Blogroll</h2>
 <ul>
   <li><a href="http://www.gonzalonazareno.org">Gonzalo Nazareno</a></li>
@@ -125,6 +122,10 @@ feature_row4:
   <li><a href="http://ral-arturo.org/">ral-arturo.org/</a></li>
   <li><a href="https://www.linuxarena.net/">Linuxarena/</a></li>
 </ul>
+</td>
+<td>
+   <a class="twitter-timeline"  href="https://twitter.com/Pledin_JD" data-widget-id="310016635949940736">Tweets por el @Pledin_JD.</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </td>
 </tr>
 </table>
