@@ -23,7 +23,7 @@ feature_row:
     alt: ""
     excerpt: "Accede a los materiales de los cursos que he impartido."
     url: "https://plataforma.josedomingo.org"
-    btn_label: "Cursos Pledin"
+    btn_label: "Plataforma Pledin"
     btn_class: "btn--primary btn--small"
   - image_path: /assets/images/modulos.png
     alt: ""
