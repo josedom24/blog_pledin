@@ -6,7 +6,7 @@ tags:
   - Python
 ---
 
-![python3](img/python.png)
+![python3](https://plataforma.josedomingo.org/pledin/cursos/python3/img/python.png)
 
 Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.
 
