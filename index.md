@@ -28,8 +28,8 @@ feature_row:
   - image_path: /assets/images/modulos.png
     alt: ""
     excerpt: "Accede a los contenido de los módulos de FP que estoy impartiendo en la actualidad."
-    url: "#"
-    btn_label: "En construcción..."
+    url: "https://fp..josedomingo.org"
+    btn_label: "Módulos FP"
     btn_class: "btn--primary btn--small"
 feature_row2:
   - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
