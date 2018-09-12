@@ -14,7 +14,7 @@ Se trata de un lenguaje de programación multiparadigma, ya que soporta orientac
 
 Los contenidos del curso al que podrás acceder en la Plataforma Pledin forman parte de un curso que he impartido para [OpenWebinars](https://openwebinars.net/cursos/python-3/) en mayo de 2017.
 
-[Accede al curso de Python3](https://plataforma.josedomingo.org/pledin/cursos/python3/)
+## [Accede al curso de Python3](https://plataforma.josedomingo.org/pledin/cursos/python3/)
 {: .text-center}
 
 Puedes obtener todo el contenido del curso en el repositorio [GitHub](https://github.com/josedom24/curso_python3).
