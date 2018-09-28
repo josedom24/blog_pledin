@@ -105,7 +105,8 @@ feature_row4:
 <!--
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/programacion/">Introducción a la programación con pseudocódigo (2018)</a></li>
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/apache24/">Curso Apache2.4 (2018)</a></li>
-  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/flask/">Curso sobre Flask (Miniframework python para desarrollar páginas web) (2017)</a></li>-->
+  -->
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/flask/">Curso sobre Flask (Miniframework python para desarrollar páginas web) (2017)</a></li>
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/">Curso de python3 (2017)</a></li>
   <li><a href="https://github.com/iesgn/curso-ual17">Curso de infraestructura Cloud con OpenStack. Universidad de Almería (2017) (github)</a></li>
   <li><a href="http://iesgn.github.io/emergya/">Curso OpenStack (2016) (github.io)</a></li>
