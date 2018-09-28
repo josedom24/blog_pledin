@@ -111,7 +111,6 @@ feature_row4:
   <li><a href="https://github.com/iesgn/curso-ual17">Curso de infraestructura Cloud con OpenStack. Universidad de Almería (2017) (github)</a></li>
   <li><a href="http://iesgn.github.io/emergya/">Curso OpenStack (2016) (github.io)</a></li>
   <li><a href="http://iesgn.github.io/cloud3/">Introducción al Cloud Computing con OpenStack y OpenShift (2015) (github.io)</a></li>
-  <li><a href="http://iesgn.github.io/cloud2/">Administración de infraestructura en la nube con OpenStack (2015) (github.io)</a></li>
   <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
   </ul>
 </td>
