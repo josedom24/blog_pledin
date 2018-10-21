@@ -25,13 +25,14 @@ github_username:  josedom24
 permalink: /:year/:month/:title/
 paginate_path: /blog/page:num
 timezone: Europe/Madrid
-atom_feed: https://www.josedomingo.org/pledin/feed/index.xml
 # Build settings
 markdown: kramdown
 theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
 
+feed:
+  path: /feed/index.xml
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
