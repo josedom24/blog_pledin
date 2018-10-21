@@ -33,6 +33,8 @@ plugins:
 
 feed:
   path: /feed/index.xml
+atom_feed:
+  path: https://www.josedomingo.org/pledin/feed/feed.xml
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
