@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /report*.html$
+
+Sitemap: https://www.josedomingo.org/pledin/sitemap.xml
+
