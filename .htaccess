@@ -1,8 +1,6 @@
 Options FollowSymLinks MultiViews
 RewriteEngine On
 
-RewriteRule ^pledin/feed/$  https://www.josedomingo.org/pledin/feed.xml
-
 RewriteCond %{QUERY_STRING} id=65$
 RewriteRule ^web/course/view.php$ https://plataforma.josedomingo.org/pledin/course/view.php?id=16 [R,L]
 RewriteCond %{QUERY_STRING} id=4$
