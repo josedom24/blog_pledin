@@ -204,6 +204,4 @@ Si instalamos el cluster en instancias de un servicio cloud de infraestuctura ha
 * `6443`: Para acceder a la API de Kubernetes.
 * `30000-40000`: Para acceder a las aplicaciones con el servicio `NodePort`.
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include indice_kubernetes.html%}

@@ -157,6 +157,4 @@ Podemos modificar las características de cualquier recurso de kubernetes una ve
     
 Se abrirá un editor de texto donde veremos el fichero Yaml que define el recurso, podemos ver todos los parámetros que se han definido con valores por defecto, al no tenerlo definidos en el fichero de creación del pod `nginx.yaml`.
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include indice_kubernetes.html%}

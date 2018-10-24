@@ -105,6 +105,4 @@ Por último si borramos un `ReplicaSet` se borraran todos los pods asociados:
 
 El uso del recurso `ReplicaSet` sustituye al uso del recurso [`ReplicaController`](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/), más concretamente el uso de `Deployment` que define un `ReplicaSet`.
 
-
-
-
+{% include indice_kubernetes.html%}

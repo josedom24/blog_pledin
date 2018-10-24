@@ -6,7 +6,7 @@ tags:
   - kubernetes
 
 ---
-{% include indice_kubernetes.html %}
+
 
 [`Deployment`](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) es la unidad de más alto nivel que podemos gestionar en Kubernetes. Nos permite definir diferentes funciones:
 
@@ -158,4 +158,4 @@ Si eliminamos el `Deployment` se eliminarán el `RecordSet` asociado y los pods 
     kubectl get pods
     No resources found.
 
-
+{% include indice_kubernetes.html%}

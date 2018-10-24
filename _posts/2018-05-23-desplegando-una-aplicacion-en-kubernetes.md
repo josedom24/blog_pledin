@@ -50,6 +50,4 @@ Los distintos recursos de Kubernetes nos proporcionan distintas características
 
 En las siguientes entradas vamos a ir estudiando cada uno de estos recursos.
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
+{% include indice_kubernetes.html%}
