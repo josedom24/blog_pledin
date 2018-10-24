@@ -6,13 +6,13 @@ tags:
   - kubernetes
 ---
 
-![mediawiki]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/10/mediawiki2.png){: .align-center}
+![mediawiki]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/10/mediawiki2.png){: .align-center }
 
 [`mediawiki`](https://www.mediawiki.org/wiki/MediaWiki) es una aplicación escrita en PHP que nos permite gestionar una wiki. Vamos a hacer un despliegue en nuestro cluster de kubernetes.
 
 En este ejemplo vamos a crear el `Deployment` sin utilizar su definición en Yaml, con la siguiente instrucción:
 
-    kubectl run mediawiki --image=mediawiki --record
+    kubectl run mediawiki --image=mediawiki --record 
     deployment.apps "mediawiki" created
     
     kubectl get deploy
@@ -36,7 +36,7 @@ Utilizando la instrucción `kubectl run` se crea un `Deployment` con un `RecordS
     metadata:
       annotations:
         deployment.kubernetes.io/revision: "1"
-        kubernetes.io/change-cause: kubectl run mediawiki --image=mediawiki     --record=true
+        kubernetes.io/change-cause: kubectl run mediawiki --image=mediawiki --record=true
     ...
 
 <!--more-->
