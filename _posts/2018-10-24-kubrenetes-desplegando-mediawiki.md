@@ -6,7 +6,7 @@ tags:
   - kubernetes
 ---
 
-![mediawiki]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/10/mediawiki.png)
+![mediawiki]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/10/mediawiki.png){: .align-left}
 
 [`mediawiki`](https://www.mediawiki.org/wiki/MediaWiki) es una aplicación escrita en PHP que nos permite gestionar una wiki. Vamos a hacer un despliegue en nuestro cluster de kubernetes.
 
