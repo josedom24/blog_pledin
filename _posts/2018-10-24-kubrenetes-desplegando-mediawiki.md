@@ -6,6 +6,8 @@ tags:
   - kubernetes
 ---
 
+![mediawiki]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/10/mediawiki.png)
+
 [`mediawiki`](https://www.mediawiki.org/wiki/MediaWiki) es una aplicación escrita en PHP que nos permite gestionar una wiki. Vamos a hacer un despliegue en nuestro cluster de kubernetes.
 
 En este ejemplo vamos a crear el `Deployment` sin utilizar su definición en Yaml, con la siguiente instrucción:
@@ -25,7 +27,7 @@ En este ejemplo vamos a crear el `Deployment` sin utilizar su definición en Yam
     NAME                         READY     STATUS    RESTARTS   AGE
     mediawiki-85bf9d6bd7-97bhg   1/1       Running   0          25s
 
-Utilizando la instrucción `kubectl run` se crea un `Deployment` con un `RecordSet` asociado que arranca un pod. La opción `--record` nos va a permitir gaurdar las actualizaciones del `Deployment` como [`annotations`](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) en la definición Yaml del mismo. Por lo tanto si vemos la definción del `Deployment`:
+Utilizando la instrucción `kubectl run` se crea un `Deployment` con un `RecordSet` asociado que arranca un pod. La opción `--record` nos va a permitir guardar las actualizaciones del `Deployment` como [`annotations`](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) en la definición Yaml del mismo. Por lo tanto si vemos la definición del `Deployment`:
 
     kubectl get deployments mediawiki -o yaml
 
@@ -37,9 +39,11 @@ Utilizando la instrucción `kubectl run` se crea un `Deployment` con un `RecordS
         kubernetes.io/change-cause: kubectl run mediawiki --image=mediawiki     --record=true
     ...
 
+<!--more-->
+
 ## Accediendo a nuestra aplicación
 
-La única forma que tenemos en estos momentos (sin haber estudiado el recurso de Kubernete `services`) para acceder a la aplicación es haciendo un proxy desde un puerto de nuestro cliente a un puerto del `master` del cluster de Kubernetes. Voy a redirigir las peticiones al puerto 8080 de mi máquina al puerto 80 de la ip del cluster, con la siguiente instrucción:
+La única forma que tenemos en estos momentos (sin haber estudiado el recurso de Kubernetes `services`) para acceder a la aplicación es haciendo un proxy desde un puerto de nuestro cliente a un puerto del `master` del cluster de Kubernetes. Voy a redirigir las peticiones al puerto 8080 de mi máquina al puerto 80 de la ip del cluster, con la siguiente instrucción:
 
     kubectl port-forward deployment/mediawiki 8080:80
 
@@ -86,7 +90,7 @@ Y comprobamos el historial de versiones del despliegue:
     1         kubectl run mediawiki --image=mediawiki --record=true
     2         kubectl set image deployment/mediawiki mediawiki=mediawiki:1.27 --all=true
 
-Podríamos volver a la versión anterior con la instrucción `kubectl rollout undo` pero vamos a realizar una nueva modifcando, indicando una versión de la imagen que no existe, por lo que se va producir un error al crear el pod y es entonces cuando vamos a realizar el *rollback* a la versión anterior.
+Podríamos volver a la versión anterior con la instrucción `kubectl rollout undo` pero vamos a realizar una nueva modificando, indicando una versión de la imagen que no existe, por lo que se va producir un error al crear el pod y es entonces cuando vamos a realizar el *rollback* a la versión anterior.
 
     kubectl set image deployment/mediawiki mediawiki=mediawiki:2 --all
     deployment.apps "mediawiki" image updated
@@ -119,3 +123,5 @@ Para volver a la versión anterior de la aplicación:
     1         kubectl run mediawiki --image=mediawiki --record=true
     3         kubectl set image deployment/mediawiki mediawiki=mediawiki:2 --all=true
     4         kubectl set image deployment/mediawiki mediawiki=mediawiki:1.27   --all=true
+
+{% include indice_kubernetes.html%}
