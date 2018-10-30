@@ -56,6 +56,8 @@ Como vemos se van a generar 3 replicas, la imagen de la aplicación la bajamos d
     guestbook-bb55b9bcf-5t5wg   1/1       Running   0          5s
     guestbook-bb55b9bcf-lbvb8   1/1       Running   0          5s
 
+<!--more-->
+
 ## Despliegue del backend
 
 En este caso vamos a realizar dos despliegues: uno con una base de datos *redis* como *master* y otra con *redis* como esclavo.
