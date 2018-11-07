@@ -124,7 +124,7 @@ Después de reiniciar el servicio, verificamos en el el “syslog” que nuestro
 
 
     Nov 21 21:46:37 dns named[893]: client 10.0.0.2#39128: transfer of 'example.com/IN': IXFR started
-    Nov 21 21:46:37 dns named[893]: client 10.0.0.2#39128: transfer of 'example.com/IN': IXFR ended</pre>
+    Nov 21 21:46:37 dns named[893]: client 10.0.0.2#39128: transfer of 'example.com/IN': IXFR ended
 
 
 Y ya podemos hacer la prueba de configurar un cliente para que use como servidores DNS nuestras máquinas bobesponja y patricio, y comprobar que si alguna de las dos están apagadas, la otra es la que resuelve.
