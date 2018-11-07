@@ -75,7 +75,7 @@ Suponemos que en la dirección 10.0.0.3 vamos a tener un servidor web. Del mismo
     $ORIGIN 0.0.10.in-addr.arpa.
     1      IN PTR bobesponja.example.com.
     2      IN PTR patricio.example.com.
-    3      IN PTR www.example.com.</pre>
+    3      IN PTR www.example.com.
 
 
 A continuación en el fichero `/etc/bind/named.conf.local` definimos las zonas indicando quien puede hacer una petición de resolución de nombre al dominio y a quien le damos permiso para que pueda copiar las zonas, que en este caso solo seria a los servidores de DNS esclavos.
