@@ -34,14 +34,14 @@ Antes de empezar vamos a estudiar algunos parámetros en la configuración globa
     };
 
     acl slaves {
-      10.0.0.2/24;           // patricio
+      10.0.0.2;           // patricio
     };
 
 Vamos a explicar cada una de las directivas:
 
 * `allow-query { 10.0.0.0/24; };`: Red desde donde podemos realizar consultas al DNS.
 * `allow-transfer { none; };`: Con este parámetro restringimos la transferencia de zonas a Servidores DNS esclavos que no estén autorizados. Esta es una buena medida de seguridad, ya que evitamos que personas ajenas se enteren de las direcciones IP que están dentro de la zona de DNS de un dominio.
-* `acl slaves { 10.0.0.2/24; };`: Listado de acceso (access list) de los servidores de DNS esclavos.
+* `acl slaves { 10.0.0.2; };`: Listado de acceso (access list) de los servidores de DNS esclavos.
 
 A continuación vamos a configurar la zona de resolución directa para nuestra zona en el servidor maestro, para ello creamos un archivo `db.example.com` para configurar la zona `example.com`, en `/var/cache/bind`:
 

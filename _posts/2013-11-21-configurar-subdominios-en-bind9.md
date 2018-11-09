@@ -32,14 +32,16 @@ Para conseguir configurar subdominios tenemos dos alternativas:
 En este caso suponemos de tenemos configurado un servidor DNS donde hemos configurado la zona `example.org` en el fichero `/var/cache/bind/db.example.org`. La configuración del subdominio virtual se ha indicado en negrita, y quedaría de la siguiente manera:
 
     $TTL    86400
-    @       IN      SOA     ns1 mail (
+    @       IN      SOA     ns1.example.org. mail.example.org. (
                                   4         
                              604800         
                               86400         
                             2419200       
                               86400 )       
 
-                    NS      ns1
+    $ORIGIN example.org.
+    @       IN      NS      ns1
+
     ns1     IN      A       10.0.10.2
     www     IN      A       10.0.10.1
 
@@ -87,14 +89,15 @@ En esta ocasión partimos de un servidor DNS con autoridad sobre el dominio `exa
 La zona está definida en el fichero `/var/cache/bind/db.example.org`, donde tendremos que indicar cual es el servidor DNS con autoridad para el subdominio, es decir indicaremos el servidor DNS al que vamos a delegar la gestión del subdominio `es.example.org`, que en nuestro caso será `nssub.es.example.org`. Indicamos en negrita la configuración necesaria:
 
     $TTL    86400
-    @       IN      SOA     ns1 mail (
+    @       IN      SOA     ns1.example.org. mail.example.org. (
                                   4         
                              604800    
                               86400     
                             2419200   
                               86400 )   
 
-                    NS      ns1
+    $ORIGIN example.org.
+    @       IN      NS      ns1
 
     ns1     IN      A       10.0.10.2
     www     IN      A       10.0.10.1
@@ -118,14 +121,14 @@ Ahora configuramos el segundo servidor DNS (`nssub.es.example.org`), al que vamo
 Y el fichero `/var/cache/bind/db.es.example.org`, quedaría:
 
     $TTL    86400
-    @       IN      SOA     nssub mail (
+    @       IN      SOA     nssub.es.example.org. mail.es.example.org. (
                                   4         
                              604800    
                               86400     
                             2419200   
                               86400 )   
-
-                      NS      nssub
+    $ORIGIN es.example.org.
+    @         IN      NS      nssub
     nssub     IN      A       10.0.10.6
     www       IN      A       10.0.10.3
 
