@@ -22,9 +22,7 @@ comments: true
   <li>Números: {{revista.numeros}}</li>
   <li>Años: {{revista.years}}</li>
   <li><a href="{{revista.url}}">Descarga</a></li>
-  {% if revista.web != ""}}
-  <li><a href="{{revista.web}}">Página web</a></li>
-  {% endif %}
+ 
 </ul>
 </td>
 </tr>
