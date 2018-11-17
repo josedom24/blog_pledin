@@ -15,14 +15,16 @@ comments: true
 ## {{revista.name}}
 <table>
 <tr>
-<td><img src="img/{{revista.img}}"/></td>
+<td><img width="150" src="img/{{revista.img}}"/></td>
 <td>
 {{revista.descripcion}}
 <ul>
   <li>Números: {{revista.numeros}}</li>
   <li>Años: {{revista.years}}</li>
   <li><a href="{{revista.url}}">Descarga</a></li>
- 
+  {% if revista.web != ""%}
+  <li><a href="{{revista.web}}">Página web</a></li>
+  {% endif %}
 </ul>
 </td>
 </tr>
