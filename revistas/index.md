@@ -24,7 +24,7 @@ comments: true
   <li><a href="{{revista.url}}">Descarga</a></li>
   {% if revista.web}}
   <li><a href="{{revista.web}}">Página web</a></li>
-  {{ endif }}
+  {% endif %}
 </ul>
 </td>
 </tr>
