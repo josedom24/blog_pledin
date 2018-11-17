@@ -15,7 +15,7 @@ comments: true
 ## {{revista.name}}
 <table>
 <tr>
-<td><img src="img/{{revista.img}}"/></td>
+<td><img width="355" src="img/{{revista.img}}"/></td>
 <td>
 {{revista.descripcion}}
 <ul>
