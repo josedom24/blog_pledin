@@ -126,10 +126,8 @@ feature_row4:
   <li><a href="http://ral-arturo.org/">ral-arturo.org</a></li>
   <li><a href="https://www.linuxarena.net/">Linuxarena</a></li>
 </ul>
-<br/>
-<br/>
-<br/>
-<br/>
+<h2>Revistas Libres de Software Libre</h2>
+<a href="/revistas"><img src="/assets/wp-content/uploads/2011/02/revistas.jpg"/></a>
 </td>
 <td width="50%">
    <a class="twitter-timeline"  href="https://twitter.com/Pledin_JD" data-widget-id="310016635949940736">Tweets por el @Pledin_JD.</a>

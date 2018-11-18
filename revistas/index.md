@@ -30,5 +30,5 @@ comments: true
 </table>
 {% endfor %}
 
-# [Accede a la colección de revistas antiguas](olfrevistas.html)
+# [Accede a la colección de revistas antiguas](oldrevistas.html)
 {: .text-center}
