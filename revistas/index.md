@@ -11,8 +11,30 @@ comments: true
 {: .text-center}
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg){: .align-center}
 
+## Revistas nuevas
+
+{% for revista in site.data.revistas_new %}
+### {{revista.name}}
+<table>
+<tr>
+<td width="20%"><img src="img/{{revista.img}}"/></td>
+<td>
+{{revista.descripcion}}
+<ul>
+  <li>Último número: {{revista.numero}}</li>
+  <li><a href="{{revista.url}}">Accede a todos los números</a></li>
+  {% if revista.web != ""%}
+  <li><a href="{{revista.web}}">Página web</a></li>
+  {% endif %}
+</ul>
+</td>
+</tr>
+</table>
+{% endfor %}
+
+## Revistas antiguas
 {% for revista in site.data.revistas %}
-## {{revista.name}}
+### {{revista.name}}
 <table>
 <tr>
 <td width="20%"><img src="img/{{revista.img}}"/></td>
