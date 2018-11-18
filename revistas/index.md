@@ -11,7 +11,7 @@ comments: true
 {: .text-center}
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg){: .align-center}
 
-## Revistas nuevas
+## Revistas actuales
 
 {% for revista in site.data.revistas_new %}
 ### {{revista.name}}
