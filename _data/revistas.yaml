@@ -85,4 +85,92 @@ Además, en la revista hay 3 mujeres colaborando, haciendo un grandísimo trabaj
   url: https://mega.nz/#!jPhHySLa!j7ZLzpvX1EJ2SNcUEKj182gmnq0H6Szm7sEvh_1oKJE
   web: "http://www.mygnet.net/"
 
-  
+- name: "Magazine FentLinux"
+  img: fentlinux.jpg
+  descripcion: "¿Qué es eso de los Magazines FL? o mejor, ¿Qué fueron eso de los Magazines FL? Los magazines de fentlinux (FL) son nuestra apuesta por la generación de documentación cooperativa relacionada con el mundo libre. Hasta la fecha se han publicado 5 números con los contenidos que reseñaremos más adelante."
+  numeros: 5
+  years: 2005-2008
+  url: https://mega.nz/#!LTplTAQa!-8bpXVCTw6oWegbXNxXJlr13fboBhutI2iyj3nY3SDY
+  web: ""
+
+- name: "Linvix"
+  img: linvix.jpg
+  descripcion: "Linvix, una revista cubana que según sus propios creadores tiene el siguiente ideario: Cuando comenzamos en el mundo del Software Libre, teníamos escasos conocimientos de Linux, recuerdo que en aquellos tiempo nos dirigíamos a los foro para resolver dudas, un amigo me dijo que una de las cosas más bonitas que tenia linux era … que generaba una gran comunidad de ayuda entre usuarios de todo el mundo…, hoy somos parte de esa comunidad mundial, de una forma u otra colaboramos con el desarrollo del Software Libre, por eso un grupo de amantes del Software Libre nos hemos unido para transmitir a todos los apasionados del Sistema Operativo del Pingüino nuestros conocimientos, así nace LINVIX, una revista que como principal propósito tiene Divulgar y Promover el uso del Software Libre en nuestro municipio, Viñales, Pinar del Rio, Cuba."
+  numeros: 10
+  years: 2009-2011
+  url: https://mega.nz/#!KWwhiYiK!yeu9pRuiO_laK-GuTm8FM5EyiU-Twu3hsRu05i6OAAc
+  web: "https://linvix.wordpress.com/"
+
+- name: "Planetix"
+  img: planetix.jpg
+  descripcion: "Por fin lo que tanto se esperaba; para todos aquellos que recién se inician en Linux, llegó una nueva revista. Aquí le explicarémos de la manera mas simple todo lo que necesita saber sobre Linux y Software Libre. La idea de publicar una revista referente a Linux y software libre nació gracias a una gran multitud de personas, que en mas de una ocasión me preguntaron que es eso de Linux. Y como ven, ahora ya tenemos el primer número de nuestra revista. Pero no lograrémos nada sin el apoyo de muchos de ustedes. Vamos, ayudémos a difundir el conocimiento libre, sabémos que ya son muchas las personas que usan Linux y que ya tienen la experiencia de probar algo diferente; pero también hay personas, y me alegro de que sean pocos, que aún no saben ni siquiera la existencia de Linux."
+  numeros: 7
+  years: 2009-2011
+  url: https://mega.nz/#!eagR1QjL!Mtv1i3mH82c5kub2y1LMkiA_4hN4yvX3jrT5sS7lPao
+  web: "https://planetix.wordpress.com/"
+
+- name: "PET, Python entre todos"
+  img: pet.jpg
+  descripcion: "La comunidad de usuarios de Python Argentina  (PyAr) publica la revista en formato digital PET: Python Entre Todos."
+  numeros: 6
+  years: 2010-2012
+  url: https://mega.nz/#!LPgjRK4Y!YelkcnEkVbEW5aHuIL7B182EKZ2HqBICR8FYp8F6KlQ
+  web: ""
+
+- name: "Libresfera"
+  img: libresfera.jpg
+  descripcion: "Libresfera es una revista que tiene como finalidad la promoción y difusión de la cultura libre."
+  numeros: 5
+  years: 2011-2012
+  url: https://mega.nz/#!6C4niCqL!hlJlevgN8cB71sZBSFTlhNH2JFVp4-FlTn1fc0B341Y
+  web: "http://www.libresfera.com/"
+
+- name: "Dattatec magazine"
+  img: dattatec.jpg
+  descripcion: "Revista digital mensual de actualidad tecnológica desarrollada por dattatec.com."
+  numeros: 43
+  years: 2008-2012
+  url: https://mega.nz/#!ia4HTKQA!8cMbod9e__OLS8Mo_FSPyHLmuhTkJdQRA48Kn0iTEQw
+  web: ""
+
+- name: "Pixels&Code"
+  img: pixel&code.jpg
+  descripcion: "Revista digital mensual de diseño gráfico y programación desarrollada por dattatec.com."
+  numeros: 12
+  years: 2011-2012
+  url: https://mega.nz/#!vGxBRAgT!xJtCtbzs99uQFOqyKXba43XqKkJE8fQE9xUcsZVO-ZM
+  web: ""
+
+- name: "Wi:Dget"
+  img: widget.jpg
+  descripcion: "WI:DGET es producto del trabajo de Ingeniux, Grupo de Software Libre de la Universidad del Valle Sede Tuluá. Esta revista tiene como objetivo informarte sobre lo último en tecnología y software libre."
+  numeros: 5
+  years: 2011-2013
+  url: https://mega.nz/#!iP5hiYzR!iN4uEWZycYuOCLqEXRnNknb574tJcA9rDWPKUj-NECU
+  web: ""
+
+- name: "Hackers & Developers"
+  img: hacker&developer.jpg
+  descripcion: "HD Magazine es una revista de distribución mensual sobre sotfware libre, hacking y programación. Hackers & Developers es una publicación realizada íntegramente por un grupo de chicas programadoras del más alto nivel."
+  numeros: 13
+  years: 2012-2013
+  url: https://mega.nz/#!fPp1iC7T!7q-Orvat8e-aTBo14eDSkd8g2EBBeLr8bI2is06LwuM
+  web: ""
+
+- name: "Cotejo"
+  img: cotejo.jpg
+  descripcion: "En esta revista orientada al Software Libre puede encontrarse una miscelánea de temas enfocados a el desarrollo para GNU/Linux. Contiene artículos variados sobre programación, Internet y otros temas de interés para la comunidad."
+  numeros: 10
+  years: 2010-2012
+  url: https://mega.nz/#!vX4lFSzC!anBwfuQ3oYYPhi79UVcWcWCRqa-rsHcfkZ2TalOTMk0
+  web: ""
+
+- name: "The Original Hacker"
+  img: theoriginalhacker.jpg
+  descripcion: "The Original Hacker es un proyecto de Eugenia Bahit, fundadora y resposable editorial de Hackers & Developers Magazine, cuyo eje es la seguridad y la programación. Sus principales competencias son el Software Libre, el hacking y la programación orientada a Internet."
+  numeros: 10'
+  years: 2013-2014
+  url: https://mega.nz/#!Gfgj2abZ!2FwcpoRK23pJEiLvxFn2Kat4AgW-b7p6JIpQFunvNuI
+  web: ""
+
+- 
