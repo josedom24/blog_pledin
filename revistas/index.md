@@ -11,17 +11,15 @@ comments: true
 {: .text-center}
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg){: .align-center}
 
-## Revistas actuales
-
 {% for revista in site.data.revistas_new %}
-### {{revista.name}}
+## {{revista.name}}
 <table>
 <tr>
 <td width="20%"><img src="img/{{revista.img}}"/></td>
 <td>
 {{revista.descripcion}}
 <ul>
-  <li>Último número: {{revista.numero}}</li>
+  <li>Último número: <strong>{{revista.numero}}</strong></li>
   <li><a href="{{revista.url}}">Accede a todos los números</a></li>
   {% if revista.web != ""%}
   <li><a href="{{revista.web}}">Página web</a></li>
@@ -32,23 +30,5 @@ comments: true
 </table>
 {% endfor %}
 
-## Revistas antiguas
-{% for revista in site.data.revistas %}
-### {{revista.name}}
-<table>
-<tr>
-<td width="20%"><img src="img/{{revista.img}}"/></td>
-<td>
-{{revista.descripcion}}
-<ul>
-  <li>Números: {{revista.numeros}}</li>
-  <li>Años: {{revista.years}}</li>
-  <li><a href="{{revista.url}}">Descarga</a></li>
-  {% if revista.web != ""%}
-  <li><a href="{{revista.web}}">Página web</a></li>
-  {% endif %}
-</ul>
-</td>
-</tr>
-</table>
-{% endfor %}
+# [Accede a la colección de revistas antiguas](olfrevistas.html)
+{: .text-center}
