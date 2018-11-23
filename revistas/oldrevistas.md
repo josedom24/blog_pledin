@@ -12,7 +12,7 @@ comments: true
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg){: .align-center}
 
 ## Revistas antiguas
-Aquí podrás encontrar una colección de revistas de Software Libre que ya no están activas o son la primera época de algunas revistas actuales. Puedes descargarte todos los números en formato zip.
+Aquí podrás encontrar una colección de revistas de Software Libre que ya no están activas o son la primera época de algunas revistas actuales. Puedes acceder a todos los números de las revistas.
 
 {% for revista in site.data.revistas %}
 ### {{revista.name}}
@@ -24,7 +24,7 @@ Aquí podrás encontrar una colección de revistas de Software Libre que ya no e
 <ul>
   <li>Números: {{revista.numeros}}</li>
   <li>Años: {{revista.years}}</li>
-  <li><a href="{{revista.url}}">Descarga</a></li>
+  <li><a href="{{revista.url}}">Accede a todos los números</a></li>
   {% if revista.web != ""%}
   <li><a href="{{revista.web}}">Página web</a></li>
   {% endif %}
