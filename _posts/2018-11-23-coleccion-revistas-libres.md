@@ -6,7 +6,7 @@ tags:
   - Software Libre
 ---
 
-<center><a href="revistas"><img src="assets/wp-content/uploads/2011/02/revistas.jpg"/></a></center>
+<center><a href="revistas"><img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2011/02/revistas.jpg"/></a></center>
 
 He publicado de nuevo mi colección de **[Revistas Libres de Software Libre](https://www.josedomingo.org/pledin/revistas/index.html)**. Por distintos motivos tuve que dejar de publicarla en mi antigua versión de PLEDIN, pero en los últimos días he actualizado los últimos números de las revistas y ya están preparada en nuestra nueva página web.
 
