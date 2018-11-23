@@ -12,7 +12,7 @@ tags:
   - Revistas
   - Software Libre
 ---
-Como sabéis hace tiempo que colecciono revistas libres sobre informática y software libre. Podéis encontrar la colección en el apartado [Revistas](http://www.josedomingo.org/revistas/). Muchas de las publicaciones que encontráis en la colección hace tiempo que no se editan y realmente sólo tres o cuatro se editan regularmente en la actualidad.
+Como sabéis hace tiempo que colecciono revistas libres sobre informática y software libre. Podéis encontrar la colección en el apartado [Revistas](https://www.josedomingo.org/revistas/). Muchas de las publicaciones que encontráis en la colección hace tiempo que no se editan y realmente sólo tres o cuatro se editan regularmente en la actualidad.
 
 <p style="text-align: justify;">
   Hoy os presento cuatro nuevas revista que he encontrado por internet, algunas se vienen editando desde hace años y otras son nuevas publicaciones que llevan sólo algunos meses en la calle.

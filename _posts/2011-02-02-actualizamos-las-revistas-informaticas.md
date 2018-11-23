@@ -36,7 +36,7 @@ Después de varios meses sin actualizar nuestra colección de Revistas Informát
 </ul>
 
 <p style="text-align: justify;">
-  Como siempre podéis encontrar todos los números de las revistas en nuestra sección de <a href="http://www.josedomingo.org/revistas/"><strong>Revistas Informáticas</strong></a>. Si conocéis alguna revista de distribución gratuita que trate temas de informática, tecnología o educación, escríbeme un correo y la añadimos a la colección.
+  Como siempre podéis encontrar todos los números de las revistas en nuestra sección de <a href="https://www.josedomingo.org/revistas/"><strong>Revistas Informáticas</strong></a>. Si conocéis alguna revista de distribución gratuita que trate temas de informática, tecnología o educación, escríbeme un correo y la añadimos a la colección.
 </p>
 
 <!-- AddThis Advanced Settings generic via filter on the_content -->

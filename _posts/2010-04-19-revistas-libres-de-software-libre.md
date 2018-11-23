@@ -19,12 +19,12 @@ Desde hace unos años me he dedicado a ir coleccionando distintas publicaciones 
 
 La colección estaba realizada en un curso moodle y a la hora de actualizar nuevos número tenía que hacer mucho trabajo. He creado una página PHP que me facilita mucho la actualización de las revistas. De las revistas que se siguen actualizando periódicamente puedes encontrar lass siguientes:
 
-  * [TuxInfo](http://www.josedomingo.org/revistas/index.php?id=1)
-  * [Full Circle Magazine](../../revistas/index.php?id=2)
-  * [Revista de Software Libre ATIX](../../revistas/index.php?id=3)
-  * [Papirux, la revista libre](../../revistas/index.php?id=4) 
+  * [TuxInfo](https://www.josedomingo.org/revistas/)
+  * [Full Circle Magazine](https://www.josedomingo.org/revistas/)
+  * [Revista de Software Libre ATIX](https://www.josedomingo.org/revistas/)
+  * [Papirux, la revista libre](https://www.josedomingo.org/revistas/) 
 
-Para acceder a toda la colección: **[Revistas Libres de Software Libre](http://www.josedomingo.org/revistas)**
+Para acceder a toda la colección: **[Revistas Libres de Software Libre](https://www.josedomingo.org/revistas/)**
 
 Como siempre, si conoces alguna otra publicación, no dudes en enviarme la información para poder actualiza la colección.
 

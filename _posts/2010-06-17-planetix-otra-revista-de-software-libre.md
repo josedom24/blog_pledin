@@ -24,7 +24,7 @@ tags:
 </p>
 
 <h1 style="text-align: center;">
-  <a href="http://www.josedomingo.org/revistas">Revistas Informáticas Libres</a>
+  <a href="https://www.josedomingo.org/revistas/">Revistas Informáticas Libres</a>
 </h1>
 
 <p style="text-align: justify;">

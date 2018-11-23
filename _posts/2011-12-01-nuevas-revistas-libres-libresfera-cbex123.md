@@ -24,7 +24,7 @@ tags:
 </p>
 
 <p style="text-align: justify;">
-  Estas dos nuevas revistas, y la actualización de los últimos números de las revistas Tuxinfo, FullCicle Magazine, Planetix, Atix,&#8230; los puedes encontrar en nuestra sección de <a href="http://www.josedomingo.org/revistas/">Revistas Informáticas</a>.
+  Estas dos nuevas revistas, y la actualización de los últimos números de las revistas Tuxinfo, FullCicle Magazine, Planetix, Atix,&#8230; los puedes encontrar en nuestra sección de <a href="https://www.josedomingo.org/revistas/">Revistas Informáticas</a>.
 </p>
 
 <!-- AddThis Advanced Settings generic via filter on the_content -->
