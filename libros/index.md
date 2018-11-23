@@ -10,7 +10,7 @@ comments: true
 # Colección de Libros Libres
 
 {% for categoria in site.data.libros %}
-## {{categoria.categoria}}
+## [{{categoria.categoria}}]({{categoria.url}})
 
 {% for libro in categoria.libros %}
 * {{libro.nombre}} [[web]({{libro.web}})] [[pdf]({{libro.url}})]

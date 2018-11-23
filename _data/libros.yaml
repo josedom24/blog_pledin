@@ -1,8 +1,9 @@
 - categoria: Aplicaciones
+  url: https://mega.nz/#F!CSJkHAIC!4vtRpckEHZmSUXY4pxzm-g
   libros:
-    - nombre: xxx
-      url: xxx
+    - nombre: "Fásciculos guadlinex: Firefox"
+      url: http://www.guadalinex.org/mas-programas/descargas/documentos-de-guadalinex/fasciculos
       web: xxx
-    - nombre: yyy
-      url: xxx
+    - nombre: "Fásciculos guadlinex: Evolution y Gain"
+      url: http://www.guadalinex.org/mas-programas/descargas/documentos-de-guadalinex/fasciculos
       web: xxx
