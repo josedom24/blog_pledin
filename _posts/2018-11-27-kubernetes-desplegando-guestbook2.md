@@ -10,7 +10,7 @@ tags:
 
 En este ejemplo vamos a crear dos servicios.
 
-## Definición del  servicio para poder acceder a la base de datos redis
+### Definición del  servicio para poder acceder a la base de datos redis
 
 En este caso no tenemos que acceder a la base de datos desde el exterior. Es la aplicación la que internamente debe poder acceder a ella, por tanto vamos a crear un servicio del tipo *ClusterIP*. En el fichero [`redis-master-srv.yaml`](https://github.com/josedom24/kubernetes/blob/master/ejemplos/guestbook/parte2/redis-master-srv.yaml) encontramos la definición del servicio para acceder al *master* de *redis*:
 
@@ -36,7 +36,7 @@ De forma similar el fichero [`redis-slave-srv.yaml`](https://github.com/josedom2
 
 <!--more-->
 
-## Definición del  servicio para poder acceder a la aplicación
+### Definición del  servicio para poder acceder a la aplicación
 
 En el fichero [`frontend-srv.yaml`](https://github.com/josedom24/kubernetes/blob/master/ejemplos/guestbook/parte2/frontend-srv.yaml) encontramos la definición del servicio, que en este caso será del tipo *NodePort* para poder acceder a la aplicación desde el exterior:
 
