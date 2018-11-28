@@ -167,7 +167,7 @@ A continuación vamos a clonar el repositorio y vamos a desplegar un fichero ind
 
 Como se puede observar cuando se sube un nuevo fichero, se configura de forma adecuada el entorno de producción, reiniciando los servidores necesarios, y podemos acceder a nuestra nueva página:
 
-[<img class="size-full wp-image-1400 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2.png" alt="drupal2" width="452" height="138" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2.png 452w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2-300x92.png 300w" sizes="(max-width: 452px) 100vw, 452px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2.png){.thumbnail}
+[<img class="size-full wp-image-1400 alignnone" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2.png" alt="drupal2" width="452" height="138" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2.png 452w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2-300x92.png 300w" sizes="(max-width: 452px) 100vw, 452px" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/11/drupal2.png)
 
 ### Migración de la base de datos
 
