@@ -71,7 +71,7 @@ feature_row4:
 {% for post in site.posts limit:3 %}
 <div class="page__inner-wrap">
         <header>
-          {% if post.title %}<h2 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h2>{% endif %}
+          {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
         </header>
       <section class="page__content" itemprop="text">
         {{ post.excerpt}}
