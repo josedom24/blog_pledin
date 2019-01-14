@@ -66,7 +66,9 @@ Veamos algunos ejemplos:
 
 El resultado de las tres plantillas es:
 
+    {% raw %}
     <a href="http://www.flask.com"> Flask</a>
+    {% endraw %}
     
 ## Filtros de variables
 
@@ -115,11 +117,13 @@ Nos permite recorrer una secuencia, veamos un ejemplo sencillo. Es compatible co
 
 La salida es:
 
+    {% raw %}
     <ul>
     <li>1 - amarillo</li>
     <li>2 - verde</li>
     <li>3 - rojo</li>
     </ul>
+    {% endraw %}
     
 
 El `-` detrás del bloque `for` evita que se añada una línea en blanco.
