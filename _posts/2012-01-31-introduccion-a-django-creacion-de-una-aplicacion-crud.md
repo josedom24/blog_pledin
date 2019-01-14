@@ -136,6 +136,7 @@ Muchas de las vistas que vamos a crear utilizan una plantilla html (template). P
 
 Y creamos la plantilla en `linktracker/template/links/list.html`:
 
+    {% raw %}
     {% if link_list %}
         <ul>
              {% for link in link_list %}
@@ -146,6 +147,7 @@ Y creamos la plantilla en `linktracker/template/links/list.html`:
     {% else %}
         <p>No links found.</p>
     {% endif %}
+    {% endraw %}
 
 Inicia el servidor web y accede a `http://127.0.0.1/:8000/links` y verás los resultados.
 
@@ -165,6 +167,7 @@ Hasta ahora tenemos una vista que nos muestra los links que tenemos guardados en
 
 Y modificamos la plantilla:
 
+    {% raw %}
     {% if message %}
      <b>{{ message }}</b>
      <p>
@@ -185,6 +188,7 @@ Y modificamos la plantilla:
      {% endif %}
      <p>
      <a href='/links/new'>Add Link</a>
+     {% endraw %}
 
 ## Añadir enlaces
 
@@ -214,6 +218,7 @@ Y definimos los dos nuevos métodos en nuestra vista (`linktracker/views.py`):
 
 Y creamos la  plantilla `linktrcker/template/links/form.html`:
 
+    {% raw %}
     <form action="/links/{{ action }}/" method="post">
         Description:
         <input name=link_description value="{{ description }}"><br />
@@ -221,7 +226,8 @@ Y creamos la  plantilla `linktrcker/template/links/form.html`:
         <input name=link_url value="{{ url }}"><br />
         <input type=submit value="{{ button }}">
     </form>
-
+    {% endraw %}
+    
 ### Modificando enlaces
   
 Vamos a añadir una nueva funcionalidad de modificar la información de un enlace, en este caso en la URL tenemos que indicar que enlace vamos a modificar, para ello añadimos una nueva acción en `urls.py`:
