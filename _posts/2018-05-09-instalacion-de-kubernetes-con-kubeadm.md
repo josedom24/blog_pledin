@@ -160,7 +160,7 @@ Y finalmente desde el master podemos obtener los nodos que forman el cluster:
     
 ## Acceso desde un cliente externo
 
-Normalmente vamos a interactuar con el cluster desde un clinete externo donde tengamos instaldo `kubectl`. Para instalar `kubectl`, siguiendo las [instrucciones oficiales](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-native-package-management), ejecutamos:
+Normalmente vamos a interactuar con el cluster desde un cliente externo donde tengamos instaldo `kubectl`. Para instalar `kubectl`, siguiendo las [instrucciones oficiales](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-native-package-management), ejecutamos:
 
     apt-get update && apt-get install -y apt-transport-https
     curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
