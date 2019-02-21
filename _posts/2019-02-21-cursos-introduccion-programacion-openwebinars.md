@@ -21,9 +21,7 @@ En este [curso](https://openwebinars.net/cursos/introduccion-programacion/) apre
     <tr>
       <td>
         <iframe width="560" height="315" src="https://www.youtube.com/watch?v=9Y4V4vJFGZk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
       </td>
-      
       <td>
         <iframe width="560" height="315" src="https://www.youtube.com/watch?v=xG5s96k2QsE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </td>
@@ -32,7 +30,6 @@ En este [curso](https://openwebinars.net/cursos/introduccion-programacion/) apre
       <td>
         <iframe width="560" height="315" src="https://www.youtube.com/watch?v=M_4O5F5M6sk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </td>
-      
       <td>
         <iframe width="560" height="315" src="https://www.youtube.com/watch?v=zhn_OPzwJlk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </td>
