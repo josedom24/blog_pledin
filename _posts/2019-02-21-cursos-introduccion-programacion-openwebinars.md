@@ -15,9 +15,15 @@ Los dos últimos cursos que he impartido en la plataforma OpenWebinars están re
 
 En este [curso](https://openwebinars.net/cursos/introduccion-programacion/) aprenderás los fundamentos a la programación estructurada. Estudiaremos el ciclo de desarrollo de una aplicación: análisis, diseño y codificación mediante pseudocódigo. Los vídeos que se han publicado en YouTube para promocionar el curso han sido:
 
+<table>
+  <tr>
+    <td>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/zhn_OPzwJlk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
+  </tr>
+</table>
 
 ## Curso de Python 3 desde cero
 
 En este [curso](https://openwebinars.net/cursos/python-desde-cero/) aprenderás los fundamentos del lenguaje de programación Python 3 desde cero, pensado para no programadores que se quieran iniciar en este mundo. mLos vídeos que se han publicado son los siguientes:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zhn_OPzwJlk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
