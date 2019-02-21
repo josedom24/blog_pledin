@@ -24,9 +24,35 @@ En este [curso](https://openwebinars.net/cursos/introduccion-programacion/) apre
       <iframe width="560" height="315" src="https://www.youtube.com/embed/M_4O5F5M6sk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </td>
   </tr>
+  <tr>
+    <td>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/xG5s96k2QsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
+    <td>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/9Y4V4vJFGZk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
+  </tr>
 </table>
 
 ## Curso de Python 3 desde cero
 
 En este [curso](https://openwebinars.net/cursos/python-desde-cero/) aprenderás los fundamentos del lenguaje de programación Python 3 desde cero, pensado para no programadores que se quieran iniciar en este mundo. mLos vídeos que se han publicado son los siguientes:
 
+<table>
+  <tr>
+    <td>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/0bacPSKj0q4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
+    <td>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/0SFxScoVFeM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/h2J6-03MsnQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
+    <td>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/2Ilq_J_R9qU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
+  </tr>
+</table>
