@@ -1,12 +1,10 @@
 ---
 title: 'Kubernetes. Desplegando WordPress con MariaDB con almacenamiento persistente'
-permalink: /2019/04/kubernetes-wordpress-almacenamiento-persistente.md
+permalink: /2019/04/kubernetes-wordpress-almacenamiento-persistente/
 tags:
   - Cloud Computing
   - kubernetes
 ---
-# 
-
 Puedes encontrar todos los ficheros con los que vamos a trabajar en el directorio [`wordpress2`](https://github.com/josedom24/kubernetes/tree/master/ejemplos/wordpress2).
 
 ## Configuración del servidor NFS
