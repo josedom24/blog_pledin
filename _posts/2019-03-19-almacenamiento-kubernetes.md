@@ -5,7 +5,7 @@ tags:
   - Cloud Computing
   - kubernetes
 ---
-Como hemos comentado anteriormente los pods son efímero, la información guardada en ellos no es persistente, pero es evidentemente que necesitamos que nuestras aplicaciones tengan la posibilidad de que su información no se pierda. La solución es añadir [volúmenes](https://kubernetes.io/docs/concepts/storage/volumes/) (almacenamiento persistente) a los pods para que lo puedan utilizar los contenedores. Los volúmenes son considerados otro recurso de Kubernete.
+Como hemos comentado anteriormente los pods son efímero, la información guardada en ellos no es persistente, pero es evidentemente que necesitamos que nuestras aplicaciones tengan la posibilidad de que su información no se pierda. La solución es añadir [volúmenes](https://kubernetes.io/docs/concepts/storage/volumes/) (almacenamiento persistente) a los pods para que lo puedan utilizar los contenedores. Los volúmenes son considerados otro recurso de Kubernetes.
 
 ### Definiendo volúmenes en un pod
 
