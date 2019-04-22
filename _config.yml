@@ -32,7 +32,7 @@ plugins:
   - jekyll-feed
 
 feed:
-  path: /feed/index.xml
+  path: /feed/feed.xml
 atom_feed:
   path: https://www.josedomingo.org/pledin/feed/feed.xml
 # Exclude from processing.
