@@ -76,3 +76,10 @@ nav#site-nav
 .archive__item-teaser img {
     width: auto;
 }
+
+div.page__inner-wrap {
+    border: 1px dotted #c6cad2;
+    margin-bottom: 25px;
+    padding: 15px;
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+}
