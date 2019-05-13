@@ -67,7 +67,7 @@ feature_row4:
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
-<h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1><hr/>
+<h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
 <div class="page__inner-wrap">
         <header>
@@ -75,7 +75,7 @@ feature_row4:
         </header>
       <section class="page__content" itemprop="text">
         {{ post.excerpt}}
-        <a href="{{ site.baseurl }}{{post.url}}">Seguir leyendo...</a><br/><hr/>
+        <a href="{{ site.baseurl }}{{post.url}}">Seguir leyendo...</a><br/>
       </section>
   </div>
   
