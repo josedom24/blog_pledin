@@ -69,7 +69,7 @@ feature_row4:
 {% include feature_row %}
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
-<div class="page__inner-wrap">
+<div class="page__inner-wrap-principal">
         <header>
           {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
         </header>
