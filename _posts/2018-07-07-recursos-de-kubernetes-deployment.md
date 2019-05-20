@@ -128,7 +128,7 @@ Si queremos volver a la versión anterior de nuestro despliegue, tenemos que eje
     kubectl rollout undo deployment/nginx
     deployment.apps "nginx" 
 
-T comprobamos como se activa el antiguo `ReplicaSet` y se crean nuevos pods con la versión anterior de nuestra aplicación:
+Y comprobamos como se activa el antiguo `ReplicaSet` y se crean nuevos pods con la versión anterior de nuestra aplicación:
     
     kubectl get rs
     NAME               DESIRED   CURRENT   READY     AGE
