@@ -10,9 +10,9 @@ tags:
 
 [`Deployment`](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) es la unidad de más alto nivel que podemos gestionar en Kubernetes. Nos permite definir diferentes funciones:
 
-* Control de replicas
+* Control de réplicas
 * Escabilidad de pods
-* Actualizaciones continúas
+* Actualizaciones continuas
 * Despliegues automáticos
 * *Rollback* a versiones anteriores
 
