@@ -105,7 +105,7 @@ También podríamos haber cambiado la versión de la imagen modificando la defin
 
     kubectl edit deployment nginx
 
-Y comprobamos que se ha creado un nuevo `RecordSet`, y unos nuevos pods con la nueva versión de la imagen.
+Y comprobamos que se ha creado un nuevo `ReplicaSet`, y unos nuevos pods con la nueva versión de la imagen.
 
     kubectl get rs
     NAME               DESIRED   CURRENT   READY     AGE
@@ -128,7 +128,7 @@ Si queremos volver a la versión anterior de nuestro despliegue, tenemos que eje
     kubectl rollout undo deployment/nginx
     deployment.apps "nginx" 
 
-T comprobamos como se activa el antiguo `RecordSet` y se crean nuevos pods con la versión anterior de nuestra aplicación:
+T comprobamos como se activa el antiguo `ReplicaSet` y se crean nuevos pods con la versión anterior de nuestra aplicación:
     
     kubectl get rs
     NAME               DESIRED   CURRENT   READY     AGE
@@ -144,7 +144,7 @@ T comprobamos como se activa el antiguo `RecordSet` y se crean nuevos pods con l
 
 ## Eliminando el despliegue
 
-Si eliminamos el `Deployment` se eliminarán el `RecordSet` asociado y los pods que se estaban gestionando.
+Si eliminamos el `Deployment` se eliminarán el `ReplicaSet` asociado y los pods que se estaban gestionando.
 
     kubectl delete deployment nginx
     deployment.extensions "nginx" deleted
