@@ -37,7 +37,7 @@ En la definición de un pod, además de especificar los contenedores que lo van 
       - name: temp
         emptyDir: {}
 
-En la sección `volumes` definimos los volúmenes disponibles y en la definción del contenedor, con la etiqueta `volumeMounts`, indicamos los puntos de montajes.
+En la sección `volumes` definimos los volúmenes disponibles y en la definición del contenedor, con la etiqueta `volumeMounts`, indicamos los puntos de montajes.
 
 Hemos definido tres volúmenes de diferente tipo:
 
@@ -242,7 +242,7 @@ A continuación si nuestro pod necesita un volumen, necesitamos hacer una solici
 Cuando creamos un *PersistentVolumenCliams*, se asignará un *PersistentVolumen* que se ajuste a la petición. Está asignación se puede configurar de dos maneras distintas:
 
 * **Estática**: Primero se crea todos los *PersistentVolumenCliams* por parte del administrador, que se irán asignando conforme se vayan creando los *PersistentVolumen*.
-* **Dinámica**: En este caso necesitamos un ["provisionador" de almacenamiento](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) (para cada uno de los backend), de tal manera que cada vez que se cree un *PersistentVolumen*, se creará bajo demanda un *PersistentVolumenCliams* que se ajuste a las características seleccionadas.
+* **Dinámica**: En este caso necesitamos un ["provisionador" de almacenamiento](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) (para cada uno de los backend), de tal manera que cada vez que se cree un *PersistentVolumenClaim*, se creará bajo demanda un *PersistentVolumen* que se ajuste a las características seleccionadas.
 
 ### Creación de *PersistentVolumenClaim*
 
