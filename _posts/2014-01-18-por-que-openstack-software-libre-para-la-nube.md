@@ -18,7 +18,7 @@ tags:
 </p>
 
 <iframe src="https://josedom24.github.io/openwebinars_openstack/#/" height="315" width="560"></iframe> 
-<iframe src="www.youtube.com/embed/3m5LeyI7Bss" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
+<iframe src="https://www.youtube.com/embed/3m5LeyI7Bss" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
 
 
 {% include comentarios.html comments=site.data.comments.openstack %}
