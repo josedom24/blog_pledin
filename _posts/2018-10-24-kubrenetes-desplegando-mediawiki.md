@@ -27,7 +27,7 @@ En este ejemplo vamos a crear el `Deployment` sin utilizar su definición en Yam
     NAME                         READY     STATUS    RESTARTS   AGE
     mediawiki-85bf9d6bd7-97bhg   1/1       Running   0          25s
 
-Utilizando la instrucción `kubectl run` se crea un `Deployment` con un `RecordSet` asociado que arranca un pod. La opción `--record` nos va a permitir guardar las actualizaciones del `Deployment` como [`annotations`](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) en la definición Yaml del mismo. Por lo tanto si vemos la definición del `Deployment`:
+Utilizando la instrucción `kubectl run` se crea un `Deployment` con un `ReplicaSet` asociado que arranca un pod. La opción `--record` nos va a permitir guardar las actualizaciones del `Deployment` como [`annotations`](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) en la definición Yaml del mismo. Por lo tanto si vemos la definición del `Deployment`:
 
     kubectl get deployments mediawiki -o yaml
 
@@ -80,7 +80,7 @@ Actualmente tenemos desplegada la versión `stable` (1.30) de la aplicación, pa
     NAME                         READY     STATUS    RESTARTS   AGE
     mediawiki-69f8b7464c-zxphb   1/1       Running   0          <invalid>
 
-Se ha creado un nuevo `RecordSet` y un nuevo pods.
+Se ha creado un nuevo `ReplicaSet` y un nuevo pods.
 
 Y comprobamos el historial de versiones del despliegue:
 
