@@ -27,7 +27,7 @@ Todas las observaciones, mejoras y sugerencias son bienvenidas.
 
 <!--more-->
 
-    **Entorno de trabajo: PSeInt**
+  **Entorno de trabajo: PSeInt**
 
 4. [Introducción a PSeInt](https://plataforma.josedomingo.org/pledin/cursos/programacion/curso/u04)
 
