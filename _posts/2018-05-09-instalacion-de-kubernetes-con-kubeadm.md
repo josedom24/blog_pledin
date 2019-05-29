@@ -15,7 +15,7 @@ tags:
 ---
 ![<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/05/name_blue.png" alt="" width="1600" height="237" class="aligncenter size-full wp-image-1988" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/05/name_blue.png)
   
-[Kubernetes](https://kubernetes.io/) es un sistema de código abierto que nos permite despliegues automáticos, escabilidad y gestión de contenedores de aplicaiones. [kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/) es una herramienta que nos permite el despliegue de un cluster de kubernetes de manera sencilla. El cluster lo podemos crear en máquinas físicas o virtuales, en nuestro caso, vamos a usar Debian 9 en 3 máquinas virtuales para realizar la instalación.
+[Kubernetes](https://kubernetes.io/) es un sistema de código abierto que nos permite despliegues automáticos, escalabilidad y gestión de contenedores de aplicaciones. [kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/) es una herramienta que nos permite el despliegue de un cluster de kubernetes de manera sencilla. El cluster lo podemos crear en máquinas físicas o virtuales, en nuestro caso, vamos a usar Debian 9 en 3 máquinas virtuales para realizar la instalación.
 
 ## Instalación de los paquetes necesarios
 
@@ -34,7 +34,7 @@ Instalamos los paquetes que nos permiten usar repositorios `apt` con https:
          gnupg2 \
          software-properties-common
     
-Añadimos las clves GPG oficales de Docker:
+Añadimos las claves GPG oficiales de Docker:
 
     $ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
     
@@ -57,7 +57,7 @@ Finalmente comprobamos la versión instalada:
     
 ### Instalación de kubeadm, kubelet and kubectl
 
-Vamos a instalar los siguientes pauqetes en nuestras máquinas:
+Vamos a instalar los siguientes paquetes en nuestras máquinas:
 
 * `kubeadm`: Instrucción que nos permite crear el cluster.
 * `kubelet`: Es el componente de kubernetes que se ejecuta en todos los nodos y es responsable de ejecutar los pods y los contenedores.
@@ -82,7 +82,7 @@ En el nodo que vamos a usar como master, ejecutamos la siguiente instrucción co
     
 Este comando inicializa el cluster, hemos indicado le CIDR de la red por donde se comunican los nodos del cluster.
 
-> Estoy utilizando como instraestructura tres instancias de OpenStack, es necesario indicar el parámetro `--apiserver-cert-extra-sans` con la IP flotante del master para que el certificado que se genera sea válido para esta ip, y se pueda controlar el cluster desde el exterior.
+> Estoy utilizando como infraestructura tres instancias de OpenStack, es necesario indicar el parámetro `--apiserver-cert-extra-sans` con la IP flotante del master para que el certificado que se genera sea válido para esta ip, y se pueda controlar el cluster desde el exterior.
 
 Cuando termina muestra un mensaje similar a este:
 
@@ -105,7 +105,7 @@ Cuando termina muestra un mensaje similar a este:
     
 Nos indica tres cosas:
 
-1. Las instrucciones que tenemos que ejecutar en el master, con un usuario sin privilegios para usar el cliente kubectl y manejar el claster.
+1. Las instrucciones que tenemos que ejecutar en el master, con un usuario sin privilegios para usar el cliente kubectl y manejar el cluster.
 2. La necesidad de instalar un pod para la gestión de la red.
 3. Y la instrucción que tenemos que ejecutar en los nodos para añadirlos al cluster. Utilizaremos un token para ello.
 
@@ -160,7 +160,7 @@ Y finalmente desde el master podemos obtener los nodos que forman el cluster:
     
 ## Acceso desde un cliente externo
 
-Normalmente vamos a interactuar con el cluster desde un cliente externo donde tengamos instaldo `kubectl`. Para instalar `kubectl`, siguiendo las [instrucciones oficiales](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-native-package-management), ejecutamos:
+Normalmente vamos a interactuar con el cluster desde un cliente externo donde tengamos instalado `kubectl`. Para instalar `kubectl`, siguiendo las [instrucciones oficiales](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-native-package-management), ejecutamos:
 
     apt-get update && apt-get install -y apt-transport-https
     curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
