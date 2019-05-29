@@ -1,11 +1,12 @@
 ---
-title: 'Curso de introducción a la programación con pseudocódigo '
+title: 'Curso de introducción a la programación con pseudocódigo'
 permalina: 2019/05/curso-introduccion-programacion-pseudocodigo/
 tags:
   - Cursos
   - Programación
   - Pseudocódigo
 ---
+[Curso de introducción a la programación con pseudocódigo](https://plataforma.josedomingo.org/pledin/cursos/programacion/){: .btn .btn--primary .btn--x-large}
 
 Un algoritmo es un conjunto de acciones que especifican la secuencia de operaciones realizar, en orden, para resolver un problema. El pseudocódigo, nos permite una aproximación del algoritmo al lenguaje natural y por tanto un a redacción rápida del mismo. En este curso se presenta los fundamentos para analizar problemas y resolverlos a través de pseudocódigo.
 
@@ -14,7 +15,7 @@ Los siguientes contenidos forman parte de un curso que he impartido para [OpenWe
 Puedes obtener todo el contenido del curso en la [Plataforma PLEDIN](https://plataforma.josedomingo.org/pledin/cursos/programacion/).
 Todas las observaciones, mejoras y sugerencias son bienvenidas.
 
-## Unidades
+**Contenido del curso**
 
 0. [Introducción al curso](https://plataforma.josedomingo.org/pledin/cursos/programacion/curso/u0/u0.pdf)
 
@@ -23,6 +24,8 @@ Todas las observaciones, mejoras y sugerencias son bienvenidas.
 1. [Resolución de problemas](https://plataforma.josedomingo.org/pledin/cursos/programacion/curso/u01)
 2. [Análisis del problema](https://plataforma.josedomingo.org/pledin/cursos/programacion/curso/u02)
 3. [Diseño de algoritmos](https://plataforma.josedomingo.org/pledin/cursos/programacion/curso/u03)
+
+<!--more-->
 
     **Entorno de trabajo: PSeInt**
 
