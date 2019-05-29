@@ -6,7 +6,7 @@ tags:
   - Programación
   - Pseudocódigo
 ---
-[Curso de introducción a la programación con pseudocódigo](https://plataforma.josedomingo.org/pledin/cursos/programacion/){: .btn .btn--primary .btn--x-large}
+[Curso de introducción a la programación con pseudocódigo](https://plataforma.josedomingo.org/pledin/cursos/programacion/){: .btn .btn--warning .btn--x-large .align-center }
 
 Un algoritmo es un conjunto de acciones que especifican la secuencia de operaciones realizar, en orden, para resolver un problema. El pseudocódigo, nos permite una aproximación del algoritmo al lenguaje natural y por tanto un a redacción rápida del mismo. En este curso se presenta los fundamentos para analizar problemas y resolverlos a través de pseudocódigo.
 
