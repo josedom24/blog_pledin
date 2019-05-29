@@ -174,7 +174,7 @@ En el master como root, ejecutamos:
     apt install nfs-kernel-server
     mkdir -p /var/shared
 
-Y en el fichero `/etc/export` declaramos el directorio que vamos a exportar:
+Y en el fichero `/etc/exports` declaramos el directorio que vamos a exportar:
 
     /var/shared 10.0.0.0/24(rw,sync,no_root_squash,no_all_squash)
 
@@ -233,7 +233,7 @@ Y lo creamos y vemos el recurso:
     NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM     STORAGECLASS   REASON    AGE
     nfs-pv    5Gi        RWX            Recycle          Available                                      10s
 
-El tipo de volumen disponible lo vamos a referenciar cin su nombre (`nfs-pv`), tiene 5Gb de capacidad, estamos utilizando NFS, el modo de acceso es RWX y su política de reciclaje es de reutilización del contenido.
+El tipo de volumen disponible lo vamos a referenciar con su nombre (`nfs-pv`), tiene 5Gb de capacidad, estamos utilizando NFS, el modo de acceso es RWX y su política de reciclaje es de reutilización del contenido.
 
 ## Solicitud de almacenamiento en Kubernetes: PersistentVolumenClaims
 
