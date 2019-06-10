@@ -1,6 +1,6 @@
 ---
 id: 143
-title: Sufiendo spam en WordPress
+title: Sufriendo spam en WordPress
 date: 2010-05-23T10:22:48+00:00
 
 
