@@ -25,13 +25,13 @@ La solución puede ser utilizar un [`Ingress controller`](https://kubernetes.io/
 
 Siguiendo los pasos que obtenemos en la guía de usuario de [`traefik`](https://docs.traefik.io/user-guide/kubernetes/) vamos a realizar la instalación del ingress controller.
 
-Lo primero es crear las reglas de aceso (RBAC) necesarias (puedes ver el contenido del los ficheros yaml en la documentación):
+Lo primero es crear las reglas de acceso (RBAC) necesarias (puedes ver el contenido del los ficheros yaml en la documentación):
 
-    kubectl apply -f https://raw.githubusercontent.com/containous/traefik/master/examples/k8s/traefik-rbac.yaml
+    kubect apply -f https://raw.githubusercontent.com/containous/traefik/v1.7/examples/k8s/traefik-rbac.yaml
 
 Como hemos comentado podemos desplegar el proxy utilizando un `Deployment` o un `DaemonSet`, hemos elegido esta última opción como indicábamos anteriormente:
 
-    kubectl apply -f https://raw.githubusercontent.com/containous/traefik/master/examples/k8s/traefik-ds.yaml
+    kubect apply -f https://raw.githubusercontent.com/containous/traefik/v1.7/examples/k8s/traefik-ds.yaml
 
 Comprobamos el despliegue:
 

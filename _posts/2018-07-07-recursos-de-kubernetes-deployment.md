@@ -10,9 +10,9 @@ tags:
 
 [`Deployment`](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) es la unidad de más alto nivel que podemos gestionar en Kubernetes. Nos permite definir diferentes funciones:
 
-* Control de replicas
+* Control de réplicas
 * Escabilidad de pods
-* Actualizaciones continúas
+* Actualizaciones continuas
 * Despliegues automáticos
 * *Rollback* a versiones anteriores
 
@@ -105,7 +105,7 @@ También podríamos haber cambiado la versión de la imagen modificando la defin
 
     kubectl edit deployment nginx
 
-Y comprobamos que se ha creado un nuevo `RecordSet`, y unos nuevos pods con la nueva versión de la imagen.
+Y comprobamos que se ha creado un nuevo `ReplicaSet`, y unos nuevos pods con la nueva versión de la imagen.
 
     kubectl get rs
     NAME               DESIRED   CURRENT   READY     AGE
@@ -128,7 +128,7 @@ Si queremos volver a la versión anterior de nuestro despliegue, tenemos que eje
     kubectl rollout undo deployment/nginx
     deployment.apps "nginx" 
 
-T comprobamos como se activa el antiguo `RecordSet` y se crean nuevos pods con la versión anterior de nuestra aplicación:
+Y comprobamos como se activa el antiguo `ReplicaSet` y se crean nuevos pods con la versión anterior de nuestra aplicación:
     
     kubectl get rs
     NAME               DESIRED   CURRENT   READY     AGE
@@ -144,7 +144,7 @@ T comprobamos como se activa el antiguo `RecordSet` y se crean nuevos pods con l
 
 ## Eliminando el despliegue
 
-Si eliminamos el `Deployment` se eliminarán el `RecordSet` asociado y los pods que se estaban gestionando.
+Si eliminamos el `Deployment` se eliminarán el `ReplicaSet` asociado y los pods que se estaban gestionando.
 
     kubectl delete deployment nginx
     deployment.extensions "nginx" deleted

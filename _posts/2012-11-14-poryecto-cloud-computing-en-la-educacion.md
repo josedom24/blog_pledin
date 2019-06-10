@@ -26,16 +26,12 @@ tags:
   Toda la documentación del proyecto la puedes encontrar en dos formatos: página estática html, como un curso moodle:
 </p>
 
-  * [www.gonzalonazareno.org/cloud](http://www.gonzalonazareno.org/cloud)
+  * [informatica.gonzalonazareno.org/cloud](http://informatica.gonzalonazareno.org/cloud)
   * [Curso Moodle](http://informatica.gonzalonazareno.org/plataforma/course/view.php?id=47)
 
 He puesto también una copia en PLEDIN:
 
-  * [www.josedomingo.org/cloud](http://www.josedomingo.org/cloud)
-  * [Curso Moodle](http://www.josedomingo.org/web/course/view.php?id=68)
+  * [Curso Moodle](https://plataforma.josedomingo.org/pledin/cursos/cloud2012/)
 
 Un saludo
 
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->

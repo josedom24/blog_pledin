@@ -3,3 +3,4 @@ _site
 .jekyll-metadata
 post.sh
 update.sh
+.swp

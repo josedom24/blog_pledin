@@ -67,15 +67,15 @@ feature_row4:
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
-<h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1><hr/>
+<h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
-<div class="page__inner-wrap">
+<div class="page__inner-wrap-principal">
         <header>
           {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
         </header>
       <section class="page__content" itemprop="text">
         {{ post.excerpt}}
-        <a href="{{ site.baseurl }}{{post.url}}">Seguir leyendo...</a><br/><hr/>
+        <a href="{{ site.baseurl }}{{post.url}}">Seguir leyendo...</a><br/>
       </section>
   </div>
   
@@ -102,9 +102,7 @@ feature_row4:
 <td>
 <h2>Últimos cursos...</h2>
 <ul>
-<!--
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/programacion/">Introducción a la programación con pseudocódigo (2018)</a></li>
-  -->
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/apache24/">Curso Apache2.4 (2018)</a></li>
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/flask/">Curso sobre Flask (Miniframework python para desarrollar páginas web) (2017)</a></li>
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/python3/">Curso de python3 (2017)</a></li>
