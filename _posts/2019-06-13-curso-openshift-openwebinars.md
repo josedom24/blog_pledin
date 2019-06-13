@@ -15,7 +15,7 @@ Hace pocos días han lanzado el último curso que he impartido en OpenWebinars: 
   <tbody>
     <tr>
       <td>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/T6MHNGeV1Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iT6MHNGeV1Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </td>
       
       <td>
