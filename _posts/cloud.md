@@ -16,13 +16,15 @@ Para poder instalar la aplicación Nextcloud necesitamos instalar un servidor LA
 
         apt install mariadb-server
 
-    A continuación creamos la base de datos y el usuario con el que nos vamos a conectar a la base de datos:
+    A continuación accedemos al servidor y creamos la base de datos y el usuario con el que nos vamos a conectar a la base de datos:
 
-        CREATE DATABASE nextcloud
-        CREATE USER 'usernextcloud'@'localhost' IDENTIFIED BY 'passnextcloud';
-        GRANT ALL PRIVILEGES ON nextcloud.* to 'usernextcloud'@'localhost';
-        FLUSH PRIVILEGES;
-        quit
+        $ mysql -u root -p
+
+        > CREATE DATABASE nextcloud;
+        > CREATE USER 'usernextcloud'@'localhost' IDENTIFIED BY 'passnextcloud';
+        > GRANT ALL PRIVILEGES ON nextcloud.* to 'usernextcloud'@'localhost';
+        > FLUSH PRIVILEGES;
+        > quit
 
 3. Instalamos la versión de php, así como la libería para que php pueda conectarse a la base de datos (por dependencia se instala el módulos de apache2 `libapache2-mod-php7.3` que permite que el servidor web ejecute código php):
 
@@ -34,7 +36,7 @@ Accedemos a nuestro servidor y comenzamos con la configuración de la aplicació
 
 Siguiendo la documentación necesitamos instalar algunas librerías más de php:
 
-    apt install
+    apt install php-zip php-xml php-gd php-curl php-mbstring
 
 Ya tenemos instalada nuestra aplicación Nextcloud.
 
@@ -52,9 +54,68 @@ La versión que obtenemos de los repositorios de Debian Buster es la 1.45-3, per
     - os/arch: linux/amd64
     - go version: go1.12.10
 
+
+
+
 ### Configuración de loc proveedores cloud
 
-A continuación vamos a configurar distintos proveedores cloud, para ello se utilizan distintas formas según la API del proveedor: usuario y contraseña del servicio, autentifcación oauth y autorización por parte del serrvicio, ...
+A continuación vamos a configurar distintos proveedores cloud, para ello se utilizan distintas formas según la API del proveedor: usuario y contraseña del servicio, autentifcación oauth y autorización por parte del servicio, ...
+
+#### Configuración de mega
+
+Para configurar un nuevo proveedor ejecutamos:
+
+    $ rclone config
+
+Y elegimos la opción:
+
+    n) New remote
+
+Los datos que tenemos que indicar son los siguientes:
+
+* Un nombre con el que vamos a identificar este proveedor.
+* De las lista de proveedores elegimos el que nos interesa indicando el número, en el caso de mega es el 18.
+* El nombre de usuario y la contraseña de la cuenta.
+* Para nuestro ejemplo no vamos a introducir la configuración avanzada.
+
+Por lo tanto los pasos serían:
+
+    # rclone config
+    n) New remote
+    s) Set configuration password
+    q) Quit config
+    n/s/q> n
+    name> mega1
+    Type of storage to configure.
+    Enter a string value. Press Enter for the default ("").
+    Choose a number from below, or type in your own value
+     ...
+    18 / Mega
+       \ "mega"
+    ...
+    Storage> 18
+    ** See help for mega backend at: https://rclone.org/mega/ **
+
+    User name
+    Enter a string value. Press Enter for the default ("").
+    user> tucorreo@gmail.com
+    Password.
+    y) Yes type in my own password
+    g) Generate random password
+    y/g> y
+    Enter the password:
+    password:*********
+    Confirm the password:
+    password:*********
+    Edit advanced config? (y/n)
+    y) Yes
+    n) No
+    y/n> n
+
+Una vez que tenemos configurado el proveedor podríamos empezar a gestionarlo ejecutando distintos subcomandos, por ejemplo: 
+
+
+
 
 #### Configurando dropbox
 
@@ -69,6 +130,6 @@ Y elegimos la opción:
 A continuación indicamos el nombre con el que vamos a identifica al servicio, elegimos el proveedor de una lista y en el caso de dropbox indicamos el nombre de usuario y la contraseña (la contraseña se guardará cifrada en el fichero de configuración):
 
 
-
+https://rclone.org/remote_setup/
 
 
