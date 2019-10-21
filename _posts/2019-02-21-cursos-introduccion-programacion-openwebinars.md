@@ -30,7 +30,6 @@ En este [curso](https://openwebinars.net/cursos/introduccion-programacion/) apre
 </figure>
 </div>
 
-
 ## Curso de Python 3 desde cero
 
 En este [curso](https://openwebinars.net/cursos/python-desde-cero/) aprenderás los fundamentos del lenguaje de programación Python 3 desde cero, pensado para no programadores que se quieran iniciar en este mundo. mLos vídeos que se han publicado son los siguientes:
