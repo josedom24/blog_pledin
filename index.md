@@ -65,7 +65,7 @@ feature_row4:
 ---
 
 {% include feature_row id="intro" type="center" %}
-{% include feature_row id="row2" %}
+{% include feature_row id="feature_row2" %}
 {% include feature_row %}
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
