@@ -20,11 +20,4 @@ El grupo **OpenStack Sevilla** se une a los eventos de celebración del 5º aniv
   * [Cloud hibrido, multicloud, cloud bursting con OpenStack, rightscale, amazon aws y azure](http://es.slideshare.net/bn-cloud/5th-birthday-openstack-sevilla-cloud-bursting) por [Nicolás Bertet](http://www.slideshare.net/bn-cloud)
   * [Historia y evolución del proyecto OpenStack](http://www.slideshare.net/alberto.molina/open-stack-5th-birthday-slide-deck) por Alberto Molina
 
-Puedes ver el reportaje fotográfico del evento:
-
-<iframe src="http://www.flickr.com/slideShow/index.gne?group_id=&user_id=16117002@N00&set_id=&text=" width="700" height="700" frameborder="0" scrolling="no" align="center"></iframe>
-
-
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
+Puedes ver el reportaje fotográfico del evento en este [enlace](http://www.flickr.com/slideShow/index.gne?group_id=&user_id=16117002@N00&set_id=&text=).
