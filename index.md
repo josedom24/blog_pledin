@@ -129,24 +129,5 @@ feature_row4:
 
 
 {% include feature_row id="feature_row2" %}
-<table style="width: 100%;">
-<tr>
-
-<td style="width: 50px; vertical-align:top"><h2>Blogroll</h2>
-<ul>
-  <li><a href="http://www.gonzalonazareno.org">Gonzalo Nazareno</a></li>
-  <li><a href="https://albertomolina.wordpress.com/">Desde lo alto del cerro</a></li>
-  <li><a href="http://ral-arturo.org/">ral-arturo.org</a></li>
-  <li><a href="https://www.linuxarena.net/">Linuxarena</a></li>
-</ul>
-<h2>Revistas Libres de Software Libre</h2>
-<center><a href="revistas"><img src="assets/wp-content/uploads/2011/02/revistas.jpg"/></a></center>
-</td>
-<td width="50%">
-   <a class="twitter-timeline"  href="https://twitter.com/Pledin_JD" data-widget-id="310016635949940736">Tweets por el @Pledin_JD.</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</td>
-</tr>
-</table>
 
 {% include feature_row id="feature_row4" type="center" %}
