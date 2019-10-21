@@ -31,18 +31,11 @@ Puedes obtener más información del encuentro en el [meetup](http://www.meetup.
 
 Si te interesa OpenStack y el Cloud Computing no tienes excusas para no participar en este grupo.
 
-**[Editado: 16 de abril]:** Os dejo en esta entrada la presentación y el vídeo del primer encuentro del grupo OpenStack Sevilla que celebramos ayer por la tarde:
+**[Editado: 16 de abril]:** Os dejo en esta entrada la [presentación](http://iesgn.github.io/openstacksvq1/#/) y el vídeo del primer encuentro del grupo OpenStack Sevilla que celebramos ayer por la tarde:
 
-<center>
-  <iframe src="http://iesgn.github.io/openstacksvq1/#/" width="560" height="315"></iframe>
-</center>
 
   
 <center>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/p6Quofs4Wlo" frameborder="0" allowfullscreen></iframe>
 </center>
 
-
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
