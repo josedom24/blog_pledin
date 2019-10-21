@@ -114,6 +114,9 @@ feature_row4:
 </td>
 </tr>
 </table>
+
+{% include feature_row2 %}
+
 <table style="width: 100%;">
 <tr>
 
