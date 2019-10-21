@@ -20,8 +20,8 @@ Hace pocos días han lanzado el último curso que he impartido en OpenWebinars: 
 <div id="gallery">
 <figure class="half">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/HPEPPArfOfk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  <figure class="half">
-  </figure>
+</figure>
+<figure class="half">  
   <iframe width="560" height="315" src="https://www.youtube.com/embed/MmxIuTf9WBs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </figure>
 </div>
