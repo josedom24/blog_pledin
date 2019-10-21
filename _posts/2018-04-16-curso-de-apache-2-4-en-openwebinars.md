@@ -14,20 +14,6 @@ tags:
 ---
 Hace pocos días he impartido un [curso sobre el servidor web Apache 2.4 en OpenWebinars](https://openwebinars.net/cursos/servidor-apache/?ref=landing-cursos). Os dejo aquí dos vídeos que se han publicado en YouTube para promocionar el curso:
 
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Pp7Z20f6myM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </td>
-      
-      <td>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/muAKPiPqW6g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- AddThis Advanced Settings generic via filter on the_content -->
-
-<!-- AddThis Share Buttons generic via filter on the_content -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Pp7Z20f6myM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br/>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/muAKPiPqW6g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
