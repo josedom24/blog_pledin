@@ -12,15 +12,16 @@ tags:
 Hace pocos días han lanzado el último curso que he impartido en OpenWebinars: [Curso de OpenShift](https://openwebinars.net/cursos/openshift/). Os dejo aquí dos vídeos que se han publicado en YouTube para promocionar el curso:
 
 
-{% include video id="iT6MHNGeV1Q" provider="youtube" %}
+
 <table>
   <tbody>
     <tr>
       <td>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/iT6MHNGeV1Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        {% include video id="iT6MHNGeV1Q" provider="youtube" %}
       </td>
       
       <td>
+        {% include video id="cLiOynXWbJU" provider="youtube" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/cLiOynXWbJU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </td>
     </tr>
