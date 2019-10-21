@@ -32,13 +32,14 @@ feature_row:
     btn_label: "Módulos FP"
     btn_class: "btn--primary btn--small"
 feature_row2:
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Left Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Left aligned with `type="left"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
+  - image_path: 
+    alt: ""
+    title: "Blogroll"
+    excerpt: '<li><a href="http://www.gonzalonazareno.org">Gonzalo Nazareno</a></li>
+  <li><a href="https://albertomolina.wordpress.com/">Desde lo alto del cerro</a></li>
+  <li><a href="http://ral-arturo.org/">ral-arturo.org</a></li>
+  <li><a href="https://www.linuxarena.net/">Linuxarena</a></li>'
+    
 feature_row3:
   - image_path: 
     alt: ""
@@ -65,7 +66,7 @@ feature_row4:
 ---
 
 {% include feature_row id="intro" type="center" %}
-{% include feature_row id="feature_row2" %}
+
 {% include feature_row %}
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
@@ -116,7 +117,7 @@ feature_row4:
 </table>
 
 
-
+{% include feature_row id="feature_row2" %}
 <table style="width: 100%;">
 <tr>
 
