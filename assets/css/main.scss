@@ -84,8 +84,11 @@ div.page__inner-wrap-principal {
     box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
 }
 
-.fluid-width-video-wrapper {
-    width: 50%;
-    position: relative;
-    padding: 0;
+.half {
+    width:50%;
+    float:left;
+    margin:0px;
+    text-align:center;
+    padding:0px;
+
 }
