@@ -11,6 +11,8 @@ tags:
 ---
 Hace pocos días han lanzado el último curso que he impartido en OpenWebinars: [Curso de OpenShift](https://openwebinars.net/cursos/openshift/). Os dejo aquí dos vídeos que se han publicado en YouTube para promocionar el curso:
 
+
+{% include video id="iT6MHNGeV1Q" provider="youtube" %}
 <table>
   <tbody>
     <tr>
