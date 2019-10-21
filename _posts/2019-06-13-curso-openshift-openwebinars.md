@@ -16,19 +16,8 @@ Hace pocos días han lanzado el último curso que he impartido en OpenWebinars: 
         {% include video id="iT6MHNGeV1Q" provider="youtube" %}
         {% include video id="cLiOynXWbJU" provider="youtube" %}
 
-<table>
-  <tbody>
-    <tr>
-      <td>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/HPEPPArfOfk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </td>
-      
-      <td>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/MmxIuTf9WBs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 
 
