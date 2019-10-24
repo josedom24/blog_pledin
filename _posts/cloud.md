@@ -54,9 +54,6 @@ La versión que obtenemos de los repositorios de Debian Buster es la 1.45-3, per
     - os/arch: linux/amd64
     - go version: go1.12.10
 
-
-
-
 ### Configuración de loc proveedores cloud
 
 A continuación vamos a configurar distintos proveedores cloud, para ello se utilizan distintas formas según la API del proveedor: usuario y contraseña del servicio, autentifcación oauth y autorización por parte del servicio, ...
@@ -98,7 +95,7 @@ Por lo tanto los pasos serían:
 
     User name
     Enter a string value. Press Enter for the default ("").
-    user> tucorreo@gmail.com
+    user> tucorreo@correo.com
     Password.
     y) Yes type in my own password
     g) Generate random password
@@ -112,14 +109,16 @@ Por lo tanto los pasos serían:
     n) No
     y/n> n
 
-Una vez que tenemos configurado el proveedor podríamos empezar a gestionarlo ejecutando distintos subcomandos, por ejemplo: 
-
-
-
-
 #### Configurando dropbox
 
-Para configurar un nuevo proveedor ejecutamos:
+Cuando hemos configurado una cuenta con mega hemos usado como método de autentificación el nombre de usuario y la contraseña. La mayortía de proveedores van a usar oAuth2 como método de autentificación, es el caso , por ejemplo de dropbox. en este caso tenemos dos formas de autentificarnos:
+
+1. dando de alta una nueva aplicación en el servicio deseado, y obtener las credenciales (identificador de usuario, token de autentificación,...)
+2. Desde un navegador web autentificarnos en el servicio y da permiso a la aplicación `rclone` para que gestione nuestros ficheros.
+
+Nosotros vamos a optar por esta segunda opción, sin embargo si estamos instalando rclone en un sistema operativo sin entorno gráfico debemos autorizar la aplicación desde un ordenador con entorno gráfico donde podamos a acceder a una navegador, lo veremos a continuación (más opciones de configuración la puedes encontrar en la documentación: [Configuring rclone on a remote / headless machine](https://rclone.org/remote_setup/).
+
+Para configurar un proveedor de dropbox:
 
     $ rclone config
 
@@ -127,9 +126,72 @@ Y elegimos la opción:
 
     n) New remote
 
-A continuación indicamos el nombre con el que vamos a identifica al servicio, elegimos el proveedor de una lista y en el caso de dropbox indicamos el nombre de usuario y la contraseña (la contraseña se guardará cifrada en el fichero de configuración):
+    ...
+    name> dropbox
+    ...
+    Choose a number from below, or type in your own value
+     ...
+    8 / Dropbox
+      \ "dropbox"
+    ...
+    Storage> 8
+    ...
+    Use auto config?
+     * Say Y if not sure
+     * Say N if you are working on a remote or headless machine
+    y) Yes
+    n) No
+    y/n> n
+    For this to work, you will need rclone available on a machine that has a web browser available.
+    Execute the following on your machine (same rclone version recommended) :
+    	rclone authorize "dropbox"
+    Then paste the result below:
+    result> 
 
 
-https://rclone.org/remote_setup/
+Como estamos configurando `rclone` en una máquina sin entorno gráfico, ahora es el momento en el que tenemos que ejecutar el comando `rclone authorize "dropbox"` en una máquina con entorno gráfico, acceder al navegador, autentificarse y configurar los permisos de la aplicación:
 
+    $ rclone authorize "dropbox"
+    If your browser doesn't open automatically go to the following link: http://127.0.0.1:53682/auth?state=212ac74326029a80a8d4aa0a707838ed
+    Log in and authorize rclone for access
+    Waiting for code...
 
+Accdemos al navegador:
+
+![dropbox]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/19/dropbox1.png){: .align-center }
+
+Y damos permisos a la aplciación:
+    
+![dropbox]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2018/19/dropbox2.png){: .align-center }
+
+Obtnemos una página que nos informa que todo ha ido bien ("Success!") y volvemos al terminal:
+    
+    Got code
+    Paste the following into your remote machine --->
+    {"access_token":"xxxxxxxxxxxxAAAAAAY2nfpKZKmI4tIDiy_ya37Tf1MT3no2rGW5PcV3znHJq0i","token_type":"bearer","expiry":"0001-01-01T00:00:00Z"}
+    <---End paste
+
+Y como se nos indica tenemos que copia y pegar la línea obtenida en nuestro servidor remoto donde estamos trabajando con `rclone`:
+
+    result> {"access_token":"xxxxxxxxxxxxAAAAAAY2nfpKZKmI4tIDiy_ya37Tf1MT3no2rGW5PcV3znHJq0i","token_type":"bearer","expiry":"0001-01-01T00:00:00Z"}
+    ...
+    y) Yes this is OK
+    ...
+    y/e/d> y
+
+Para finalizar podemos ver los proveedores que hemos configurado:
+
+    $ rclone config
+    Current remotes:
+
+    Name                 Type
+    ====                 ====
+    dropbox              dropbox
+    mega1                mega
+    ...
+
+Toda la información de estos servidores remotos los va almacenando en el fichero `~/.config/rclone/rclone.conf`.
+
+### Gestionando nuestros ficheros con rclone
+
+Una vez que tenemos configurado el proveedor podríamos empezar a gestionalos ejecutando distintos subcomandos, por ejemplo: 
