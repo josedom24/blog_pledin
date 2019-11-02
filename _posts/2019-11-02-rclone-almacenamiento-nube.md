@@ -75,6 +75,11 @@ Por lo tanto los pasos serían:
     n) No
     y/n> n
 
+Vamos a verlo en un vídeo:
+
+<script id="asciicast-E9nBhgIM9IHfvpEsYDhRgwkLC" src="https://asciinema.org/a/E9nBhgIM9IHfvpEsYDhRgwkLC.js" async></script>
+
+
 #### Configurando dropbox
 
 Cuando hemos configurado una cuenta con mega hemos usado como método de autentificación el nombre de usuario y la contraseña. La mayortía de proveedores van a usar oAuth2 como método de autentificación, es el caso , por ejemplo de dropbox. en este caso tenemos dos formas de autentificarnos:
