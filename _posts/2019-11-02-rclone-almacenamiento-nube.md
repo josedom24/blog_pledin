@@ -137,7 +137,7 @@ Y damos permisos a la aplciación:
     
 ![dropbox]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2019/11/dropbox2.png){: .align-center }
 
-Obtnemos una página que nos informa que todo ha ido bien ("Success!") y volvemos al terminal:
+Obtenemos una página que nos informa que todo ha ido bien ("Success!") y volvemos al terminal:
     
     Got code
     Paste the following into your remote machine --->
