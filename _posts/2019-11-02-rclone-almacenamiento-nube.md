@@ -20,11 +20,13 @@ La versión que obtenemos de los repositorios de Debian Buster es la 1.45-3, per
     - os/arch: linux/amd64
     - go version: go1.12.10
 
-### Configuración de los proveedores cloud
+## Configuración de los proveedores cloud
 
 A continuación vamos a configurar distintos proveedores cloud, para ello se utilizan distintas formas según la API del proveedor: usuario y contraseña del servicio, autentifcación oauth y autorización por parte del servicio, ...
 
-#### Configuración de mega
+<!--more-->
+
+### Configuración de mega
 
 Para configurar un nuevo proveedor ejecutamos:
 
@@ -80,7 +82,7 @@ Vamos a verlo en un vídeo:
 <script id="asciicast-E9nBhgIM9IHfvpEsYDhRgwkLC" src="https://asciinema.org/a/E9nBhgIM9IHfvpEsYDhRgwkLC.js" async></script>
 
 
-#### Configurando dropbox
+### Configurando dropbox
 
 Cuando hemos configurado una cuenta con mega hemos usado como método de autentificación el nombre de usuario y la contraseña. La mayortía de proveedores van a usar oAuth2 como método de autentificación, es el caso , por ejemplo de dropbox. en este caso tenemos dos formas de autentificarnos:
 
@@ -163,7 +165,12 @@ Para finalizar podemos ver los proveedores que hemos configurado:
 
 Toda la información de estos servidores remotos los va almacenando en el fichero `~/.config/rclone/rclone.conf`.
 
-### Gestionando nuestros ficheros con rclone
+
+Lo vemos en un vídeo:
+
+<script id="asciicast-gw1K6n7ktaSu3AGTRgZPzKEzd" src="https://asciinema.org/a/gw1K6n7ktaSu3AGTRgZPzKEzd.js" async></script>
+
+## Gestionando nuestros ficheros con rclone
 
 Una vez que tenemos configurado el proveedor podríamos empezar a gestionalos ejecutando distintos subcomandos, por ejemplo usando nuestra cuenta de dropbox:
 
@@ -193,5 +200,9 @@ Una vez que tenemos configurado el proveedor podríamos empezar a gestionalos ej
         2072006 info.txt
 
 Puedes ver todas las operaciones que puedes hacer con tus servicios de almacenmaineto en la nube en la [documentación de rclone](https://rclone.org/docs/).
+
+Podemos ver estas operaciones en un vídeo:
+
+<script id="asciicast-5GJmnlatyGvad57kH9ZxNPzs8" src="https://asciinema.org/a/5GJmnlatyGvad57kH9ZxNPzs8.js" async></script>
 
 Como hemos visto `rclone` es una herramienta muy interesante para gestionar nuestros servicios de almacenamiento en la nube. En la próxima entrada veremos como podemos usarlo junto a Nextcloud para gestionar todo nuestro almacenamiento de forma centralizada.
