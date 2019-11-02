@@ -5,6 +5,13 @@
   url: https://mega.nz/#F!zehWRC6A!hXjk4A9bFWuH6CXKmYut5g
   web: https://www.sololinux.es/
 
+- name: "Full Circle"
+  img: fullcircle.jpg
+  descripcion: "Full Circle Magazine es una revista dedicada a la distribución y divulgación de Ubuntu.
+La revista es en inglés, pero los primeros números están traducidos al español. En ella podemos ver información sobre Ubuntu, Kubuntu, Edubuntu y Xubuntu… No está nada mal, aunque es un poco corta, apta para lectores vagos."
+  numero: 150 (Octubre 2019)
+  url: https://mega.nz/#F!PKQg2CQJ!_OR1NcVXyZPjDX5EQJk0Kg
+  web: "https://fullcirclemagazine.org/"
 
 - name: ATIX Revista Digital
   img: atix2.jpg
@@ -34,14 +41,6 @@
   numero: 14 (Octubre 2016)
   url: https://mega.nz/#F!TepDFIzQ!dc2genNhoZxiC2yKgMmlBw
   web: "http://e-ducadores.com/aprenderparaeducar/"
-
-- name: "Full Circle"
-  img: fullcircle.jpg
-  descripcion: "Full Circle Magazine es una revista dedicada a la distribución y divulgación de Ubuntu.
-La revista es en inglés, pero los primeros números están traducidos al español. En ella podemos ver información sobre Ubuntu, Kubuntu, Edubuntu y Xubuntu… No está nada mal, aunque es un poco corta, apta para lectores vagos."
-  numero: 139 (Noviembre 2018)
-  url: https://mega.nz/#F!PKQg2CQJ!_OR1NcVXyZPjDX5EQJk0Kg
-  web: "https://fullcirclemagazine.org/"
 
 - name: "Full Circle - Recopilaciones"
   img: fullcircle2.jpg
