@@ -8,9 +8,9 @@ tags:
 
 ![rclone]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2019/11/rclone.png){: .align-center }
 
-[rclone](https://rclone.org/) es una herramienta que nos permite trabajar con los ficheros que tenemos almacenados en distintos servicios de almacenamiento en la nube (dropbox, google drive, mega, box, ... y muchos más que puedes ver en su página principal). Por lo tanto con `rclone` podemos gestionar y sincronizar los ficheros de nuestro servicios preferidos desde la línea de comandos. 
+[rclone](https://rclone.org/) es una herramienta que nos permite trabajar con los ficheros que tenemos almacenados en distintos servicios de almacenamiento en la nube (dropbox, google drive, mega, box, ... y muchos más que puedes ver en su página principal). Por lo tanto con `rclone` podemos gestionar y sincronizar los ficheros de nuestros servicios preferidos desde la línea de comandos. 
 
-La versión que obtenemos de los repositorios de Debian Buster es la 1.45-3, pero si queremos muchos más proveedores cloud para configurar es recomendable bajarse la última versión (en el momento de escribir este artículo la versión 1.49.5) que encontraremos en la [página de descarga](https://rclone.org/downloads/). Nos descargamos el fichero `deb` y los instalamos en nuestro servidor:
+La versión que obtenemos de los repositorios de Debian Buster es la 1.45-3, pero si queremos muchos más proveedores cloud para configurar es recomendable bajarse la última versión (en el momento de escribir este artículo, la versión 1.49.5) que encontraremos en la [página de descarga](https://rclone.org/downloads/). Nos descargamos el fichero `deb` y los instalamos en nuestro servidor:
 
     $ wget https://downloads.rclone.org/v1.49.5/rclone-v1.49.5-linux-amd64.deb
     $ dpkg -i rclone-v1.49.5-linux-amd64.deb
