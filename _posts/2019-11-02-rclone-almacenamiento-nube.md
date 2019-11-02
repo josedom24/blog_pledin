@@ -84,12 +84,12 @@ Vamos a verlo en un vídeo:
 
 ### Configurando dropbox
 
-Cuando hemos configurado una cuenta con mega hemos usado como método de autentificación el nombre de usuario y la contraseña. La mayoría de proveedores van a usar oAuth2 como método de autentificación, es el caso , por ejemplo de dropbox. en este caso tenemos dos formas de autentificarnos:
+Cuando hemos configurado una cuenta con mega hemos usado como método de autentificación el nombre de usuario y la contraseña. La mayoría de proveedores van a usar oAuth2 como método de autentificación, es el caso , por ejemplo de dropbox. En este caso tenemos dos formas de autentificarnos:
 
 1. dando de alta una nueva aplicación en el servicio deseado, y obtener las credenciales (identificador de usuario, token de autentificación,...)
 2. Desde un navegador web autentificarnos en el servicio y da permiso a la aplicación `rclone` para que gestione nuestros ficheros.
 
-Nosotros vamos a optar por esta segunda opción, sin embargo si estamos instalando rclone en un sistema operativo sin entorno gráfico debemos autorizar la aplicación desde un ordenador con entorno gráfico donde podamos a acceder a una navegador, lo veremos a continuación (más opciones de configuración la puedes encontrar en la documentación: [Configuring rclone on a remote / headless machine](https://rclone.org/remote_setup/).
+Nosotros vamos a optar por esta segunda opción, sin embargo si estamos instalando rclone en un sistema operativo sin entorno gráfico debemos autorizar la aplicación desde un ordenador con entorno gráfico donde podamos acceder a un navegador, lo veremos a continuación (más opciones de configuración la puedes encontrar en la documentación: [Configuring rclone on a remote / headless machine](https://rclone.org/remote_setup/).
 
 Para configurar un proveedor de dropbox:
 
@@ -120,7 +120,6 @@ Y elegimos la opción:
     	rclone authorize "dropbox"
     Then paste the result below:
     result> 
-
 
 Como estamos configurando `rclone` en una máquina sin entorno gráfico, ahora es el momento en el que tenemos que ejecutar el comando `rclone authorize "dropbox"` en una máquina con entorno gráfico, acceder al navegador, autentificarse y configurar los permisos de la aplicación:
 
@@ -165,7 +164,6 @@ Para finalizar podemos ver los proveedores que hemos configurado:
 
 Toda la información de estos servidores remotos los va almacenando en el fichero `~/.config/rclone/rclone.conf`.
 
-
 Lo vemos en un vídeo:
 
 <script id="asciicast-gw1K6n7ktaSu3AGTRgZPzKEzd" src="https://asciinema.org/a/gw1K6n7ktaSu3AGTRgZPzKEzd.js" async></script>
@@ -192,7 +190,7 @@ Una vez que tenemos configurado el proveedor podríamos empezar a gestionalos ej
         rclone ls dropbox:/prueba
         2072006 info.txt
 
-5. Tambien se pueden hacer operaciones entre varios servicios, por ejemplo copiar el fichero `info.txt` que acabamos de subir a dropbox, a un directorio de mega:
+5. También se pueden hacer operaciones entre varios servicios, por ejemplo copiar el fichero `info.txt` que acabamos de subir a dropbox, a un directorio de mega:
 
         rclone mkdir mega1:/prueba
         rclone copy dropbox:/prueba/info.txt mega1:/prueba
