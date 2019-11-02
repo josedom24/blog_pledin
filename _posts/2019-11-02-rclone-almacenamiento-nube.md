@@ -10,7 +10,7 @@ tags:
 
 [rclone](https://rclone.org/) es una herramienta que nos permite trabajar con los ficheros que tenemos almacenados en distintos servicios de almacenamiento en la nube (dropbox, google drive, mega, box, ... y muchos más que puedes ver en su página principal). Por lo tanto con `rclone` podemos gestionar y sincronizar los ficheros de nuestro servicios preferidos desde la línea de comandos. 
 
-La versión que obtenemos de los repositorios de Debian Buster es la 1.45-3, pero si queremos muchos más proovedores cloud para configurar es recomendable bajarse la última versión (en el momento de escribir este artículo la versión 1.49.5) que encontraremos en la [página de descarga](https://rclone.org/downloads/). Nos descarghamos el fichero `deb` y los instalamos en nuestro servidor:
+La versión que obtenemos de los repositorios de Debian Buster es la 1.45-3, pero si queremos muchos más proveedores cloud para configurar es recomendable bajarse la última versión (en el momento de escribir este artículo la versión 1.49.5) que encontraremos en la [página de descarga](https://rclone.org/downloads/). Nos descargamos el fichero `deb` y los instalamos en nuestro servidor:
 
     $ wget https://downloads.rclone.org/v1.49.5/rclone-v1.49.5-linux-amd64.deb
     $ dpkg -i rclone-v1.49.5-linux-amd64.deb
@@ -84,7 +84,7 @@ Vamos a verlo en un vídeo:
 
 ### Configurando dropbox
 
-Cuando hemos configurado una cuenta con mega hemos usado como método de autentificación el nombre de usuario y la contraseña. La mayortía de proveedores van a usar oAuth2 como método de autentificación, es el caso , por ejemplo de dropbox. en este caso tenemos dos formas de autentificarnos:
+Cuando hemos configurado una cuenta con mega hemos usado como método de autentificación el nombre de usuario y la contraseña. La mayoría de proveedores van a usar oAuth2 como método de autentificación, es el caso , por ejemplo de dropbox. en este caso tenemos dos formas de autentificarnos:
 
 1. dando de alta una nueva aplicación en el servicio deseado, y obtener las credenciales (identificador de usuario, token de autentificación,...)
 2. Desde un navegador web autentificarnos en el servicio y da permiso a la aplicación `rclone` para que gestione nuestros ficheros.
