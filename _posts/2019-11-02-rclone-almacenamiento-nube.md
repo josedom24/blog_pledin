@@ -166,7 +166,7 @@ Toda la información de estos servidores remotos los va almacenando en el ficher
 
 Lo vemos en un vídeo:
 
-<script id="asciicast-gw1K6n7ktaSu3AGTRgZPzKEzd" src="https://asciinema.org/a/gw1K6n7ktaSu3AGTRgZPzKEzd.js" async></script>
+<script id="asciicast-PTwHHLh30zI7kQe1gJMnWfkUP" src="https://asciinema.org/a/PTwHHLh30zI7kQe1gJMnWfkUP.js" async></script>
 
 ## Gestionando nuestros ficheros con rclone
 
