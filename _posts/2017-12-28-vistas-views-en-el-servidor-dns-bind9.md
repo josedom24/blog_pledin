@@ -23,11 +23,7 @@ Vamos a ver un ejemplo del uso de vistas (views) en bind9 para configurar dos zo
 
 ## Escenario de nuestro ejemplo
 
-Hemos creado una instancia en OpenStack con el siguiente esquema de red:
-
-[<img src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/12/os.png" alt="" width="363" height="80" class="alignnone size-full wp-image-1888" />]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2017/12/os.png)
-
-La red interna tiene como direccionamiento 10.0.0.0/24 y la red externa 172.22.0.0/16. Vamos a configurar bind9 para que cuando se consulte el nombre del servidor desde la red externa devuelva la ip flotante (172.22.0.129) y cuando la consulta se realice desde la red interna se devuelva la ip fija (10.0.0.13).
+Hemos creado una instancia en OpenStack conectada a una red interna con direccionamiento 10.0.0.0/24 y a una red externa 172.22.0.0/16. Vamos a configurar bind9 para que cuando se consulte el nombre del servidor desde la red externa devuelva la ip flotante (172.22.0.129) y cuando la consulta se realice desde la red interna se devuelva la ip fija (10.0.0.13).
 
 ## Uso de vistas en bind9
 
