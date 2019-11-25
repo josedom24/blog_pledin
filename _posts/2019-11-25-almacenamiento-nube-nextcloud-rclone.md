@@ -7,6 +7,8 @@ tags:
   - nextcloud
 ---
 
+![nextcloud]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2019/11/nc_rc.png){: .align-center }
+
 En este artículo os cuento mis entretenimientos en las últimas semanas, jugando con nextcloud y ampliando su espacio de almacenamiento usando la aplicación `rclone`. Con estas herramientas podemos automatizar fácilmente nuestras copias de seguridad en la nube. Veamos cada una de estas aplicaciones:
 
 ## Nextcloud
@@ -62,6 +64,8 @@ Siguiendo la documentación necesitamos instalar algunas librerías más de php:
 Ya tenemos instalada nuestra aplicación Nextcloud:
 
 ![nextcloud2]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2019/11/nextcloud2.png){: .align-center }
+
+<!--more-->
 
 ## Almacenmaiento externo
 
