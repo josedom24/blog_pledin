@@ -67,7 +67,7 @@ Ya tenemos instalada nuestra aplicación Nextcloud:
 
 <!--more-->
 
-## Almacenmaiento externo
+## Almacenamiento externo
 
 La aplicación "Almacenamiento externo" en nextcloud nos permite añadir a nuestro almacenamiento un directorio donde el contenido está en otro servicio. Para poder usar esta opción tenemos que activarlo en la configuración de aplicaciones, para ello elegimos las opciones **Aplicaciones** y activamos **External storage support**:
 
