@@ -128,7 +128,7 @@ Veamos las nuevas expresiones que hemos usado para estas reglas:
 * `icmp type echo-request`: se permiten las respuestas a las peticiones ping que entren por `eth0`.
 
 
-## Permitir el acceso por ssh a nuestra máquina
+### Permitir el acceso por ssh a nuestra máquina
 
  Vamos a permitir la conexión ssh desde la red 172.22.0.0/16:
 
