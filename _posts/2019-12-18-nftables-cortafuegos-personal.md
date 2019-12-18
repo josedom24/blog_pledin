@@ -10,11 +10,11 @@ tags:
 
 El objetivo de esta entrada es hacer una introducción a nftables para empezar a implementar un cortafuego personal para nuestro ordenador. 
 
-Lo primero: [¿qué es nftables?](https://wiki.nftables.org/wiki-nftables/index.php/What_is_nftables%3F). nftables es el nuevo framework que podemos usar para analizar y clasificar los paquetes de red y nos permite la implementación de cortafuegos. Es una aplicación desarrollada dentro del proyecto [netfilter](https://www.netfilter.org/). Sustituye a la familia de aplicaciones {ip,ip6,arp,eb}tables. Es [recomendable el uso de nftables](https://wiki.nftables.org/wiki-nftables/index.php/Why_nftables%3F) ya que tiene una serie de [ventajas](https://wiki.nftables.org/wiki-nftables/index.php/Main_differences_with_iptables) respecto a su antecesor iptables. Esta entrada del blog introduce los principales conceptos de nftables, para profundizar en el tema es recomendable estudiar su [documentación](https://wiki.nftables.org).
+Lo primero: [¿qué es nftables?](https://wiki.nftables.org/wiki-nftables/index.php/What_is_nftables%3F). nftables es el nuevo framework que podemos usar para analizar y clasificar los paquetes de red y nos permite la implementación de cortafuegos. Es una aplicación desarrollada dentro del proyecto [netfilter](https://www.netfilter.org/). Sustituye a la familia de aplicaciones *{ip,ip6,arp,eb}tables*. Es [recomendable el uso de nftables](https://wiki.nftables.org/wiki-nftables/index.php/Why_nftables%3F) ya que tiene una serie de [ventajas](https://wiki.nftables.org/wiki-nftables/index.php/Main_differences_with_iptables) respecto a su antecesor iptables. Esta entrada del blog introduce los principales conceptos de nftables, para profundizar en el tema es recomendable estudiar su [documentación](https://wiki.nftables.org).
 
 ## Configuración inicial de nuestro cortafuegos personal
 
-Una de las diferencias de usar nftables es que las tablas y cadenas son totalmente configurables. En nftable lo primero que tenemos que hacer es crear las tablas (son las zonas en las que crearemos las distintas reglas del cortafuegos clasificadas en cadenas). A continuación crearemos las distintas cadenas en las tablas (que nos permite clasificar las reglas). 
+Una de las diferencias de usar nftables es que las tablas y cadenas son totalmente configurables. En nftables lo primero que tenemos que hacer es crear las tablas (son las zonas en las que crearemos las distintas reglas del cortafuegos clasificadas en cadenas). A continuación crearemos las distintas cadenas en las tablas (que nos permite clasificar las reglas). 
 
 ### Creación de la tabla filter
 
@@ -22,7 +22,7 @@ Vamos a crear una tabla para filtrar los paquetes que llamaremos *filter*:
 
     # nft add table inet filter
 
-Tenemos varias [familias](https://wiki.nftables.org/wiki-nftables/index.php/Nftables_families) para crear la tables, en nuestro caso hemos escogido `inet` que nos permite trabajar con ipv4 y ipv6.
+Tenemos varias [familias](https://wiki.nftables.org/wiki-nftables/index.php/Nftables_families) para crear las tablas, en nuestro caso hemos escogido `inet` que nos permite trabajar con ipv4 y ipv6.
 
 Para ver la tabla que hemos creado:
 
@@ -31,19 +31,21 @@ Para ver la tabla que hemos creado:
 
 Puedes [leer sobre más operaciones](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_tables) sobre las tablas.
 
+<!--more-->
+
 ### Creación de las cadenas
 
-A continuación vamos a crear las cadenas de la table *filter*. Para crear una cadena debemos indicar varios parámetros:
+A continuación vamos a crear las cadenas de la tabla *filter*. Para crear una cadena debemos indicar varios parámetros:
 
 * `type`: Es la clase de cadena que vamos a crear, por ejemplo `filter` (para filtrar) o `nat` (para hacer NAT).
 * `hook`: Determina el tipo de paquete que se va a analizar. Por ejemplo: 
-  * `input`: Paquetes que tienen como destino la misma máquina), 
-  * `output`: Paquetes que tienen origen la propia máquina)
+  * `input`: Paquetes que tienen como destino la misma máquina. 
+  * `output`: Paquetes que tienen origen la propia máquina.
   * `forward`: Paquetes que pasan por la máquina. 
-  * `prerounting`:Paquetes que entran en la máquina, tan pronto como llegan, antes de decidir qué hacer con ellos. Nos permiten hacer DNAT.
+  * `prerounting`: Paquetes que entran en la máquina antes de enrutarlos. Nos permiten hacer DNAT.
   * `postrouting`: Paquetes que están a punto de salir de la máquina. Nos permite hacer SNAT.
 * `priority`: Nos permite ordenar las cadenas dentro de una misma tabla. Las cadenas más prioritarias son las que tienen un número más pequeño.
-* `policy`: Se indica la política por defecto. Si el conjunto de reglas evaluadas no se ajusta al paquete se ejecuta la política por defecto.
+* `policy`: Se indica la política por defecto. Si el conjunto de reglas evaluadas no se ajusta al paquete se ejecuta la política por defecto. Por defecto la política es `accept` por lo que se aceptan todos los paquetes que no se ajusten al conjunto de reglas. Cuando desarrollamos un cortafuegos la política suele ser `drop` no aceptando los paquetes que no se ajustan a ninguna regla.
 
 En la tabla `filter` que hemos creado anteriormente vamos a crear dos cadenas para nuestro cortafuego personal:
 
@@ -73,7 +75,7 @@ Finalmente ya hemos configurado nuestra tabla para filtrar paquetes y las cadena
 
 Una vez que tenemos configurado la tabla y las cadenas de nuestro cortafuegos, podemos empezar a configurar reglas para configurar nuestro cortafuegos personal, que va filtrar la comunicación a nuestra propía máquina.
 
-Al tener como política por defecto drop, necesitaremos configurar reglas en la cadena `input` y `output` para gestionar los paquetes que salen de la máquina y los que entran.
+Al tener como política por defecto `drop`, necesitaremos configurar reglas en la cadena `input` y `output` para gestionar los paquetes que salen de la máquina y los que entran.
 
 Para leer sobre la gestión básica de reglas puedes leer la siguiente [entrada de la wiki](https://wiki.nftables.org/wiki-nftables/index.php/Simple_rule_management).
 
@@ -100,6 +102,7 @@ Como acciones que vamos a ejecutar cuando el paquete cumpla estas reglas serán:
 Podemos ver las reglas que hemos creado:
 
     # nft list ruleset
+    
     table inet filter {
     	chain input {
     		type filter hook input priority 0; policy drop;
@@ -114,7 +117,7 @@ Podemos ver las reglas que hemos creado:
 
 ### Permitir peticiones y respuestas protocolo ICMP
 
-En concreto vamos a permitir la posibilidad que nos puedan hacer ping a nuestra máquina:
+En concreto vamos a permitir la posibilidad que puedan hacer ping a nuestra máquina:
 
     # nft add rule inet filter output oifname "eth0" icmp type echo-reply counter accept
     # nft add rule inet filter input iifname "eth0" icmp type echo-request counter accept
@@ -201,7 +204,7 @@ Finalmente podemos ver todas las reglas que hemos creado:
 
 ## Borrado de reglas
 
-Un a posibilidad para poder borrar una determinada regla es mostrar las reglas con su `handeler` (identificado de la regla):
+Una posibilidad para poder borrar una determinada regla es mostrar las reglas con su `handle` (identificador de la regla):
 
     # nft list ruleset -a
     table inet filter { # handle 1
@@ -211,33 +214,33 @@ Un a posibilidad para poder borrar una determinada regla es mostrar las reglas c
     		iifname "eth0" icmp type echo-request counter packets 2 bytes 168 accept # handle 9
     		...
 
-Por ejemplo para borrar la regla que hemos visto anteriormente sería:
+Por ejemplo para borrar la regla que hemos mostrado en el ejemplo anterior:
 
-    # nft delete rule inet filter handler 9
+    # nft delete rule inet filter input handle 9
 
 ## Traducción de reglas de iptables a nftables
 
-Si todavía no estamos acostumbrado a la sintáxis de nftables pero dominamos iptables, tenemos a nuestra disposición la utilidad `iptables-translate` que nos posibilita la traducción. Por ejemplo si tenemos la siguiente regla iptables:
+Si todavía no estamos acostumbrados a la sintáxis de nftables pero dominamos iptables, tenemos a nuestra disposición la utilidad `iptables-translate` que nos posibilita la traducción. Por ejemplo si tenemos la siguiente regla iptables:
 
     # iptables -A INTPUT -i eth0 -p udp --sport 53 -m state --state ESTABLISHED -j ACCEPT
 
 Podemos traducirla de la siguiente manera:
 
     # iptables-translate -A INTPUT -i eth0 -p udp --sport 53 -m state --state ESTABLISHED -j ACCEPT
-    nft add rule ip filter INTPUT iifname "eth0" udp sport 53 ct state established  counter accept
+    nft add rule ip filter INTPUT iifname "eth0" udp sport 53 ct state established counter accept
 
 Hay que tener en cuenta dos detalles:
 
 * La regla que que hemos generado es para un tabla de la familia `ip`, nostros estamos usando la familia `inet`.
-* El nombre de las cadenas se devuelven en mayúsculas, nostros hemos creado las reglas en minúsculas.
+* El nombre de las cadenas se devuelven en mayúsculas, nosotros hemos creado las cadenas en minúsculas.
 
 Por la tento la regla traducida quedaría de la siguiente manera:
 
-    # nft add rule inet filter input iifname "eth0" udp sport 53 ct state established  counter accept
+    # nft add rule inet filter input iifname "eth0" udp sport 53 ct state established counter accept
 
 ## Copia de seguridad de nuestro cortafuegos
 
-Caundo reincimos nuestra máquina el cortafuego se reinciia, por lo que tenemos que guardar las reglas para posteiormente recuperlas. Siguiendo en enlace de la [wiki](https://wiki.nftables.org/wiki-nftables/index.php/Operations_at_ruleset_level) podemos hacer una copia de seguridad del cortafuego de la siguiente manera:
+Caundo reiniciamos nuestra máquina el cortafuego no mantiene el conjunto de reglas, por lo que tenemos que guardar las reglas para posteriormente recuperlas. Siguiendo en enlace de la [wiki](https://wiki.nftables.org/wiki-nftables/index.php/Operations_at_ruleset_level) podemos hacer una copia de seguridad del cortafuego de la siguiente manera:
 
     # echo "nft flush ruleset" > backup.nft
     # nft list ruleset >> backup.nft
@@ -248,4 +251,4 @@ Posteriormente podemos ejecutar el siguiente comando para recuperar las reglas d
 
 ## Conclusiones
 
-En este artículo se ha hecho una breve introducción a nftables, que nos posibilidad la implemntación de cortafuegos. En nuestro caso hemos introducido un ejemplo para desarrollar un cortafuegos personal que controle el tráfico de una sóla máquina. En la siguiente entrada del blog haremos una introducción de como desarrollar un cortafuegos perimetral con nftables que nos controle el tráfico a un conjunto de máquinas.
+En este artículo se ha hecho una breve introducción a nftables, una aplicación que nos posibilita la implementación de cortafuegos. En nuestro caso hemos introducido un ejemplo para desarrollar un cortafuegos personal que controle el tráfico de una sóla máquina. En la siguiente entrada del blog haremos una introducción de como desarrollar un cortafuegos perimetral con nftables que nos controle el tráfico a un conjunto de máquinas.
