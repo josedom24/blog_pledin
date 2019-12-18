@@ -52,7 +52,7 @@ En la tabla `filter` que hemos creado anteriormente vamos a crear dos cadenas pa
     # nft add chain inet filter input { type filter hook input priority 0 \; counter \; policy accept \; }
     # nft add chain inet filter output { type filter hook output priority 0 \; counter \; policy accept \; }
     
-Por ejemplo para cambiar la política por defecto a drop de las cadenas:
+Por ejemplo para cambiar la política por defecto a `drop` de las cadenas creadas:
 
     # nft chain inet filter input { policy drop \; }
     # nft chain inet filter output { policy drop \; }
