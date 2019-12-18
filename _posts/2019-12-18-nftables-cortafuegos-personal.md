@@ -240,7 +240,7 @@ Por la tento la regla traducida quedaría de la siguiente manera:
 
 ## Copia de seguridad de nuestro cortafuegos
 
-Cuando reiniciamos nuestra máquina el cortafuego no mantiene el conjunto de reglas, por lo que tenemos que guardar las reglas para posteriormente recuperlas. Siguiendo el enlace de la [wiki](https://wiki.nftables.org/wiki-nftables/index.php/Operations_at_ruleset_level) podemos hacer una copia de seguridad del cortafuego de la siguiente manera:
+Cuando reiniciamos nuestra máquina el cortafuego no mantiene el conjunto de reglas, por lo que tenemos que guardar las reglas para posteriormente recuperlas. Siguiendo el enlace de la [wiki](https://wiki.nftables.org/wiki-nftables/index.php/Operations_at_ruleset_level) podemos hacer una copia de seguridad del cortafuegos de la siguiente manera:
 
     # echo "nft flush ruleset" > backup.nft
     # nft list ruleset >> backup.nft
