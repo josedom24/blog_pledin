@@ -34,6 +34,8 @@ NAT son las siglas del inglés network address translation o traducción de dire
 * **Destination NAT o port forwarding**: En este caso se utiliza cuando tenemos algún servidor en una máquina detrás del dispositivo de NAT. En este caso será un equipo externo el que inicie la conexión, ya que solicitará un determinado servicio y el dispositivo de NAT debe modificar la dirección IP destino. 
 * **PAT (Port Address translation)**: Modifica específicamente el puerto (origen o destino) en lugar de la dirección IP. Por ejemplo si queremos reenviar todas las peticiones web que lleguen al puerto 80/tcp al mismo equipo pero al puerto 8080/tcp.
 
+<!--more-->
+
 ## Creación de la tabla nat
 
 Vamos a crear una tabla para crear las reglas de NAT que llamaremos *nat* (suponemos que nuestro cortafuegos ya tiene creada una tabla *filter*):
@@ -47,8 +49,6 @@ Para ver las tablas que tenemos:
     table ip nat
 
 Como vemos hemos creado la tabla *nat* de la familia ip ya que vamos a trabajar con direccionamiento ipv4.
-
-<!--more-->
 
 ## Creación de las cadenas
 
