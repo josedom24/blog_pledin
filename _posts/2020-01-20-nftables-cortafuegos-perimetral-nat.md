@@ -12,15 +12,15 @@ En la entrada anterior hicimos una introducción a la [implementación de un cor
 
 ## Configuración inicial de nuestro cortafuegos perimetral
 
-Un cortafuego personal nos controla las comunicaciones que entran y salen de un ordenador (usamos las cadenas `input` y `output` de la tabla filter). En un cortafuegos perimetral estamos gestionando las comunicaciones que entran y salen de una o varias redes de ordenadores, o visto de otra manera, las comunicaciones que atraviesan el router que da acceso a estas redes, por lo tanto, lo más usual, es que el cortafuegos se implemente en el router. Para controlar los paquetes que atraviesan el router utilizaremos la cadena `forward` de la tabla `filter`.
+Un cortafuego personal nos controla las comunicaciones que entran y salen de un ordenador (usamos las cadenas `input` y `output` de la tabla `filter`). En un cortafuegos perimetral estamos gestionando las conexiones que entran y salen de una o varias redes de ordenadores, o visto de otra manera, las conexiones que atraviesan el router que da acceso a estas redes, por lo tanto, lo más usual, es que el cortafuegos se implemente en el router. Para controlar los paquetes que atraviesan el router utilizaremos la cadena `forward` de la tabla `filter`.
 
 El cortafuegos perimetral que nosotros vamos a configurar sería el más simple, y es el que controla el tráfico para una red local:
 
-imagen perimetral
+![nftables]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/01/perimetral.png){: .align-center }
 
 Sin embargo el cortafuegos perimetral puede controlar el tráfico de varias redes loscales, por ejemplo cuando tenemos en una red los equipos de nuestra red local y en otra red los servidores que exponen servicios al exterior (por ejemplo el servidor web). A esta última red se le suele llama zona desmilitarizada (DMZ) y es este caso tendríamos un escenario como este:
 
-imagen perimetral DMZ
+![nftables]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/01/dmz.png){: .align-center }
 
 Además de la función de filtrado, con nftables podemos hacer NAT, por ejemplo para permitir que los equipos de la red local puedan comunicarse con otra red (SNAT, source NAT) o para que un equipo externo acceda a una máquina de la red local (DNAT, destination NAT). Para ello utilizaremos la tabla `nat`.
 
@@ -28,7 +28,7 @@ Además de la función de filtrado, con nftables podemos hacer NAT, por ejemplo 
 
 NAT son las siglas del inglés network address translation o traducción de direcciones de red y es un mecanismo que se usa ampliamente hoy en día. Existen diferentes tipos:
 
-* **Source NAT**: Se cambia la dirección IP de origen, es la situación más utilizada cuando estamos utilizando una dirección IP privada (RFC 1918) en una red local y establecemos una conexión con un equipo de Internet. Un equipo de la red (normalmente la puerta de enlace) se encarga de cambiar la dirección IP privada origen por la dirección IP pública, para que el equipo de Internet pueda contestar. También es conocido como *IP masquerading*, pero podemos distinguir dos casos:*
+* **Source NAT**: Se cambia la dirección IP de origen, es la situación más utilizada cuando estamos utilizando una dirección IP privada en una red local y establecemos una conexión con un equipo de Internet. Un equipo de la red (normalmente la puerta de enlace) se encarga de cambiar la dirección IP privada origen por la dirección IP pública, para que el equipo de Internet pueda contestar. También es conocido como *IP masquerading*, pero podemos distinguir dos casos:
     * SNAT estático: Cuando la dirección IP pública que sustituye a la IP origen es estática (SNAT también significa Static NAT).
     * SNAT dinámico o MASQUERADE: Cuando la dirección IP pública que sustituye a la IP origen es dinámica, caso bastante habitual en conexiones a Internet domésticas.
 * **Destination NAT o port forwarding**: En este caso se utiliza cuando tenemos algún servidor en una máquina detrás del dispositivo de NAT. En este caso será un equipo externo el que inicie la conexión, ya que solicitará un determinado servicio y el dispositivo de NAT debe modificar la dirección IP destino. 
@@ -74,7 +74,7 @@ Finalmente ya hemos configurado nuestra tabla *nat*:
 
 ## Configuración del enrutamiento
 
-El equipo donde estamos construyendo nuestro cortafuegos también hace de router por lo tanto para que los paquetes que vienen o van a los ordenadores de la red local se puedan enrutar, necesitamos actibar el bit de forwarding:
+El equipo donde estamos construyendo nuestro cortafuegos también hace de router por lo tanto para que los paquetes que vienen o van a los ordenadores de la red local se puedan enrutar, necesitamos activar el *bit de forwarding*:
 
     echo 1 > /proc/sys/net/ipv4/ip_forward
 
@@ -86,7 +86,7 @@ Esta activación se borra cuando se apaga el equipo, ya que el directorio `/proc
 
 Para que nuestro equipos de la red local tengan salida al exterior (por ejemplo a internet) tenemos que configurar el SNAT en nuestro cortafuegos. Tendríamos dos casos:
 
-* SNAT estático, por ejemplo la ip pública del route es una IP fija (por ejemplo la `80.58.1.14`):
+* SNAT estático, por ejemplo la ip pública del router es una IP fija (por ejemplo la `80.58.1.14`):
 
         nft add rule ip nat postrouting oifname "eth0" ip saddr 192.168.100.0/24 counter snat to 80.58.1.14
 
@@ -114,18 +114,16 @@ Al introducir esta última regla ya tendríamos conexión a internet desde un eq
 
 ## PREROUTING
 
-El único equipo de la red local que es accesible desde Internet es el dispositivo de NAT a través de su dirección IP pública (por ejemplo la `80.56.1.14`). Utilizando NAT, en concreto DNAT, podemos hacer que la conexión a la IP pública desde el exterior a un determinado puerto se redirija a un servidor en la red local que realmente este ofreciendo el servicio.
+El único equipo de la red local que es accesible desde Internet es el dispositivo de NAT (como hemos indicado suele ser el router) a través de su dirección IP pública (por ejemplo la `80.56.1.14`). Utilizando NAT, en concreto DNAT, podemos hacer que la conexión a la IP pública desde el exterior a un determinado puerto se redirija a un servidor en la red local que realmente este ofreciendo el servicio.
 
 Supongamos que instalamos un servidor web en un equipo de la red local con dirección IP `192.168.100.10` y queremos que sea accesible desde Internet, tendremos que modificar las peticiones que lleguen al puerto 80/tcp des equipo que tiene la dirección IP pública y que cambie la dirección IP destino `80.56.1.14` por `192.168.100.10`, esto se hace con la siguiente regla:
 
     nft add rule ip nat prerouting iifname "eth0" tcp dport 80 counter dnat to 192.168.100.10
 
-Explicación de los parámetros:
-
+Explicación de los parámetros::
 * `add rule ip nat prerouting`: Se añade la regla a la cadena `prerouting`, donde las reglas se aplican antes de tomar la decisión de enrutamiento, así se tomará la decisión de encaminamiento con la nueva dirección IP destino.
 * `tcp dport 80`: Esta regla se ejecutará sobre paquetes que llegan al puerto 80/tcp.
-* `iifname "eth0"`:... y entran por la interfaz `eth0`.
-
+* `iifname "eth0"`:... y entran por la interfaz `eth0`.:
 Como acciones que vamos a ejecutar cuando el paquete cumpla estas reglas serán:
 
 * `counter`: Para que cuente los paquetes que cumplen la regla.
@@ -136,9 +134,13 @@ Si desde intenet accedemos con un navegador web a la URL `http://80.56.1.14/` es
 
 Hay algunos servicios que permiten utilizar puertos diferentes a los estándar, como por ejemplo ssh, ya que podemos acceder a un servidor por ssh utilizando un puerto distinto al 22/tcp. Como nftables nos permite no sólo modificar la dirección IP destino sino también el puerto destino, podríamos tener esta regla:
 
-    nft add rule ip nat prerouting iifname "eth0" tcp dport 2222 counter dnat to 192.168.100.10:22
+    nft add rule ip nat prerouting iifname "eth0" tcp dport 2222 counter dnat to 1:2.168.100.10:22
 
-En este caso si accedemos por ssh a nuestro router (a su IP pública) al puerto 2222 estaríamos accediendo al servidor ssh (puerto 22/tcp) de la máquina `192.168.100.10`.
+En este caso si accedemos por ssh a nuestro router (a su IP pública) al puerto 2222 estaríamos accediendo al servidor ssh (puerto 22/tcp) de la máquina `192.168.100.10`:
+
+    ssh -p2222  debian@80.56.1.14
+    ...
+    debian@lan:~$ 
 
 ## Listados de reglas NAT
 
