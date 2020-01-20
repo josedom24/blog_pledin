@@ -18,7 +18,7 @@ El cortafuegos perimetral que nosotros vamos a configurar sería el más simple,
 
 ![nftables]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/01/perimetral.png){: .align-center }
 
-Sin embargo el cortafuegos perimetral puede controlar el tráfico de varias redes loscales, por ejemplo cuando tenemos en una red los equipos de nuestra red local y en otra red los servidores que exponen servicios al exterior (por ejemplo el servidor web). A esta última red se le suele llama zona desmilitarizada (DMZ) y es este caso tendríamos un escenario como este:
+Sin embargo el cortafuegos perimetral puede controlar el tráfico de varias redes loscales, por ejemplo cuando tenemos en una red los equipos de nuestra red local y en otra red los servidores que exponen servicios al exterior (por ejemplo el servidor web). A esta última red se le suele llamar zona desmilitarizada (DMZ) y es este caso tendríamos un escenario como este:
 
 ![nftables]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/01/dmz.png){: .align-center }
 

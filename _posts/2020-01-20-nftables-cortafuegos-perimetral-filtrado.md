@@ -1,10 +1,10 @@
----
-title: 'Implementación de un cortafuegos perimetral con nftables'
-permalink: /2020/01/nftables-cortafuegos-perimetral-filtrado/
-tags:
-  - Cortafuegos
-  - nftables
----
+#---
+#title: 'Implementación de un cortafuegos perimetral con nftables'
+#permalink: /2020/01/nftables-cortafuegos-perimetral-filtrado/
+#tags:
+#  - Cortafuegos
+#  - nftables
+#---
 
 ![nftables]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2019/12/nftables.png){: .align-center }
 
