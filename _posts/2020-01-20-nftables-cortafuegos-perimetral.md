@@ -24,22 +24,27 @@ imagen perimetral DMZ
 
 Además de la función de filtrado, con nftables podemos hacer NAT, por ejemplo para permitir que los equipos de la red local puedan comunicarse con otra red (SNAT, source NAT) o para que un equipo externo acceda a una máquina de la red local (DNAT, destination NAT). Para ello utilizaremos la tabla `nat`.
 
-## 
+## Configuración de NAT con nftables
 
-### Creación de la tabla filter
+NAT son las siglas del inglés network address translation o traducción de direcciones de red y es un mecanismo que se usa ampliamente hoy en día. Existen diferentes tipos:
 
-Vamos a crear una tabla para filtrar los paquetes que llamaremos *filter*:
+* **Source NAT**: Se cambia la dirección IP de origen, es la situación más utilizada cuando estamos utilizando una dirección IP privada (RFC 1918) en una red local y establecemos una conexión con un equipo de Internet. Un equipo de la red (normalmente la puerta de enlace) se encarga de cambiar la dirección IP privada origen por la dirección IP pública, para que el equipo de Internet pueda contestar. También es conocido como *IP masquerading*, pero podemos distinguir dos casos:*
+    * SNAT: Cuando la dirección IP pública que sustituye a la IP origen es estática (SNAT también significa Static NAT).
+    * MASQUERADE: Cuando la dirección IP pública que sustituye a la IP origen es dinámica, caso bastante habitual en conexiones a Internet domésticas.
+* **Destination NAT o port forwarding**: En este caso se utiliza cuando tenemos algún servidor en una máquina detrás del dispositivo de NAT. En este caso será un equipo externo el que inicie la conexión, ya que solicitará un determinado servicio y el dispositivo de NAT debe modificar la dirección IP destino. 
+* **PAT (Port Address translation)**: Modifica específicamente el puerto (origen o destino) en lugar de la dirección IP. Por ejemplo si queremos reenviar todas las peticiones web que lleguen al puerto 80/tcp al mismo equipo pero al puerto 8080/tcp.
 
-    # nft add table inet filter
+### Creación de la tabla nat
 
-Tenemos varias [familias](https://wiki.nftables.org/wiki-nftables/index.php/Nftables_families) para crear las tablas, en nuestro caso hemos escogido `inet` que nos permite trabajar con ipv4 y ipv6.
+Vamos a crear una tabla para crear las reglas de NAT que llamaremos *nat* (suponemos que nuestro cortafuegos ya tiene creada una tabla *filter*):
 
-Para ver la tabla que hemos creado:
+    # nft add table inet nat
+
+Para ver las tablas que tenemos:
 
     # nft list tables
     table inet filter
-
-Puedes [leer sobre más operaciones](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_tables) sobre las tablas.
+    table inet nat
 
 <!--more-->
 
