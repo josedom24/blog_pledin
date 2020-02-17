@@ -54,7 +54,7 @@ En nuestro servidor interno hemos creado un virtual host para servir una página
     </body>
     
 
-Vamos a utilizar la directiva [`ProvyPass`](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxypass) en el fichero de configuración del virtual host, de la siguiente forma:
+Vamos a utilizar la directiva [`ProxyPass`](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#proxypass) en el fichero de configuración del virtual host, de la siguiente forma:
 
     ProxyPass "/web/" "http://interno.example.org/"
     
@@ -74,7 +74,7 @@ De esta manera al acceder desde el cliente la URL `http://proxy.example.org/web/
 
 Como vemos una imagen no se ha cargado, además no todos los enlaces funcionan, pero antés vamos a solucionar el problema de las redirecciones.
 
-### El probelma de las redirecciones
+### El problema de las redirecciones
 
 Cuando creamos una redirección en un servidor web y el cliente intenta acceder al recurso, el servidor manda una respuesta con código de estado `301` o `302`, e indica la URL de la nueva ubicación del recurso en una cabecera HTTP llamada `Location`.
 
