@@ -150,6 +150,8 @@ A continuación vamos a crear un nuevo contenedor, con el nombre `servidor_wp`, 
     
 La variable de entorno del contenedor wordpress `WORDPRESS_DB_HOST` la hemos inicializado con el nombre del contenedor de la base de datos, ya que como hemos explicado anteriormente, al estar conectado a la misma red los dos contenedores, este nombre se podrá resolver. Podemos acceder a la ip del servidor docker y comprobar la instalación de wordpress.
 
+![docker]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/02/wp.png){: .align-center }
+
 ## Enlazando contenedores con docker-compose
 
 Cuando trabajamos con escenarios donde necesitamos correr varios contenedores podemos utilizar [docker-compose](https://docs.docker.com/compose/) para gestionarlos. En el fichero `docker-compose.yml` vamos a definir el escenario. El programa `docker-compose` se debe ejecutar en el directorio donde este ese fichero. Por ejemplo para la ejecución de wordpress persistente podríamos tener un fichero con el siguiente contenido:
@@ -193,6 +195,6 @@ Para crear el escenario:
     Creating servidor_wp    ... done
     Creating servidor_mysql ... done
 
-<small>La imagen de este artículo está tomada de la siguiente página web: https://www.nuagenetworks.net/blog/docker-networking-overview/</small>
+<small>La primera imagen de este artículo está tomada de la siguiente página web: https://www.nuagenetworks.net/blog/docker-networking-overview/</small>
 
 
