@@ -11,7 +11,7 @@ tags:
 
 Durante esta tercera evaluación, en la que se ha suspendido las actividades docentes presenciales en el Sistema Educativo, los docentes nos hemos tenido que adaptar para ofrecer a nuestros alumnos los materiales necesarios y los medios para que pudieran seguir avanzando en el curso.
 
-En mi caso, me decidí a ir grabando las distintas clases, y hacer vídeos cortos sobre los distintos conceptos y prácticas de los distintos módulos.
+En mi caso, me decidí por  ir grabando las distintas clases, y hacer vídeos cortos sobre los distintos conceptos y prácticas de los distintos módulos.
 
 En esta entrada os dejo los vídeos que he grabado para el módulo de Lenguajes de Marcas de 1º ASIR (Administración de Sistemas Informáticos en Red). Corresponden a las últimas dos unidades didácticas:
 
@@ -25,7 +25,6 @@ Los vídeos que he realizado son los siguientes:
 * [Instalación de python flask](https://www.youtube.com/watch?v=dk2AhFsZk_o)
 * [¿Por qué usamos entornos virtuales?](https://www.youtube.com/watch?v=4dlqBy58S64)
 * [Cómo trabajamos con flask](https://www.youtube.com/watch?v=GLWFh_j7RRA)
-* [REPOSITORIO: Ejemplos para aprender flask](https://github.com/josedom24/ejemplos_flask)
 * [Mi primer programa en flask (ejemplo1)](https://www.youtube.com/watch?v=JrUOobwaxsw)
 * [Servidor web y depuración de las aplicaciones flask (ejemplo1) (2ª parte)](https://www.youtube.com/watch?v=8pJAgwvcKbI)
 * [Empezamos a trabajar con plantillas flask (ejemplo2)](https://www.youtube.com/watch?v=L6re-DJMPUI)
