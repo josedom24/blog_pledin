@@ -62,4 +62,6 @@ Los materiales lo puedes encontrar en esta [página](https://fp.josedomingo.org/
 * [Librería requests. Modificación de los recursos de una API restful utilizando peticiones POST](https://www.youtube.com/watch?v=ObPfKUDAkEY)
 * [Desarrollo de aplicaciones flask con requests](https://www.youtube.com/watch?v=KQ5FN7q4P_w)
 * [Despliegue de aplicaciones flask con requests en Heroku](https://www.youtube.com/watch?v=VqbCTa-eyk4https://www.youtube.com/watch?v=VqbCTa-eyk4)
-
+* [Introducción a oAuth](https://youtu.be/O82YeiZA5Ls)
+* [Ejemplo aplicación oAuth v1](https://youtu.be/2EkZe66Q0Bo)
+* [Ejemplo aplicación oAuth v2](https://youtu.be/98-PNRZ36tw)
