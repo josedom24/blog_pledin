@@ -7,7 +7,7 @@ tags:
   - vídeo
 ---
 
-![nginx]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/nginx.jpg){: .align-center })
+![nginx]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/nginx.jpg){: .align-center }
 
 En este artículo voy a documentar mi experiencia montando un sistema para poder realizar un streaming de vídeo usando software libre. En mi [instituto](https://dit.gonzalonazareno.org) hemos usado en estos meses [jitsi](https://meet.jit.si/) para realizar videoconferencias entre los profesores y para impartir las clases a los alumnos. Al final de curso teníamos que celebrar el claustro final y montamos un sistema de streaming para emitir la videconferencia jitsi donde se encontraban los compañeros que iban a intervenir. Evidentemente con los medios que tenemos no era posible tener una videoconferencia para unas 60 personas, pero queríamos que todos los profesores pudieran seguir el claustro en directo. Por lo que días antes nos pusimos a estudiar alternativas (por supuesto, usando **software libre**) y os cuento los pasos que fuimos dando:
 
@@ -60,13 +60,13 @@ Para configurar OBS para transmitir vídeo a nuestro servidor rtmp, vamos a la o
 * URL: La URL de nuestro servidor rtmp, en nuestro caso sería `rtmp://video.josedomingo.org/live`
 * Clave de retransmisión: Es una cadena de caracteres qe identifica la retransmisión y que posteriormente usaremos para ver el streaming, en nuestro caso vamos a poner `test`.
 
-![obs]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/obs.png){: .align-center })
+![obs]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/obs.png){: .align-center }
 
 Después de que [configuremos el vídeo](https://www.popcornstudio.es/open-broadcaster-software) que queremos transmitir, ya podemos elegir la opción **Iniciar Transmisión** en la pantalla principal.
 
 Para comprobar que la transmisión se está haciendo de manera adecuada nos debe aparecer una barra de estado, con un cuadro verde (recuerda: verde bueno, rojo malo):
 
-![obs]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/obs2.png){: .align-center })
+![obs]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/obs2.png){: .align-center }
 
 ## Usando VLC para ver el streaming
 
@@ -74,11 +74,11 @@ Para comprobar que la transmisión se está haciendo de manera adecuada nos debe
 
 Podemos configurar VLC para visualizar el streaming que estamos haciendo, para ello nos vamos a la opción **Medio** -> **Abrir ubicación de red...** e indicamos la URL de la retransmisión que estaría formada por la URL de nuestro servidor rtmp más la clave de retransmisión que indicamos en OBS: `rtmp://video.josedomingo.org/live/test`:
 
-![vlc]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/vlc.png){: .align-center })
+![vlc]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/vlc.png){: .align-center }
 
 Y en pocos segundos estaríamos viendo la retransmisión en directo:
 
-![vlc]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/vlc2.png){: .align-center })
+![vlc]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/vlc2.png){: .align-center }
 
 ## Añadiendo más funcionalidad a nuestro servidor de streaming
 
@@ -154,7 +154,7 @@ A continuación borramos el contenedor y lo volvemos a crear con un volumen para
 
 Y podemos probar por ejemplo con la retransmisión hls:
 
-![rtmp]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/rtmp.png){: .align-center })
+![rtmp]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/07/rtmp.png){: .align-center }
 
 Para terminar algunas indicaciones:
 
