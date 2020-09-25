@@ -88,7 +88,7 @@ Al ejecutar el programa, se nos indicará la URL a la que tenemos que acceder. E
 
 
     $ python3 solicitar_consumer_key.py
-    Please visit https://eu.api.ovh.com/auth/?credentialToken=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx to authenticate
+    Please visit https://eu.api.ovh.com/auth/?credentialToken=xxxxxxxxxxxxxxxxxxxxxxxxxxxx to authenticate
     and press Enter to continue...
 
 En este momento accedemos a la URL, nos logueamos e indicamos el tiempo de validez de la clave:
