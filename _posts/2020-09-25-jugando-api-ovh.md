@@ -6,7 +6,7 @@ tags:
   - Servicios web
 ---
 
-![ovh]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/09/ovh1.png){: .align-center }
+![ovh]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/09/ovh.png){: .align-center }
 
 OVH es un proveedor de alojamiento web, computación en la nube y telecomunicaciones francés. Ofrece distintos servicios: VPS, dominios, Cloud Computing,... En este artículo voy a hacer una introducción al uso de la [API pública de OVH](https://api.ovh.com/) para gestionar los recursos que tengamos contratados en la empresa.
 
