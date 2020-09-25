@@ -80,9 +80,9 @@ Veamos que hace cada instrucción:
 
 * `client = ovh.Client()`: Crea el cliente que vamos a usar para hacer llamadas a la API. esta instrucción buscará nuestras credenciales en el fichero `ovh.conf`.
 * `ck = client.new_consumer_key_request()`: Solicitamos la `consumer_key`.
-* `ck.add_recursive_rules(ovh.API_READ_WRITE, '/')`: Indicamos la autorización que vamos a tener para usar los r3ecursos de la API. En este caso vamos a generar un `consumer_key` que será válido para hacer cualquier tipo de llamada HTTP (GET; POST, PUT, DELETE) (indicado con `ovh.API_READ_WRITE`) a todos loos recursos de la API (indicado con `/`). 
+* `ck.add_recursive_rules(ovh.API_READ_WRITE, '/')`: Indicamos la autorización que vamos a tener para usar los recursos de la API. En este caso vamos a generar un `consumer_key` que será válido para hacer cualquier tipo de llamada HTTP (GET; POST, PUT, DELETE) (indicado con `ovh.API_READ_WRITE`) a todos los recursos de la API (indicado con `/`). 
     * Si indicamos, por ejemplo: `ck.add_rules(ovh.API_READ_ONLY, "/me")` pues autorizaríamos sólo peticiones GET a la ruta de la API `/me`.
-* validation = ck.request(): Solicitamos información sobre la solicitud de clave. En concreto en `validation['validationUrl']` tendremos el token que va a formar parte de la URL a la que tenemos que acceder para generar la clave..
+* `validation = ck.request()`: Solicitamos información sobre la solicitud de clave. En concreto en `validation['validationUrl']` tendremos el token que va a formar parte de la URL a la que tenemos que acceder para generar la clave..
 
 Al ejecutar el programa, se nos indicará la URL a la que tenemos que acceder. En esa página nos tendremos que loguear e indicar la duración de validez del `consumer_key`. Volvemos a la consola pulsamos `Enter` y nos mostrará nuestro nombre (`client.get('/me')['firstname']`) y el valor que estamos buscando (`validation['consumerKey']`). El proceso sería el siguiente:
 
