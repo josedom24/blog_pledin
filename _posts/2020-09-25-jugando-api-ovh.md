@@ -91,7 +91,7 @@ Al ejecutar el programa, se nos indicará la URL a la que tenemos que acceder. E
     Please visit https://eu.api.ovh.com/auth/?credentialToken=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx to authenticate
     and press Enter to continue...
 
-En este momento accedemos a la URL, nos logueamos e indicamos el tiempo de validez de la clave:ç
+En este momento accedemos a la URL, nos logueamos e indicamos el tiempo de validez de la clave:
 
 ![ovh]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2020/09/ovh3.png){: .align-center }
 
