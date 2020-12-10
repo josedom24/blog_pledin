@@ -153,9 +153,9 @@ Para ello vamos a crear un fichero con la configuración general relativa al ser
 
 Los parámetros indicados son los siguientes:
 
-    * `log-queries`: Puede descomentarse para depuración.
-    * `no-hosts`: Si no queremos consultar `/etc/hosts`
-    * `expand-hosts`: Nos permite asignar nuevos ficheros `hosts` en las distintas zonas.
+* `log-queries`: Puede descomentarse para depuración.
+* `no-hosts`: Si no queremos consultar `/etc/hosts`
+* `expand-hosts`: Nos permite asignar nuevos ficheros `hosts` en las distintas zonas.
 
 Y podemos definir una zona en el fichero `/etc/dnsmasq.d/example.conf`:
 
@@ -181,11 +181,11 @@ En el fichero `/etc/hosts.d/hosts_example_net` hemos añadido un nombre, para co
 
 Veamos los distintos parámetros que hemos definido:
 
-    * `auth-zone`: Se define el nombre de dominio correspondiente a la zona que estamos definiendo.
-    * `auth-soa`: Definimos el registro SOA, donde indicamos el número de serie, el correo de contacto y los tiempos (Refresh, Retry y Expire)
-    * `auth-server`: Se declara el registros NS, es decir el nombre del servidor DNS sobre la zona.
-    * `addn-hosts`: Indicamos un fichero de hosts donde podemos añadir resoluciones que serán añadidas como registros (A/AAAA/PTR).
-    * La definición de los distintos tipos de registros.
+* `auth-zone`: Se define el nombre de dominio correspondiente a la zona que estamos definiendo.
+* `auth-soa`: Definimos el registro SOA, donde indicamos el número de serie, el correo de contacto y los tiempos (Refresh, Retry y Expire)
+* `auth-server`: Se declara el registros NS, es decir el nombre del servidor DNS sobre la zona.
+* `addn-hosts`: Indicamos un fichero de hosts donde podemos añadir resoluciones que serán añadidas como registros (A/AAAA/PTR).
+* La definición de los distintos tipos de registros.
 
 Y ya podemos realizar las pruebas de resolución:
 
