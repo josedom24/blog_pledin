@@ -21,5 +21,5 @@ blog:
       - title: "Etiquetas"
         url: /tags/
       - title: "Feed"
-        url: feed.xml
+        url: https://www.josedomingo.org/pledin/feed/feed.xml
 
