@@ -23,7 +23,7 @@ Cuando instalamos docker tenemos las siguientes redes predefinidas:
 <!--more-->
 
 * Por defecto los contenedores que creamos se conectan a la red de tipo bridge llamada `bridge` (por defecto el direccionamiento de esta red es `172.17.0.0/16`). Los contenedores conectados a esta red que quieren exponer algún puerto al exterior tienen que usar la opción `-p` para mapear puertos.
-* Si conecto un contenedor a la red host, el contenedor estaría en la misma red que el host (por lo tanto toma direccionamiento del servidor DHCP de nuestra red). Además los puerto son accesibles directamente desde el host. Por ejemplo:
+* Si conecto un contenedor a la red host, el contenedor será accesible usando la misma IP que tu máquina. Por ejemplo:
 
         # docker run -d --name mi_servidor --network host josedom24/aplicacionweb:v1
         
