@@ -25,7 +25,6 @@ Aquí podrás encontrar una colección de revistas de Software Libre que ya no e
   <li>Números: {{revista.numeros}}</li>
   <li>Años: {{revista.years}}</li>
   <li><a href="{{revista.url}}">Accede a todos los números</a></li>
-  <li><a href="{{revista.zip}}">Descarga ZIP</a></li>
   {% if revista.web != ""%}
   <li><a href="{{revista.web}}">Página web</a></li>
   {% endif %}
