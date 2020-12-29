@@ -1,8 +1,15 @@
 - name: Magazine SoloLinux
   img: sololinux.jpg
   descripcion: "Nuestra revista digital ofrece los contenidos completos de 'www.sololinux.es', simplemente se recopilan al finalizar el mes."
-  numero: 9 (Octubre 2019)
-  url: https://mega.nz/#F!zehWRC6A!hXjk4A9bFWuH6CXKmYut5g
+  numero: 22 (Noviembre 2020)
+  url: https://cloud.josedomingo.org/index.php/s/X4a4w54NmY5gdJe
+  web: https://www.sololinux.es/
+
+- name: Magazine SoloWordpress
+  img: solowordpress.jpg
+  descripcion: "En la revista magazine SoloWordpress tratamos exclusivamente temas relacionados con el CMS más utilizado en internet, por tanto se orienta de igual forma a usuarios que quieren comenzar su primer proyecto, como a profesionales del CMS WordPress. La revista es bimensual (cada dos meses)."
+  numero: 4 (Abril-Mayo 2020)
+  url: https://cloud.josedomingo.org/index.php/s/mnowNbk4NtFKm5W
   web: https://www.sololinux.es/
 
 - name: "Full Circle"
