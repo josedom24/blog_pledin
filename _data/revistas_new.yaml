@@ -17,15 +17,8 @@
   descripcion: "Full Circle Magazine es una revista dedicada a la distribución y divulgación de Ubuntu.
 La revista es en inglés, pero los primeros números están traducidos al español. En ella podemos ver información sobre Ubuntu, Kubuntu, Edubuntu y Xubuntu… No está nada mal, aunque es un poco corta, apta para lectores vagos."
   numero: 164 (Diciembre 2020)
-  url: https://mega.nz/#F!PKQg2CQJ!_OR1NcVXyZPjDX5EQJk0Kg
+  url: https://cloud.josedomingo.org/index.php/s/37NKnn5KKqkrGDp
   web: "https://fullcirclemagazine.org/"
-
-- name: ATIX Revista Digital
-  img: atix2.jpg
-  descripcion: "Revista sobre Software Libre de la Comunidad de Software Libre ATIX, de Oruru (Bolivia). Objetivos: * Colaborar con a la difusión de la Filosofía del Software, Tecnología y conocimiento Libre. * Descubrir dentro de nuestro entorno. nuevos valores dentro del fantástico mundo del Software Libre. * Aportar a la comunidad nacional e internacional con la difusión y actividades que estas organicen. * Ser el catalizador y forjador de nuevas oportunidades dentro el mundo de Software Libre, en nuestro entorno."
-  numero: 30 (Abril 2019)
-  url: https://mega.nz/#F!jewB3KAb!_XnkfrTpZmWOqVVnGpDywA
-  web: http://revista.atixlibre.org/
 
 - name: "Occam's Razor"
   img: occam2.jpg
