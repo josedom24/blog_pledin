@@ -68,7 +68,7 @@ Y podemos subir nuestra imagen con el comando:
 
 Podemos comprobar que la imagen se ha subido a docker hub: 
 
-<a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub2.png" rel="attachment wp-att-1669"><img class="aligncenter size-large wp-image-1669" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub2-1024x357.png" alt="dockerhub2" width="770" height="268" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub2-1024x357.png 1024w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub2-300x105.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub2-768x268.png 768w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub2.png 1305w" sizes="(max-width: 770px) 100vw, 770px" /></a>
+<a class="thumbnail" href="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub8.png" rel="attachment wp-att-1683"><img class="aligncenter size-full wp-image-1683" src="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub8.png" alt="dockerhub8" width="973" height="836" srcset="{{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub8.png 973w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub8-300x258.png 300w, {{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2016/02/dockerhub8-768x660.png 768w" sizes="(max-width: 973px) 100vw, 973px" /></a>
 
 Ya podemos buscar la nueva imagen que hemos subido y bajarla en otro servidor:
 
