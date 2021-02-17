@@ -18,4 +18,4 @@ La idea ha sido abordar algunos temas transversales que son comunes a todos los 
 * [Taller: Introducción a los contenedores](https://www.youtube.com/watch?v=8XoE5XudnJ0&list=PLsABa5cggfjrXA5aRwVhaVwXTZd5SpK6Z)
 * [Taller de kubernetes](https://www.youtube.com/watch?v=PjfusNkD808&list=PLsABa5cggfjrq4r-UA_E25aRplwxnL6Rs)
 
-Espero que os gusten
+Espero que os gusten.
