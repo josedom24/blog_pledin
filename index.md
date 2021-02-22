@@ -114,11 +114,11 @@ feature_row4:
 <td>
 <h2>Últimos cursos...</h2>
 <ul>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/curso_cpp1/">Curso de C++: Introducción a C++ (2020)</a></li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/curso_cpp2/">Curso de C++: Estructuras de control y tipos de datos (2020)</a></li>
+  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/curso_cpp3/">Curso de C++: Programación estructurada y orientación a objetos (2020)</a></li>
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/openshift/">Curso de OpenShift (2019)</a></li>
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/moodle2020/">Curso de introducción al uso de la plataforma moodle (2020)</a></li>
-  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/programacion_python3/">Introducción a la programación con python3 (2019)</a></li>
-  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/programacion/">Introducción a la programación con pseudocódigo (2018)</a></li>
-  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/apache24/">Curso Apache2.4 (2018)</a></li>
   <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
   </ul>
 </td>
