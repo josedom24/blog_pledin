@@ -187,10 +187,12 @@ Lo creamos y comprobamos los recursos que se han creado:
 	replicaset.apps/nginx-bdc5c7d65   2         2         2       2m55s
 
 En este ejemplo deberíamos acceder a la ip del nodo controlador y al puerto 31684 para acceder a la aplicación. Para obtener la ip del contenedor podemos ejecutar:
-
+  
+  ```bash
 	$ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' kind-control-plane
 	172.20.0.4
-
+  ```
+  
 Por lo tanto desde un navegador podemos acceder a esa ip y al puerto asignado por el servicio, para ver la aplicación:
 
 ![kind]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/02/kind.png){: .align-center }
