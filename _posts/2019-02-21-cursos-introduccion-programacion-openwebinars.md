@@ -1,12 +1,12 @@
 ---
 title: Cursos de introducción a la programación en OpenWebinars
-permalink: /2018/04/cursos-introduccion-programacion-openwebinars/
+permalink: /2019/02/cursos-introduccion-programacion-openwebinars/
 
 
 tags:
   - Pseudocódigo
   - Programación
-  - python3
+  - Python
   - Cursos
 ---
 Los dos últimos cursos que he impartido en la plataforma OpenWebinars están relacionados con la programación, más concretamente aprender a programar desde 0 con pseudocódigo y con python3, os dejo los vídeos promocionales de los mismos:

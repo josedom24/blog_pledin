@@ -4,7 +4,7 @@ permalina: 2019/10/curso-introduccion-programacion-python3/
 tags:
   - Cursos
   - Programación
-  - python3
+  - Python
 ---
 [Curso de introducción a la programación con python3](https://plataforma.josedomingo.org/pledin/cursos/programacion_python3/){: .btn .btn--warning .btn--x-large .align-center }
 
