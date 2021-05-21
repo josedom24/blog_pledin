@@ -6,7 +6,7 @@ tags:
   - docker
 ---
 
-![docker]({{ site.url }}{{ site.baseurl }}/assets/2015/12/docker.png){: .align-center }
+![docker]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2015/12/docker.png){: .align-center }
 
 En las últimas semanas he estado impartiendo un curso de "Introducción a docker" para el CPR de Zafra, para profesores de la familia profesional de Informática de formación Profesional. 
 
