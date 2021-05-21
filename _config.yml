@@ -56,10 +56,10 @@ repository: "josedom24/blog_pledin"
 twitter:
   username: "pledin_jd"
 
-comments:
-  provider: "disqus"
-  disqus:
-    shortname: "pledin"
+#comments:
+#  provider: "disqus"
+#  disqus:
+#    shortname: "pledin"
 
 author:
   name   : "José Domingo Muñoz"
