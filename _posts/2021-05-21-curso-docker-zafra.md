@@ -35,4 +35,4 @@ Y los contenidos han sido:
 
 Puedes acceder a los contenidos del curso en el siguiente enlace:
 
-[Curso "Introducción a Docker](https://iesgn.github.io/curso_docker_2021/){: .btn .btn--warning .btn--x-large .align-center }
+[Curso "Introducción a Docker"](https://iesgn.github.io/curso_docker_2021/){: .btn .btn--warning .btn--x-large .align-center }
