@@ -61,6 +61,12 @@ twitter:
 #  disqus:
 #    shortname: "pledin"
 
+repository  : "josedom24/blog_pledin"
+comments:
+  provider  : "staticman_v2"
+  staticman:
+    branch    : "master"
+
 author:
   name   : "José Domingo Muñoz"
   avatar : "/assets/images/bio-photo.jpg"
