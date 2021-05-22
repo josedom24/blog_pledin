@@ -61,6 +61,8 @@ twitter:
 #  disqus:
 #    shortname: "pledin"
 
+
+staticman_url: http://localhost:3000/v2/entry/josedom24/blog_pledin/master/comments
 repository  : "josedom24/blog_pledin"
 comments:
   provider  : "staticman_v2"
