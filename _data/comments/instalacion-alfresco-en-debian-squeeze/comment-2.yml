@@ -1,8 +1,7 @@
-
 _id: 8a453820-baf8-11eb-8ee3-99ca498bd770
 message: "Hola,<br/> llevo algunos días buscando información y no se donde puede estar el fallo. Te sugiero que copies el conector directamente en /var/lib/tomcat6/webapps/alfresco/WEB-INF/lib y comprueba si funciona.<br/> Espero qhe sirva de algo.<br/> Un saludo y gracias por escribir."
 name: José Domingo Muñoz
 email: 2424fbdd076dfc091fbc90e4ecccb9aa
 url: ''
 hidden: ''
-date: '19 enero, 2012 at 4:11 pm'
+date: '2012-01-19T16:11:0'
