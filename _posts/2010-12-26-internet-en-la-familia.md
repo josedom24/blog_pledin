@@ -46,4 +46,3 @@ Hoy os traigo dos libros que he encontrado por internet acerca de la seguridad i
     <a href="http://1.bp.blogspot.com/_Vu4cDVjjvVI/TJFCVa3MLQI/AAAAAAAACWI/HRmf_gSs9v4/s1600/Internetenfamilia.jpg" target="_blank"><br /> </a>
   </div>
 </div>
-{% include comentarios.html comments=site.data.comments.internet %}
