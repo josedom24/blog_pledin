@@ -29,4 +29,3 @@ En la [Plataforma Educativa](http://www.josedomingo.org/web/), podéis encontrar
 </h4>
 
 
-{% include comentarios.html comments=site.data.comments.cursos %}
