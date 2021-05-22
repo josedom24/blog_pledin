@@ -10,6 +10,7 @@ classes: wide
 sidebar:
   nav: "all"
 comments: true
+slug: about
 ---
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2010/04/logo_3.gif)
 
