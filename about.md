@@ -26,4 +26,3 @@ Espero que os guste y que os sea útil, si quereis colaborar con este proyecto o
 
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/images/logo3.png)
 
-{% include comentarios.html comments=site.data.comments.presentacion %}
