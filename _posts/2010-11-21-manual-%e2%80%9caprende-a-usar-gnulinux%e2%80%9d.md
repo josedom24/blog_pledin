@@ -5,7 +5,7 @@ date: 2010-11-21T21:15:34+00:00
 
 
 guid: http://www.josedomingo.org/pledin/?p=368
-permalink: '/2010/11/manual-%e2%80%9caprende-a-usar-gnulinux%e2%80%9d/'
+permalink: '/2010/11/manual-aprende-a-usar-gnulinux/'
 
   
 tags:
@@ -22,4 +22,3 @@ tags:
   Lo añado también a la <a href="http://www.josedomingo.org/web/mod/data/view.php?id=1670">biblioteca de libros libres</a>.
 </p>
 
-{% include comentarios.html comments=site.data.comments.linux %}
