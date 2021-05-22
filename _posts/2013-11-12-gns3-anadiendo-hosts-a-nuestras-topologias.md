@@ -146,4 +146,3 @@ Del mismo modo desde le router podemos hacer ping al host:
 
 Bueno, espero que el presente artículo sea de utilidad sobre todo para nuestros alumnos del módulo de redes. Un saludo.
 
-{% include comentarios.html comments=site.data.comments.gns3 %}
