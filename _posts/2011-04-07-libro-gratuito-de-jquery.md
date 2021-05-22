@@ -34,4 +34,3 @@ Entre los temas que se ven en este libro, están los conceptos básicos, eventos
 </h1>
 
 
-{% include comentarios.html comments=site.data.comments.jquery %}
