@@ -67,4 +67,3 @@ Quiero dar las gracias a mi compañero <a href="http://albertomolina.wordpress.c
   
 Espero que os sirva.
 
-{% include comentarios.html comments=site.data.comments.dell %}
