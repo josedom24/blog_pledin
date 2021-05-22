@@ -331,4 +331,3 @@ Recomiendo que en los últimos pasos de la instalación se vayan monitorizando l
 
 Un saludo.
 
-{% include comentarios.html comments=site.data.comments.alfresco %}
