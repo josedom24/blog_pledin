@@ -62,12 +62,13 @@ twitter:
 #    shortname: "pledin"
 
 
-staticman_url: http://localhost:3000/v2/entry/josedom24/blog_pledin/master/comments
+staticman_url: 
 repository  : "josedom24/blog_pledin"
 comments:
   provider  : "staticman_v2"
   staticman:
     branch    : "master"
+    endpoint: "http://localhost:3000/v2/entry/"
 
 author:
   name   : "José Domingo Muñoz"
