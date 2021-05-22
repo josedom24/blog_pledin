@@ -277,4 +277,3 @@ Bueno, esto esto arrancando el servidor web del framework puedes ver como funcio
 
 ![django]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2012/01/Pantallazo1.png)
 
-{% include comentarios.html comments=site.data.comments.django %}
