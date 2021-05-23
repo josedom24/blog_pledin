@@ -1,6 +1,6 @@
 
 id: 8a453820-baf8-11eb-8ee3-99ca498bd770
-message: "<p>Hola,<br>si se pueden conectar varios contenedores entre sí. Mi recomendación es que si vas a trabajar con varios contenedores definas tu escenario usando docker-compose.</p><p>Te dejo un enlace con la documentación de docker-compose, es concreto de la sección link que permite indicar los enlaces entre los contenedores.</p><p><a href="https://github.com/docker/docker.github.io/blob/master/compose/compose-file/index.md#links" rel="nofollow noopener" title="https://github.com/docker/docker.github.io/blob/master/compose/compose-file/index.md#links">https://github.com/docker/d...</a></p><p>Un saludo</p>"
+message: '<p>Hola,<br>si se pueden conectar varios contenedores entre sí. Mi recomendación es que si vas a trabajar con varios contenedores definas tu escenario usando docker-compose.</p><p>Te dejo un enlace con la documentación de docker-compose, es concreto de la sección link que permite indicar los enlaces entre los contenedores.</p><p><a href="https://github.com/docker/docker.github.io/blob/master/compose/compose-file/index.md#links" rel="nofollow noopener" title="https://github.com/docker/docker.github.io/blob/master/compose/compose-file/index.md#links">https://github.com/docker/d...</a></p><p>Un saludo</p>'
 name: José Domingo Muñoz
 email: 2424fbdd076dfc091fbc90e4ecccb9aa
 url: ''
