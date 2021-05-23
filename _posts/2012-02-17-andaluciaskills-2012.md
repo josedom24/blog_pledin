@@ -32,4 +32,3 @@ Para más información:
   *  [Spainskills 2011](http://www.juntadeandalucia.es/educacion/formacionprofesionalindex.php/andaluciaskills/andaluciaskills-2012/1817-anticipo-sobre-spainskills-2011)
 
 
-{% include comentarios.html comments=site.data.comments.skill %}
