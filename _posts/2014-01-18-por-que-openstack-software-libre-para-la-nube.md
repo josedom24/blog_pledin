@@ -21,4 +21,4 @@ tags:
 <iframe src="https://www.youtube.com/embed/3m5LeyI7Bss" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
 
 
-{% include comentarios.html comments=site.data.comments.openstack %}
+
