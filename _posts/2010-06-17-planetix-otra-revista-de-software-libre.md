@@ -32,4 +32,3 @@ tags:
     <!-- AddThis Advanced Settings generic via filter on the_content -->
     
 
-{% include comentarios.html comments=site.data.comments.planetix %}
