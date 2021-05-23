@@ -1,5 +1,5 @@
 id: 8a453820-baf8-11eb-8ee3-99ca498bd770
-message: "<p>Hola:<br>Muchas gracias por el blog, me has resuelto varias dudas que tenía. Estoy liado con dos contenedores, Librenms de <a href=\"https://github.com/jarischaefer/docker-librenms\" rel=\"nofollow noopener\" title=\"https://github.com/jarischaefer/docker-librenms\">https://github.com/jarischa...</a> y mysql. El caso es que librenms siempre me dice que no conecta con Mysql. Después de leer tu documentación voy a ver si consigo hacer que se enlacen. Las variables de entorno que usas no son exáctamente igual que las que usa él, o eso creo. Probaré a ver. Si te sobra tiempo y quieres probar tu y me cuentas, te lo agradecería...<br>Un saludo y gracias por la info.</p>"
+message: "<p>Hola:<br>Muchas gracias por el blog, me has resuelto varias dudas que tenía. Estoy liado con dos contenedores, Librenms de https://github.com/jarischaefer/docker-librenms\ y mysql. El caso es que librenms siempre me dice que no conecta con Mysql. Después de leer tu documentación voy a ver si consigo hacer que se enlacen. Las variables de entorno que usas no son exáctamente igual que las que usa él, o eso creo. Probaré a ver. Si te sobra tiempo y quieres probar tu y me cuentas, te lo agradecería...<br>Un saludo y gracias por la info.</p>"
 name: Nasked
 email: 
 url: ''
