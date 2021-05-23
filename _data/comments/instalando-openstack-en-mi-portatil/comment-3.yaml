@@ -1,0 +1,8 @@
+
+id: 8a453820-baf8-11eb-8ee3-99ca498bd770
+message: "<p>Hola, evidentemente una instalación en un sólo ordenador sólo tiene sentido para tener una infraestructura de prueba, para probar como funciona openstack. Pero si queremos una infraestructura en producción, OpenStack hay que instalarlo en un un entorno multinodo, en que cada máquina cumple un rol: controlado, red, cómputo, almacenamiento,...</p>"
+name: José Domingo Muñoz
+email: 2424fbdd076dfc091fbc90e4ecccb9aa
+url: ''
+hidden: ''
+date: '2019-11-20T12:31:26Z'

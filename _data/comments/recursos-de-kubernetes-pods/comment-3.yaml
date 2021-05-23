@@ -1,0 +1,8 @@
+
+id: 8a453820-baf8-11eb-8ee3-99ca498bd770
+message: "<p>Hola,</p><p>1) Los pods ejecutan varios contenedores cuando es necesario que compartan almacenamiento y direccionamiento de red. Ejemplo: servidor web y servidor de base de datos, esto serían dos pods cada uno con un contenedor. Otro ejemplo: un servidor web nginx + fpm_php, en este caso estos dos servicios podrían ejecutarse en dos contenedores dentro de un pod.<br>2) Kubernetes nos ofrece la facilidad de replicar nuestros pods con ello estamos consiguiendo, entre otras cosas, tolerancia a fallos y balanceo de carga. Evidentemente los pods van a estar distribuidos por los distintos nodos del cluster, pero además kubernetes va a intentar que siempre se estén ejecutando el número de replicas del pod que hemos indicado.</p><p>Un saludo</p>"
+name: José Domingo Muñoz
+email: 2424fbdd076dfc091fbc90e4ecccb9aa
+url: ''
+hidden: ''
+date: '2019-10-16T10:01:04Z'

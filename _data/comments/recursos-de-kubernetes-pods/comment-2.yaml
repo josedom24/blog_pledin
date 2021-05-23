@@ -1,0 +1,8 @@
+
+id: 8a453820-baf8-11eb-8ee3-99ca498bd770
+message: "<p>Hola, primero que nada muchas gracias por este artículo, es más entendible cuando hay gráficas e imágenes.<br>Aunque he entendido más el concepto de pods, todavía tengo algunas dudas, espero puedas ayudarme.</p><p>En primera, si los pods pueden ejecutar varios contenedores, lo ideal sería que sean contenedores del mismo tipo?, es decir, misma aplicación, un servidor web. Que tener un contenedor redis, un servidor web en el mismo pod.<br>En mi propia conclusión yo creo que sería lo adecuado.</p><p>Segundo, supongo que es recomendable tener más de un pod ejecutándose, ya que si un pod es destruido por X razón todavía el sitio web (por mencionar un ejemplo) estaría disponible. Y supongo que todavía mejor tener más de un nodo por si un nodo falla.</p><p>Saludos y gracias.</p>"
+name: felocru
+email: 
+url: ''
+hidden: ''
+date: '2019-10-15T16:19:18Z'

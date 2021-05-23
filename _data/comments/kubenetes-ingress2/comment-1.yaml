@@ -1,0 +1,8 @@
+
+id: 8a453820-baf8-11eb-8ee3-99ca498bd770
+message: "<p>Hola, muy interesante. Cuando muestras los servicios se muestra que usan los puertos 80 y 8080, pero cuando se hace el ejemplo se ve que toman puertos por encima de los 30000. ¿Cómo hiciste para que tome esos puertos? Si se usa tal cual no funciona el ingress, supongo que tengo que modificarlo con los puertos que me dio el kubectl no?<br>No me llegó a funcionar =(</p>"
+name: Javier Cóndor
+email: 
+url: ''
+hidden: ''
+date: '2020-04-15T01:28:55Z'
