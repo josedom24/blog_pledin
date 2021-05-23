@@ -1,6 +1,6 @@
 
 id: 8a453820-baf8-11eb-8ee3-99ca498bd770
-message: "<p>Muy buen post me ha aclarado muchas cosas.</p><p>Me gustaría hacerte una pregunta:<br>¿Como puedo unir un nombre local con un nombre externo?. Es decir asociar este nombre interno "mongodb-replicaset-0.mongodb-replicaset.mongodb-replicaset.svc.cluster.local:27017" a este nombre externo "<a href="http://mongo-01.midominio.com" rel="nofollow noopener" title="mongo-01.midominio.com">mongo-01.midominio.com</a>".</p><p>La opción de exponer un puerto random del nodo no es valido ya que solo atiende a peticiones con el nombre interno.</p><p>Un saludo y muchas gracias!</p>"
+message: '<p>Muy buen post me ha aclarado muchas cosas.</p><p>Me gustaría hacerte una pregunta:<br>¿Como puedo unir un nombre local con un nombre externo?. Es decir asociar este nombre interno "mongodb-replicaset-0.mongodb-replicaset.mongodb-replicaset.svc.cluster.local:27017" a este nombre externo "<a href="http://mongo-01.midominio.com" rel="nofollow noopener" title="mongo-01.midominio.com">mongo-01.midominio.com</a>".</p><p>La opción de exponer un puerto random del nodo no es valido ya que solo atiende a peticiones con el nombre interno.</p><p>Un saludo y muchas gracias!</p>'
 name: Rafael Muñoz Gonzalez
 email: 
 url: ''
