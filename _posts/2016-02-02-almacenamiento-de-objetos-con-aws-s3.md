@@ -118,7 +118,7 @@ Con la CLI de aws se incluyen los comandos <strong>cp, ls, mv, rm y sync</strong
     2016-02-01 08:33:07     147061 tux.png
     2016-02-01 08:34:01     147061 tux2.png
 
-La parte de sincronización también es fácil de utilizar usando el comando <strong><a href="http://docs.aws.amazon.com/cli/latest/reference/s3/sync.html">rsync</a></strong>, indicamos el origen y el destino y sincronizará todos los archivos y directorios que contenga:
+La parte de sincronización también es fácil de utilizar usando el comando <strong><a href="http://docs.aws.amazon.com/cli/latest/reference/s3/sync.html">sync</a></strong>, indicamos el origen y el destino y sincronizará todos los archivos y directorios que contenga:
 
 **Sincronizar los ficheros de un directorio local a remoto:**
 
