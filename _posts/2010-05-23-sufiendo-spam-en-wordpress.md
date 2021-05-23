@@ -29,4 +29,3 @@ tags:
 </p>
 
 
-{% include comentarios.html comments=site.data.comments.wordpress %}
