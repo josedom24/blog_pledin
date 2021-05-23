@@ -1,8 +1,0 @@
-
-id: 8a453820-baf8-11eb-8ee3-99ca498bd770
-message: "<p>Hola,</p><p>Me alegro que te haya sido de utilidad. Respecto a los de las variables de entorno dependerán de la imagen que estás utilizando, además puede que hayan cambiado. Pero para salir de duda mira las variables globales que puedes usar con la imagen oficial de mysql en la página: <a href="https://hub.docker.com/_/mysql/" rel="nofollow noopener" title="https://hub.docker.com/_/mysql/">https://hub.docker.com/_/my...</a></p><p>Un saludo</p>"
-name: José Domingo Muñoz
-email: 2424fbdd076dfc091fbc90e4ecccb9aa
-url: ''
-hidden: ''
-date: '2018-11-10T14:22:47Z'

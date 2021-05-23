@@ -1,8 +1,0 @@
-
-id: 8a453820-baf8-11eb-8ee3-99ca498bd770
-message: "<p>Creo la cosa va con el mysql, el latest es la versión 8. Ejecute:</p><p>$ docker run --name servidor_mysql -e MYSQL_ROOT_PASSWORD=asdasd -d mysql:5.6</p>"
-name: Apolinar Martinez Melchor
-email: 
-url: ''
-hidden: ''
-date: '2019-05-15T22:16:26Z'
