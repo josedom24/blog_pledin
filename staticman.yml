@@ -52,7 +52,7 @@ comments:
   moderation: true
 
   # Akismet spam detection.
-   akismet:
+  # akismet:
   #   enabled: true
   #   author: "José Domingo Muñoz"
   #   authorEmail: "josedom24@gmail.com"
