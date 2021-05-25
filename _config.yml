@@ -30,6 +30,7 @@ markdown: kramdown
 theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
 
 feed:
   path: /feed/feed.xml
