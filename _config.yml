@@ -61,7 +61,9 @@ twitter:
 #  disqus:
 #    shortname: "pledin"
 
-
+tag_archive:
+  type: liquid
+  path: /tags/
 
 repository  : "josedom24/blog_pledin"
 comments:
