@@ -65,7 +65,7 @@ twitter:
 
 repository  : "josedom24/blog_pledin"
 comments:
-  provider  : "staticman_v3"
+  provider  : "staticman_v2"
   staticman:
     branch    : "master"
     endpoint: "https://comentarios.josedomingo.org/v3/entry/github"
