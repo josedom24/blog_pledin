@@ -68,7 +68,7 @@ comments:
   provider  : "staticman_v2"
   staticman:
     branch    : "master"
-    endpoint: "https://comentarios.josedomingo.org/v3/entry/"
+    endpoint: "https://comentarios.josedomingo.org/v3/entry/github"
 
 author:
   name   : "José Domingo Muñoz"
