@@ -130,7 +130,7 @@ Y podemos comprobar que hemos añadido de colaborador al usuario `pledin-staticm
 
 ## Configuración de Staticman
 
-Como hemos indicado anteriormente, estoy usando el tema *Minimal Mistakes* de Jekyll, y como vemos en su [documentación](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#static-based-comments-via-staticman) nos ofrece soporte para Staticman, esto nos facilita mucho el trabajo con Staticman, por que al configurarlo de manera adecuada, el tema *Minimal Mistakes* nos ofrecerá el código necesario para generar el formulario desde los que mandamos los comentarios, así como la visualización los los comentarios que tenga cada uno de los posts.
+Como hemos indicado anteriormente, estoy usando el tema *Minimal Mistakes* de Jekyll, y como vemos en su [documentación](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#static-based-comments-via-staticman) nos ofrece soporte para Staticman, esto nos facilita mucho el trabajo con Staticman, por que al configurarlo de manera adecuada, el tema *Minimal Mistakes* nos ofrecerá el código necesario para generar el formulario desde los que mandamos los comentarios, así como la visualización de los comentarios que tenga cada uno de los posts.
 
 La primera configuración la haremos en el fichero `_config.yml` y nos permitirá configurar el sistema de comentarios que va a utilizar el tema *Minimal Mistakes*:
 
