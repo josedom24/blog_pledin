@@ -24,7 +24,7 @@ Pero, **¿cómo funciona Staticman?**: En realidad no tenemos una base de datos,
 
 ## Permitir que Saticman pueda trabajar con GitHub
 
-**Staticman** se va comportar como un bot que será capaz de acceder a mi repositorio github donde tengo almacenada mi página personal para hacer un pull request que añadirá un fichero con la información de un comentario.
+**Staticman** se va comportar como un bot que será capaz de acceder a mi repositorio github, donde tengo almacenada mi página personal, para hacer un pull request que añadirá un fichero con la información de un comentario.
 
 En la la [documentación](https://staticman.net/docs/getting-started.html) podemos encontrar distintos métodos para que Staticman se autentifique contra GitHub, en mi caso he seguido la opción de **Usar un token personal para el acceso a GitHub**, para ello seguimos los siguientes pasos:
 
