@@ -3,6 +3,7 @@ title: 'Nuevo sistema de comentarios con Staticman'
 permalink: /2021/05/comentarios-pledin-staticman/
 tags:
   - Pledin
+  - Jekyll
 ---
 
 ![staticman]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/05/staticman.png){: .align-center }
@@ -209,3 +210,26 @@ reCaptcha:
 
 Si todo se ha configurado de manera adecuada, ecada uno de los posts de nuestra página tendremos un formulario para mandar un comentario:
 
+![cuenta]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/05/comentario.png){: .align-center }
+
+A continuación podremos ver que nos ha llegado un pull request a nuestro repositorio:
+
+![cuenta]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/05/pullrequest.png){: .align-center }
+
+Después de aceptar el pull requests, podemos que se ha creado el fichero `_data/comments/comentarios-pledin-staticman/comment-1621967610157.yml` con el siguiente contenido:
+
+```yaml
+_id: b3a212b0-bd87-11eb-9326-775a5c0bb816
+message: >-
+  Comentario para probar Staticman, el gestor de comentarios que estamos usando
+  en Pledin.
+name: Jose Domingo Muñoz
+email: 2424fbdd076dfc091fbc90e4ecccb9aa
+url: ''
+hidden: ''
+date: '2021-05-25T18:33:30.149Z'
+```
+
+Si volvemos a generar nuestra página estática con Jekyll, podemos observar como el comentario se muestra en el post:
+
+![cuenta]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/05/comentario2.png){: .align-center }

@@ -3,6 +3,7 @@ title: 'Bienvenidos a PLEDIN 3.0'
 permalink: /2018/09/bienvenidos-a-pledin30/
 tags:
   - Pledin
+  - Jekyll
 ---
 
 En esta entrada os presento la nueva versión de mi página personal: PLEDIN 3.0. Desde hace 8 años he estado trabajando con Wordpress y la verdad es que aunque la experiencia ha sido muy positiva, sí he experimentado que las ventajas que ofrece una herramienta como Wordpress no las estoy aprovechando, no necesito una web dinámica para escribir contenido estático. Además el mantenimiento de la página puede llegar a ser muy pesado (copias de seguridad, mantenimiento de la base de datos, etc.), todo estos aspectos son un poco más complicado con la página Moodle donde mantengo los cursos que he ido impartiendo a lo largo de estos años (utilizo una moodle con contenido estático, sin aprovechar todas las funcionalidades que nos ofrece).
