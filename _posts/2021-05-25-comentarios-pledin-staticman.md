@@ -192,7 +192,7 @@ Si por ejemplo, la `Secret key` vale `1q2w3e4r`, para encriptarla ejecutaremos l
 
 ```bash
 $ curl https://comentarios.josedomingo.org/v3/encrypt/1q2w3e4r
-VR6I5bes11YZJy26gO1FmnK4yxJs6eQvmIK5KOCzJGNuIqsKb2jh0Fwu2Z5DoUFDtQawQO6C/EtYnYJsxLXX/jqxoa7b1dL/eneombysd09cTLodpHjL4KcpN3vHdQe5w/k4CSTqz/Bfj9nGFOxsaPtXPbVHGkyLK//vXikh0Ubz9qWI+elTRbVyOwcmI87ZcScBq2vqAinDC5bIhu5b3/drbLpI4/y6gK17fIDEcIEPLMec/4OBzTf/RwN6TlvJmtCTbuGJJRdhJa1SyHwAKa3p/OuL+2mVvdMHP8NRQHz8pYvfGXVhq4WyvoNxA/TbRen6GNUU21POozzZycRNRg==
+VR6I5bes11YZJy26gO1FmnK4yxJs6eQvmIK5KOCzJGNuIqsKb2jh0Fwu2Z5DoUFDtQawQO6C/...ycRNRg==
 ```
 
 A continuación tendremos que añadir en los ficheros `_config.yaml` y `staticman.yml` la configuración re reCAPTCHA:
