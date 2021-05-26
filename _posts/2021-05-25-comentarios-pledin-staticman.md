@@ -144,7 +144,7 @@ comments:
     endpoint: "https://comentarios.josedomingo.org/v2/entry/"
 ```
 
-Indicamos el repositorio (`repository`) donde Staticman va a trabajar, el proveedor usado para gestionar comentarios (`povider`), la ram del repositorio con el que va a trabajar (`branch`) y final el `endpoint` de la API que ofrece nuestra instancia de Staticman.
+Indicamos el repositorio (`repository`) donde Staticman va a trabajar, el proveedor usado para gestionar comentarios (`povider`), la rama del repositorio con el que va a trabajar (`branch`) y final el `endpoint` de la API que ofrece nuestra instancia de Staticman.
 
 A continuación debemos crear un fichero, llamado `staticman.yaml`, donde vamos a indicar la configuración de Staticman:
 
@@ -170,7 +170,7 @@ comments:
 Podemos encontrar todos los [parámetros de configuración](https://staticman.net/docs/configuration) en la documentación, pero vamos a explicar los fundamentales:
 
 * `allowdFields`: Lista con los campos permitidos, si se envían algún otro campo que no se encuentre en esta lista se dará un error.
-* `branch`: Rama del repsoitorio donde tiene que trabajar.
+* `branch`: Rama del repositorio donde tiene que trabajar.
 * `commitMessage`: Mensaje del commit, donde se añade el nombre de la persona que ha escrito el comentario.
 * `filename`: El nombre del fichero que va a generar Staticman con los datos del comentario.
 * `format`: El formato de dicho fichero.
@@ -182,7 +182,7 @@ Podemos encontrar todos los [parámetros de configuración](https://staticman.ne
 
 ## Luchando contra el Spam
 
-Desde el primer momento que hice funcionar el sistema, empece a recibir muchos comentarios que eran Spam. Necesitamos algún sistema antispam que reduzca el número de comentario fraudulentos recibidos. Staticman ofrece dos sistemas para [luchar contra el Spam](https://staticman.net/docs/spam): Akismet, es un sistema antispam proporcionado por Wordpress, y reCAPTCHA, ofrecido por Google y nos proporciona un mecanismo para asegurarno que ningún bot manda comentarios a nuestro sistema. 
+Desde el primer momento que hice funcionar el sistema, empece a recibir muchos comentarios que eran Spam. Necesitamos algún sistema antispam que reduzca el número de comentario fraudulentos recibidos. Staticman ofrece dos sistemas para [luchar contra el Spam](https://staticman.net/docs/spam): Akismet, es un sistema antispam proporcionado por Wordpress, y reCAPTCHA, ofrecido por Google y nos proporciona un mecanismo para asegurarnos que ningún bot manda comentarios a nuestro sistema. 
 
 Lo ideal sería combinar los dos métodos, pero en mi caso, no me ha funcionando la configuración con Akismet, por lo sólo he podido añadir reCAPTCHA a mis formularios de envío. De todas modos como tengo activa la moderación (`moderation`) no se publica ningún comentario hasta que no se acepta el pull request.
 
