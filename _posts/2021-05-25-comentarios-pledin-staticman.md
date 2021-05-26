@@ -34,7 +34,7 @@ Registramos una nueva cuenta en GitHub que es la que va a utilizar Staticman par
 
 Vamos a crear un token de acceso para esta cuenta: `Settings` - `Developer settings` - `Personal access tokens` - `Generate new token`:
 
-![cuenta]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/05/token-personal.png){: .align-center }
+![cuenta]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/05/personal-token.png){: .align-center }
 
 En esta pantalla indicamos un nombre y damos los permisos adecuados con los que vamos a tener acceso con este token, de principio sólo sería necesario escoger el apartado **repo**. Guardamos el token que hemos generado que lo utilizaremos posteriormente.
 
