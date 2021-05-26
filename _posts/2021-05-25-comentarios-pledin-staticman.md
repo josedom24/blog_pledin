@@ -113,7 +113,7 @@ Hello from Staticman version 3.0.0!
 
 ## Envíando una invitación de colaboración a nuestra instancia de Staticman
 
-A continuación, desde nuestra nuestra cuenta principal de GitHub, vamos a invitar a nuestra instancia Staticman para que tenga permisos de acceder a nuestro repositorio donde tenemos los ficheros de nuestra página, para ello [seguimos estos pasos](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository): desde el repositorio, `Settings` - `Manage access` - `Invite a collaborator`, elegimos el nombre de la nueva cuenta, y lo invitamos para colaborar.
+A continuación, desde nuestra cuenta principal de GitHub, vamos a invitar a la instancia Staticman para que tenga permisos de acceder a nuestro repositorio donde tenemos los ficheros de nuestra página, para ello [seguimos estos pasos](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository): desde el repositorio, `Settings` - `Manage access` - `Invite a collaborator`, elegimos el nombre de la nueva cuenta, y lo invitamos para colaborar.
 
 ![cuenta]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/05/invitacion.png){: .align-center }
 
