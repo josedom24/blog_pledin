@@ -1,0 +1,12 @@
+_id: a4173070-f6ec-11eb-836d-974dd84f10c3
+message: "Realmente ese problema no tiene que ver con el proxy inverso. Tiene que ver con el tratamiento de virtualhosting por parte de apache2: Si tenemos varios virtualhosting donde hemos indicados distintos subdominios, si indicamos un subdominio que no existe, se mostrará el primer virtualhost. El primer virtualhost será aquel cuyo nombre del fichero de configuración es el primero al ordenarlo alfabéticamente.
+
+No se puede solucionar, pero se puede crear un virtualhost, con un nombre de fichero, que al ordenarlo alfabéticamente sea el primero (por ejemplo con el nombre 000-default.conf) y que muestre algún contenido, aunque no sea significativo.
+
+Un saludo
+"
+name: José Domingo
+email: 2424fbdd076dfc091fbc90e4ecccb9aa
+url: ''
+hidden: ''
+date: '2021-08-11T12:32:08Z'
