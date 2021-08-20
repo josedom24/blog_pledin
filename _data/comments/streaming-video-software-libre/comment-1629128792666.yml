@@ -1,5 +1,5 @@
 _id: 210c8990-fea9-11eb-836d-974dd84f10c3
-message: "Hola José Domingo,\r\n\r\nEstamos intentando montar un sistema similar para retransmitir varias cámaras IP. Tenemos todo corriendo con el docker, pero viendo el consumo con sólo tres cámaras nos está asustando un poco. Estamos con un Celeron dual core y 4GB de RAM, pero nuestro objetivo es pasar 60 cámaras por aquí, pero vemos que ni con el nginx.conf de ejemplo sin transcoding baja el consumo del contenedor.\r\nTienes alguna referencia del hardware a usar"
+message: "Hola José Domingo,\r\n\r\nEstamos intentando montar un sistema similar para retransmitir varias cámaras IP. Tenemos todo corriendo con el docker, pero viendo el consumo con sólo tres cámaras nos está asustando un poco. Estamos con un Celeron dual core y 4GB de RAM, pero nuestro objetivo es pasar 60 cámaras por aquí, pero vemos que ni con el nginx.conf de ejemplo sin transcoding baja el consumo del contenedor.\r\n¿Tienes alguna referencia del hardware a usar?"
 name: Rubén
 email: 31c5b62ceb4ce2556b30e76b24c90888
 url: ''
