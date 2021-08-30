@@ -1,0 +1,7 @@
+_id: b8ed4cf0-05e2-11ec-b03a-0f38a73d158d
+message: "Hola José, bueno veo que este post es de 2013! Espero que el blog aún este activo! Casualmente estaba buscando como hacer una delegación de zona usando bind9 en Debian y resulta que la zona directa me funciona sin problemas, pero no logro hacer que funcione la delegación para la zona inversa (es algo que estoy probando 1ro en un laboratorio usando bloques IP /29 para los clientes a quienes les intento delegar ambas zonas DNS (directa e inversa)) \r\nVeo que en este artículo de 2013, hablas sobre el tema, pero solo lo referente a la zona directa, podrías ayudarme con la inversa??\r\n\r\nSaludos..."
+name: Eduardo R. Barrrera Pérez
+email: 2689067a8a0d87a67e1017b13b16dd93
+url: ''
+hidden: ''
+date: '2021-08-25T20:26:26.913Z'
