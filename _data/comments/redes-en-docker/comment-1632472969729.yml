@@ -1,0 +1,7 @@
+_id: 65f4d110-1d13-11ec-b03a-0f38a73d158d
+message: "Tengo una duda.  Imaginemos que yo tenga un Centos con varias IPs,  y que estoy corriendo varios dockers.\r\nEn principio, cuando haga el port mapping al levantar el docker acceder por la IP principal al servicio que me brinde el docker  (imaginemos un apache, corriendo en un docker, en el puerto 80).   Y si ahora quiere levantar otro docker,  corriendo en el mismo puerto, usando otra de las IPs del host ?   Como le digo que usa una IP diferente del host y no la misma ?    El proposito es tener en la misma maquina ambos dockers, ambos escuchando en el mismo puerto, con IPs diferentes...\r\n\r\nGracias!"
+name: Andrés Gorostidi Pulgar
+email: 15626b27e68979c4212c9106c46bec94
+url: ''
+hidden: ''
+date: '2021-09-24T08:42:49.723Z'
