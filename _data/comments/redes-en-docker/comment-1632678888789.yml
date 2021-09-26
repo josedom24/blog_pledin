@@ -1,0 +1,7 @@
+_id: d739a180-1ef2-11ec-b03a-0f38a73d158d
+message: "Hola Andrés, podrías ejecutar los siguientes comandos para ejecutar dos servidores web (he usado nginx en la prueba) y que cada uno responda en el puerto 80 de cada una de las direcciones ip que tiene la máquina:\r\n\r\n```bash\r\ndocker run -d --name web1 -p 192.168.121.65:80:80 nginx\r\ndocker run -d --name web2 -p 192.168.122.79:80:80 nginx\r\n```\r\n\r\nY comprobamos que  están corriendo los dos contenedores:\r\n\r\n```bash\r\ndocker ps -a\r\nCONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                       NAMES\r\n4b330d9bc911   nginx     \"/docker-entrypoint.…\"   4 seconds ago    Up 3 seconds    192.168.122.79:80->80/tcp   web2\r\n658b74e65ffe   nginx     \"/docker-entrypoint.…\"   21 seconds ago   Up 20 seconds   192.168.121.65:80->80/tcp   web1\r\n```\r\n\r\nPrueba a entrar en las distintas ip y verás que tiene acceso a cada uno de los servidores web.\r\nUn saludo"
+name: José Domingo Muñoz
+email: 2424fbdd076dfc091fbc90e4ecccb9aa
+url: ''
+hidden: ''
+date: '2021-09-26T17:54:48.783Z'
