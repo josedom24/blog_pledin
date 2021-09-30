@@ -95,7 +95,16 @@ usuario@maquina:~$ vagrant box list
 
 ### ¿Qué recursos se han creado en KVM?
 
-1. Como podemos probar la máquina tiene acceso al exterior. Aunque no hayamos configurado ninguna conexión de red, esta máquina se ha conectado a un red de tipo NAT que ha creado vagrant y que podemos ver usando el cliente `virsh`:
+1. Una vez creado el escenario podemos comprobar que se ha creado una máquina, usamos el cliente `virsh`:
+
+    ```bash
+    usuario@maquina:~/vagrant$ virsh -c qemu:///system list
+     Id   Nombre        Estado
+    --------------------------------
+     3    ej1_default   ejecutando
+    ```
+
+2. Como podemos probar la máquina tiene acceso al exterior. Aunque no hayamos configurado ninguna conexión de red, esta máquina se ha conectado a un red de tipo NAT que ha creado vagrant y que podemos ver usando el cliente `virsh`:
 
     ```bash
     usuario@maquina:~/vagrant$ virsh -c qemu:///system net-list --all
@@ -105,9 +114,9 @@ usuario@maquina:~$ vagrant box list
     vagrant-libvirt   activo     no                  si
     ```
 
-2. La instrucción `vagrant ssh` accede a la máquina con el usuario `vagrant` y con una clave privada, la clave pública relacionada se ha guardado en el sistema de archivo de la máquina. Para cada máquina se genera una par de claves, la clave privada de una máquina se guarda en el directorio `directorio_vagrantfile/.vagrant/machines/default/libvirt/`.
+3. La instrucción `vagrant ssh` accede a la máquina con el usuario `vagrant` y con una clave privada, la clave pública relacionada se ha guardado en el sistema de archivo de la máquina. Para cada máquina se genera una par de claves, la clave privada de una máquina se guarda en el directorio `directorio_vagrantfile/.vagrant/machines/default/libvirt/`.
 
-3. Se han creado dos volúmenes en el pool `default`:
+4. Se han creado dos volúmenes en el pool `default`:
 
     ```bash
     usuario@maquina:~/vagrant$ virsh -c qemu:///system vol-list default
