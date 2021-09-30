@@ -114,7 +114,7 @@ usuario@maquina:~$ vagrant box list
     vagrant-libvirt   activo     no                  si
     ```
 
-3. La instrucción `vagrant ssh` accede a la máquina con el usuario `vagrant` y con una clave privada, la clave pública relacionada se ha guardado en el sistema de archivo de la máquina. Para cada máquina se genera una par de claves, la clave privada de una máquina se guarda en el directorio `directorio_vagrantfile/.vagrant/machines/default/libvirt/`.
+3. La instrucción `vagrant ssh` accede a la máquina con el usuario `vagrant` y con una clave privada, la clave pública relacionada se ha guardado en el sistema de archivo de la máquina. Para cada máquina se genera una par de claves, la clave privada de una máquina se guarda en el directorio `.vagrant/machines/default/libvirt/` que encontramos en el directorio donde hemos guardado el fichero `Vagrantfile` que hemos usado para crear el escenario.
 
 4. Se han creado dos volúmenes en el pool `default`:
 
