@@ -1,5 +1,5 @@
 ---
-title: 'Introdución al uso de vagrant + libvirt + QEMU/KVM'
+title: 'Introducción al uso de vagrant + libvirt + QEMU/KVM'
 permalink: /2021/09/introduccion-vagrant-libvirt/
 tags:
   - Vagrant
