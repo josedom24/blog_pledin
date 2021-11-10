@@ -1,0 +1,9 @@
+_id: d1874f50-4277-11ec-b03a-0f38a73d158d
+message: >-
+  El tema de 2 contenedores corriendo en el mismo puerto se resuelve con un
+  proxy reverso, como traefik (https://traefik.io/traefik/)
+name: diego
+email: 473475d2d1e0ec88bdce61a935e69d42
+url: ''
+hidden: ''
+date: '2021-11-10T22:44:52.926Z'
