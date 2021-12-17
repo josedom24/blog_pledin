@@ -196,12 +196,16 @@ Veamos con detenimiento este ejemplo:
 
 1. La variable `registros` guarda todos los registros seleccionados de la consulta. Po defecto se devuelve una tupla de tuplas:
 
-        (('José', 'Domingo', 20, 'M', 2000.0), ('Pablo', 'Ruíz', 21, 'M', 2100.0), ('María', 'López', 22, 'F', 2200.0))
+```
+(('José', 'Domingo', 20, 'M', 2000.0), ('Pablo', 'Ruíz', 21, 'M', 2100.0), ('María', 'López', 22, 'F', 2200.0))
+```
 
 2. Podemos recorrer los registros con un `for`, cada campo de un registro se guardará en una posición, por lo que usamos el indice para acceder:
 
-        for registro in registros:
-            print(registro[0],registro[1],registro[2],registro[3],registro[4])
+```
+for registro in registros:
+   print(registro[0],registro[1],registro[2],registro[3],registro[4])
+```
 
 Veamos la ejecución del programa:
 
@@ -216,13 +220,17 @@ María López 22 F 2200.0
 
 Si tenemos muchos atributos en una tabla, puede ser complicado usar índices para seleccionarlos. Lo ideal sería que el cursos nos devolviera una tupla de diccionarios, y de esta manera poder referenciar los atributos por su nombre. Para ello, al crear el cursor debemos indicar que su tipo sea `DictCursor`, para ello:
 
-    ...
-    cursor = db.cursor(MySQLdb.cursors.DictCursor)
-    ...
+```
+...
+cursor = db.cursor(MySQLdb.cursors.DictCursor)
+...
+```
 
 De esta forma al devolver los registros seleccionados se nos devolverá una tupla de diccionarios:
 
-    ({'FIRST_NAME': 'José', 'LAST_NAME': 'Domingo', 'AGE': 20, 'SEX': 'M', 'INCOME': 2000.0}, {'FIRST_NAME': 'Pablo', 'LAST_NAME': 'Ruíz', ...)
+```
+({'FIRST_NAME': 'José', 'LAST_NAME': 'Domingo', 'AGE': 20, 'SEX': 'M', 'INCOME': 2000.0}, {'FIRST_NAME': 'Pablo', 'LAST_NAME': 'Ruíz', ...)
+```
 
 Podemos listar el primer nombre de los trabajadores de esta forma:
 
