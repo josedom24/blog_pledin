@@ -229,7 +229,7 @@ cursor = db.cursor(MySQLdb.cursors.DictCursor)
 De esta forma al devolver los registros seleccionados se nos devolverá una tupla de diccionarios:
 
 ```
-({'FIRST_NAME': 'José', 'LAST_NAME': 'Domingo', 'AGE': 20, 'SEX': 'M', 'INCOME': 2000.0}, {'FIRST_NAME': 'Pablo'...
+({'FIRST_NAME': 'José', 'LAST_NAME': 'Domingo', 'AGE': 20, 'SEX': 'M', 'INCOME': 2000.0},{'FIRST_NAME': 'Pablo'...
 ```
 
 Podemos listar el primer nombre de los trabajadores de esta forma:
