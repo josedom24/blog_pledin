@@ -74,6 +74,9 @@ $ ls /usr/share/lxc/templates/
 lxc-alpine    lxc-archlinux  lxc-centos  lxc-debian    lxc-fedora	  lxc-gentoo  lxc-oci		lxc-opensuse  lxc-plamo  lxc-sabayon	lxc-sparclinux	lxc-ubuntu	  lxc-voidlinux
 lxc-altlinux  lxc-busybox    lxc-cirros  lxc-download  lxc-fedora-legacy  lxc-local   lxc-openmandriva	lxc-oracle    lxc-pld	 lxc-slackware	lxc-sshd	lxc-ubuntu-cloud
 ```
+
+También puedes obtener la lista de plantilla en la página [Image server for LXC and LXD](https://uk.lxd.images.canonical.com/).
+
 ## Configuración de los contenedores LXC
 
 El fichero `/etc/lxc/default.conf` contiene la configuración general que van a tener los contenedores que creemos. Su contenido es el siguiente:
