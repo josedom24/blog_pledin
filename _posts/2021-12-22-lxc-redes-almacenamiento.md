@@ -4,6 +4,7 @@ permalink: /2021/12/lxc-redes-almacenamiento/
 tags:
   - LXC
   - Virtualización
+published: false
 ---
 
 ![lxc]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/12/lxc2.png){: .align-center }
@@ -48,8 +49,9 @@ Vemos que se crea un proceso `dnsmasq` que ofrece el servidor DHCP y DNS a los c
 
 ```bash
 $ ps aux|grep dnsmasq
-dnsmasq      433  0.0  0.0  13440   392 ?        S    19:32   0:00 dnsmasq --conf-file=/etc/lxc/dhcp.conf -u dnsmasq --strict-order --bind-interfaces --pid-file=/run/lxc/dnsmasq.pid --listen-address 10.0.3.1 --dhcp-range 10.0.3.2,10.0.3.254 --dhcp-lease-max=253 --dhcp-no-override --except-interface=lo --interface=lxcbr0 --dhcp-leasefile=/var/lib/misc/dnsmasq.lxcbr0.leases --dhcp-authoritative
-root        1572  0.0  0.0   5204   712 pts/0    S+   20:13   0:00 grep dnsmasq
+dnsmasq      433  0.0  0.0  13440   392 ?        S    19:32   0:00 dnsmasq --conf-file=/etc/lxc/dhcp.conf -u dnsmasq --strict-order \
+--bind-interfaces --pid-file=/run/lxc/dnsmasq.pid --listen-address 10.0.3.1 --dhcp-range 10.0.3.2,10.0.3.254 --dhcp-lease-max=253 \
+--dhcp-no-override --except-interface=lo --interface=lxcbr0 --dhcp-leasefile=/var/lib/misc/dnsmasq.lxcbr0.leases --dhcp-authoritative
 ```
 
 Además se crea una regla iptables para que nuestro host haga de SNAT para que los contenedores tengan salida al exterior:
