@@ -108,4 +108,4 @@ RewriteRule ^web/course/$ https://www.josedomingo.org/pledin/ [L]
 RewriteRule ^web/course/view.php$ https://www.josedomingo.org/pledin/? [L]
 RewriteRule ^revistas/$ https://www.josedomingo.org/pledin/revistas/ [L]
 
-ErrorDocument 404 /404/index.html
+ErrorDocument 404 /pledin/404/index.html
