@@ -187,7 +187,7 @@ Aparece un sólo procesador.
 
 ## Conclusiones
 
-Actualmente el trabajo con contenedores es muy beneficioso para la administración de un sistema informático, ya que podemos aislar espacios separados (procesos, usuarios, servicios, sistemas de ficheros, redes,...) de manera muy sencillo y no un nivel de aislamiento aceptable. En la próxima entrada vamos a hacer una introducción a las redes en los contenedores linux y estudiaremos algunos otros aspectos.
+Actualmente el trabajo con contenedores es muy beneficioso para la administración de un sistema informático, ya que podemos aislar espacios separados (procesos, usuarios, servicios, sistemas de ficheros, redes,...) de manera muy sencillo y no un nivel de aislamiento aceptable. En la próxima entrada vamos a hacer una introducción a las redes y al almacenamiento en los contenedores linux: [Introducción a las redes y almacenamiento en LXC](https://www.josedomingo.org/pledin/2021/12/lxc-redes-almacenamiento/).
 
 
 
