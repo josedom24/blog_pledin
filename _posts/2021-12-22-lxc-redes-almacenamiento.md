@@ -19,7 +19,7 @@ LXC nos ofrece distintos [mecanismos](https://linuxcontainers.org/lxd/docs/maste
 
 ## Redes con lxc-net
 
-Veamos en primer lugar la segunda opción. En versiones anteriores de LXC no había configurada una red por defecto para conectar nuestros contenedores. En la versión actual y utilizando `lxc-net` se crea un bridge llamado `lxcbr0` que nos ofrece una red de tipo NAT con los servicios DHCP y DNS. Veamos su configuración:
+Veamos en primer lugar la segunda opción. Como en el artículo anterior, este manual se basa en la distribución GNU/Linux Debian 11. En versiones anteriores de LXC no había configurada una red por defecto para conectar nuestros contenedores. En la versión actual y utilizando `lxc-net` se crea un bridge llamado `lxcbr0` que nos ofrece una red de tipo NAT con los servicios DHCP y DNS. Veamos su configuración:
 
 En primer lugar, en el fichero `/etc/default/lxc-net` se configura los parámetros de la red que se va a crear:
 
