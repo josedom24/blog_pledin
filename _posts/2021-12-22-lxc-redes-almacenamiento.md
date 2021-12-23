@@ -85,7 +85,7 @@ lxc.net.0.flags = up
 ...
 ```
 
-Por lo tanto podemos comprobar que el `contenedor1` esta conectado a sea red. Por ejemplo si mostramos los contenedores que hemos creado, vemos que ha recibido una ip en ese rango:
+Por lo tanto podemos comprobar que el `contenedor1` esta conectado a sea red. Por ejemplo, si mostramos los contenedores que hemos creado, vemos que ha recibido una ip en ese rango:
 
 ```bash
 $ lxc-ls -f
@@ -134,7 +134,7 @@ LXC_DHCP_CONFILE=/etc/dnsmasq.conf
 
 Con el parámetro `LXC_DHCP_CONFILE` indicamos el fichero de configuración del servicio `dnsmasq` que se va a crear (el fichero de configuración se puede llamar `dnsmasq.conf` o tener otro nombre). 
 
-Por ejemplo si queremos realizar una reserva para otorgar la misma ip al `contenedor1`, crearíamos el fichero `/etc/dnsmasq.conf` con el siguiente contenido:
+Por ejemplo, si queremos realizar una reserva para otorgar la misma ip al `contenedor1`, crearíamos el fichero `/etc/dnsmasq.conf` con el siguiente contenido:
 
 ```
 dhcp-host=contenedor1,10.0.3.10
