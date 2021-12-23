@@ -4,33 +4,32 @@ permalink: /2021/12/lxc-redes-almacenamiento/
 tags:
   - LXC
   - Virtualización
-published: false
 ---
 
 ![lxc]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/12/lxc2.png){: .align-center }
 
-En el anterior artículo [Introducción a LinuX Containers (LXC)](https://www.josedomingo.org/pledin/2021/12/introduccion-lxc/) estudiamos los aspectos fundamentales de la gestión de los contenedores LXC. En este artículo vamso a profundizar en las redes y en el almacenamiento que podemos configurar en los LinuX Containers.
+En el anterior artículo: [Introducción a LinuX Containers (LXC)](https://www.josedomingo.org/pledin/2021/12/introduccion-lxc/) estudiamos los aspectos fundamentales de la gestión de los contenedores LXC. En este artículo vamos a profundizar en las redes y en el almacenamiento que podemos configurar en los **LinuX Containers**.
 
 # Redes en LXC
 
 LXC nos ofrece distintos [mecanismos](https://linuxcontainers.org/lxd/docs/master/networks/) para conectar nuestros contenedores a una red. En este artículo nos vamos a centrar en las conexiones de tipo **bridge**. Tenemos dos posibilidades:
 
 * Podemos crear manualmente el *bridge* o usar libvirt para su creación (podemos crear [distintos tipos de redes con libvirt](https://wiki.libvirt.org/page/Networking)).
-* Podemos usar `lxc-net`, servicio ofrecido por LXC, que nos facilita la creación de un bridge que por defecto se llama `lxcbr0` y que nos ofrece una una red de tipo NAT con los servicios de DHCP y DNS.
+* Podemos usar `lxc-net`, servicio ofrecido por LXC, que nos facilita la creación de un bridge, que por defecto se llama `lxcbr0`, y que nos ofrece una una red de tipo NAT con los servicios de DHCP y DNS.
 
 ## Redes con lxc-net
 
-Veamos en primer lugar la segunda opción. En versiones anteriores de LXC no había configurada una red por defecto para conectar nuestros contenedores. En la versión actual y utilizando `lxc-net` se crea un puente llamado `lxcbr0` que nos ofrece una red de tipo NAT con los servicios DHCP y DNS. Veamos su configuración:
+Veamos en primer lugar la segunda opción. En versiones anteriores de LXC no había configurada una red por defecto para conectar nuestros contenedores. En la versión actual y utilizando `lxc-net` se crea un bridge llamado `lxcbr0` que nos ofrece una red de tipo NAT con los servicios DHCP y DNS. Veamos su configuración:
 
-En primer lugar veamos la configuración de la red que se crea, para ello examinamos el fichero `/etc/default/lxc-net`:
+En primer lugar, en el fichero `/etc/default/lxc-net` se configura los parámetros de la red que se va a crear:
 
 ```bash
 USE_LXC_BRIDGE="true"
 ...
 ```
 
-Con la directiva `USE_LXC_BRIDGE="true"` activamos la funcionalidad ofrecida por el servicio `lxc-net`: gestionar la red creada.
-No hay más directivas porque se coge la configuración por defecto que es la siguiente:
+Con el parámetro `USE_LXC_BRIDGE="true"` activamos la funcionalidad ofrecida por el servicio `lxc-net`: gestionar la red creada.
+No hay más parámetros porque se coge la configuración por defecto que es la siguiente:
 
 ```bash
 LXC_BRIDGE="lxcbr0"
@@ -43,7 +42,7 @@ LXC_DHCP_MAX="253"
 
 <!--more-->
 
-Es decir, se crea el bridge `lxcbr0`, el direccionamiento de la red que se crea es `10.0.3.0/24` y podemos ver el rango de direcciones que se reparten. Si queremos cambiar algunos de estos parámetros habrá que introducirlos en el fichero de configuración y reiniciar el servicio `lxc-net`.
+Es decir, se crea el bridge `lxcbr0`, el direccionamiento de la red que se crea es `10.0.3.0/24` y podemos indicar el rango de direcciones que se reparten. Si queremos cambiar algunos de estos parámetros habrá que introducirlos en el fichero de configuración y reiniciar el servicio `lxc-net`.
 
 Vemos que se crea un proceso `dnsmasq` que ofrece el servidor DHCP y DNS a los contenedores:
 
@@ -54,7 +53,7 @@ dnsmasq      433  0.0  0.0  13440   392 ?        S    19:32   0:00 dnsmasq --con
 --dhcp-no-override --except-interface=lo --interface=lxcbr0 --dhcp-leasefile=/var/lib/misc/dnsmasq.lxcbr0.leases --dhcp-authoritative
 ```
 
-Además se crea una regla iptables para que nuestro host haga de SNAT para que los contenedores tengan salida al exterior:
+Además se crea una regla iptables para que nuestro host haga SNAT para que los contenedores tengan salida al exterior:
 
 ```bash
 $ iptables -L -n -v -t nat
@@ -66,7 +65,7 @@ Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
 
 ### Conexión de los contenedores a `lxcbr0`
 
-La configuración por defecto es que los contenedores que creemos se conectan a esta red, lo podemos ver en el a configuración general en el fichero `/etc/lxc/default.conf`:
+La configuración por defecto posibilita que los contenedores que creemos se conecten a esta red. Lo podemos ver en la configuración general, en el fichero `/etc/lxc/default.conf`:
 
 ```bash
 lxc.net.0.type = veth
@@ -85,7 +84,7 @@ lxc.net.0.flags = up
 ...
 ```
 
-Por lo tanto podemos comprobar que el `contenedor1` esta conectado a sea red. Por ejemplo si mostramos los contenedores que hemos creado vemos que ha recibido una ip en ese rango:
+Por lo tanto podemos comprobar que el `contenedor1` esta conectado a sea red. Por ejemplo si mostramos los contenedores que hemos creado, vemos que ha recibido una ip en ese rango:
 
 ```bash
 $ lxc-ls -f
@@ -119,7 +118,7 @@ PING endor.josedomingo.org (37.187.119.60) 56(84) bytes of data.
 ```
 
 1. Comprobamos que se ha configurado con la ip `10.0.3.180`.
-2. Vemos que la puerta de enlace es la `10.0.3.1` que corresponde a la máquina física.
+2. Vemos que la puerta de enlace es la `10.0.3.1` que corresponde a nuestra máquina física.
 3. Del mismo modo la máquina física es el servidor DNS.
 4. Hemos instalado la herramienta `ping` y comprobamos que tenemos resolución y acceso al exterior.
 
@@ -132,9 +131,9 @@ USE_LXC_BRIDGE="true"
 LXC_DHCP_CONFILE=/etc/dnsmasq.conf
 ```
 
-Con el parámetro `LXC_DHCP_CONFILE` indicamos el fichero de configuración del servicio `dnsmasq` que se va a crear (el fichero de configuración puede llamarse `dnsmasq.cong` o cualquier otro nombre). 
+Con el parámetro `LXC_DHCP_CONFILE` indicamos el fichero de configuración del servicio `dnsmasq` que se va a crear (el fichero de configuración se puede llamar `dnsmasq.conf` o tener otro nombre). 
 
-Por ejemplo si queremos realizar una reserva para otorgar la misma ip a l `contenedor1`, crearíamos el fichero `/etc/dnsmasq.conf` con el siguiente contenido:
+Por ejemplo si queremos realizar una reserva para otorgar la misma ip al `contenedor1`, crearíamos el fichero `/etc/dnsmasq.conf` con el siguiente contenido:
 
 ```
 dhcp-host=contenedor1,10.0.3.10
@@ -173,7 +172,7 @@ contenedor1.example.org
 
 ## Conexión de los contenedores a un bridge existente
 
-Imaginemos que tenemos en nuestro host instalado libvirt para manejar los recursos de KVM/Qemu y hemos creado una red con `virsh` de tipo NAT que ha creado un bridge llamado `virbr0` con las siguientes características:
+Imaginemos que tenemos en nuestro host instalado libvirt para manejar los recursos de KVM/Qemu y hemos creado una red con `virsh` de tipo NAT, que ha creado un bridge llamado `virbr0`, con las siguientes características:
 
 ```
 $ virsh net-dumpxml default
@@ -211,7 +210,7 @@ $ lxc-create -n contenedor2 -t debian -- -r bullseye
 $ lxc-start contenedor2
 $ lxc-ls -f
 NAME        STATE   AUTOSTART GROUPS IPV4            IPV6 UNPRIVILEGED 
-contenedor1 RUNNING 1         -      10.0.3.10      -    false        
+contenedor1 RUNNING 1         -      10.0.3.10       -    false        
 contenedor2 RUNNING 1         -      192.168.122.228 -    false        
 ```
 
@@ -234,7 +233,7 @@ lxc.net.1.flags = up
 ...
 ```
 
-Indicamos la segunda conexión utilizando el nombre de los parámetros como `lxc.net.1.*`. Además hemos cambiado la mac de la segunda tarjeta de red. Ahora reiniciamos el contenedor, accedemos al contenedor:
+Indicamos la segunda conexión utilizando el nombre de los parámetros como `lxc.net.1.*`. Además hemos cambiado la mac de la segunda tarjeta de red. Ahora reiniciamos y accedemos al contenedor:
 
 ```
 $ lxc-stop -r contenedor1
@@ -283,7 +282,7 @@ contenedor2 RUNNING 1         -      192.168.122.228             -    false
 
 # Almacenamiento en LXC
 
-Veamos como montar un directorio del host en un contenedor. Imaginemos que tenemos el directorio `opt/contenedor1` con un fichero `index.html` y lo queremos montar en el `contenedor1` en el directorio `/srv/www`. Tenemos que tener en cuenta los siguiente:
+Veamos como montar un directorio del host en un contenedor. Imaginemos que tenemos el directorio `/opt/contenedor1` con un fichero `index.html` y lo queremos montar en el `contenedor1` en el directorio `/srv/www`. Tenemos que tener en cuenta los siguiente:
 
 El directorio de montaje debe existir en el contenedor:
 
@@ -293,7 +292,7 @@ root@contenedor1:~# cd /srv
 root@contenedor1:/srv# mkdir www
 ```
 
-En el fichero de configuración del contenedor añadimos la siguiente línea:
+En el fichero de configuración del contenedor (`/var/lib/lxc/contenedor1/config`) añadimos la siguiente línea:
 
 ```
 lxc.mount.entry=/opt/contenedor1 srv/www none bind 0 0
@@ -312,6 +311,9 @@ root@contenedor1:/srv/www# ls
 index.html
 ```
 
+## Conclusiones
+
+Con los dos últimos artículos hemos hecho una breve descripción a los aspectos más interesantes del trabajo con **LinuX Containers** (LXC). Como siempre para seguir estudiando lo mejor es estudiar la [documentación oficial](https://linuxcontainers.org/lxc/introduction/#LXC-Manpages).
 
 
 
