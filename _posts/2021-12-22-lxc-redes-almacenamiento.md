@@ -314,7 +314,7 @@ index.html
 
 ## Conclusiones
 
-Con los dos últimos artículos hemos hecho una breve descripción a los aspectos más interesantes del trabajo con **LinuX Containers** (LXC). Como siempre para seguir estudiando lo mejor es estudiar la [documentación oficial](https://linuxcontainers.org/lxc/introduction/#LXC-Manpages).
+Con los dos últimos artículos hemos hecho una breve descripción a los aspectos más interesantes del trabajo con **LinuX Containers** (LXC). Como siempre para seguir profundizando lo mejor es estudiar la [documentación oficial](https://linuxcontainers.org/lxc/introduction/#LXC-Manpages).
 
 
 
