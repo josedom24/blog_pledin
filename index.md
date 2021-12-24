@@ -38,7 +38,7 @@ feature_row2:
     excerpt: '<li><a href="http://www.gonzalonazareno.org">Gonzalo Nazareno</a></li>
   <li><a href="https://albertomolina.wordpress.com/">Desde lo alto del cerro</a></li>
   <li><a href="http://ral-arturo.org/">ral-arturo.org</a></li>
-  <li><a href="https://www.linuxarena.net/">Linuxarena</a></li>'
+  '
   - image_path: assets/wp-content/uploads/2011/02/revistas.jpg
     alt: "Revistas"
     title: "Revistas Libres de Software Libre"
