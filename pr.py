@@ -7,5 +7,5 @@ for number in d:
     lista=["pepe"]
     for user in lista:
         if user in dd.get("body"):
-            a=subprocess.check_output(["gh","pr","close","-d",str(number.get("number")))
+            a=subprocess.check_output(["gh","pr","close","-d",str(number.get("number"))])
             
