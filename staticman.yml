@@ -51,7 +51,7 @@ comments:
   # Otherwise, entries will be published to the main branch automatically.
   moderation: true
 
-   Akismet spam detection.
+  # Akismet spam detection.
    akismet:
      enabled: true
      author: "José Domingo Muñoz"
