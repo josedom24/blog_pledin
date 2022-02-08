@@ -1,4 +1,4 @@
-import json,subprocess
+import json,subprocess,os
 a=subprocess.check_output(["gh","pr","list","--json","number"])
 d=json.loads(a.decode('utf-8'))
 for number in d:
@@ -7,5 +7,5 @@ for number in d:
     lista=["pepe"]
     for user in lista:
         if user in dd.get("body"):
-            a=subprocess.check_output(["gh","pr","close","-d",str(number.get("number"))])
+            os.system("gh pr close -d "+str(number.get("number")))
             
