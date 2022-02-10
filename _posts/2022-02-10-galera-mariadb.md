@@ -26,7 +26,7 @@ Los dos nodos tendrán instalado el sistema operativo GNU/Linux Debian 11.
 Vamos a empezar instalando el paquete `mariadb-server` en los dos nodos:
 
 ```
-apt update && apt install mariadb-server
+apt install mariadb-server
 ```
 
 Aunque no es necesario para la construcción del cluster, es recomendable asegurar la instalación ejecutando el comando [`mysql_secure_installation`](https://mariadb.com/kb/en/mysql_secure_installation/), que nos permite realizar las siguientes tareas:
