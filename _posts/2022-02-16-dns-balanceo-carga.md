@@ -133,9 +133,9 @@ En este caso, el comportamiento depende del cliente:
 * Otros simplemente harán round robin (primero le pregunta a nodo1, la siguiente pregunta va primero a nodo2,...) 
 * Y otros consultarán en el orden que se puso los servidores (por lo que un nodo recibirá todas las consultas).
 
-Independientemente como se comporte lo importante es que si no hay respuesta de un servidor delegado, se probará a preguntar al otro.
+Independientemente de como se comporte, lo importante es que si no hay respuesta de un servidor delegado, se probará a preguntar al otro.
 
-En esta prueba comprobamos como en un primer momento está preguntando al servidor dns delegado del nodo2, cuando apagamos este nodo, las respuestas pasan al servidor dns del nodo1 y sigue accediendo al servicio. Volvemos a iniciar el nodo2, pero se sigue consultado al dns del nodo1. Cuando, finalmente, apagamos el nodo1, las consultas pasn a hacerse de nuevo al dns del nodo2. Veámoslo de manera más gráfica:
+En esta prueba comprobamos como en un primer momento está preguntando al servidor dns delegado del nodo2, cuando apagamos este nodo, las peticiones pasan al servidor dns del nodo1 y sigue accediendo al servicio. Volvemos a iniciar el nodo2, pero se sigue consultado al dns del nodo1. Cuando, finalmente, apagamos el nodo1, las consultas pasan a hacerse de nuevo al dns del nodo2. Veámoslo de manera más gráfica:
 
 <script id="asciicast-s6EXgU0VBBd4m5ZdY4YPekJww" src="https://asciinema.org/a/s6EXgU0VBBd4m5ZdY4YPekJww.js" async></script>
 
