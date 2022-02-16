@@ -14,7 +14,6 @@ Una manera sencilla de balancear la carga entre dos servidores que estén ofreci
 
 Vamos a montar tres máquinas:
 
-
 * `nodo1: 10.1.1.101`
 * `nodo2: 10.1.1.102`
 * `dns: 10.1.1.103`
@@ -53,10 +52,9 @@ www.example.com.	86400	IN	A	10.1.1.101
 
 Si accedemos desde un navegador web, podremos observar como se va intercalando el acceso (balanceando la carga) entre los dos nodos. Hemos configurado el ordenador desde el que estamos accediendo para que consulte a nuestro dns:
 
+![dns]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/02/lb.png){: .align-center }
 
-![dns](lb.png)
-
-Para verlo de forma más gráfica, podemos acceder con `curl` al fichero `info,txt` del servidor que contiene le nombre del nodo:
+Para verlo de forma más gráfica, podemos acceder con `curl` al fichero `info.txt` del servidor que contiene le nombre del nodo:
 
 ```
 while [ True ]; do curl http://www.example.com/info.txt && sleep 1 ; done
