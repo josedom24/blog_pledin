@@ -145,3 +145,8 @@ En esta prueba comprobamos como en un primer momento está preguntando al servid
 
 En esta entrada del blog hemos visto dos maneras muy simples de balancear la carga entre servicios que corren en distintos nodos usando el DNS. Hemos visto que el balanceo de carga no conlleva la alta disponibilidad. En las próximas entradas quiero hacer una aproximación a la construcción de cluster en alta disponibilidad usando pacemaker y corosync. Finalmente cuando construyamos un cluster de alta disponibilidad activo-activo podremos usar algunas de estas técnicas de balanceo para acceder al cluster.
 
+He desarrollado dos escenarios construido con vagrant y configurados con ansible para montar la infraestructura que hemos estudiado en esta entrada:
+
+* [Escenario 1: Balanceo por DNS](https://github.com/josedom24/escenarios-HA/tree/master/01-Balanceo-DNS)
+* [Escenario 2: Balanceo por DNS Delegado](https://github.com/josedom24/escenarios-HA/tree/master/02-Balanceo-DNS-Delegado)
+
