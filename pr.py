@@ -1,5 +1,5 @@
 import json,subprocess,os
-lista=["zithromax"]
+lista=["zithromax","Amie"]
 a=subprocess.check_output(["gh","pr","list","--json","number"])
 d=json.loads(a.decode('utf-8'))
 for number in d:
