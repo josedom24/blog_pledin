@@ -66,7 +66,7 @@ nodo2
 
 <script id="asciicast-8g2TUKWLxFjHTmfCex4n7kPuS" src="https://asciinema.org/a/8g2TUKWLxFjHTmfCex4n7kPuS.js" async></script>
 
-Con esta solución estamos balanceando la carga, pero no estamos consiguiendo una alta disponibilidad: en el momento que uno de los servidores web se apaga, las peticiones que vayan dirigido a él no obtendrán respuestas. Para ciertos servicios esto es un problema porque se quedaran esperando respuesta. Lo podemos ver haciendo un ping, después de apagar el nodo1:
+Con esta solución estamos balanceando la carga, pero no estamos consiguiendo una alta disponibilidad: en el momento que uno de los servidores web se apaga, las peticiones que vayan dirigido a él no obtendrán respuesta. Para ciertos servicios esto es un problema porque se quedarán esperando respuesta. Lo podemos ver haciendo un ping, después de apagar el nodo1:
 
 ```
 ping www.example.com
@@ -90,14 +90,14 @@ El alias que vamos a configurar sería:
 www.example.com    IN   CNAME   www.http.example.com
 ```
 
-Es decir cuando accedamos a `www.example.com` estaremos accediendo a `www` de un dominio delegado (a un subdominio) que será `http.example.com`. Las zona de este subdominio delegado van a estar definidas en dos servidores DNs que instalaremos en nuestros nodos que ofrecen el servicio (nodo1 y nodo2). La delegación de del dominio se hará de la siguiente manera:
+Es decir cuando accedamos a `www.example.com` estaremos accediendo a `www` de un dominio delegado (a un subdominio) que será `http.example.com`. Las zona de este subdominio delegado van a estar definidas en dos servidores DNS que instalaremos en nuestros nodos que ofrecen el servicio (nodo1 y nodo2). La delegación de del dominio se hará de la siguiente manera:
 
 ```
 http.example.com    IN  NS      nodo1.http.example.com
 http.example.com    IN  NS      nodo2.http.example.com
 ```
 
-De esta forma al resolver el nombre `www.example.com`, estaremos resolviendo el nombre `www.http.example.com`, y para averiguar su ip el servidor dns tendrá que preguntar a uno de los servidor dns delegados. El servidor dns preguntará de forma alternativa a uno de los servidores dns delegados, y lo más importante, si un nodo se apaga y no puede devolver la respuesta, preguntará al otro, por lo que no tendremos cortes de servicio.
+De esta forma al resolver el nombre `www.example.com`, estaremos resolviendo el nombre `www.http.example.com`, y para averiguar su ip el servidor dns tendrá que preguntar a uno de los servidores dns delegados. El servidor dns preguntará de forma alternativa a uno de los servidores dns delegados, y lo más importante, si un nodo se apaga y no puede devolver la respuesta, preguntará al otro, por lo que no tendremos cortes de servicio.
 
 Veamos la configuración completa del servidor dns principal. El fichero `/var/cache/bind/db.example.com` quedaría:
 
