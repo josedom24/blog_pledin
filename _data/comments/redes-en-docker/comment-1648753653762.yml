@@ -1,0 +1,15 @@
+_id: d1d200f0-b125-11ec-967d-554e3cb74b5b
+message: >-
+  Hola José. Estoy con un tema que no puedo resolver. Tengo una LAN
+  192.168.1.1/24 y dentro de esaLAN tengo mi DOCKER HOST (192.168.1.10).
+  corriendo 2 contenedores con apache balanceados que leen el mismo directorio
+  html que esta en el DOCKER HOST. Se ven desde dentro de la LAN y funciona bien
+  con el ruteo de puertos. Ahora yo quiero conecta esos dockers a una base de
+  datos dentro de la LAN (192.168.1.20). No lo gro hacerlo. Quizas tenga que
+  levantar los docker de alguna forma de bridge y asignarles IPs de la LAN?
+  gracias
+name: Maximiliano
+email: cd82f53e3a26fe2a5821860bf499e57f
+url: ''
+hidden: ''
+date: '2022-03-31T19:07:33.747Z'
