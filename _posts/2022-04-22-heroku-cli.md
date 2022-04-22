@@ -10,7 +10,7 @@ tags:
 
 ![heroku]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/04/heroku.png){: .align-center }
 
-[Heroku](https://www.heroku.com/) es una aplicación que nos ofrece un servicio de Cloud Computing PaaS (Plataforma como servicio). Ya hemos tratado esta herramienta en más ocasiones en Pledin: [Instalación de drupal en heroku](https://www.josedomingo.org/pledin/2015/11/instalacion-de-drupal-en-heroku/) y [Despliegue de una aplicación Python Bottle en Heroku (https://www.josedomingo.org/pledin/2017/04/despliegue-de-una-aplicacion-python-bottle-en-heroku/).
+[Heroku](https://www.heroku.com/) es una aplicación que nos ofrece un servicio de Cloud Computing PaaS (Plataforma como servicio). Ya hemos tratado esta herramienta en más ocasiones en Pledin: [Instalación de drupal en heroku](https://www.josedomingo.org/pledin/2015/11/instalacion-de-drupal-en-heroku/) y [Despliegue de una aplicación Python Bottle en Heroku](https://www.josedomingo.org/pledin/2017/04/despliegue-de-una-aplicacion-python-bottle-en-heroku/).
 
 Desde hace una semana la integración de Heroku con GitHub está fallando. Al día de hoy no podemos conectar desde el dashboard de Heroku a nuestros repositorios de GitHub. El problema es que GitHub ha denegado la integración desde varias herramientas (entre ellas Heroku) porque han detectado el acceso a repositorios privados usando token OAuth ilegítimos, puedes encontrar más información en [So, what happened with GitHub, Heroku, and those raided private repos?](https://www.theregister.com/2022/04/21/github-stolen-oauth-tokens-used-in-breaches/).
 
