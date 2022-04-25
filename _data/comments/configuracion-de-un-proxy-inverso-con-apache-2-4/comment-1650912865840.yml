@@ -1,0 +1,7 @@
+_id: 206a9810-c4c9-11ec-a380-b15886e89c6f
+message: "Hola buenas he seguido los paso pero no funciona, o no lo hace bien.\r\nTrato de hacer proxy a un servicio montado en docker en otro servidor.\r\n\r\nLa configuración que he puesto es esta:\r\n#sentry en svr83\r\n                ProxyPass \"/sentry/\" \"http://192.168.8.41:9000/\"\r\n                ProxyPassReverse \"/sentry/\" \"http://192.168.8.41:9000/\"\r\n                ProxyHTMLURLMap http://192.168.8.41:9000 /sentry\r\n                <Location /sentry/>\r\n                        ProxyPassReverse /\r\n                        ProxyHTMLEnable On\r\n                        ProxyHTMLURLMap / /sentry/\r\n                        RequestHeader unset Accept-Encoding\r\n                </Location>      \r\nHa activado todos los módulos pero no va\r\n\r\nCarga la primera página sin problema, pero una vez que hago login intenta cargar todos los ficheros y llamar todos las apis en el raíz en lugar de la carpeta sentry :\r\n\r\n\r\n/api/0/organizations/sentry/teams/:1          Failed to load resource: the server responded with a status of 404 (Not Found)\r\n\r\n¿que hago mal?\r\n\r\nSaludos"
+name: Juanlu
+email: bb0e983b76f9679c552a56cb39257e0f
+url: ''
+hidden: ''
+date: '2022-04-25T18:54:25.832Z'
