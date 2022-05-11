@@ -114,7 +114,7 @@ feature_row4:
 <td>
 <h2>Últimos cursos...</h2>
 <ul>
-  <li><a href="https://www.josedomingo.org/pledin/2022/05/curso-cloud-iesgn">"Mini" Curso: Virtualización y Cloud Computing en el IES Gonzalo Nazareno</a></li>]
+  <li><a href="https://www.josedomingo.org/pledin/2022/05/curso-cloud-iesgn">"Mini" Curso: Virtualización y Cloud Computing en el IES Gonzalo Nazareno (2022)</a></li>
   <li><a href="https://iesgn.github.io/curso_docker_2021/">Curso: Introducción a  Docker. CPR Zafra. (2021)</a></li>
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/curso_cpp1/">Curso de C++: Introducción a C++ (2020)</a></li>
   <li><a href="https://plataforma.josedomingo.org/pledin/cursos/curso_cpp2/">Curso de C++: Estructuras de control y tipos de datos (2020)</a></li>
