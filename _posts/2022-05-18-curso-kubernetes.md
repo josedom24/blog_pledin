@@ -21,15 +21,15 @@ En este curso conoceremos las principales características de Kubernetes y de la
 
 Los contenidos del curso han sido:
 
-#. Introducción a Kubernetes
-#. Instalación de Kubernetes
-#. Contenedores en Kubernetes: Pods
-#. Tolerancia y escalabilidad: ReplicaSets
-#. Despliegues
-#. Acceso a las aplicaciones
-#. Despliegues parametrizados
-#. Almacenamiento en Kubernetes
-#. Otras cargas de trabajo
-#. Instalación de aplicaciones en Kubernetes con Helm
+1. Introducción a Kubernetes
+2. Instalación de Kubernetes
+3. Contenedores en Kubernetes: Pods
+4. Tolerancia y escalabilidad: ReplicaSets
+5. Despliegues
+6. Acceso a las aplicaciones
+7. Despliegues parametrizados
+8. Almacenamiento en Kubernetes
+9. Otras cargas de trabajo
+10. Instalación de aplicaciones en Kubernetes con Helm
 
 [Curso: Introducción a Kubernetes](https://github.com/iesgn/curso_kubernetes_cep){: .btn .btn--warning .btn--x-large .align-center }
