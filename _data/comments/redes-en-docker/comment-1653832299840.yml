@@ -1,0 +1,7 @@
+_id: 76c58380-df56-11ec-852d-95ae8122efdb
+message: "Hola. Estoy recién empezando con Docker y tengo una duda. En una maquina virtual tengo dos SO, Ubuntu Desktop y Ubuntu Server. En los dos sistemas he configurado una red interna para que se puedan comunicar. En Ubuntu Server, he instalado docker y mediante docker-compose he creado una imagen mysql, que en el archivo docker-compose.yml he puesto \"ports: 3306:3306\", con la idea desde Ubuntu Desktop acceder a información al servidor. Todo parece estar bien, incluso cuando hago \"sudo docker ps\", me aparece mysql funcionando y con el port 3306 configurado. Pero, desde el host (Ubuntu Desktop) intento verificar el funcionamiento, escribiendo en la terminal \"sudo nmap -p- --open -n <ip_guest>\" o \"nc -z4nv <ip_guest> 3306\", no funciona. El primer comando me devuelve el port 22 en lugar de 3306, y el segundo comando si escribo 22, si me reconoce la ip_guest. Cualquier ayuda me seria útil.\r\n\r\nGracias"
+name: Emil
+email: b565cbcc69932ad1f7e4387fc6ad9f46
+url: ''
+hidden: ''
+date: '2022-05-29T13:51:39.837Z'
