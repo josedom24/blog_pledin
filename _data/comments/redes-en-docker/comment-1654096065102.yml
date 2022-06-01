@@ -1,0 +1,7 @@
+_id: 971ca1a0-e1bc-11ec-852d-95ae8122efdb
+message: "Hola Emil,\r\n\r\nIntenta acceder desde el ubuntu Desktop al servidor de base de datos. Para ello, instala el cliente de mysql y ejecuta:\r\n\r\n```\r\nmysql -u usuario -p -h <ip_ubuntu_server>\r\n```\r\n\r\nUn saludo, espero que te sirva."
+name: José Domingo Muñoz
+email: 2424fbdd076dfc091fbc90e4ecccb9aa
+url: ''
+hidden: ''
+date: '2022-06-01T15:07:45.097Z'
