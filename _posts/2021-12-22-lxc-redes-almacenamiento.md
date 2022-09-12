@@ -217,7 +217,7 @@ contenedor2 RUNNING 1         -      192.168.122.228 -    false
 
 Vemos como el `contenedor2` ha tomado en una ip de la red `default`.
 
-Si quisieramos cambiar la conexión del un contenedor ya existente deberiamos hacer la modificación en su fichero de configuración: `/var/lib/lxc/<NOMBRE_CONTENEDOR>/config` y reiniciar el contenedor.
+Si quisiéramos cambiar la conexión del un contenedor ya existente deberiamos hacer la modificación en su fichero de configuración: `/var/lib/lxc/<NOMBRE_CONTENEDOR>/config` y reiniciar el contenedor.
 
 También podríamos conectar el `contenedor1` a la red `default`, para ello vamos a añadir la información de la conexión en su fichero de configuración `/var/lib/lxc/contenedor1/config`:
 
