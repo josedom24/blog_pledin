@@ -90,31 +90,58 @@ Queremos hacer una propuesta de cambio a un repositorio del que no somos propiet
 
 ![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr6.png){: .align-center }	
 
-5. Ya hemos explicado en los cuatros pasos anteriores cómo se realiza un Pull Requets, sin embargo es importante tener en cunta los siguiente: al hacer el fork del repositorio original hacemos una copia completa en un determinado momento, pero ese repositorio puede ir cambiando y sin embargo esos cambios no se verán reflejados en nuestro fork. Nos tenemos que asegurar antes de proponer un cambio (hacer un Pull Request), tener nuestro fork lo más actualizado posible para que no tengamos problemas introduciendo numerosos conflictos. Para ello vamos a realizar los siguientes pasos:
+## Pasos para validación de un Pull Request
 
-	Nos aseguremos de posicionarnos en la rama principal de nuestro fork (en este ejemplo se llama `master`, aunque actualmente se llama `main`):
+Ahora nos ponemos en el rol del usuario propietario del repositorio original, que ha recibido un Pull Request del otro usuario:
 
-	```
-	~/blog_pledin$ git checkout master
-	Switched to branch 'master'
-	Your branch is up to date with 'origin/master'.
-	```
+![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr7.png){: .align-center }	
 
-	Añadimos un nuevo repositorio remoto a nuestro repositorio local que será el repositorio original que hemos copiado. A este nuevo repositorio lo vamos a llamar **upstream** (evidentemente al añadir el repositorio original usamos la URL https ya que no somos propietario del mismo):
+Si accedemos, tendremos la opción de aprobar y fusionar la propuesta de cambio o cerrar el Pull Request con lo que no lo aceptamos:
 
-	```
-	~/blog_pledin$ git remote add upstream https://github.com/josedom24/blog-pledin.git
-	```
+![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr8.png){: .align-center }	
 
-	Ahora tendremos dos repositorios remotos asociados al repositorio local:
 
-	```
-	~/blog_pledin$ git remote -v
-	origin	git@github.com:pledin-staticman/blog_pledin.git (fetch)
-	origin	git@github.com:pledin-staticman/blog_pledin.git (push)
-	upstream	https://github.com/josedom24/blog-pledin.git (fetch)
-	upstream	https://github.com/josedom24/blog-pledin.git (push)
-	```
+## Sincronización de nuestro fork con el repositorio original
 
-		
+Ya hemos explicado en los cuatros pasos anteriores cómo se realiza un Pull Request, sin embargo es importante tener en cunta los siguiente: al hacer el fork del repositorio original hacemos una copia completa en un determinado momento, pero ese repositorio puede ir cambiando y sin embargo esos cambios no se verán reflejados en nuestro fork. Nos tenemos que asegurar antes de proponer un cambio (hacer un Pull Request), tener nuestro fork lo más actualizado posible para que no tengamos problemas introduciendo numerosos conflictos. Para ello vamos a realizar los siguientes pasos:
+
+Nos aseguremos de posicionarnos en la rama principal de nuestro fork (en este ejemplo se llama `master`, aunque actualmente se llama `main`):
+
+```
+~/blog_pledin$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+Añadimos un nuevo repositorio remoto a nuestro repositorio local que será el repositorio original que hemos copiado. A este nuevo repositorio lo vamos a llamar **upstream** (evidentemente al añadir el repositorio original usamos la URL https ya que no somos propietario del mismo):
+
+```
+~/blog_pledin$ git remote add upstream https://github.com/josedom24/blog_pledin.git
+```
+
+Ahora tendremos dos repositorios remotos asociados al repositorio local:
+
+```
+~/blog_pledin$ git remote -v
+origin	git@github.com:pledin-staticman/blog_pledin.git (fetch)
+origin	git@github.com:pledin-staticman/blog_pledin.git (push)
+upstream	https://github.com/josedom24/blog_pledin.git (fetch)
+upstream	https://github.com/josedom24/blog_pledin.git (push)
+```
+
+Buscamos los posibles cambios que ha tenido el repositorio original:
+
+```
+~/blog_pledin$ git fetch upstream
+```
+
+Y a continuación fusionamos los cambios del repositorio original que están en la rama `upstream/master` (si fuera un repositorio nuevo sería `upstream/main`) en nuestra rama principal:
+
+```
+~/blog_pledin$ git merge upstream/main
+```
+
+Otra forma de sincronizar el repositorio sería desde la página de GitHub:
+
+![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr9.png){: .align-center }	
 	
