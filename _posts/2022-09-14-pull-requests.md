@@ -21,7 +21,7 @@ Queremos hacer una propuesta de cambio a un repositorio del que no somos propiet
 
 1. El usuario tiene que hacer un **fork** del repositorio al que quiere contribuir. Un fork es una copia completa de un determinado repositorio a nuestra cuenta de GitHub. Para ello accedemos al repositorio que queremos copiar y pulsamos sobre el botón **Fork**:
 
-![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr1.png){: .align-center }
+	![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr1.png){: .align-center }
 
 	Y crearemos un nuevo fork:
 
@@ -33,7 +33,7 @@ Queremos hacer una propuesta de cambio a un repositorio del que no somos propiet
 
 2. Una vez que hemos copiado el repositorio a nuestra cuenta, podemos **clonar** ese repositorio. En nuestro caso hemos configurado el acceso SSH a GitHub y por lo tanto podemos usar la URL de acceso por SSH:
 
-![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr4.png){: .align-center }	
+	![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr4.png){: .align-center }	
 
 	Para realizar la clonación ejecutamos:
 
@@ -84,11 +84,11 @@ Queremos hacer una propuesta de cambio a un repositorio del que no somos propiet
 
 4. Por último tenemos que crear el Pull Requests desde la página de GitHub. Comprobamos que nos aparece un cuadro que nos dice que hemos hecho cambios en una nueva rama y podemos crear un nuevo Pull Requests para proponer dichos cambios, para ello pulsamos el botón **Caompare & pull request**:
 
-![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr5.png){: .align-center }	
+	![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr5.png){: .align-center }	
 
 	A continuación nos aparece un formulario donde podemos escribir un comentario al propietario del repositorio al que estamos proponiendo el cambio para explicar el Pull Request sugerido. Y finalmente pulsamos el botón **Create pull request** para crearlo.
 
-![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr6.png){: .align-center }	
+	![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr6.png){: .align-center }	
 
 ## Pasos para validación de un Pull Request
 
