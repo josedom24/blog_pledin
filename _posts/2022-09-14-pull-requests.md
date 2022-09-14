@@ -25,11 +25,11 @@ Queremos hacer una propuesta de cambio a un repositorio del que no somos propiet
 
 	Y crearemos un nuevo fork:
 
-![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr2.png){: .align-center }
+	![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr2.png){: .align-center }
 
 	Qué creará un nuevo repositorio en la cuenta de nuestro usuario:
 
-![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr3.png){: .align-center }
+	![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr3.png){: .align-center }
 
 2. Una vez que hemos copiado el repositorio a nuestra cuenta, podemos **clonar** ese repositorio. En nuestro caso hemos configurado el acceso SSH a GitHub y por lo tanto podemos usar la URL de acceso por SSH:
 
