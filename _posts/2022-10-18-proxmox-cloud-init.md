@@ -7,7 +7,7 @@ tags:
   - cloud-init
 ---
 
-![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/09/pr.jpg){: .align-center }
+![Pull Requests]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/10/proxmox_cloudinit.png){: .align-center }
 
 [cloud-init](https://cloud-init.io/): **cloud instance initialization**, es un programa que permite realizar la configuración de la instancia al crearse a partir de una imagen. Es el estándar de facto en nube pública o privada, está desarrollado en python y es un proyecto liderado por Canonical.
 
