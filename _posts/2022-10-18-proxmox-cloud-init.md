@@ -48,7 +48,7 @@ Para hacer esta configuración por defecto, nos vamos a la opción **Cloud-Init*
 
 ![proxmox + cloud-init]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/10/cloudinit3.png){: .align-center }
 
-Donde hemos configurado un usuario y una contraseña por defecto, los servidor y dominios DNS lo hemos dejado sin indicar (para que coja los definidos en el servidor de proxmox), no hemos añadido una clave ssh y por último, hemos configurado la red para que se configure por DHCP.
+Donde hemos configurado un usuario y una contraseña por defecto, los servidores y dominios DNS lo hemos dejado sin indicar (para que coja los definidos en el servidor de proxmox), no hemos añadido una clave ssh y por último, hemos configurado la red para que se configure por DHCP.
 
 Para terminar convertimos la máquina virtual en una plantilla, desde la cual podamos clonar nuevas máquinas:
 
@@ -56,7 +56,7 @@ Para terminar convertimos la máquina virtual en una plantilla, desde la cual po
 
 ## Creación de nuevas máquinas virtuales y configuración con cloud-init
 
-Las nuevas máquinas virtuales que creemos a partir de la plantilla que hemos creado, tendrán un CD-ROM para guardar la información ofrecida a cloud-init. Además dicha información que configuramos para la plantilla, la podremos modificar. Vamos a crear una nueva máquina a partir de la plantilla, usando clonación enlazada:
+Las nuevas máquinas virtuales que creemos a partir de la plantilla que hemos definido, tendrán un CD-ROM para guardar la información ofrecida a cloud-init. Además dicha información que configuramos para la plantilla, la podremos modificar. Vamos a crear una nueva máquina a partir de la plantilla, usando clonación enlazada:
 
 ![proxmox + cloud-init]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/10/cloudinit5.png){: .align-center }
 
