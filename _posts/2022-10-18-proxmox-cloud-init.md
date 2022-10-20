@@ -34,7 +34,7 @@ He instalado una máquina virtual con Debian Bullseye (el proceso sería similar
 apt install cloud-init
 ```
 
-La información que le vamos a ofrecer a nuestras máquinas para que cloud-init las configuren se van a guardar en un fichero de texto dentro de una unidad de CD-ROM (en los proveedores de cloud se suele utilizar un servidor web, que llamamos de *servidor de metadatos**, donde se conectan las instancias por obtener la información de configuración). Por lo tanto una vez apagada nuestra máquina, nos vamos al apartado **Hardware** y le añadimos un dispositivo **CloudInit Drive** que añadirá una unidad de CD-ROM a nuestra máquina:
+La información que le vamos a ofrecer a nuestras máquinas para que cloud-init las configuren se van a guardar en un fichero de texto dentro de una unidad de CD-ROM (en los proveedores de cloud se suele utilizar un servidor web, que llamamos de *servidor de metadatos*, donde se conectan las instancias por obtener la información de configuración). Por lo tanto una vez apagada nuestra máquina, nos vamos al apartado **Hardware** y le añadimos un dispositivo **CloudInit Drive** que añadirá una unidad de CD-ROM a nuestra máquina:
 
 ![proxmox + cloud-init]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/10/cloudinit1.png){: .align-center }
 
