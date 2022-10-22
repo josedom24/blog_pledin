@@ -70,7 +70,7 @@ Ya podemos iniciar la nueva máquina:
 
 ![proxmox + cloud-init]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/10/cloudinit7.png){: .align-center }
 
-Y podemos comprobar varias cosas: cloud-init a configurado el hostname de la máquina con el nombre que habíamos asignado en Proxmox, hemos accedido con el usuario y contraseña que configuramos y se ha configurado de forma estática la máquina. Además, cloud-init ha hecho más tareas de configuración internamente.
+Y podemos comprobar varias cosas: cloud-init ha configurado el hostname de la máquina con el nombre que habíamos asignado en Proxmox, hemos accedido con el usuario y contraseña que configuramos y se ha configurado de forma estática la máquina. Además, cloud-init ha hecho más tareas de configuración internamente.
 
 Por último, podemos comprobar que podemos acceder a la máquina virtual usando nuestra clave ssh privada:
 
