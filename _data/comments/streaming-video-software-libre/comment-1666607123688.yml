@@ -1,0 +1,13 @@
+_id: 2b24aba0-5386-11ed-aa30-a3d709cbd6f3
+message: >-
+  Hola José!.  He seguido todos los pasos y me encuentro con el docker instalado
+  y funcionando. Retransmito con OBS y soy capaz de verlo a través de VLC en mi
+  propio PC, pero no desde otro PC. Los PC's están conectados a  la misma subred
+  y hacen ping entre ellos, pero no soy capaz de ver el vídeo desde el segundo
+  PC. ¿Alguna idea de que puede ser?. Los puertos 1935 y 8080 los tengo
+  abiertos.
+name: Guille
+email: 681a1cf1ad1cb5880acce3eb4d55c5b9
+url: ''
+hidden: ''
+date: '2022-10-24T10:25:23.681Z'
