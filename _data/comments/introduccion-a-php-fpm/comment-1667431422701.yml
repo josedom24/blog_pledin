@@ -1,0 +1,19 @@
+_id: 63a8e2d0-5b05-11ed-aa30-a3d709cbd6f3
+message: >-
+  que tal, lleva un rato leyendo sobre fpm ya que tengo un problema con mi sitio
+  web, ojala alguien pudiera darme una pista de por donde seguir investigando,
+  el sitio esta en un vps el problema es que de vez en cuando aparecen algunos
+  procesos de php-fpm pool que consumen el 100% del cpu y por tanto el servidor
+  ya no puede manejar mas solicitudes, es un sitio en wordpress, estuve viendo
+  que podria deberse a que algunas tablas de la base de datos usaban el motor
+  myisam y eso generaba un uso excesivo de cpu, cambie las tablas mas grandes a
+  ino y aumente el buffer en ram para ese motor y mejoro bastante, dejo de
+  suceder tan a menudo pero aun pasa cada 2 o 3 días, el problema es que no
+  tengo acceso mas que a cpanel y whm entonces no puedo revisar gran cosa, si a
+  alguien le ha sucedido algo similiar me ayudaria mucho que me contaran su
+  experiencia gracias
+name: javier alberto
+email: f72c1bc893b5e856c703b0aa3e096883
+url: ''
+hidden: ''
+date: '2022-11-02T23:23:42.699Z'
