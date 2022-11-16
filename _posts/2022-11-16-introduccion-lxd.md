@@ -109,7 +109,7 @@ lxc network list
 +-----------------+----------+---------+----------------+---------------------------+-------------+---------+---------+
 ```
 
-Como vemos se ha configurado con el direccionamiento que han tomado las instancias, y tiene configurado un servidor DHCP responsable de asignar el direccionamiento a las instancias.
+Esta red es de tipo NAT con DHCP, es decir, posibilita que las instancias tengas conexión a internet y tiene configurado un servidor DHCP responsable de asignar el direccionamiento a las instancias. En este ejemplo la dirección `10.93.154.1` es la IP del host en esta red y sería la puerta de enlace de las instancias.
 
 Podemos crear nuevas redes y modificar las existentes pero lo estudiaremos en otro post del blog.
 
