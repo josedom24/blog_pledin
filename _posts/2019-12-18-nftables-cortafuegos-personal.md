@@ -157,7 +157,7 @@ En la regla que hemos definido en la cadena `output` permitimos los paquetes que
 En este caso para permitir las consultas DNS tenemos que controlar el protocolo UDP:
 
 * `udp dport 53`: Indicamos que el puerto de destino es el 53(DNS) del protocolo UDP.
-* `udp dport 53`: Indicamos que el puerto de origen es el 53(DNS) del protocolo UDP.
+* `udp sport 53`: Indicamos que el puerto de origen es el 53(DNS) del protocolo UDP.
 
 ### Permitir tráfico HTTP/HTTPS
 
