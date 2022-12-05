@@ -1,0 +1,7 @@
+_id: 5ee61ec0-74dc-11ed-aa30-a3d709cbd6f3
+message: "Hola Carlos,\r\nSi se puede usando el parámetro machine_virtual_size, para más [información](https://github.com/vagrant-libvirt/vagrant-libvirt/blob/main/docs/configuration.markdown).\r\nTambién puedes ver este artículo [Expand disk size of Rocky Linux 8 Vagrant box for libvirt provider](https://medium.com/@panda1100/expand-disk-size-of-rocky-linux-8-vagrant-box-for-libvirt-provider-e51b87ef497).\r\nUn saludo"
+name: José Domingo Muñoz
+email: 2424fbdd076dfc091fbc90e4ecccb9aa
+url: ''
+hidden: ''
+date: '2022-12-05T20:35:35.553Z'
