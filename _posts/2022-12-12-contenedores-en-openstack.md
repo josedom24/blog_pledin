@@ -111,7 +111,7 @@ networks:
       com.docker.network.driver.mtu: 1450
 ```
 
-## Configuración del mtu en contenedores LXC
+## Configuración de la mtu en contenedores LXC
 
 Al instalar LXC en una instancia de OpenStack, nos encontramos con el mismo problema: el bridge por defecto que se crea para conectar los contenedores LXC tiene una mtu de 1500:
 
