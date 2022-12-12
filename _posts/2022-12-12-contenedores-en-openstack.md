@@ -169,7 +169,7 @@ Para cambiar la mtu del bridge `lxcbr0` ejecutamos:
 ip link set dev lxcbr0 mtu 1450
 ```
 
-Ahora los contenedores que se conecten a este puente tomaran el mismo mtu:
+Ahora los contenedores que se conecten a este puente tomarán la misma mtu:
 
 ```
 $ lxc-execute contenedor3 -- ip a
