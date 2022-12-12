@@ -12,12 +12,12 @@ tags:
 
 Una de las características de trabajar con infraestructura en la nube como OpenStack es la posibilidad de virtualizar la red. Para ello OpenStack puede utilizar varios mecanismos, pero en instalaciones estándar de OpenStack se suele usar la redes [XVLAN](https://es.wikipedia.org/wiki/Virtual_Extensible_LAN), que es un protocolo  donde se encapsula tráfico de la capa de enlace sobre la capa de red, en concreto el tráfico Ethernet sobre una red IP.
 
-Por otro lado vamos a recordar que la **MTU** (Unidad máxima de transferencia) expresa el tamaño en bytes que puede tener la unidad de datos de un protocolo d red. En concreto para Ethernet es por defecto 1500 bytes.
+Por otro lado vamos a recordar que la **MTU** (Unidad máxima de transferencia) expresa el tamaño en bytes que puede tener la unidad de datos de un protocolo de red. En concreto para Ethernet es, por defecto, 1500 bytes.
 
 Cuando usamos redes XVLAN, estamos definiendo interfaces de red virtuales sobre interfaces físicas, y para que esto funcione necesitamos añadir información a las tramas que estamos encapsulando, normalmente necesitamos unos 50 bytes de información extra. Al crecer el tamaño de la trama, tendríamos dos opciones:
 
-1. Modificar la MTU de los dispositivos físicos sobre lo que estamos montado nuestra infraestructura de OpenStack, por ejemplo a 1550 bytes, y configurar el componente de red de openstack neutron, para trabajar con redes virtuales de 1500 bytes.
-2. No realizar modificación sobre los dispositivos físicos de nuestra infraestructura, y configurar neutron para trabajar con una mtu de 1450 bytes. En este caso las instancias que se conecten a las redes virtuales se adaptaran a esta mtu y tomaran el valor de 1450 bytes.
+1. Modificar la MTU de los dispositivos físicos sobre lo que estamos montando nuestra infraestructura de OpenStack, por ejemplo a 1550 bytes, y configurar el componente de red de openstack neutron, para trabajar con redes virtuales de 1500 bytes.
+2. No realizar modificación sobre los dispositivos físicos de nuestra infraestructura, y configurar neutron para trabajar con una mtu de 1450 bytes. En este caso las instancias que se conecten a las redes virtuales se adaptarán a esta mtu y tomarán el valor de 1450 bytes.
 
 La segunda opción es la que se realiza en una instalación de OpenStack estándar. Veamos estos datos:
 
@@ -40,9 +40,9 @@ $ ip a
 2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc pfifo_fast state UP group default qlen 1000
 ...
 ```
-Todo esto funciona muy bien y sin ningún problema. El problema lo encontramos cuando sobre una instancia de OpenStack instalamos algún software de virtualización de contenedores (Docker, LXC, LXD, ...), en este caso los contenedores y los bridge virtuales que se crean para su interconexión se configuran con el valor estándar de mtu de 1550 bytes y nos encontramos con problemas de conectividades en el contenedor.
+Todo esto funciona muy bien y sin ningún problema. El problema lo encontramos cuando sobre una instancia de OpenStack instalamos algún software de virtualización de contenedores (Docker, LXC, LXD, ...), en este caso los contenedores y los bridge virtuales que se crean para su interconexión se configuran con el valor estándar de mtu de 1500 bytes y nos encontramos con problemas de conectividades en el contenedor.
 
-En este artículo vamos a repasar distintas soluciones a este problema para las distintas tecnologíss  de contenedores.
+En este artículo vamos a repasar distintas soluciones a este problema para las distintas tecnologías  de contenedores.
 
 <!--more-->
 
