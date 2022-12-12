@@ -65,7 +65,7 @@ $ docker run -it --rm alpine ip a
 15: eth0@if16: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue state UP 
 ```
 
-### Primera solución: Configuración de demonio docker
+### Primera solución: Configuración del demonio docker
 
 Para solucionar este problema debemos crear el fichero `/etc/docker/daemon.json` con el siguiente contenido:
 
@@ -85,7 +85,7 @@ A partir de ahora los contenedores que creemos tomaran una mtu de 1450.
 
 ### Segunda solución: Configuración de la mtu en la creación de redes docker
 
-Itra alternativa sería a la hora de crear nuevas redes en docker configurar el valor adecuado de la mtu, para ello:
+Otra alternativa sería a la hora de crear nuevas redes en docker configurar el valor adecuado de la mtu, para ello:
 
 ```
 $ docker network create --opt com.docker.network.driver.mtu=1450 mi_red
@@ -100,7 +100,7 @@ $ docker run -it --rm --network mi_red alpine ip a
 ...
 ```
 
-Si utilizamos `docker-compose`para crear la red, tendríamos que configurar la mtu, de esta forma en el fichero `docker-compose.yml`:
+Si utilizamos `docker-compose` para crear la red, tendríamos que configurar la mtu, de esta forma en el fichero `docker-compose.yml`:
 
 ```
 ...
