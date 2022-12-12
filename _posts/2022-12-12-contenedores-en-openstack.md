@@ -135,7 +135,7 @@ $ lxc-execute contenedor1 -- ip a
 
 Podemos configurar el contenedor para que tome el valor de la mtu que deseemos. Tenemos dos opciones:
 
-1. Si queremos que todos los nuevos contenedores tengan un valor de mtu predeterminado, añadimos al fichero `/etc/lxc/default.conf` la línea:
+Si queremos que todos los nuevos contenedores tengan un valor de mtu predeterminado, añadimos al fichero `/etc/lxc/default.conf` la línea:
 
 ```
 lxc.net.0.mtu = 1450
