@@ -7,7 +7,7 @@ tags:
   - Cursos
 ---
 
-![proxmox]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/01/logo.png){: .align-center }
+![proxmox]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/01/logo.jpg){: .align-center }
 
 En estos últimos meses hemos desarrollado y tutorizado (junto a Manuel Domínguez ([@Mafradoti](https://twitter.com/Mafradoti)) dos ediciones de un curso sobre Proxmox. El curso ha sido elaborado para el CEP de Castilleja de la Cuesta (Sevilla) y los destinatario han sido profesores de secundaria de la familia de informática de Andalucía. 
 
