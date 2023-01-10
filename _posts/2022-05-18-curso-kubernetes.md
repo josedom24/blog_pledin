@@ -9,7 +9,7 @@ tags:
 
 ![k8s]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2022/05/kubernetes.png){: .align-center }
 
-En estos últimos meses hemos desarrollado y tutorizado dos ediciones de un curso sobre Kubernetes. Eel curso ha sido elaborado para el CEP de Castilleja de la Cuesta (Sevilla) y los destinatario han sido profesores de secundaria de la familia de informática de Andalucía. Junto a Alberto Molina ([@alberto_molina](https://twitter.com/alberto_molina)) he creado el curso, y a los dos nos ha acompañado Manuel Domínguez ([@Mafradoti](https://twitter.com/Mafradoti)) para tutorizarlo.
+En estos últimos meses hemos desarrollado y tutorizado dos ediciones de un curso sobre Kubernetes. El curso ha sido elaborado para el CEP de Castilleja de la Cuesta (Sevilla) y los destinatario han sido profesores de secundaria de la familia de informática de Andalucía. Junto a Alberto Molina ([@alberto_molina](https://twitter.com/alberto_molina)) he creado el curso, y a los dos nos ha acompañado Manuel Domínguez ([@Mafradoti](https://twitter.com/Mafradoti)) para tutorizarlo.
 
 En los últimos años se ha ido extendiendo el uso de contenedores como elementos esenciales para el uso de aplicaciones en entornos en producción, tanto más cuanto más variable sea la demanda, la frecuencia con la que se actualizan o la necesidad de que funcionen de forma ininterrumpida.
 
