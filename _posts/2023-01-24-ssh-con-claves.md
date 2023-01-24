@@ -50,6 +50,8 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
+<!--more-->
+
 Si hacemos ahora un listado de los ficheros del directorio `~/.ssh`, aparecerán los ficheros:
 
 ```bash
