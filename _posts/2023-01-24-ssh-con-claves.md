@@ -102,7 +102,7 @@ usuario2@nodo2:~$ cat .ssh/authorized_keys
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9WwLHgn7oJxGOyc7zCfEg+FFF/mL0pSkGsLHHb6wC+hvV4BDGBTfNrXEnDQvlLt+FmZ9Fv4fvFgfILbg2+ZEyMIuDDz1zcK8kJp5hcUQPksfAdVJGDLAdoj77qkKeb6uEZ6765aXYHh9sEY6A1hqsXitS9S007AvdYpZdd6Q4/5gwGNUlUw28fqDEoY1IjsC177yxvKXzgoL49Fl4ozf5bb6u9skugVpmzlfS3/ZRELtgCNgyxRnG3lP5Iu7NP8h9o58Eba/EHOtCUKV08UyfvDTFgPqoKiR0HntKAvqMTBsf/ZFbp99XSAkP+qli3KSBhQKIyMeqoha+n75NVY1/DTeW1uirfEVuUaQ/rBDBexib4kzj66c16AqqPIaFzV8z+UB5nZSA13I0XnkJkn/7pWcN9+4/gazH7kdGtqA0DSx7gOxw4ZrVMARK8i5QWKSeAJbfFdgHe4LEZiQ7KU/jYWltbXxNa+Xga5kpy1/UGlPvcE7k1KfGeqpqOvpju+0= usuario1@nodo1
 ```
 
-**Nota:** Podríamos copiar el contenido de la clave pública del cliente al servidor de forma manual, sin utilizar el comando `ssh-copy-id`. simplemnte tendríamos que copiar en el portapapeles el contenidod el fichero `id_rsa.pub` en el cliente y pegarlo en el fichero `.ssh/authorized_keys` del servidor.
+**Nota:** Podríamos copiar el contenido de la clave pública del cliente al servidor de forma manual, sin utilizar el comando `ssh-copy-id`. Simplemente tendríamos que copiar en el portapapeles el contenido del fichero `id_rsa.pub` en el cliente y pegarlo en el fichero `.ssh/authorized_keys` del servidor.
 
 ## Accediendo por ssh sin contraseña
 
