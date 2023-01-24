@@ -26,7 +26,9 @@ En la máquina cliente `nodo1`, el `usuario1` va a crear sus claves ssh, en conc
 * **La ubicación y el nombre de las claves**: En principio el directorio donde se guarda es `.ssh` en el home del usuario, y el nombre puede ser cualquiera, pero para empezar os sugiero que dejéis el que viene por defecto `id_rsa`, de esta manera no habrá que indicar el nombre de la clave al realizar la conexión (se toma el nombre `id_rsa` por defecto). Por lo tanto en la primera pregunta dejamos los valores por defecto.
 * **Frase de paso (passphrase)**: Se nos pide a continuación una palabra de paso. Por seguridad, os sugiero que la pongáis porque será la contraseña de vuestra clave privada. Al utilizar la clave privada se os pedirá la frase de paso. Si vuestra clave privada cae en malas manos necesitarán esta frase para poder usarla.
 
-```sh
+<!--more-->
+
+```
 usuario1@nodo1:~$ ssh-keygen
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/usuario1/.ssh/id_rsa): 
@@ -51,11 +53,9 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-<!--more-->
-
 Si hacemos ahora un listado de los ficheros del directorio `~/.ssh`, aparecerán los ficheros:
 
-```sh
+```
 usuario@cliente:~$ ls -l ~/.ssh/
 
 usuario1@nodo1:~$ ls -al .ssh
@@ -76,7 +76,7 @@ Para que con nuestra clave privada podamos autentificarnos al conectarnos con ss
 
 Para realizar esta copia vamos a usar la instrucción `ssh-copy-id` desde el cliente, indicando la clave pública que vamos a copiar:
 
-```sh
+```
 usuario1@nodo1:~$ ssh-copy-id -i .ssh/id_rsa.pub usuario2@10.0.0.11
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: ".ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -91,7 +91,7 @@ and check to make sure that only the key(s) you wanted were added.
 
 Ahora podemos comprobar en el servidor que en el home del `usuario2` se ha creado un fichero `.ssh/authorized_keys` con el contenido de la clave pública del `usuario1` del cliente:
 
-```sh
+```
 usuario2@nodo2:~$ ls -al .ssh
 total 12
 drwx------ 2 usuario2 usuario2 4096 Jan 24 16:26 .
@@ -135,7 +135,7 @@ Si la conexión la hacemos desde una máquina en la que no tenemos un entorno gr
 
 **ssh-agent** en un programa que almacena las claves privadas y las utiliza en cada sesión ssh que establezcamos en la sesión actual, lo ejecutamos y añadimos nuestra clave privada:
 
-```sh
+```
 suario1@nodo1:~$ ssh-agent /bin/bash
 usuario1@nodo1:~$ ssh-add .ssh/id_rsa
 Enter passphrase for .ssh/id_rsa: 
@@ -144,7 +144,7 @@ Identity added: .ssh/id_rsa (usuario1@nodo1)
 
 Una vez que hemos añadido nuestra clave privada, en las próximas conexiones dentro de esta sesión, no se nos volverá a pedir la frase de paso:
 
-```sh
+```
 usuario1@nodo1:~$ ssh usuario2@10.0.0.11
 Linux nodo2 5.10.0-20-amd64 #1 SMP Debian 5.10.158-2 (2022-12-13) x86_64
 
