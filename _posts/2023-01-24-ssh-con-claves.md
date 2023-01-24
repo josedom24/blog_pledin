@@ -16,6 +16,7 @@ Vamos a trabajar con dos máquinas donde hemos instalado el sistema operativo De
 
 * **nodo1**: Actuará de cliente, desde donde nos vamos a conectar. Tiene la dirección IP `10.0.0.10` y hemos creado un usuario que hemos llamado **usuario1**.
 * **nodo2**: Actuará como servidor ssh, es la máquina a la que nos vamos a conectar. Tiene la dirección IP `10.0.0.11` y hemos creado un usuario que hemos llamado **usuario2**.
+
 Por lo tanto nos vamos a conectar desde la máquina `nodo1` con el usuario `usuario1` a la máquina `nodo2` con el `usuario2`.
 
 ## Creación de las claves ssh en el cliente
