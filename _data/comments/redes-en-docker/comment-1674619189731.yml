@@ -1,0 +1,16 @@
+_id: b69e1730-9c64-11ed-b275-134a87abe452
+message: >-
+  Hola José, leyendo tu artículo me surge una duda. Como puedo mediante una
+  archivo docker-compose.yml especificar que un servicio dentro de un
+  determinado contenedor se emita por una determinada interfaz de red
+  determinada asumiendo que en el host anfitrión tenga 2.el escenario que quiero
+  interpretar en un archivo .yml de docker-compose es el siguiente: docker run
+  --detach --volume mi-data:/data --network host --name X --restart
+  unless-stopped imagen-servicio etho. El network lo puedo modificar y declarar
+  directamente en el yml como un bridge pero la interfaz eth0 del host anfitrión
+  como lo declaró??
+name: Gleiver Fndez. Harria.
+email: c2e0f7ba4c79da6c07e128264e8287e1
+url: ''
+hidden: ''
+date: '2023-01-25T03:59:49.727Z'
