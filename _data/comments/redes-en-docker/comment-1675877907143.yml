@@ -2,8 +2,11 @@ _id: 64999f30-a7d7-11ed-b275-134a87abe452
 message: "Hola Gleiver,
 
 He estado buscando por internet y por la documentación de docker y yo no he encontrado ninguna solución a tu problema. 
+<br/>
 Entiendo que cuando usas el tipo de red host en docker el contenedor está ofreciendo el servicio en el mismo host, y por lo tanto ofrece el servicio en todas las interfaces de red de la máquina.
+<br/>
 Una posible solución que se me ocurre, y que no se si es válida para tu caso es usar el cortafuego para restringir el acceso al servicio desde una determina interfaz.
+<br/>
 Siento no poder ayudar más.
 Un saludo"
 name: José Domingo Muñoz
