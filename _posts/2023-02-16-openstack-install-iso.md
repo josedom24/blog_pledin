@@ -71,28 +71,28 @@ Y tenemos varios opciones para trabajar con él:
 
 1. Crear una instancia a partir de este volumen. Tendríamos una instancia con el sistema operativo que acabamos de instalar, para ello:
 
-```
-openstack server create --flavor vol.normal \
- --volume disco_debian \
- --security-group default \
- --network "red de josedom" \
- instancia_prueba
-```
+	```
+	openstack server create --flavor vol.normal \
+ 	--volume disco_debian \
+ 	--security-group default \
+ 	--network "red de josedom" \
+ 	instancia_prueba
+	```
 
 2. Convertir el volumen en una imagen, para poder crear instancias a partir de ella. Podríamos crear distintas instancias con el sistema operativo que hemos instalado. Para ello:
 
-```
-openstack image create --volume disco_debian nueva_imagen_debian_11
-```
+	```
+	openstack image create --volume disco_debian nueva_imagen_debian_11
+	```
 
-Y podemos comprobar que hemos creado una nueva imagen desde la que podemos crear nuevas instancias:
+	Y podemos comprobar que hemos creado una nueva imagen desde la que podemos crear nuevas instancias:
 
-```
-$ openstack images list
-...
-| 447968c9-c2d6-4ad7-8526-d3fc4be26325 | nueva_imagen_debian_11   | active |
-...
-```
+	```
+	$ openstack images list
+	...
+	| 447968c9-c2d6-4ad7-8526-d3fc4be26325 | nueva_imagen_debian_11   | active |
+	...
+	```
 
 ## Conclusiones
 
