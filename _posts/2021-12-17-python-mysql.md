@@ -196,16 +196,16 @@ Veamos con detenimiento este ejemplo:
 
 1. La variable `registros` guarda todos los registros seleccionados de la consulta. Po defecto se devuelve una tupla de tuplas:
 
-```
-(('José', 'Domingo', 20, 'M', 2000.0), ('Pablo', 'Ruíz', 21, 'M', 2100.0), ('María', 'López', 22, 'F', 2200.0))
-```
+	```
+	(('José', 'Domingo', 20, 'M', 2000.0), ('Pablo', 'Ruíz', 21, 'M', 2100.0), ('María', 'López', 22, 'F', 2200.0))
+	```
 
 2. Podemos recorrer los registros con un `for`, cada campo de un registro se guardará en una posición, por lo que usamos el indice para acceder:
 
-```
-for registro in registros:
-   print(registro[0],registro[1],registro[2],registro[3],registro[4])
-```
+	```
+	for registro in registros:
+	   print(registro[0],registro[1],registro[2],registro[3],registro[4])
+	```
 
 Veamos la ejecución del programa:
 
