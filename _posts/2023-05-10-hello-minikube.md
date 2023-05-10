@@ -93,7 +93,7 @@ Podemos ver los recursos creados, ejecutando `kubectl get all`:
 
 ![minikube]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/05/minikube11.png){: .align-center }
 
-eY para acceder, pulsamos sobre el símbolo **+**, y luego en **Select port to view on Host 1**, en la página que nos sale ponemos el puerto que han asignado al servicio, en este ejmplo el **30025** y pulsando sobre el botón **Display Port**, accedemos a la aplicación:
+Y para acceder, pulsamos sobre el símbolo **+**, y luego en **Select port to view on Host 1**, en la página que nos sale ponemos el puerto que han asignado al servicio, en este ejmplo el **30025** y pulsando sobre el botón **Display Port**, accedemos a la aplicación:
 
 ![minikube]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/05/minikube12.png){: .align-center }
 
