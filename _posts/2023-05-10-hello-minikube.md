@@ -76,7 +76,7 @@ Y para ver los recursos que se han creado:
 
 ## Desplegando una aplicación guardada en un repositorio GitHub
 
-En la máquina virtual que se crea, tenemos muchas herramientas instaladas, por ejemplo `git`, esto nos posibilita la posibilidad de clonar cualquier repositorio que tengamos y poder trabajar con los manifiestos YAML de Kubernetes que nos permiten el despliegue de una aplicación.
+En la máquina virtual que se crea, tenemos muchas herramientas instaladas, por ejemplo `git`, esto nos ofrece la posibilidad de clonar cualquier repositorio que tengamos y poder trabajar con los manifiestos YAML de Kubernetes que nos permiten el despliegue de una aplicación.
 
 Por ejemplo, voy a trabajar con el repositorio `https://github.com/josedom24/example-hello-minikube`, donde tenemos un fichero YAML para crear un despliegue usando la imagen `paulbouwer/hello-kubernetes:1` que crea una aplicación en node.js que muestra un mensaje **Hello world!** y alguna otra información. Para más información sobre esta imagen, puedes estudiar el [repositorio de la aplicación](https://github.com/paulbouwer/hello-kubernetes) y el repositorio en [Docker Hub](https://hub.docker.com/r/paulbouwer/hello-kubernetes/).
 
