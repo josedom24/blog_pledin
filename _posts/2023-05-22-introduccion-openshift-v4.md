@@ -204,6 +204,31 @@ Debemos indicar el proyecto donde se creará un recurso **DevWorkspace** donde s
 
 ![openshift]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/05/oclogin5.png){: .align-center }
 
+## Visión general del proyecto de trabajo
+
+Un proyecto permite a OpenShift agrupar distintos recursos. Es similar al recurso **namespace** de Kubernetes, pero guarda información adicional.
+
+De hecho, cada vez que se crea un nuevo proyecto, se crea un recursos **namespace** con el mismo nombre.
+
+En **Red Hat OpenShift Dedicated Developer Sandbox**, no podemos crear nuevos proyectos y se nos asigna de forma automática un proyecto con el mismo nombre que el de nuestro usuario.
+
+Para acceder a la información de nuestro proyecto, en la **Vista Administrator**, escogemos la opción **Home -> Projects**:
+
+![openshift]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/05/proyecto1.png){: .align-center }
+
+Si pulsamos sobre el nombre del proyecto, obtendremos los detalles del mismo: definición, inventario, uso de recursos, métricas, cuotas, eventos,...
+
+![openshift]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/05/proyecto2.png){: .align-center }
+
+![openshift]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/05/proyecto3.png){: .align-center }
+
+Tenemos varias opciones:
+
+* **Details**: Detalles de la definición del proyecto.
+* **YAML**: Definición YAML del recurso proyecto.
+* **Workloads**: Acceso a todos los recursos definidos en este proyecto.
+* **RoleBindings**: Permisos definidos para este proyecto.
+
 ## Conclusiones
 
 En esta entrada hemos estudiado las características fundamentales de la plataforma OpenShift v4. Hemos visto los dos métodos fundamentales de interactuar con ella: la **consola web** y la herramienta de línea de comandos **oc**. En el próximo articulo veremos algunos ejemplos ppara enseñar como desplegar aplicaciones en contenedores usando OpenShift v4.
