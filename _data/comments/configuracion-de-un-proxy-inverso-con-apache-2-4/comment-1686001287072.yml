@@ -1,0 +1,12 @@
+_id: b95a7300-03e9-11ee-b275-134a87abe452
+message: >-
+  Hola. He montado un proxy inverso como indicas, pero en algunas páginas no me
+  reescribe las rutas bien, y en otras si. Me he fijado que las páginas que
+  empiezan por "<!DOCTYPE html><html>" fallan, apache no modifica las rutas. Y
+  las que empiezan directamente con "<html>" hace el cambio de las rutas y
+  funcionan perfectamente.
+name: Andres Bou
+email: 681309e20731a5d63c88593bf7983286
+url: ''
+hidden: ''
+date: '2023-06-05T21:41:27.069Z'
