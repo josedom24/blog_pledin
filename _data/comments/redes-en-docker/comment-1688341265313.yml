@@ -1,0 +1,15 @@
+_id: e906e860-1931-11ee-b275-134a87abe452
+message: >-
+  Hola amigo muchas gracias por tu contenido, tengo esta situación. Tengo
+  instalado docker con un contenedor de Datapower y de datapower paso a un
+  backed que es un bus de integración .  Ambos están en mi mismo PC y están como
+  localhost.  Cuando lanzo una prueba pegándole al localhost:datapower llega la
+  petición pero de datapower hacia el BUS no funciona y no da telnet ni nada...
+  pero si yo consumo el servicio que está expuesto en el BUS directamente por
+  localhost si funciona.  He probado varias formas pero creo que tiene que ver
+  algo con la red o no se que sería.
+name: Andres
+email: 1fd33c0ddac1524cf893c5e17a282775
+url: ''
+hidden: ''
+date: '2023-07-02T23:41:05.304Z'
