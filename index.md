@@ -130,7 +130,7 @@ feature_row4:
           <h2 class="archive__item-title">Últimos cursos...</h2>
             <ul>
               <li><a href="https://josedom24.github.io/curso_docker_2022/">Curso: Introducción a  Docker. CPR Badajoz. (2022)</a></li>
-              <li><a href="https://github.com/iesgn/curso_kubernetes_cep">Curso; Introducción a Kubernetes. CEP Castilleja de la Cuesta (2022)</a></li>
+              <li><a href="https://github.com/iesgn/curso_kubernetes_cep">Curso: Introducción a Kubernetes. CEP Castilleja de la Cuesta (2022)</a></li>
               <li><a href="https://www.josedomingo.org/pledin/2022/05/curso-cloud-iesgn">"Mini" Curso: Virtualización y Cloud Computing en el IES Gonzalo Nazareno (2022)</a></li>
               <li><a href="https://iesgn.github.io/curso_docker_2021/">Curso: Introducción a  Docker. CPR Zafra. (2021)</a></li>
               <li><a href="https://plataforma.josedomingo.org/pledin/cursos/curso_cpp1/">Curso de C++: Introducción a C++ (2020)</a></li>
