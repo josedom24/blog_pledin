@@ -128,7 +128,7 @@ feature_row4:
               {% endfor %}
             </ul>
         </div>
-      </div>>
+      </div>
     </div>
     <div class="feature__item--left">
       <div class="archive__item">
@@ -143,7 +143,7 @@ feature_row4:
               <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
             </ul>
         </div>
-      </div>>
+      </div>
     </div>
 </div>
 
