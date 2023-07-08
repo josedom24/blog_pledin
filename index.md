@@ -130,9 +130,6 @@ feature_row4:
         </div>
       </div>>
     </div>
-</div>
-
-<div class="feature__wrapper">
     <div class="feature__item--left">
       <div class="archive__item">
         <div class="archive__item-body">
