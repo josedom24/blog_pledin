@@ -79,6 +79,7 @@ feature_row4:
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
+
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
 <div class="page__inner-wrap-principal">
@@ -92,7 +93,6 @@ feature_row4:
   </div>
   
 {% endfor %}
-
 
 <table>
 <tr>
@@ -126,6 +126,8 @@ feature_row4:
 </table>
 
 
-{% include feature_row id="feature_row2" %}
+{% include feature_row id="feature_row2" type=right %}
+{% include feature_row id="feature_row2" type=left %}
+
 
 {% include feature_row id="feature_row4" type="center" %}
