@@ -95,6 +95,8 @@ feature_row4:
 
 {% include feature_row %}
 
+
+
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
 <div class="page__inner-wrap-principal">
@@ -109,6 +111,28 @@ feature_row4:
   
 {% endfor %}
 
+
+<div class="feature__wrapper">
+    <div class="feature__item--right">
+      <div class="archive__item">
+        <div class="archive__item-body">
+          <h2 class="archive__item-title">Más posts...</h2>
+            <ul>
+              {% for post in site.posts offset: 3 limit: 6%}
+                <li>
+                  <a href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                  </a>
+                  <small>({{ post.date | date: "%d-%m-%Y" }})</small>
+                </li>
+              {% endfor %}
+            </ul>
+        </div>
+      </div>>
+    </div>
+</div>
+
+<!--
 <table>
 <tr>
 <td>
@@ -126,6 +150,7 @@ feature_row4:
 
 
 </td>
+->
 <td>
 <h2>Últimos cursos...</h2>
 <ul>
