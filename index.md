@@ -113,9 +113,6 @@ feature_row4:
 
 
 <div class="feature__wrapper">
-  <table>
-    <tr>
-      <td>
         <div class="archive__item-body">
           <h2 class="archive__item-title">Más posts...</h2>
             <ul>
@@ -128,9 +125,7 @@ feature_row4:
                 </li>
               {% endfor %}
             </ul>
-        </div> 
-      </td>  
-      <td>
+        </div>   
         <div class="archive__item-body">
           <h2 class="archive__item-title">Últimos cursos...</h2>
             <ul>
@@ -142,9 +137,6 @@ feature_row4:
               <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
             </ul>
         </div>
-      </td>
-    </tr>
-    </table>
 </div>
 
 <!--
