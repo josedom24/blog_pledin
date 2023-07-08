@@ -66,6 +66,21 @@ feature_row3:
     #url: "#test-link"
     #btn_label: "Read More"
     #btn_class: "btn--primary"
+feature_row2:
+  - image_path: 
+    alt: ""
+    title: "Últimos cursos..."
+    excerpt: ''
+    #url: "#test-link"
+    #btn_label: "Read More"
+    #btn_class: "btn--primary"
+  - image_path: 
+    alt: ""
+    title: ""
+    excerpt: ''
+    #url: "#test-link"
+    #btn_label: "Read More"
+    #btn_class: "btn--primary"
 feature_row4:
   - image_path: /assets/wp-content/uploads/2010/04/88x31.png
     alt: "cc"
@@ -126,8 +141,8 @@ feature_row4:
 </table>
 
 
-{% include feature_row id="feature_row3" type=right %}
-{% include feature_row id="feature_row3" type=left %}
+{% include feature_row id="feature_row3" type="right" %}
+{% include feature_row id="feature_row2" type="left" %}
 
 
 {% include feature_row id="feature_row4" type="center" %}
