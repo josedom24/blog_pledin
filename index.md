@@ -31,26 +31,26 @@ feature_row:
     url: "https://fp.josedomingo.org"
     btn_label: "Módulos FP"
     btn_class: "btn--primary btn--small"
-feature_row2:
-  - image_path: 
-    alt: ""
-    title: "Blogroll"
-    excerpt: '<li><a href="http://www.gonzalonazareno.org">Gonzalo Nazareno</a></li>
-  <li><a href="https://albertomolina.wordpress.com/">Desde lo alto del cerro</a></li>
-  <li><a href="http://ral-arturo.org/">ral-arturo.org</a></li>
-  '
-  - image_path: assets/wp-content/uploads/2011/02/revistas.jpg
-    alt: "Revistas"
-    title: "Revistas Libres de Software Libre"
-    excerpt: ''
-    url: "https://www.josedomingo.org/pledin/revistas/"
-  - image_path: 
-    alt: ""
-    title: "Twitter"
-    excerpt: '<a class="twitter-timeline"  href="https://twitter.com/Pledin_JD" data-widget-id="310016635949940736">Tweets por el @Pledin_JD.</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>'
-    
-    
+#feature_row2:
+#  - image_path: 
+#    alt: ""
+#    title: "Blogroll"
+#    excerpt: '<li><a href="http://www.gonzalonazareno.org">Gonzalo Nazareno</a></li>
+#  <li><a href="https://albertomolina.wordpress.com/">Desde lo alto del cerro</a></li>
+#  <li><a href="http://ral-arturo.org/">ral-arturo.org</a></li>
+#  '
+#  - image_path: assets/wp-content/uploads/2011/02/revistas.jpg
+#    alt: "Revistas"
+#    title: "Revistas Libres de Software Libre"
+#    excerpt: ''
+#    url: "https://www.josedomingo.org/pledin/revistas/"
+#  - image_path: 
+#    alt: ""
+#    title: "Twitter"
+#    excerpt: '<a class="twitter-timeline"  href="https://twitter.com/Pledin_JD" data-widget-id="310016635949940736">Tweets por el @Pledin_JD.</a>
+#            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>'
+#    
+#    
 feature_row3:
   - image_path: 
     alt: ""
