@@ -54,10 +54,11 @@ comments:
   # Akismet spam detection.
   akismet:
     enabled: true
-    author: "José Domingo Muñoz"
-    authorEmail: "josedom24@gmail.com"
-    authorUrl: "https://www.josedomingo.org"
+    author: "name"
+    authorEmail: "email"
+    authorUrl: "url"
     content: "message"
+    type: "comment"
   #   type: "comment"
 
   # Name of the site. Used in notification emails.
