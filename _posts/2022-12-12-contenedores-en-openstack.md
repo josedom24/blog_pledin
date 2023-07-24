@@ -3,7 +3,7 @@ title: 'Contenedores en instancias de OpenStack'
 permalink: /2022/12/contenedores-instancias-openstack/
 tags:
   - OpenStack
-  - Docker
+  - docker
   - LXC
   - LXD
 ---
