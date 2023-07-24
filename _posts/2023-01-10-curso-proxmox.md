@@ -3,7 +3,7 @@ title: 'Curso: Introducción a Proxmox VE'
 permalink: /2023/01/curso-proxmox/
 tags:
   - Proxmox
-  - Virtualizacion
+  - Virtualización
   - Cursos
 ---
 
