@@ -1,0 +1,7 @@
+_id: 61a439b0-6173-11ee-ba88-5be285d0a175
+message: "hola jose,\r\nestoy pegandome con las codificaciones tras hacer un requests en python3, no se si funcionaran igual que en python 2 (que usas en tus ejemplos):\r\n\r\n<pre>\r\nen el ejemplo1 de tu articulo:\r\n>>> cad=\"josé\"\r\n>>> cad me devuel josé y no su codificacion UTF8\r\n\r\nen el ejemplo2 de tu articulo:\r\n>>> cad_uni = u'josé'\r\n>>> type (cad_uni) me devuelve str y no unicode, por que puede ser??\r\n</pre>\r\n\r\nSaludos"
+name: pablo
+email: f972a3a4e202739783b0a1b81e84bf38
+url: ''
+hidden: ''
+date: '2023-10-02T22:31:09.103Z'
