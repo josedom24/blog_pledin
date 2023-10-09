@@ -1,0 +1,7 @@
+_id: c0c91930-66c1-11ee-ba88-5be285d0a175
+message: "Hola Pablo\r\nEn python3 es distinto, porque la codificación por defecto en python3 la clase string está codificada con Unicode.\r\n\r\nPara más información: https://docs.python.org/es/3/howto/unicode.html\r\n\r\nUn saludo\r\n\r\n<pre>"
+name: José Domingo Muñoz
+email: 2424fbdd076dfc091fbc90e4ecccb9aa
+url: ''
+hidden: ''
+date: '2023-10-09T16:34:45.086Z'
