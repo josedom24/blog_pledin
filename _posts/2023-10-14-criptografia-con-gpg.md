@@ -61,6 +61,25 @@ Por lo tanto, si queremos recuperar el fichero original podríamos ejecutar:
 gpg -d fichero.txt.gpg > fichero2.txt
 ```
 
+## Criptografía asimétrica
+
+![gpg]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/criptografia3.png){: .align-center }
+
+En este tipo de criptografía, el emisor y el receptor  no comparten clave secreta. Cada usuario tiene una clave de encriptación que es **pública**, y por lo tanto conocida por todos. La clave de desencriptación es **privada**, conocida sólo por el receptor.
+
+Por lo tanto en este caso, utilizando distintos tipos de algoritmos (por ejemplo DSA o RSA) cualquier usuario puede puede cifrar un mensaje usando **la clave pública de un usuario**, sólo este usuario podrá descifrar el mensaje usando su **clave privada**.
+
+Este tipo de criptografía es más compleja que la simétrica, por lo tanto es menos eficiente, aunque es más segura.
+
+## Criptografía asimétrica con gpg
+
+
+
+## Firma digital
+
+## Firma digital con gpg
+
+## Anillo de confianza
 
  
 
