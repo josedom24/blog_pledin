@@ -134,9 +134,46 @@ gpg --armor --output josedom.asc --export correo@example.org
 
 Podemos enviar el fichero `josedom.asc` a otros usuarios o subir nuestra calve pública a un servidor público de claves PGP, por ejemplo al de [red.es](https://www.rediris.es/servicios/identidad/pgp/index.html.es).
 
+Por último, si nosotros recibimos una clave pública de otro usuario en el fichero `ahsoka.asc` y queremos importarlo, ejecutaremos:
 
+```bash
+gpg --import ahsoka.asc
+```
 
+Y podemos comprobar que la importación ha sido correcta:
 
+```bash
+gpg --list-key
+...
+--------------------------------
+pub   rsa3072 2023-10-16 [SC] [expires: 2025-10-15]
+      F8F2A90AF7A9BFCC530BFC8F603DCFEBDFC063AB
+uid           [ultimate] José Domingo <correo@example.org>
+sub   rsa3072 2023-10-16 [E] [expires: 2025-10-15]
+
+pub   rsa3072 2023-10-16 [SC] [expires: 2025-10-15]
+      2BF88208A94C08B3204F0131D0C833A59DC79BA6
+uid           [ultimate] Ahsoka Tano <ahsoka@example.org>
+sub   rsa3072 2023-10-16 [E] [expires: 2025-10-15]
+```
+
+### Cifrar y descifrar documentos
+
+Cada clave pública y privada tiene un papel específico en el cifrado y descifrado de documentos. Se puede pensar en una clave pública como en una caja fuerte de seguridad. Cuando un remitente cifra un documento usando una clave pública, ese documento se pone en la caja fuerte, la caja se cierra, y el bloqueo de la combinación de ésta se gira varias veces. La parte correspondiente a la clave privada, esto es, el destinatario, es la combinación que puede volver a abrir la caja y retirar el documento. Dicho de otro modo, sólo la persona que posee la clave privada puede recuperar un documento cifrado usando la clave pública asociada al cifrado.
+
+Si queremos cifrar un documento para el usuario Ahsoka, loo haremos usando su clave pública. Solo el usuario Ashoka podrá descifrarlo con su clave privada. Por lo tanto, si queremos cifrar un documento cifrado para que solo lo descifre el usuario Ahoska, lo cifraremos (con la opción `--encrypt`) con su clave pública:
+
+```bash
+gpg --output fichero.txt.gpg --encrypt --recipient ahsoka@example.org fichero.txt 
+```
+
+Cuando el usuario recibe el fichero cifrado, utilizará su clave privada (por lo tanto se nos pedirá la frase de paso) para descifrarlo:
+
+```bash
+gpg --output fichero.txt --decrypt fichero.txt.gpg 
+gpg: encrypted with 3072-bit RSA key, ID FA920C331CD102E2, created 2023-10-16
+      "Ahsoka Tano <ahsoka@example.org>"
+```
 
 ## Firma digital
 
