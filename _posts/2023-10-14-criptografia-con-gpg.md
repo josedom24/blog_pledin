@@ -33,7 +33,7 @@ Podemos indicar dos tipos de criptografía dependiendo de las claves usadas:
 
 Como hemos indicado anteriormente el emisor y el receptor usan **la misma clave** para cifrar y descifrar el mensaje. Por lo tanto, el emisor y el receptor, antes de poder comunicarse, deben ponerse de acuerdo en el valor de la clave. Una vez que ambas partes tienen acceso a esta clave, el remitente cifra un mensaje usando la clave, lo envía al destinatario, y este lo descifra con la misma clave. 
 
-Los algoritmos usados en la criptografía simétrica (POR EJEMPLO, **aes**) son principalmente operaciones booleanas y de transposición, y es **más eficiente que la criptografía asimétrica**. 
+Los algoritmos usados en la criptografía simétrica (por ejemplo, **aes**) son principalmente operaciones booleanas y de transposición, y es **más eficiente que la criptografía asimétrica**. 
 
 ## Criptografía simétrica usando gpg
 
@@ -176,6 +176,17 @@ gpg: encrypted with 3072-bit RSA key, ID FA920C331CD102E2, created 2023-10-16
 ```
 
 ## Firma digital
+
+Una firma digital certifica un documento y le añade una marca de tiempo. Si posteriormente el documento fuera modificado en cualquier modo, el intento de verificar la firma fallaría. La utilidad de una firma digital es la misma que la de una firma escrita a mano, sólo que la digital tiene una resistencia a la falsificación.
+Para que un usuario firme un mensaje utilizará su clave privada, y para poder verificar dicha firma se utilizará la clave pública del usuario.
+
+Por lo tanto firmando un mensaje estamos asegurando su autenticidad, su integridad (que no ha sido modificado) y el no repudio (garantiza al receptor que el mensaje ha sido generado por el emisor).
+
+Antes de seguir explicando la firma digital, vamos a introducir el concepto de **función de dispersión o hash**. Por medio de un algoritmo (por ejemplo MD5, SHA-1,...) a partir de un fichero se obtiene un resumen de tamaño fijo. Evidentemente, a partir del resultado (hash) no podemos generar el fichero original. Podemos utilizar los hash para comprobar la **integridad** de un fichero. Por ejmeplo, si sabemos el hash de un fichero, si lo descargamos podemos volver a ejecutar la función de dispersión para comprobar si hemos descargado un fichero corrupto. Si el hash del fichero descargado es igual que el hash del fichero original, poremos asegurar la integridad del fichero.
+
+Sigamos avanzando en el concepto de firma digital. Resulta computacionalmente caro encriptar mensajes largos con nuestra calve privada para firmarlos. Por lo que al firmar un documento, vamos a calcular su hash lo vamos a encriptar con la clave privada del emisor. 
+
+
 
 ## Firma digital con gpg
 
