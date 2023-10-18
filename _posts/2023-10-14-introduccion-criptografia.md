@@ -58,7 +58,7 @@ Para que **un usuario firme un mensaje utilizará su clave privada**, y para **p
 
 Por lo tanto firmando un mensaje estamos asegurando su autenticidad, su integridad (que no ha sido modificado) y el no repudio (garantiza al receptor que el mensaje ha sido enviado por el emisor).
 
-Resulta computacionalmente caro encriptar mensajes largos con nuestra clave privada para firmarlos. Por lo que al firmar un documento, vamos a calcular su hash y la vamos a encriptar con la clave privada del emisor. 
+Resulta computacionalmente caro encriptar mensajes largos con nuestra clave privada para firmarlos. Por lo que al firmar un documento, vamos a calcular su hash y la vamos a encriptar con la clave privada del emisor, es decir, firmamos el hash. 
 
 ![criptografía]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/criptografia4.png){: .align-center }
 
