@@ -9,7 +9,7 @@ tags:
 
 ![criptografía]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/intro.png){: .align-center }
 
-La **Criptografía** (que viene de dos palabras "cripto" (**secreto**) y "grafía" (**escritura**)) nos permite el **cifrado** o **codificación** de mensajes con el fin de hacerlos ininteligibles. Puedes profundizar en este concepto en la [Wikipedia](https://es.wikipedia.org/wiki/Criptograf%C3%ADa).
+La **Criptografía** (que viene de dos palabras "cripto" (**secreto**) y "grafía" (**escritura**) nos permite el **cifrado** o **codificación** de mensajes con el fin de hacerlos ininteligibles. Puedes profundizar en este concepto en la [Wikipedia](https://es.wikipedia.org/wiki/Criptograf%C3%ADa).
 
 Veamos algunos conceptos sobre criptografía:
 
@@ -22,7 +22,7 @@ Veamos algunos conceptos sobre criptografía:
 
 Podemos indicar dos tipos de criptografía dependiendo de las claves usadas:
 
-* **Criptografía de clave simétrica**: Las claves usadas por el emisor y el receptor son las mismas.
+* **Criptografía de clave simétrica**: Las claves encriptación/desencriptación usadas por el emisor y el receptor son las mismas.
 * **Criptografía de clave asimétrica o de clave pública**: Cada usuario tiene una **clave pública** conocida por todos y una **clave privada**, que es secreta.
 
 <!--more-->
