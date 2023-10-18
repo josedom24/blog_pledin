@@ -53,8 +53,8 @@ En al mayoría de los protocolos que usan criptografía para cifrar la informaci
 
 Antes de seguir explicando la firma digital, vamos a introducir el concepto de **función de dispersión o hash**. Por medio de un algoritmo (por ejemplo MD5, SHA-1,...) a partir de un fichero se obtiene un resumen de tamaño fijo. Evidentemente, a partir del resultado (hash) no podemos generar el fichero original. Podemos utilizar los hash para comprobar la **integridad** de un fichero. Por ejemplo, si sabemos el hash de un fichero, si lo descargamos podemos volver a ejecutar la función de dispersión para comprobar si hemos descargado un fichero corrupto. Si el hash del fichero descargado es igual que el hash del fichero original, podemos asegurar la integridad del fichero.
 
-Una firma digital certifica un documento y le añade una marca de tiempo. Si posteriormente el documento fuera modificado en cualquier modo, el intento de verificar la firma fallaría. La utilidad de una firma digital es la misma que la de una firma escrita a mano, sólo que la digital tiene una resistencia a la falsificación.
-Para que un usuario firme un mensaje utilizará su clave privada, y para poder verificar dicha firma se utilizará la clave pública del usuario.
+Una **firma digital** certifica un documento y le añade una marca de tiempo. Si posteriormente el documento fuera modificado en cualquier modo, el intento de verificar la firma fallaría. La utilidad de una firma digital es la misma que la de una firma escrita a mano, sólo que la digital tiene una resistencia a la falsificación.
+Para que **un usuario firme un mensaje utilizará su clave privada**, y para **poder verificar dicha firma se utilizará la clave pública del usuario**.
 
 Por lo tanto firmando un mensaje estamos asegurando su autenticidad, su integridad (que no ha sido modificado) y el no repudio (garantiza al receptor que el mensaje ha sido enviado por el emisor).
 
