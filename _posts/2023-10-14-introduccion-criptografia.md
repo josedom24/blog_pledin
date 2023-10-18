@@ -41,7 +41,7 @@ Los algoritmos usados en la criptografía simétrica (por ejemplo, **aes**) son 
 
 En este tipo de criptografía, el emisor y el receptor  no comparten una clave. Cada usuario tiene una clave que es **pública**, y por lo tanto conocida por todos y una clave que es **privada**, conocida sólo por el receptor.
 
-Por lo tanto en este caso, utilizando distintos tipos de algoritmos (por ejemplo **DSA** o **RSA**) cualquier usuario puede puede cifrar un mensaje usando **la clave pública de un usuario**, sólo este usuario podrá descifrar el mensaje usando su **clave privada**.
+Por lo tanto en este caso, utilizando distintos tipos de algoritmos (por ejemplo **DSA** o **RSA**) cualquier usuario puede cifrar un mensaje usando **la clave pública de un usuario**, sólo este usuario podrá descifrar el mensaje usando su **clave privada**.
 
 Este tipo de criptografía es más compleja que la simétrica, por lo tanto es menos eficiente, aunque es más segura.
 
