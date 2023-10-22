@@ -185,8 +185,72 @@ gpg --output fichero.sig --detach-sig fichero.pdf
 
 El fichero `fichero.sig` es sólo la firma digital del fichero que hemos firmado.
 
-## Anillo de confianza
+## Validación de las claves
 
+Como hemos visto anteriormente es necesario poseer la clave pública de los usuarios con los que estoy intercambiando información. Esa clave pública nos servirá:
 
- 
+* Para poder cifrar mensajes que le envío a ese usuario y que solamente el podrá descifrar con su clave privada.
+* Para poder verificar la firma digital que haya realizado ese usuario.
+
+Cuando recibimos la clave pública de un usuario podemos y la hayamos importado, es necesario validarla. Tenemos dos métodos para validar las claves:
+
+### Validación personal
+
+En este caso, se verifica la huella digital (el hash de la clave pública), se comprueba que pertenece al usuario apropiado (garantizar que la persona con la que se está comunicando sea el auténtico propietario de la clave), y a continuación **firmamos su clave pública con nuestra clave privada.**.
+
+En nuestro ejemplo hemos importado la clave pública de Ahsoka Tano, tendríamos que calcular la huella digital de la clave, ejecutando el subcomando `fpr` al editar la clave:
+
+```bash
+gpg --edit-key ahsoka@example.org
+gpg (GnuPG) 2.2.40; Copyright (C) 2022 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Secret key is available.
+
+sec  rsa3072/D0C833A59DC79BA6
+     created: 2023-10-16  expires: 2025-10-15  usage: SC  
+     trust: ultimate      validity: ultimate
+ssb  rsa3072/FA920C331CD102E2
+     created: 2023-10-16  expires: 2025-10-15  usage: E   
+[ultimate] (1). Ahsoka Tano <ahsoka@example.org>
+
+gpg> fpr
+pub   rsa3072/D0C833A59DC79BA6 2023-10-16 Ahsoka Tano <ahsoka@example.org>
+ Primary key fingerprint: 2BF8 8208 A94C 08B3 204F  0131 D0C8 33A5 9DC7 9BA6
+```
+
+Ahora tendría que verificar la huella digital con el propietario de la clave, es decir, con Ahsoka Tano. Esto puede hacerse en persona o por teléfono, o por medio de otras maneras, siempre y cuando el usuario pueda garantizar que la persona con la que se está comunicando sea el auténtico propietario de la clave. Si la huella digital que se obtiene por medio del propietario es la misma que la que se obtiene de la clave, entonces se puede estar seguro de que se está en posesión de una copia correcta de la clave.
+
+Después de esta comprobación, ya podríamos realizar la firma, con el subcomando `--sign` (como haremos uso de nuestra calve privada, se nos pedirá lsu frase de paso):
+
+```bash
+gpg> sign
+
+sec  rsa3072/D0C833A59DC79BA6
+     created: 2023-10-16  expires: 2025-10-15  usage: SC  
+     trust: ultimate      validity: ultimate
+ Primary key fingerprint: 2BF8 8208 A94C 08B3 204F  0131 D0C8 33A5 9DC7 9BA6
+
+     Ahsoka Tano <ahsoka@example.org>
+
+This key is due to expire on 2025-10-15.
+Are you sure that you want to sign this key with your
+key "José Domingo <correo@example.org>" (603DCFEBDFC063AB)
+
+Really sign? (y/N) y
+
+```
+
+### Anillo de confianza
+
+Desafortunadamente este proceso se complicado cuando debemos validar un gran número de claves o cuando debemos comunicarnos con personas a las que no conocemos personalmente.
+GnuPG trata este problema con un mecanismo conocido como **anillo de confianza**. En el modelo del anillo de confianza la responsabilidad de la validación de las claves públicas recae en las personas en las que confiamos.
+
+Pongamos un ejemplo:
+
+* Si yo he firmado la clave pública de Ahsoka Tano,
+* y Ahsoka Tano ha firmado las claves de Anakin Skywalker y de Obi-Wan Kenobi.
+
+Si yo confío en Ahsoka Tano, ya que he validado personalmente su clave, entonces puede deducir que las claves de Anakin Skywalker y de Obi-Wan Kenobi son válidas sin llegar a comprobarlas personalmente. Tendré que usar la clave pública de Ahsoka Tano para comprobar que las las calves de Anakin Skywalker y de Obi-Wan Kenobi son válidas. 
 
