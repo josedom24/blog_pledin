@@ -206,18 +206,17 @@ gpg (GnuPG) 2.2.40; Copyright (C) 2022 g10 Code GmbH
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
-Secret key is available.
 
-sec  rsa3072/D0C833A59DC79BA6
-     created: 2023-10-16  expires: 2025-10-15  usage: SC  
-     trust: ultimate      validity: ultimate
-ssb  rsa3072/FA920C331CD102E2
-     created: 2023-10-16  expires: 2025-10-15  usage: E   
-[ultimate] (1). Ahsoka Tano <ahsoka@example.org>
+pub  rsa3072/E0EE582D3C903041
+     created: 2023-10-22  expires: 2025-10-21  usage: SC  
+     trust: unknown       validity: unknown
+sub  rsa3072/11518C522A7B719A
+     created: 2023-10-22  expires: 2025-10-21  usage: E   
+[ unknown] (1). Ahsoka Tano <ahsoka@example.org>
 
 gpg> fpr
-pub   rsa3072/D0C833A59DC79BA6 2023-10-16 Ahsoka Tano <ahsoka@example.org>
- Primary key fingerprint: 2BF8 8208 A94C 08B3 204F  0131 D0C8 33A5 9DC7 9BA6
+pub   rsa3072/E0EE582D3C903041 2023-10-22 Ahsoka Tano <ahsoka@example.org>
+ Primary key fingerprint: 11AD F9B8 DF66 0DFB D147  B4A5 E0EE 582D 3C90 3041
 ```
 
 Ahora tendría que verificar la huella digital con el propietario de la clave, es decir, con Ahsoka Tano. Esto puede hacerse en persona o por teléfono, o por medio de otras maneras, siempre y cuando el usuario pueda garantizar que la persona con la que se está comunicando sea el auténtico propietario de la clave. Si la huella digital que se obtiene por medio del propietario es la misma que la que se obtiene de la clave, entonces se puede estar seguro de que se está en posesión de una copia correcta de la clave.
@@ -227,20 +226,21 @@ Después de esta comprobación, ya podríamos realizar la firma, con el subcoman
 ```bash
 gpg> sign
 
-sec  rsa3072/D0C833A59DC79BA6
-     created: 2023-10-16  expires: 2025-10-15  usage: SC  
-     trust: ultimate      validity: ultimate
- Primary key fingerprint: 2BF8 8208 A94C 08B3 204F  0131 D0C8 33A5 9DC7 9BA6
+pub  rsa3072/E0EE582D3C903041
+     created: 2023-10-22  expires: 2025-10-21  usage: SC  
+     trust: unknown       validity: unknown
+ Primary key fingerprint: 11AD F9B8 DF66 0DFB D147  B4A5 E0EE 582D 3C90 3041
 
      Ahsoka Tano <ahsoka@example.org>
 
-This key is due to expire on 2025-10-15.
+This key is due to expire on 2025-10-21.
 Are you sure that you want to sign this key with your
 key "José Domingo <correo@example.org>" (603DCFEBDFC063AB)
 
 Really sign? (y/N) y
-
 ```
+
+Para terminar la edición de la clave, guardamos los cambios con el subcomando `save`.
 
 ### Anillo de confianza
 
@@ -252,5 +252,118 @@ Pongamos un ejemplo:
 * Si yo he firmado la clave pública de Ahsoka Tano,
 * y Ahsoka Tano ha firmado las claves de Anakin Skywalker y de Obi-Wan Kenobi.
 
-Si yo confío en Ahsoka Tano, ya que he validado personalmente su clave, entonces puede deducir que las claves de Anakin Skywalker y de Obi-Wan Kenobi son válidas sin llegar a comprobarlas personalmente. Tendré que usar la clave pública de Ahsoka Tano para comprobar que las las calves de Anakin Skywalker y de Obi-Wan Kenobi son válidas. 
+Si yo confío en Ahsoka Tano, ya que he validado personalmente su clave, entonces puede deducir que las claves de Anakin Skywalker y de Obi-Wan Kenobi son válidas sin llegar a comprobarlas personalmente. Tendré que usar la clave pública de Ahsoka Tano para comprobar que las las claves de Anakin Skywalker y de Obi-Wan Kenobi son válidas. 
+
+Hay que introducir un nuevo concepto confianza en en el propietario (**trust**). Hay que doiferenciar este concpto con el de validación (**validity**) que será la confianza en que una clave pertenece a la persona asociada con el identificador de clave.
+
+En la práctica la confianza es algo subjetivo. Por ejemplo, la clave de Ahoska Tano es valída para mi, ya que la he firmado, pero puedo desconfiar de otras claves que hayan sido validadas por la firma de Ahsoka Tano. En este caso, puede que yo no acepte las claves de Anakin Skywalker y de Obi-Wan Kenobi como válidas sólo porque hayan sido firmadas por Ahsoka Tano. Si volvemos a editar la clave de Ahsoka:
+
+```bash
+gpg --edit-key ahsoka@example.org 
+gpg (GnuPG) 2.2.40; Copyright (C) 2022 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+
+pub  rsa3072/E0EE582D3C903041
+     created: 2023-10-22  expires: 2025-10-21  usage: SC  
+     trust: unknown       validity: full
+sub  rsa3072/11518C522A7B719A
+     created: 2023-10-22  expires: 2025-10-21  usage: E   
+[  full  ] (1). Ahsoka Tano <ahsoka@example.org>
+
+gpg> 
+
+```
+Vemos como la confienza en el propietario es desconocida (**unknown**) y sin embargo la confianza de que la clave es de Ahsoka Tano es total (**full**) ya que la he firmado anteriormente. El nivel de confianza en una clave es algo que sólo nosotros podemos asignar a la clave, y se considera información privada. El nivel de confianza no se exporta con la clave, de hecho no se almacena en los anillos de claves sino en una base de datos aparte.El edito de claves nos permite ajustar nuestra confianza en el propietario de una clave, para ello usamos el subcomando `trust`:
+
+```bash
+gpg> trust
+pub  rsa3072/E0EE582D3C903041
+     created: 2023-10-22  expires: 2025-10-21  usage: SC  
+     trust: unknown       validity: full
+sub  rsa3072/11518C522A7B719A
+     created: 2023-10-22  expires: 2025-10-21  usage: E   
+[  full  ] (1). Ahsoka Tano <ahsoka@example.org>
+
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+  1 = I don't know or won't say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+
+Your decision? 
+```
+
+Como vemos podemos configurar la confianza del propietario de la clave en distintos niveles:
+
+* **1 = I don't know or won't say (unknown)**: No lo sé o prefiero no decirlo. No se sabe nada sobre el dueño de la clave firmante. Las claves en nuestro anillo de claves que no nos pertenezcan tendrán al principio este nivel de confianza.
+* **2 = I do NOT trust (never)**: No tengo confianza. Se sabe que el propietario firma otras claves de modo impropio.
+* **3 = I trust marginally (marginal)**: Confío un poco. El propietario comprende las implicaciones de firmar una clave y valida las claves de forma correcta antes de firmarlas.
+* **4 = I trust fully (full)**:Confío totalmente. El propietario comprende perfectamente las implicaciones de firmar una clave y su firma sobre una clave es tan buena como la nuestra.
+* **5 = I trust ultimately (ultimate)**: confío absolutamente. Es la confianza que tenemos sobre nuestras claves. Problablemente tendremos además las privadas del usuario.
+
+### Usar la confianza para validar las claves
+
+El anillo de confianza permite usar un algoritmo más elaborado para validar una clave. Hasta ahora, una clave sólo se consideraba válida si la firmábamos nosotros personalmente. Ahora es posible usar un algoritmo más flexible: una clave se considera válida si cumple dos condiciones:
+
+* Si viene firmada por las suficientes claves válidas, lo que quiere decir:
+      * Que la hemos firmado nosotros personalmente,
+      * o que ha sido firmada por una clave de plena confianza,
+      * o que ha sido firmada por tres claves de confianza marginal;
+* y si el camino de claves firmadas que nos lleva desde la clave hasta nuestra propia clave es de cinco pasos o menos.
+
+La longitud del camino, en número de claves con confianza marginal requeridas, y el número de claves con confianza plena requeridas se pueden cambiar. Los números dados arriba son los valores por definición usados por GnuPG.
+
+Veamos un ejemplo:
+
+* Ahoska Tano ha firmado la clave de Obi-Wan Kenobi, por lo tanto la valida.
+* Yo recibo la clave pública de Obi-Wan Kenobi, firmado por Ahsoka Tano. No conozco a Obi-Wan, por lo que no firmo su clave para validarla.
+* He recibido la clave de Anakin Skywalker que ha sido firmada por Obi-Wan Kenobi.
+
+![criptografía]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/criptografia7.png){: .align-center }
+
+Si yo confio totalmente en Ahoska Tano:
+
+* La clave de Obi-Wan Kenobi también es válida por el anillo de conianza ya que **ha sido firmada por una clave de plena confianza**.
+* La clave de Anakin Skywalker no es válida, realmente su validez no esta definidad.
+
+```bash
+gpg --list-keys
+/home/vagrant/.gnupg/pubring.kbx
+--------------------------------
+...
+uid           [ultimate] José Domingo <correo@example.org>
+...
+uid           [  full  ] Ahsoka Tano <ahsoka@example.org>
+...
+uid           [  full  ] Obi-Wan Kenobi <obi@example.org>
+...
+uid           [  undef ] Anakin Skywalker <anakin@example.org>
+```
+
+Sin embargo, si cambio el nivel de confianza de Ahsoka Tano a marginal:
+
+*  Comprobamos que ahora la validez de la clave de Obi-Wan será marginal.
+* Y la clave de Anakin Skywalker es desconocida.
+
+```bash
+gpg --list-keys
+/home/vagrant/.gnupg/pubring.kbx
+--------------------------------
+...
+uid           [ultimate] José Domingo <correo@example.org>
+...
+uid           [  full  ] Ahsoka Tano <ahsoka@example.org>
+...
+uid           [  marginal  ] Obi-Wan Kenobi <obi@example.org>
+...
+uid           [  unknown ] Anakin Skywalker <anakin@example.org>
+```
+
+
 
