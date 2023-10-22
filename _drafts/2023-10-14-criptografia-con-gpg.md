@@ -187,5 +187,6 @@ El fichero `fichero.sig` es sólo la firma digital del fichero que hemos firmado
 
 ## Anillo de confianza
 
+
  
 
