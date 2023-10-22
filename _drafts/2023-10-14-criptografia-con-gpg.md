@@ -9,33 +9,7 @@ tags:
 
 ![gpg]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/logo-gnupg-light-purple-bg.png){: .align-center }
 
-La **Criptografía** (que viene de dos palabras "cripto" (**secreto**) y "grafía" (**escritura**)) nos permite el **cifrado** o **codificación** de mensajes con el fin de hacerlos ininteligibles. Puedes profundizar en este concepto en la [Wikipedia](https://es.wikipedia.org/wiki/Criptograf%C3%ADa).
-
-Veamos algunos conceptos sobre criptografía:
-
-![gpg]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/criptografia1.png){: .align-center }
-
-* **Emisor**: Cualquier persona o sistema (navegadores web, servicios, routers,...) que quieren enviar un mensaje de forma segura.
-* **Receptor**: Cualquier persona o sistema que quiere recibir un mensaje de forma segura.
-* **Atacante**: Cualquier persona o sistema que trata de leer, eliminar, modificar,... el mensaje enviado por el emisor hacia el receptor.
-* **Algoritmo de encriptación/desencriptación**: Operación matemática que nos permite a partir de una **clave de encriptación** cifrar el mensaje que queremos enviar a un mensaje cifrado. Este mensaje cifrado podremos descifrarlo a partir de una **clave de desencriptación**.
-
-Podemos indicar dos tipos de criptografía dependiendo de las claves usadas:
-
-* **Criptografía de clave simétrica**: Las claves de usadas por el emisor y el receptor son las mismas.
-* **Criptografía de clave asimétrica o de clave pública**: Cada usuario tiene una **clave pública** conocida por todos y una **clave privada**, que es secreta.
-
-<!--more-->
-
-## Criptografía de clave simétrica
-
-![gpg]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/criptografia2.png){: .align-center }
-
-Como hemos indicado anteriormente el emisor y el receptor usan **la misma clave** para cifrar y descifrar el mensaje. Por lo tanto, el emisor y el receptor, antes de poder comunicarse, deben ponerse de acuerdo en el valor de la clave. Una vez que ambas partes tienen acceso a esta clave, el remitente cifra un mensaje usando la clave, lo envía al destinatario, y este lo descifra con la misma clave. 
-
-Los algoritmos usados en la criptografía simétrica (por ejemplo, **aes**) son principalmente operaciones booleanas y de transposición, y es **más eficiente que la criptografía asimétrica**. 
-
-## Criptografía simétrica usando gpg
+En el artículo anterior: [Introducción a la criptografía](https://www.josedomingo.org/pledin/2023/10/introduccion-criptografia/) repsamos los aspectos más importantes sobre criptografía. En este artículo vamos a hacer una aplicación práctica utilizando el software GPG.
 
 [GnuPG](https://www.gnupg.org/) es una implementación completa y gratuita del estándar OpenPGP, también conocido como PGP. GnuPG nos permite usar criptografía simétrica y asimétrica para cifrar y firmar nuestros datos.
 
@@ -44,6 +18,10 @@ Para instalar gpg en nuestro sistema operativo basado en Debian, ejecutamos:
 ```bash
 apt install gnupg
 ```
+
+## Criptografía simétrica usando gpg
+
+Recordamos que en la **criptografía simétrica** las claves encriptación/desencriptación usadas por el emisor y el receptor son las mismas.
 
 Vamos a usar la opción `-c` del comando `gpg` para cifrar. Por ejemplo para cifrar un fichero, ejecutamos:
 
@@ -65,17 +43,9 @@ Por lo tanto, si queremos recuperar el fichero original podríamos ejecutar:
 gpg -d fichero.txt.gpg > fichero2.txt
 ```
 
-## Criptografía asimétrica
-
-![gpg]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/criptografia3.png){: .align-center }
-
-En este tipo de criptografía, el emisor y el receptor  no comparten clave secreta. Cada usuario tiene una clave de encriptación que es **pública**, y por lo tanto conocida por todos. La clave de desencriptación es **privada**, conocida sólo por el receptor.
-
-Por lo tanto en este caso, utilizando distintos tipos de algoritmos (por ejemplo DSA o RSA) cualquier usuario puede puede cifrar un mensaje usando **la clave pública de un usuario**, sólo este usuario podrá descifrar el mensaje usando su **clave privada**.
-
-Este tipo de criptografía es más compleja que la simétrica, por lo tanto es menos eficiente, aunque es más segura.
-
 ## Criptografía asimétrica con gpg
+
+En la **criptografía asimétrica o de clave pública**, cada usuario tiene una clave pública conocida por todos y una clave privada, que es secreta.
 
 ### Generación de claves
 
@@ -174,21 +144,46 @@ gpg --output fichero.txt --decrypt fichero.txt.gpg
 gpg: encrypted with 3072-bit RSA key, ID FA920C331CD102E2, created 2023-10-16
       "Ahsoka Tano <ahsoka@example.org>"
 ```
-
-## Firma digital
-
-Una firma digital certifica un documento y le añade una marca de tiempo. Si posteriormente el documento fuera modificado en cualquier modo, el intento de verificar la firma fallaría. La utilidad de una firma digital es la misma que la de una firma escrita a mano, sólo que la digital tiene una resistencia a la falsificación.
-Para que un usuario firme un mensaje utilizará su clave privada, y para poder verificar dicha firma se utilizará la clave pública del usuario.
-
-Por lo tanto firmando un mensaje estamos asegurando su autenticidad, su integridad (que no ha sido modificado) y el no repudio (garantiza al receptor que el mensaje ha sido generado por el emisor).
-
-Antes de seguir explicando la firma digital, vamos a introducir el concepto de **función de dispersión o hash**. Por medio de un algoritmo (por ejemplo MD5, SHA-1,...) a partir de un fichero se obtiene un resumen de tamaño fijo. Evidentemente, a partir del resultado (hash) no podemos generar el fichero original. Podemos utilizar los hash para comprobar la **integridad** de un fichero. Por ejmeplo, si sabemos el hash de un fichero, si lo descargamos podemos volver a ejecutar la función de dispersión para comprobar si hemos descargado un fichero corrupto. Si el hash del fichero descargado es igual que el hash del fichero original, poremos asegurar la integridad del fichero.
-
-Sigamos avanzando en el concepto de firma digital. Resulta computacionalmente caro encriptar mensajes largos con nuestra calve privada para firmarlos. Por lo que al firmar un documento, vamos a calcular su hash lo vamos a encriptar con la clave privada del emisor. 
-
-
-
 ## Firma digital con gpg
+
+Una **firma digital** certifica un documento y le añade una marca de tiempo. Si posteriormente el documento fuera modificado en cualquier modo, el intento de verificar la firma fallaría. La utilidad de una firma digital es la misma que la de una firma escrita a mano, sólo que la digital tiene una resistencia a la falsificación. Para que **un usuario firme un mensaje utilizará su clave privada, y para poder verificar dicha firma se utilizará la clave pública del usuario.**
+
+el parámetro `--sign`` se usa para generar una firma digital. El documento que se desea firmar es la entrada, y la salida es el documento firmado. 
+
+```bash
+gpg --output fichero.sig --sign fichero.pdf
+```
+Si es necesario se pedirá la frase de paso de la clave privada. El documento se comprime antes de ser firmado, y la salida es en formato binario.
+
+El usuario al que enviamos el documento firmado necesita tener nuestra clave pública para poder verificar la firma. Con un documento con firma digital el usuario puede llevar a cabo dos acciones: comprobar sólo la firma o comprobar la firma y recuperar el documento original al mismo tiempo. Para comprobar la firma se usa la opción `--verify`. 
+
+```bash
+gpg --verify fichero.sig
+gpg: Firmado el dom 22 oct 2023 11:27:51 CEST
+gpg:                usando RSA clave 67379D6620EAD8BF2DA7111760DAB70F3B298B8C
+gpg: Firma correcta de "José Domingo Muñoz Rodríguez <josedom24@josedomingo.org>" [absoluta]
+```
+Para verificar la firma y extraer el documento se usa la opción `--decrypt`. El documento con la firma es la entrada, y el documento original recuperado es la salida.
+
+```bash
+gpg --output fichero_original.pdf --decrypt fichero.sig
+```
+
+En algunos casos es necesario no comprimir el fichero firmado, y generar firmas ASCII, para ello usaremos la opción `--clearsign`:
+
+```bash
+gpg --clearsign fichero.txt
+```
+
+Se genera el fichero `fichero.txt.asc` con el contenido del fichero y la firma digital en formato ASCII.
+
+Si el receptor ya tiene el documento original, sólo mandamos la firma digital. Generamos la firma con la opción `--detach-sign` de gpg.
+
+```bash
+gpg --output fichero.sig --detach-sig fichero.pdf
+```
+
+El fichero `fichero.sig` es sólo la firma digital del fichero que hemos firmado.
 
 ## Anillo de confianza
 
