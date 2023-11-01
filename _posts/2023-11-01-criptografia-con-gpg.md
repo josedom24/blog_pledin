@@ -1,15 +1,15 @@
 ---
-title: 'Introducción a la criptografía con gpg'
-permalink: /2023/10/criptografia-con-gpg/
+title: 'Introducción a la criptografía con GnuPG'
+permalink: /2023/11/criptografia-con-gpg/
 tags:
   - Criptografía
   - gpg
   - Manuales
 ---
 
-![gpg]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/logo-gnupg-light-purple-bg.png){: .align-center }
+![gpg]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/11/logo-gnupg-light-purple-bg.png){: .align-center }
 
-En el artículo anterior: [Introducción a la criptografía](https://www.josedomingo.org/pledin/2023/10/introduccion-criptografia/) repsamos los aspectos más importantes sobre criptografía. En este artículo vamos a hacer una aplicación práctica utilizando el software GPG.
+En el artículo anterior: [Introducción a la criptografía](https://www.josedomingo.org/pledin/2023/10/introduccion-criptografia/) repasamos los aspectos más importantes sobre criptografía. En este artículo vamos a hacer una aplicación práctica utilizando el software GnuPG.
 
 [GnuPG](https://www.gnupg.org/) es una implementación completa y gratuita del estándar OpenPGP, también conocido como PGP. GnuPG nos permite usar criptografía simétrica y asimétrica para cifrar y firmar nuestros datos.
 
@@ -43,6 +43,8 @@ Por lo tanto, si queremos recuperar el fichero original podríamos ejecutar:
 gpg -d fichero.txt.gpg > fichero2.txt
 ```
 
+<!--more-->
+
 ## Criptografía asimétrica con gpg
 
 En la **criptografía asimétrica o de clave pública**, cada usuario tiene una clave pública conocida por todos y una clave privada, que es secreta.
@@ -56,7 +58,7 @@ gpg --gen-key
 ```
 
 Nos pedirá el nombre del usuario y su correo electrónico, además podremos introducir una **frase de paso** para proteger la clave privada, cad vez que la usemos se nos pedirá esta frase.
-Muchas de las opciones para generar las claves se han tomado por defecto, si queremos que nos pida más detalle de la generación de la clave podemos usar la opción `--full-generate-key`. Si usamos esta opción no pedirá el tipo de clave que vamos a generar, el tamaño de la clave y la fecha de validez de la clave.
+Muchas de las opciones para generar las claves se han tomado por defecto, si queremos que nos pida más detalle de la generación de las claves podemos usar la opción `--full-generate-key`. Si usamos esta opción nos pedirá el tipo de clave que vamos a generar, el tamaño de la clave y la fecha de validez de la clave.
 
 ### Listar las claves
 
@@ -72,9 +74,9 @@ uid           [ultimate] José Domingo <correo@example.org>
 sub   rsa3072 2023-10-16 [E] [expires: 2025-10-15]
 ```
 
-Vemos que se ha generado una clave principal pública (`pub`). También vemos la fecha de validez, así como su identificador (`uid`) (el nombre de usuario, el correo o el identificador alfanumérico). Esta clave primaría nos permite realziar firmas digitales, para cifrar se ha generado una subclave (`sub`) que está vinculada a la clave principal. Para más información sobre las subclaves puedes ver la [wiki de Debian](https://wiki.debian.org/Subkeys).
+Vemos que se ha generado una clave principal pública (`pub`). También vemos la fecha de validez, así como su identificador (`uid`) (el nombre de usuario, el correo o el identificador alfanumérico). Esta clave primaría nos permite realizar firmas digitales, para cifrar se ha generado una subclave (`sub`) que está vinculada a la clave principal. Para más información sobre las subclaves puedes ver la [wiki de Debian](https://wiki.debian.org/Subkeys).
 
-También podemos listar las calves privadas, ejecutando:
+También podemos listar las claves privadas, ejecutando:
 
 ```bash
 gpg --list-secret-key
@@ -90,7 +92,7 @@ Vemos que es la clave privada (`sec`) y que de la misma forma que la anterior, s
 
 ### Exportación e importación de claves
 
-Si queremos que otros usuarios utilicen nuestra calve pública para cifrar mensajes, es necesaria enviarles nuestra clave pública. Para ello vamos a usar la siguiente instrucción donde tenemos que identificar nuestra calve pública (con el nombre, el correo o el identificador):
+Si queremos que otros usuarios utilicen nuestra clave pública para cifrar mensajes, es necesaria enviarles nuestra clave pública. Para ello vamos a exportarla, usando la siguiente instrucción, donde tenemos que identificar nuestra clave pública (con el nombre, el correo o el identificador):
 
 ```bash
 gpg --output josedom.gpg --export correo@example.org
@@ -102,7 +104,7 @@ El fichero `josedom.gpg` es un binario con nuestra clave pública, si para facil
 gpg --armor --output josedom.asc --export correo@example.org
 ```
 
-Podemos enviar el fichero `josedom.asc` a otros usuarios o subir nuestra calve pública a un servidor público de claves PGP, por ejemplo al de [red.es](https://www.rediris.es/servicios/identidad/pgp/index.html.es).
+Podemos enviar el fichero `josedom.asc` a otros usuarios o subir nuestra clave pública a un servidor público de claves PGP, por ejemplo al de [red.es](https://www.rediris.es/servicios/identidad/pgp/index.html.es).
 
 Por último, si nosotros recibimos una clave pública de otro usuario en el fichero `ahsoka.asc` y queremos importarlo, ejecutaremos:
 
@@ -131,7 +133,7 @@ sub   rsa3072 2023-10-16 [E] [expires: 2025-10-15]
 
 Cada clave pública y privada tiene un papel específico en el cifrado y descifrado de documentos. Se puede pensar en una clave pública como en una caja fuerte de seguridad. Cuando un remitente cifra un documento usando una clave pública, ese documento se pone en la caja fuerte, la caja se cierra, y el bloqueo de la combinación de ésta se gira varias veces. La parte correspondiente a la clave privada, esto es, el destinatario, es la combinación que puede volver a abrir la caja y retirar el documento. Dicho de otro modo, sólo la persona que posee la clave privada puede recuperar un documento cifrado usando la clave pública asociada al cifrado.
 
-Si queremos cifrar un documento para el usuario Ahsoka, loo haremos usando su clave pública. Solo el usuario Ashoka podrá descifrarlo con su clave privada. Por lo tanto, si queremos cifrar un documento cifrado para que solo lo descifre el usuario Ahoska, lo cifraremos (con la opción `--encrypt`) con su clave pública:
+Si queremos cifrar un documento para el usuario Ahsoka, lo haremos usando su clave pública. Solo el usuario Ashoka podrá descifrarlo con su clave privada. Por lo tanto, si queremos cifrar un documento cifrado para que solo lo descifre el usuario Ahoska, lo cifraremos (con la opción `--encrypt`) con su clave pública:
 
 ```bash
 gpg --output fichero.txt.gpg --encrypt --recipient ahsoka@example.org fichero.txt 
@@ -148,7 +150,7 @@ gpg: encrypted with 3072-bit RSA key, ID FA920C331CD102E2, created 2023-10-16
 
 Una **firma digital** certifica un documento y le añade una marca de tiempo. Si posteriormente el documento fuera modificado en cualquier modo, el intento de verificar la firma fallaría. La utilidad de una firma digital es la misma que la de una firma escrita a mano, sólo que la digital tiene una resistencia a la falsificación. Para que **un usuario firme un mensaje utilizará su clave privada, y para poder verificar dicha firma se utilizará la clave pública del usuario.**
 
-el parámetro `--sign`` se usa para generar una firma digital. El documento que se desea firmar es la entrada, y la salida es el documento firmado. 
+El parámetro `--sign` se usa para generar una firma digital. El documento que se desea firmar es la entrada, y la salida es el documento firmado. 
 
 ```bash
 gpg --output fichero.sig --sign fichero.pdf
@@ -163,6 +165,7 @@ gpg: Firmado el dom 22 oct 2023 11:27:51 CEST
 gpg:                usando RSA clave 67379D6620EAD8BF2DA7111760DAB70F3B298B8C
 gpg: Firma correcta de "José Domingo Muñoz Rodríguez <josedom24@josedomingo.org>" [absoluta]
 ```
+
 Para verificar la firma y extraer el documento se usa la opción `--decrypt`. El documento con la firma es la entrada, y el documento original recuperado es la salida.
 
 ```bash
@@ -192,11 +195,11 @@ Como hemos visto anteriormente es necesario poseer la clave pública de los usua
 * Para poder cifrar mensajes que le envío a ese usuario y que solamente el podrá descifrar con su clave privada.
 * Para poder verificar la firma digital que haya realizado ese usuario.
 
-Cuando recibimos la clave pública de un usuario podemos y la hayamos importado, es necesario validarla. Tenemos dos métodos para validar las claves:
+Cuando recibimos la clave pública de un usuario y la hayamos importado, es necesario validarla. Tenemos dos métodos para validar las claves:
 
 ### Validación personal
 
-En este caso, se verifica la huella digital (el hash de la clave pública), se comprueba que pertenece al usuario apropiado (garantizar que la persona con la que se está comunicando sea el auténtico propietario de la clave), y a continuación **firmamos su clave pública con nuestra clave privada.**.
+En este caso, se verifica la huella digital (el hash de la clave pública), se comprueba que pertenece al usuario apropiado (garantizar que la persona con la que se está comunicando sea el auténtico propietario de la clave), y a continuación **firmamos su clave pública con nuestra clave privada**.
 
 En nuestro ejemplo hemos importado la clave pública de Ahsoka Tano, tendríamos que calcular la huella digital de la clave, ejecutando el subcomando `fpr` al editar la clave:
 
@@ -221,7 +224,7 @@ pub   rsa3072/E0EE582D3C903041 2023-10-22 Ahsoka Tano <ahsoka@example.org>
 
 Ahora tendría que verificar la huella digital con el propietario de la clave, es decir, con Ahsoka Tano. Esto puede hacerse en persona o por teléfono, o por medio de otras maneras, siempre y cuando el usuario pueda garantizar que la persona con la que se está comunicando sea el auténtico propietario de la clave. Si la huella digital que se obtiene por medio del propietario es la misma que la que se obtiene de la clave, entonces se puede estar seguro de que se está en posesión de una copia correcta de la clave.
 
-Después de esta comprobación, ya podríamos realizar la firma, con el subcomando `--sign` (como haremos uso de nuestra calve privada, se nos pedirá lsu frase de paso):
+Después de esta comprobación, ya podríamos realizar la firma, con el subcomando `--sign` (como haremos uso de nuestra clave privada, se nos pedirá la frase de paso):
 
 ```bash
 gpg> sign
@@ -244,19 +247,19 @@ Para terminar la edición de la clave, guardamos los cambios con el subcomando `
 
 ### Anillo de confianza
 
-Desafortunadamente este proceso se complicado cuando debemos validar un gran número de claves o cuando debemos comunicarnos con personas a las que no conocemos personalmente.
+Desafortunadamente este proceso es complicado cuando debemos validar un gran número de claves o cuando debemos comunicarnos con personas a las que no conocemos personalmente.
 GnuPG trata este problema con un mecanismo conocido como **anillo de confianza**. En el modelo del anillo de confianza la responsabilidad de la validación de las claves públicas recae en las personas en las que confiamos.
 
 Pongamos un ejemplo:
 
-* Si yo he firmado la clave pública de Ahsoka Tano,
+* Yo he firmado la clave pública de Ahsoka Tano,
 * y Ahsoka Tano ha firmado las claves de Anakin Skywalker y de Obi-Wan Kenobi.
 
 Si yo confío en Ahsoka Tano, ya que he validado personalmente su clave, entonces puede deducir que las claves de Anakin Skywalker y de Obi-Wan Kenobi son válidas sin llegar a comprobarlas personalmente. Tendré que usar la clave pública de Ahsoka Tano para comprobar que las las claves de Anakin Skywalker y de Obi-Wan Kenobi son válidas. 
 
-Hay que introducir un nuevo concepto confianza en en el propietario (**trust**). Hay que doiferenciar este concpto con el de validación (**validity**) que será la confianza en que una clave pertenece a la persona asociada con el identificador de clave.
+Hay que introducir un nuevo concepto **confianza en en el propietario** (**trust**). Hay que diferenciar este concepto con el de **validación** (**validity**) que será la confianza en que una clave pertenece a la persona asociada con el identificador de clave.
 
-En la práctica la confianza es algo subjetivo. Por ejemplo, la clave de Ahoska Tano es valída para mi, ya que la he firmado, pero puedo desconfiar de otras claves que hayan sido validadas por la firma de Ahsoka Tano. En este caso, puede que yo no acepte las claves de Anakin Skywalker y de Obi-Wan Kenobi como válidas sólo porque hayan sido firmadas por Ahsoka Tano. Si volvemos a editar la clave de Ahsoka:
+En la práctica la confianza es algo subjetivo. Por ejemplo, la clave de Ahoska Tano es válida para mi, ya que la he firmado, pero puedo desconfiar de otras claves que hayan sido validadas por la firma de Ahsoka Tano. En este caso, puede que yo no acepte las claves de Anakin Skywalker y de Obi-Wan Kenobi como válidas sólo porque hayan sido firmadas por Ahsoka Tano. Si volvemos a editar la clave de Ahsoka:
 
 ```bash
 gpg --edit-key ahsoka@example.org 
@@ -275,7 +278,7 @@ sub  rsa3072/11518C522A7B719A
 gpg> 
 
 ```
-Vemos como la confienza en el propietario es desconocida (**unknown**) y sin embargo la confianza de que la clave es de Ahsoka Tano es total (**full**) ya que la he firmado anteriormente. El nivel de confianza en una clave es algo que sólo nosotros podemos asignar a la clave, y se considera información privada. El nivel de confianza no se exporta con la clave, de hecho no se almacena en los anillos de claves sino en una base de datos aparte.El edito de claves nos permite ajustar nuestra confianza en el propietario de una clave, para ello usamos el subcomando `trust`:
+Vemos como la confianza en el propietario es desconocida (**unknown**) y sin embargo la confianza de que la clave es de Ahsoka Tano es total (**full**) ya que la he firmado anteriormente. El nivel de confianza en una clave es algo que sólo nosotros podemos asignar a la clave, y se considera información privada. El nivel de confianza no se exporta con la clave, de hecho no se almacena en los anillos de claves sino en una base de datos aparte. El editor de claves nos permite ajustar nuestra confianza en el propietario de una clave, para ello usamos el subcomando `trust`:
 
 ```bash
 gpg> trust
@@ -325,7 +328,7 @@ Veamos un ejemplo:
 * Yo recibo la clave pública de Obi-Wan Kenobi, firmado por Ahsoka Tano. No conozco a Obi-Wan, por lo que no firmo su clave para validarla.
 * He recibido la clave de Anakin Skywalker que ha sido firmada por Obi-Wan Kenobi.
 
-![criptografía]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/10/criptografia7.png){: .align-center }
+![criptografía]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2023/11/criptografia7.png){: .align-center }
 
 Si yo confio totalmente en Ahoska Tano:
 
@@ -364,6 +367,10 @@ uid           [  marginal  ] Obi-Wan Kenobi <obi@example.org>
 ...
 uid           [  unknown ] Anakin Skywalker <anakin@example.org>
 ```
+
+## Conclusiones
+
+En este artículo hemos hecho un resumen del uso de la herramienta GnuPG para trabajar con criptografía simétrica y asimétrica. Para seguir profundizando en el uso de esta herramienta os sugiero la lectura de la [documentación oficial](https://www.gnupg.org/documentation/index.html).
 
 
 
