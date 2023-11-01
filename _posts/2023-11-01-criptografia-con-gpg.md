@@ -15,7 +15,7 @@ En el artículo anterior: [Introducción a la criptografía](https://www.josedom
 
 Para instalar gpg en nuestro sistema operativo basado en Debian, ejecutamos:
 
-```bash
+```
 apt install gnupg
 ```
 
@@ -25,7 +25,7 @@ Recordamos que en la **criptografía simétrica** las claves encriptación/desen
 
 Vamos a usar la opción `-c` del comando `gpg` para cifrar. Por ejemplo para cifrar un fichero, ejecutamos:
 
-```bash
+```
 gpg -c fichero.txt
 ```
 
@@ -33,13 +33,13 @@ Nos pide la clave de encriptación (**Nota: si estáis usando gnome al introduci
 
 Para desencriptar el fichero usamos la opción `-d`, simplemente ejecutamos:
 
-```bash
+```
 gpg -d fichero.txt.gpg
 ```
 
 Por lo tanto, si queremos recuperar el fichero original podríamos ejecutar:
 
-```bash
+```
 gpg -d fichero.txt.gpg > fichero2.txt
 ```
 
@@ -53,7 +53,7 @@ En la **criptografía asimétrica o de clave pública**, cada usuario tiene una 
 
 Lo primero que tenemos que hacer es generar un par de claves (pública y privada) para un usuario de nuestro sistema. Tenemos varias formas de generar las claves, la más sencilla es usar la siguiente opción:
 
-```bash
+```
 gpg --gen-key
 ```
 
@@ -64,7 +64,7 @@ Muchas de las opciones para generar las claves se han tomado por defecto, si que
 
 Podemos listar las claves públicas que tenemos, con el siguiente comando:
 
-```bash
+```
 gpg --list-key
 /home/usuario/.gnupg/pubring.kbx
 --------------------------------
@@ -78,7 +78,7 @@ Vemos que se ha generado una clave principal pública (`pub`). También vemos la
 
 También podemos listar las claves privadas, ejecutando:
 
-```bash
+```
 gpg --list-secret-key
 /home/usuario/.gnupg/pubring.kbx
 --------------------------------
@@ -94,13 +94,13 @@ Vemos que es la clave privada (`sec`) y que de la misma forma que la anterior, s
 
 Si queremos que otros usuarios utilicen nuestra clave pública para cifrar mensajes, es necesaria enviarles nuestra clave pública. Para ello vamos a exportarla, usando la siguiente instrucción, donde tenemos que identificar nuestra clave pública (con el nombre, el correo o el identificador):
 
-```bash
+```
 gpg --output josedom.gpg --export correo@example.org
 ```
 
 El fichero `josedom.gpg` es un binario con nuestra clave pública, si para facilitar el envío queremos generarlo en formato de texto plano, ejecutamos:
 
-```bash
+```
 gpg --armor --output josedom.asc --export correo@example.org
 ```
 
@@ -108,13 +108,13 @@ Podemos enviar el fichero `josedom.asc` a otros usuarios o subir nuestra clave p
 
 Por último, si nosotros recibimos una clave pública de otro usuario en el fichero `ahsoka.asc` y queremos importarlo, ejecutaremos:
 
-```bash
+```
 gpg --import ahsoka.asc
 ```
 
 Y podemos comprobar que la importación ha sido correcta:
 
-```bash
+```
 gpg --list-key
 ...
 --------------------------------
@@ -135,13 +135,13 @@ Cada clave pública y privada tiene un papel específico en el cifrado y descifr
 
 Si queremos cifrar un documento para el usuario Ahsoka, lo haremos usando su clave pública. Solo el usuario Ashoka podrá descifrarlo con su clave privada. Por lo tanto, si queremos cifrar un documento cifrado para que solo lo descifre el usuario Ahoska, lo cifraremos (con la opción `--encrypt`) con su clave pública:
 
-```bash
+```
 gpg --output fichero.txt.gpg --encrypt --recipient ahsoka@example.org fichero.txt 
 ```
 
 Cuando el usuario recibe el fichero cifrado, utilizará su clave privada (por lo tanto se nos pedirá la frase de paso) para descifrarlo:
 
-```bash
+```
 gpg --output fichero.txt --decrypt fichero.txt.gpg 
 gpg: encrypted with 3072-bit RSA key, ID FA920C331CD102E2, created 2023-10-16
       "Ahsoka Tano <ahsoka@example.org>"
@@ -152,14 +152,14 @@ Una **firma digital** certifica un documento y le añade una marca de tiempo. Si
 
 El parámetro `--sign` se usa para generar una firma digital. El documento que se desea firmar es la entrada, y la salida es el documento firmado. 
 
-```bash
+```
 gpg --output fichero.sig --sign fichero.pdf
 ```
 Si es necesario se pedirá la frase de paso de la clave privada. El documento se comprime antes de ser firmado, y la salida es en formato binario.
 
 El usuario al que enviamos el documento firmado necesita tener nuestra clave pública para poder verificar la firma. Con un documento con firma digital el usuario puede llevar a cabo dos acciones: comprobar sólo la firma o comprobar la firma y recuperar el documento original al mismo tiempo. Para comprobar la firma se usa la opción `--verify`. 
 
-```bash
+```
 gpg --verify fichero.sig
 gpg: Firmado el dom 22 oct 2023 11:27:51 CEST
 gpg:                usando RSA clave 67379D6620EAD8BF2DA7111760DAB70F3B298B8C
@@ -168,13 +168,13 @@ gpg: Firma correcta de "José Domingo Muñoz Rodríguez <josedom24@josedomingo.o
 
 Para verificar la firma y extraer el documento se usa la opción `--decrypt`. El documento con la firma es la entrada, y el documento original recuperado es la salida.
 
-```bash
+```
 gpg --output fichero_original.pdf --decrypt fichero.sig
 ```
 
 En algunos casos es necesario no comprimir el fichero firmado, y generar firmas ASCII, para ello usaremos la opción `--clearsign`:
 
-```bash
+```
 gpg --clearsign fichero.txt
 ```
 
@@ -182,7 +182,7 @@ Se genera el fichero `fichero.txt.asc` con el contenido del fichero y la firma d
 
 Si el receptor ya tiene el documento original, sólo mandamos la firma digital. Generamos la firma con la opción `--detach-sign` de gpg.
 
-```bash
+```
 gpg --output fichero.sig --detach-sig fichero.pdf
 ```
 
@@ -203,7 +203,7 @@ En este caso, se verifica la huella digital (el hash de la clave pública), se c
 
 En nuestro ejemplo hemos importado la clave pública de Ahsoka Tano, tendríamos que calcular la huella digital de la clave, ejecutando el subcomando `fpr` al editar la clave:
 
-```bash
+```
 gpg --edit-key ahsoka@example.org
 gpg (GnuPG) 2.2.40; Copyright (C) 2022 g10 Code GmbH
 This is free software: you are free to change and redistribute it.
@@ -226,7 +226,7 @@ Ahora tendría que verificar la huella digital con el propietario de la clave, e
 
 Después de esta comprobación, ya podríamos realizar la firma, con el subcomando `--sign` (como haremos uso de nuestra clave privada, se nos pedirá la frase de paso):
 
-```bash
+```
 gpg> sign
 
 pub  rsa3072/E0EE582D3C903041
@@ -261,7 +261,7 @@ Hay que introducir un nuevo concepto **confianza en en el propietario** (**trust
 
 En la práctica la confianza es algo subjetivo. Por ejemplo, la clave de Ahoska Tano es válida para mi, ya que la he firmado, pero puedo desconfiar de otras claves que hayan sido validadas por la firma de Ahsoka Tano. En este caso, puede que yo no acepte las claves de Anakin Skywalker y de Obi-Wan Kenobi como válidas sólo porque hayan sido firmadas por Ahsoka Tano. Si volvemos a editar la clave de Ahsoka:
 
-```bash
+```
 gpg --edit-key ahsoka@example.org 
 gpg (GnuPG) 2.2.40; Copyright (C) 2022 g10 Code GmbH
 This is free software: you are free to change and redistribute it.
@@ -280,7 +280,7 @@ gpg>
 ```
 Vemos como la confianza en el propietario es desconocida (**unknown**) y sin embargo la confianza de que la clave es de Ahsoka Tano es total (**full**) ya que la he firmado anteriormente. El nivel de confianza en una clave es algo que sólo nosotros podemos asignar a la clave, y se considera información privada. El nivel de confianza no se exporta con la clave, de hecho no se almacena en los anillos de claves sino en una base de datos aparte. El editor de claves nos permite ajustar nuestra confianza en el propietario de una clave, para ello usamos el subcomando `trust`:
 
-```bash
+```
 gpg> trust
 pub  rsa3072/E0EE582D3C903041
      created: 2023-10-22  expires: 2025-10-21  usage: SC  
@@ -335,7 +335,7 @@ Si yo confio totalmente en Ahoska Tano:
 * La clave de Obi-Wan Kenobi también es válida por el anillo de conianza ya que **ha sido firmada por una clave de plena confianza**.
 * La clave de Anakin Skywalker no es válida, realmente su validez no esta definidad.
 
-```bash
+```
 gpg --list-keys
 /home/vagrant/.gnupg/pubring.kbx
 --------------------------------
@@ -354,7 +354,7 @@ Sin embargo, si cambio el nivel de confianza de Ahsoka Tano a marginal:
 *  Comprobamos que ahora la validez de la clave de Obi-Wan será marginal.
 * Y la clave de Anakin Skywalker es desconocida.
 
-```bash
+```
 gpg --list-keys
 /home/vagrant/.gnupg/pubring.kbx
 --------------------------------
