@@ -1,0 +1,12 @@
+_id: 1e8a0460-b629-11ee-9106-cb0a945ab720
+message: >-
+  Hola José Domingo Muñoz, muy interesante el articulo, pero me ha generado una
+  duda que estoy intentando realizar, la cual es cargar una imagen que se
+  encuentre de manera local en mi maquina. Parece que siempre intento cargar la
+  imagen OpenShift por defecto busca la imagen en DockerHub. Tendras alguna idea
+  de como subir una imagen local? o una imagen privada en DockerHub
+name: Fabrizio Fuentes
+email: 7b365c529a29bf30734c5426c986ec70
+url: ''
+hidden: ''
+date: '2024-01-18T17:43:42.384Z'
