@@ -78,6 +78,7 @@ Para solucionar este problema debemos crear el fichero `/etc/docker/daemon.json`
 Y reiniciamos el demonio de docker:
 
 ```
+# systemctl daemon-reload
 # systemctl restart docker
 ```
 
