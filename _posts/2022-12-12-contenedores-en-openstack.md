@@ -101,7 +101,7 @@ $ docker run -it --rm --network mi_red alpine ip a
 ...
 ```
 
-Si utilizamos `docker-compose` para crear la red, tendríamos que configurar la mtu, de esta forma en el fichero `docker-compose.yml`:
+Si utilizamos `docker-compose` para crear la red, tendríamos que configurar la mtu, de esta forma en el fichero `docker-compose.yaml`:
 
 ```
 ...
