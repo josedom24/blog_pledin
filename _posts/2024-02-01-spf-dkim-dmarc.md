@@ -10,7 +10,7 @@ En el día de hoy, como ya anunciaron hace unas semanas, Google y Yahoo intensif
 
 De tal forma, que estas dos compañías (presumiblemente el resto se irán sumando a estas nuevas políticas), exigirán que todos los correos cumplan con los estándares SPF, DKIM y DMARC. **SPF** autoriza al servidor que envía tus correos, **DKIM** garantiza la integridad del mensaje y **DMARC** indica al receptor qué hacer si alguno de los anteriores no coincide (por ejemplo, rechazarlo o enviarlo a carpeta de spam).
 
-En este artículo, voy a hacer una introducción de cada uno de estos protocolos y cómo loo podemos configurar para asegurar que los correos enviados por los servidores de correos que administramos *"lleguen a buen puerto"*.
+En este artículo, voy a hacer una introducción de cada uno de estos protocolos y cómo los podemos configurar para asegurar que los correos enviados por los servidores de correos que administramos *"lleguen a buen puerto"*.
 
 ## SPF
 
@@ -146,6 +146,9 @@ dig txt _dmarc.josedomingo.org
 ...
 _dmarc.josedomingo.org. 0	IN	TXT	"v=DMARC1; p=quarantine; adkim=r; aspf=r;"
 ```
+Si lo comprobamos con esdta [herramienta](https://mxtoolbox.com/dmarc.aspx):
+
+![dmarc]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/02/dmarc.png){: .align-center }
 
 ## Conclusiones
 
