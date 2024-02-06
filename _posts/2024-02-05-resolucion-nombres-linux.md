@@ -11,7 +11,7 @@ Los diferentes servicios que nos ofrecen la posibilidad de resolver nombres de d
 
 ## Conceptos relacionados con la la resolución de nombres de dominio
 
-Antes de comenzar a estudiar con dettale los distintos mecanismos de resolución, vamos a repasar algunos conceptos que serán necesarios:
+Antes de comenzar a estudiar con detalle los distintos mecanismos de resolución, vamos a repasar algunos conceptos que serán necesarios:
 
 * Servidor DNS: Ofrece un servicio de resolución de nombres de dominio, entre otras cosas. Los nombres de dominio siguen el **sistema de nombres de dominio (Domain Name System o DNS, por sus siglas en inglés)**​, que es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados a redes IP como Internet o una red privada. Los servidores DNs se pueden consultar, por ejemplo para obtener la dirección IP a partir de un determinado nombre de host o nombre de dominio. Tradicionalmente en los sistemas GNU/Linux el fichero donde se configura el o los servidores DNS que se utilizarán para resolver los nombres es `/etc/resolv.conf`.
 * Resolución estática: Es un sistema de resolución de nombres de dominios a direcciones IP, que está configurado de manera estática en un ordenador. en los sistemas GNU/Linux se utiliza el fichero `/etc/hosts` para guardar la correspondencia entre nombre y dirección.
@@ -43,7 +43,7 @@ Y realizamos un ping a ese nombre, se consultará en primer lugar la resolución
 
 ```
 ping www.example.org
-PING www.example.org (192.168.121.180) 56(84) bytes of data.```
+PING www.example.org (192.168.121.180) 56(84) bytes of data.
 ```
 
 Sin embargo si borramos esa línea del fichero `/etc/hosts`, la resolución estática no funcionará (no hemos encontrado el nombre) y se realizará una consulta al servidor DNS que tengamos configurado en `/etc/resolv.conf`:
