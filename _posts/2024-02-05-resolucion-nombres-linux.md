@@ -13,14 +13,14 @@ Los diferentes servicios que nos ofrecen la posibilidad de resolver nombres de d
 
 Antes de comenzar a estudiar con detalle los distintos mecanismos de resolución, vamos a repasar algunos conceptos que serán necesarios:
 
-* Servidor DNS: Ofrece un servicio de resolución de nombres de dominio, entre otras cosas. Los nombres de dominio siguen el **sistema de nombres de dominio (Domain Name System o DNS, por sus siglas en inglés)**​, que es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados a redes IP como Internet o una red privada. Los servidores DNs se pueden consultar, por ejemplo para obtener la dirección IP a partir de un determinado nombre de host o nombre de dominio. Tradicionalmente en los sistemas GNU/Linux el fichero donde se configura el o los servidores DNS que se utilizarán para resolver los nombres es `/etc/resolv.conf`.
-* Resolución estática: Es un sistema de resolución de nombres de dominios a direcciones IP, que está configurado de manera estática en un ordenador. en los sistemas GNU/Linux se utiliza el fichero `/etc/hosts` para guardar la correspondencia entre nombre y dirección.
-* NSS: El **Name Service Switch** o **NSS** es una biblioteca estándar de C que en sistemas GNU/Linux ofrece distintas funciones que los programas pueden utilizar para consultar distintas bases de datos del sistemas. En concreto con este sistema se ordena las distintas fuentes para consultar las distintas bases de datos, por ejemplo de usuarios, contraseñas, nombres de hosts,... En este artículo la base de datos que nos interesa corresponde a los nombres de los hosts. Esta base de datos se llama `hosts` y como veremos en el fichero `/etc/nsswitch.conf` se configura el orden de consulta que se realizan para resolver el nombre de un host a su dirección IP.
+* **Servidor DNS**: Ofrece un servicio de resolución de nombres de dominio, entre otras cosas. Los nombres de dominio siguen el **sistema de nombres de dominio (Domain Name System o DNS, por sus siglas en inglés)**​, que es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados a redes IP como Internet o una red privada. Los servidores DNS se pueden consultar, por ejemplo para obtener la dirección IP a partir de un determinado nombre de host o nombre de dominio. Tradicionalmente en los sistemas GNU/Linux el fichero donde se configura el o los servidores DNS que se utilizarán para resolver los nombres es `/etc/resolv.conf`.
+* **Resolución estática**: Es un sistema de resolución de nombres de dominios a direcciones IP, que está configurado de manera estática en un ordenador. En los sistemas GNU/Linux se utiliza el fichero `/etc/hosts` para guardar la correspondencia entre nombre y dirección.
+* **NSS**: El **Name Service Switch** o **NSS** es una biblioteca estándar de C que en sistemas GNU/Linux ofrece distintas funciones que los programas pueden utilizar para consultar distintas bases de datos del sistema. En concreto con este sistema se ordena las distintas fuentes para consultar las distintas bases de datos, por ejemplo de usuarios, contraseñas, nombres de hosts,... En este artículo la base de datos que nos interesa corresponde a los nombres de los hosts. Esta base de datos se llama `hosts` y como veremos en el fichero `/etc/nsswitch.conf` se configura el orden de consulta que se realiza para resolver el nombre de un host a su dirección IP.
 
 
 ## El fichero nsswitch.conf
 
-Como hemos indicado este fichero nos permite configurar el orden de los distintos mecanismos que podemos utilizar para consultar distintas informaciones del sistema. En nuestro caso queremos configurar el orden de los mecanismos de resolución de nombres de dominio, por lo tanto nos tenemos que fijar en la base de datos `hosts`. Por ejemplo en este fichero podemos encontrar una línea como está:
+Como hemos indicado este fichero nos permite configurar el orden de los distintos mecanismos que podemos utilizar para consultar distintas informaciones del sistema. En nuestro caso nos interesa la configuración del orden de los mecanismos de resolución de nombres de dominio, por lo tanto nos tenemos que fijar en la base de datos `hosts`. Por ejemplo en este fichero podemos encontrar una línea como está:
 
 ```
 hosts:          files dns
@@ -31,7 +31,7 @@ Como observamos en la primera columna tenemos el nombre de la base de datos, en 
 * **files**: Este es el servicio de resolución estática, es decir nos permite resolver nombres de dominio consultando el fichero `/etc/hosts`.
 * **dns**: Este es el servicio de resolución de nombres de dominio que realiza una consulta a los servidores DNS configurados en el fichero `/etc/resolv.conf`.
 
-Por lo tanto con esta configuración, cualquier programa del sistema que necesite resolver un nombre de dominio a una dirección IP, primero usará la resolución estática y buscara el nombre en el fichero `/etc/hosts` y si no lo encuentro realizará una consulta a los servidores DNS configurados en el fichero `/etc/resolv.conf`.
+Por lo tanto con esta configuración, cualquier programa del sistema que necesite resolver un nombre de dominio a una dirección IP, primero usará la resolución estática y buscará el nombre en el fichero `/etc/hosts` y si no lo encuentra realizará una consulta a los servidores DNS configurados en el fichero `/etc/resolv.conf`.
 
 Por ejemplo, si en el fichero `/etc/hosts` tenemos la siguiente línea:
 
@@ -46,7 +46,7 @@ ping www.example.org
 PING www.example.org (192.168.121.180) 56(84) bytes of data.
 ```
 
-Sin embargo si borramos esa línea del fichero `/etc/hosts`, la resolución estática no funcionará (no hemos encontrado el nombre) y se realizará una consulta al servidor DNS que tengamos configurado en `/etc/resolv.conf`:
+Sin embargo, si borramos esa línea del fichero `/etc/hosts`, la resolución estática no funcionará (no hemos encontrado el nombre) y se realizará una consulta al servidor DNS que tengamos configurado en `/etc/resolv.conf`:
 
 ```
 ping www.example.org
@@ -57,10 +57,40 @@ Como podemos observar las direcciones IP resueltas son diferentes.
 
 ## Consultas de nombres de dominio utilizando NSS
 
-getent ahosts www.example.org
+Tenemos a nuestra disposición utilidades que nos permiten hacer peticiones a servidores DNS para realizar  resoluciones de nombres. Ejemplo de este tipo de herramienta son: `dig`, `nslookup` o `host`. Esta herramientas no consultan el fichero `/etc/nsswitch.conf` para determinar el orden de las consultan que tienen que realizar para la resolución de nombres. Estas herramientas sólo hacen consultas a un servidor DNS, no buscan nombres utilizando la resolución estática, no acceden al fichero `/etc/hosts`.
+
+
+**NSS** nos ofrece una herramienta para consultar las distintas informaciones, por ejemplo para consultar la resolución de nombres de dominio podemos usar el comando `getent ahosts`. Está herramienta si sigue el orden de mecanismos configurados en el fichero `/etc/nsswitch.conf`, en nuestro ejemplo, primero buscara el nombre usando resolución estática, y si no lo encuentra hará la consulta DNS. Por ejemplo, si tenemos la línea de resolución en el fichero `/etc/hosts` como anteriormente:
+
+```
+getent ahosts  www.example.org
+192.168.121.180   STREAM www.example.org
+...
+```
+
+Y si quitamos la línea, se realizará una consulta al servidor DNS:
+
+```
+getent ahosts  www.example.org
+93.184.216.34   STREAM www.example.org
+...
+```
 
 ## Multicast DNS
 
+El **mDNS (Multicast DNS)** es un protocolo utilizado en redes locales para resolver nombres de dominio sin necesidad de servidores DNS centralizados. En lugar de depender de servidores DNS, el mDNS utiliza mensajes de difusión para descubrir y resolver nombres de dispositivos en la red local.
+
+Con este sistema de resolución de nombres de dominio podemos referenciar cualquier equipo de nuestra red local, usando el dominio `.local`.
+
+El distribuciones GNU/Linux el servicio de mDNS lo ofrece normalmente un programa llamado `avahi`, que es un demonio encargado de la resolución de los nombres de las máquinas locales.
+
+Tenemos un nuevos mecanismo de resolución de nombres que podemos configurar en el orden de búsqueda establecido en el fichero `/etc/nsswitch.conf`, En este caso podríamos tener la siguiente configuración:
+
+```
+hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4
+```
+
+En esta 
 
 getent hosts www.example.org
 2606:2800:220:1:248:1893:25c8:1946 www.example.org
