@@ -18,6 +18,10 @@ Antes de comenzar a estudiar con detalle los distintos mecanismos de resolución
 * **NSS**: El **Name Service Switch** o **NSS** es una biblioteca estándar de C que en sistemas GNU/Linux ofrece distintas funciones que los programas pueden utilizar para consultar distintas bases de datos del sistema. En concreto con este sistema se ordena las distintas fuentes para consultar las distintas bases de datos, por ejemplo de usuarios, contraseñas, nombres de hosts,... En este artículo la base de datos que nos interesa corresponde a los nombres de los hosts. Esta base de datos se llama `hosts` y como veremos en el fichero `/etc/nsswitch.conf` se configura el orden de consulta que se realiza para resolver el nombre de un host a su dirección IP.
 
 
+## El fichero /etc/resolv.conf
+
+
+
 ## El fichero nsswitch.conf
 
 Como hemos indicado este fichero nos permite configurar el orden de los distintos mecanismos que podemos utilizar para consultar distintas informaciones del sistema. En nuestro caso nos interesa la configuración del orden de los mecanismos de resolución de nombres de dominio, por lo tanto nos tenemos que fijar en la base de datos `hosts`. Por ejemplo en este fichero podemos encontrar una línea como está:
@@ -152,3 +156,14 @@ nss-resolve is a plug-in module for the GNU Name Service Switch (NSS) functional
 https://medium.com/@gabber12/explained-domain-name-resolutions-c85cd1acff91
 https://nelsonslog.wordpress.com/2016/10/29/ubuntu-name-lookup-dns-vs-nss/
 https://wiki.archlinux.org/title/Domain_name_resolution
+
+
+
+
+
+
+
+
+# red
+
+https://unix.stackexchange.com/questions/475146/how-exactly-are-networkmanager-networkd-netplan-ifupdown2-and-iproute2-inter
