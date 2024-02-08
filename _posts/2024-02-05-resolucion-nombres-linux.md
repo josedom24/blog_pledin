@@ -167,3 +167,4 @@ https://wiki.archlinux.org/title/Domain_name_resolution
 # red
 
 https://unix.stackexchange.com/questions/475146/how-exactly-are-networkmanager-networkd-netplan-ifupdown2-and-iproute2-inter
+https://sio2sio2.github.io/doc-linux/02.conbas/09.admbasica/11.red.html
