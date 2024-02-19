@@ -1,5 +1,5 @@
 ---
-title: 'Resolución de nombres en sistemas Linux'
+title: 'Resolución de nombres de dominios en sistemas Linux'
 permalink: /2024/02/resolucion-nombres-linux/
 tags:
   - dns
@@ -13,14 +13,13 @@ Los diferentes servicios que nos ofrecen la posibilidad de resolver nombres de d
 
 Antes de comenzar a estudiar con detalle los distintos mecanismos de resolución, vamos a repasar algunos conceptos que serán necesarios:
 
-* **Servidor DNS**: Ofrece un servicio de resolución de nombres de dominio, entre otras cosas. Los nombres de dominio siguen el **sistema de nombres de dominio (Domain Name System o DNS, por sus siglas en inglés)**​, que es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados a redes IP como Internet o una red privada. Los servidores DNS se pueden consultar, por ejemplo para obtener la dirección IP a partir de un determinado nombre de host o nombre de dominio. Tradicionalmente en los sistemas GNU/Linux el fichero donde se configura el o los servidores DNS que se utilizarán para resolver los nombres es `/etc/resolv.conf`.
+* **Servidor DNS**: Ofrece un servicio de resolución de nombres de dominio, entre otras cosas. Los nombres de dominio siguen el **sistema de nombres de dominio (Domain Name System o DNS, por sus siglas en inglés)** ​, que es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados a redes IP como Internet o una red privada. Los servidores DNS se pueden consultar, por ejemplo para obtener la dirección IP a partir de un determinado nombre de host o nombre de dominio. Tradicionalmente en los sistemas GNU/Linux el fichero donde se configura el o los servidores DNS que se utilizarán para resolver los nombres es `/etc/resolv.conf`.
 * **Resolución estática**: Es un sistema de resolución de nombres de dominios a direcciones IP, que está configurado de manera estática en un ordenador. En los sistemas GNU/Linux se utiliza el fichero `/etc/hosts` para guardar la correspondencia entre nombre y dirección.
-* **NSS**: El **Name Service Switch** o **NSS** es una biblioteca estándar de C que en sistemas GNU/Linux ofrece distintas funciones que los programas pueden utilizar para consultar distintas bases de datos del sistema. En concreto con este sistema se ordena las distintas fuentes para consultar las distintas bases de datos, por ejemplo de usuarios, contraseñas, nombres de hosts,... En este artículo la base de datos que nos interesa corresponde a los nombres de los hosts. Esta base de datos se llama `hosts` y como veremos en el fichero `/etc/nsswitch.conf` se configura el orden de consulta que se realiza para resolver el nombre de un host a su dirección IP.
-
+* **NSS**: El **Name Service Switch** o **NSS** es una biblioteca estándar de C que en sistemas GNU/Linux ofrece distintas funciones que los programas pueden utilizar para consultar distintas bases de datos del sistema. En concreto con este sistema se ordena las distintas fuentes para consultar las distintas bases de datos, por ejemplo de usuarios, contraseñas, nombres de hosts,... En este artículo la base de datos que nos interesa corresponde a los nombres de los hosts. Esta base de datos se llama `hosts` y como veremos en el fichero `/etc/nsswitch.conf` se configura el orden de consulta que se realiza para resolver el nombre de un dominio a su dirección IP.
 
 ## El fichero /etc/resolv.conf
 
-Como hemos comentado, este archivo especifica los servidores DNS que el sistema utilizará para resolver nombres de dominio en direcciones IP. Los parámetros más importantes que podemos encontrar son:
+Como hemos comentado, este archivo especifica los servidores DNS que el sistema utilizará para resolver nombres de dominio a direcciones IP. Los parámetros más importantes que podemos encontrar son:
 
 * `nameserver`: Esta línea define los servidores DNS que el sistema utilizará para resolver nombres de dominio. Pueden haber múltiples líneas `nameserver`, una para cada servidor DNS. El orden es importante ya que se intentará resolver el nombre utilizando el primer servidor, si este no funciona se intentará con el siguiente y así consecutivamente.
 * `search`: Esta línea especifica el dominio de búsqueda para las consultas de resolución de nombres de dominio. Si intentas resolver un nombre de dominio que no está completamente cualificado (es decir, sin un sufijo de dominio), el sistema intentará agregar los dominios de búsqueda especificados aquí para completar el nombre antes de enviar la consulta al servidor.
@@ -51,7 +50,7 @@ Como hemos indicado este fichero nos permite configurar el orden de los distinto
 hosts:          files dns
 ```
 
-Como observamos en la primera columna tenemos el nombre de la base de datos, en nuestro ejemplo `hosts` que se refiere a la consulta de nombres de dominios. A continuación encontramos una o varias especificaciones de servicio (en este caso de servicios de resolución de nombres), por ejemplo, "files", "dns",...  El orden de los servicios en la línea determina el orden en que se consultarán dichos servicios, sucesivamente, hasta que se encuentre un resultado. Veamos los dos servicios que hemos puesto en el ejemplo:
+Como observamos en la primera columna tenemos el nombre de la base de datos, en nuestro ejemplo `hosts` que se refiere a la consulta de nombres de dominios. A continuación encontramos una o varias especificaciones de servicios (en este caso de servicios de resolución de nombres), por ejemplo, "files", "dns",...  El orden de los servicios en la línea determina el orden en que se consultarán dichos servicios, sucesivamente, hasta que se encuentre un resultado. Veamos los dos servicios que hemos puesto en el ejemplo:
 
 * **`files`**: Este es el servicio de resolución estática, es decir nos permite resolver nombres de dominio consultando el fichero `/etc/hosts`.
 * **`dns`**: Este es el servicio de resolución de nombres de dominio que realiza una consulta a los servidores DNS configurados en el fichero `/etc/resolv.conf`.
