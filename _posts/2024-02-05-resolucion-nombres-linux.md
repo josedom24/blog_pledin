@@ -7,15 +7,17 @@ tags:
   - Manuales
 ---
 
+![dns]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/02/dns.png){: .align-center }
+
 Los diferentes servicios que nos ofrecen la posibilidad de resolver nombres de dominio a direcciones IP dentro de un sistema operativo GNU/Linux han ido evolucionando a lo largo del tiempo. En este artículo quiero introducir la situación actual acerca de este tema, y presentar los distintos servicios involucrados en la resolución de nombres.
 
 ## Conceptos relacionados con la la resolución de nombres de dominio
 
-Antes de comenzar a estudiar con detalle los distintos mecanismos de resolución, vamos a repasar algunos conceptos que serán necesarios:
+Antes de comenzar a estudiar con detalle los distintos mecanismos de resolución, vamos a repasar algunos conceptos que nos serán necesarios:
 
-* **Servidor DNS**: Ofrece un servicio de resolución de nombres de dominio, entre otras cosas. Los nombres de dominio siguen el **sistema de nombres de dominio (Domain Name System o DNS, por sus siglas en inglés)** ​, que es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados a redes IP como Internet o una red privada. Los servidores DNS se pueden consultar, por ejemplo para obtener la dirección IP a partir de un determinado nombre de host o nombre de dominio. Tradicionalmente en los sistemas GNU/Linux el fichero donde se configura el o los servidores DNS que se utilizarán para resolver los nombres es `/etc/resolv.conf`.
+* **Servidor DNS**: Ofrece un servicio de resolución de nombres de dominio, entre otras cosas. Los nombres de dominio siguen el **sistema de nombres de dominio (Domain Name System o DNS**, por sus siglas en inglés) ​, que es un sistema de nomenclatura jerárquico descentralizado para dispositivos conectados a redes IP como Internet o una red privada. Los servidores DNS se pueden consultar, por ejemplo para obtener la dirección IP a partir de un determinado nombre de host o nombre de dominio. Tradicionalmente en los sistemas GNU/Linux el fichero donde se configura el o los servidores DNS que se utilizarán para resolver los nombres es `/etc/resolv.conf`.
 * **Resolución estática**: Es un sistema de resolución de nombres de dominios a direcciones IP, que está configurado de manera estática en un ordenador. En los sistemas GNU/Linux se utiliza el fichero `/etc/hosts` para guardar la correspondencia entre nombre y dirección.
-* **NSS**: El **Name Service Switch** o **NSS** es una biblioteca estándar de C que en sistemas GNU/Linux ofrece distintas funciones que los programas pueden utilizar para consultar distintas bases de datos del sistema. En concreto con este sistema se ordena las distintas fuentes para consultar las distintas bases de datos, por ejemplo de usuarios, contraseñas, nombres de hosts,... En este artículo la base de datos que nos interesa corresponde a los nombres de los hosts. Esta base de datos se llama `hosts` y como veremos en el fichero `/etc/nsswitch.conf` se configura el orden de consulta que se realiza para resolver el nombre de un dominio a su dirección IP.
+* **NSS**: El **Name Service Switch** o **NSS** es una biblioteca estándar de C que en sistemas GNU/Linux ofrece distintas funciones que los programas pueden utilizar para consultar distintas bases de datos del sistema. En concreto con este sistema se ordena las distintas fuentes para consultar las distintas bases de datos, por ejemplo de usuarios, contraseñas, nombres de hosts,... En este artículo la base de datos que nos interesa corresponde a los nombres de dominios o nombres de hosts. Esta base de datos se llama `hosts` y como veremos en el fichero `/etc/nsswitch.conf` se configura el orden de consulta que se realiza para resolver el nombre de un dominio a su dirección IP.
 
 ## El fichero /etc/resolv.conf
 
@@ -36,11 +38,11 @@ search example.com mycompany.com
 options timeout:2 attempts:3
 ```
 
-Estos parámetros se suelen recibir de forma dinámica por medio de un servidor DHCP, aunque también lo podemos indicar de forma estática en la configuración de red del sistema. Normalmente tenemos alguna demonio instalado en el sistema, como [`resolvconf`](https://manpages.ubuntu.com/manpages/trusty/man8/resolvconf.8.html) que es el encargado de generar el fichero `/etc/resolv.conf` a partir de la configuración de red que hayamos especificados.
+Estos parámetros se suelen recibir de forma dinámica por medio de un servidor DHCP, aunque también lo podemos indicar de forma estática en la configuración de red del sistema. Normalmente tenemos algún demonio instalado en el sistema, como [`resolvconf`](https://manpages.ubuntu.com/manpages/trusty/man8/resolvconf.8.html) que es el encargado de generar el fichero `/etc/resolv.conf` a partir de la configuración de red que hayamos especificado.
 
-En este caso no demos cambiar directamente el fichero `/etc/resolv.conf` porque el programa `resolvconf` puede reescribirlo en algunas circunstancias, por ejemplo cuando se renueva la concesión del servidor DHCP. 
+En este caso no debemos cambiar directamente el fichero `/etc/resolv.conf` porque el programa `resolvconf` puede reescribirlo en algunas circunstancias, por ejemplo cuando se renueva la concesión del servidor DHCP. 
 
-En este caso si queremos añadir contenido de forma estática al fichero `/etc/resolv.conf` es necesario escribir el contenido en el fichero `/etc/resolvconf/resolv.conf.d/head` si lo que queremos añadir se coloca antes de lo generado por `resolvconf`, o en el fichero `/etc/resolvconf/resolv.conf.d/tail` para añadirlo al final del fichero.
+Si queremos añadir contenido de forma estática al fichero `/etc/resolv.conf` es necesario escribir el contenido en el fichero `/etc/resolvconf/resolv.conf.d/head` si lo que queremos añadir se coloca antes de lo generado por `resolvconf`, o en el fichero `/etc/resolvconf/resolv.conf.d/tail` para añadirlo al final del fichero.
 
 ## El fichero nsswitch.conf
 
@@ -83,9 +85,9 @@ Como podemos observar las direcciones IP resueltas son diferentes.
 
 ## Consultas de nombres de dominio utilizando NSS
 
-Tenemos a nuestra disposición utilidades que nos permiten hacer peticiones a servidores DNS para realizar  resoluciones de nombres. Ejemplo de este tipo de herramienta son: `dig`, `nslookup` o `host`. Esta herramientas no consultan el fichero `/etc/nsswitch.conf` para determinar el orden de las consultan que tienen que realizar para la resolución de nombres. Estas herramientas sólo hacen consultas a un servidor DNS, no buscan nombres utilizando la resolución estática, no acceden al fichero `/etc/hosts`.
+Tenemos a nuestra disposición utilidades que nos permiten hacer peticiones a servidores DNS para realizar  resoluciones de nombres. Ejemplo de este tipo de herramienta son: `dig`, `nslookup` o `host`. Estas herramientas no consultan el fichero `/etc/nsswitch.conf` para determinar el orden de las consultas que tienen que realizar para la resolución de nombres. Estas herramientas sólo hacen consultas a un servidor DNS, no buscan nombres utilizando la resolución estática, no acceden al fichero `/etc/hosts`.
 
-**NSS** nos ofrece una herramienta para consultar las distintas informaciones, por ejemplo para consultar la resolución de nombres de dominio podemos usar el comando `getent ahosts`. Está herramienta si sigue el orden de mecanismos configurados en el fichero `/etc/nsswitch.conf`, en nuestro ejemplo, primero buscara el nombre usando resolución estática, y si no lo encuentra hará la consulta DNS. Por ejemplo, si tenemos la línea de resolución en el fichero `/etc/hosts` como anteriormente:
+**NSS** nos ofrece una herramienta para consultar las distintas informaciones, por ejemplo para consultar la resolución de nombres de dominio podemos usar el comando `getent ahosts`. Está herramienta sí sigue el orden de mecanismos configurados en el fichero `/etc/nsswitch.conf`, en nuestro ejemplo, primero buscara el nombre usando resolución estática, y si no lo encuentra hará la consulta DNS. Por ejemplo, si tenemos la línea de resolución en el fichero `/etc/hosts` como anteriormente:
 
 ```
 getent ahosts  www.example.org
@@ -107,7 +109,7 @@ El **mDNS (Multicast DNS)** es un protocolo utilizado en redes locales para reso
 
 Con este sistema de resolución de nombres de dominio podemos referenciar cualquier equipo de nuestra red local, usando el dominio `.local`.
 
-El distribuciones GNU/Linux el servicio de mDNS lo ofrece normalmente un programa llamado `avahi`, que es un demonio encargado de la resolución de los nombres de las máquinas locales.
+En distribuciones GNU/Linux el servicio de mDNS lo ofrece normalmente un programa llamado `avahi`, que es un demonio encargado de la resolución de los nombres de las máquinas locales.
 
 Tenemos un nuevo mecanismo de resolución de nombres que podemos configurar en el orden de búsqueda establecido en el fichero `/etc/nsswitch.conf`, en este caso podríamos tener la siguiente configuración:
 
@@ -119,7 +121,7 @@ Con esta configuración, el orden que se sigue para la resolución de nombres es
 
 * **`files`**: Como ya hemos comentado, resolución estática.
 * **`mdns4_minimal [NOTFOUND=return]`**: Resolución por mDNS. `mdns4_minimal` busca servicios mínimos, lo que significa que solo busca los servicios más básicos y esenciales. Por lo general, mdns4_minimal se utiliza en entornos donde se espera un bajo consumo de recursos o donde la red es simple y no tiene una gran cantidad de servicios anunciados. La opción `[NOTFOUND=return]` indica que si el nombre no se puede resolver, que no se siga buscando con las opciones posteriores.
-* **`dns`**: Ya hemos indicado que se trata de una consuta a un servidor DNS.
+* **`dns`**: Ya hemos indicado que se trata de una consulta a un servidor DNS.
 * **`mdns4`**: Resolución por mDNS, `mdns4` buscará todos los servicios disponibles en la red, lo que podría significar un mayor consumo de recursos, especialmente en redes grandes o complejas con muchos servicios anunciados.
 
 En resumen, `mdns4_minimal` es una opción más ligera que busca solo servicios mínimos, mientras que `mdns4` busca todos los servicios anunciados a través de mDNS. La elección entre ellas dependerá de las necesidades y características específicas del entorno de red en cuestión.
@@ -142,7 +144,7 @@ PING stark.local (192.168.18.3) 56(84) bytes of data.
 
 ## systemd-resolved
 
-[*systemd-resolved*](https://www.freedesktop.org/wiki/Software/systemd/resolved/) es un servicio de systemd (Español) que proporciona resolución de nombres de red a aplicaciones locales. Este servicio ofrece resolución de nombres a través de 3 vías:
+[*systemd-resolved*](https://www.freedesktop.org/wiki/Software/systemd/resolved/) es un servicio de systemd que proporciona resolución de nombres de dominio a aplicaciones locales. Este servicio ofrece resolución de nombres a través de tres vías:
 
 * Una interfaz D-Bus. [D-Bus](https://es.wikipedia.org/wiki/D-Bus) es un sistema de comunicación entre procesos. Presumiblemente las aplicaciones gráficas utilizarán está vía para solicitar la resolución de nombres.
 * El servicio NSS. *systemd-resolved* nos ofrece tres plugin para el sistema NSS:
@@ -153,7 +155,7 @@ PING stark.local (192.168.18.3) 56(84) bytes of data.
 
 *systemd-resolved* proporciona servicios de resolución para **sistema de nombres de dominio (DNS)** (incluyendo **DNSSEC** y **DNS mediante TLS**), **multicast DNS (mDNS)** y **resolución de nombres de multidifusión de enlace local (LLMNR)** (servicio similar a mDNS). 
 
-La resolución se puede configurar editando `/etc/systemd/resolved.conf` o colocando archivos con extensión `.conf` en `/etc/systemd/resolved.conf.d/`. Para utilizar *systemd-resolved* inicie y active el servicio `systemd-resolved.service`. 
+La resolución se puede configurar editando `/etc/systemd/resolved.conf` o colocando archivos con extensión `.conf` en `/etc/systemd/resolved.conf.d/`. Para utilizar *systemd-resolved* debemos iniciar el servicio `systemd-resolved.service`. 
 
 ### Configuración NSS con systemd-resolved
 
@@ -167,9 +169,9 @@ Como podemos ver en la [documentación](https://www.freedesktop.org/software/sys
 
 ### Configuración DNS con systemd-resolved
 
-*systemd-resolved* tiene varios modos diferentes para manejar la resolución de nombres de dominio (para más información puede ver la [documentación](https://man.archlinux.org/man/systemd-resolved.8#/ETC/RESOLV.CONF) de `systemd-resolved). En este artículo vamos a señalar los modos más interesantes:
+*systemd-resolved* tiene varios modos diferentes para manejar la resolución de nombres de dominio (para más información puede ver la [documentación](https://man.archlinux.org/man/systemd-resolved.8#/ETC/RESOLV.CONF) de *systemd-resolved*). En este artículo vamos a señalar los modos más interesantes:
 
-* **Utilizar el archivo "stub" de DNS de systemd**: el archivo "stub" de DNS de systemd `/run/systemd/resolve/stub-resolv.conf` la configuración del servido DNS auxiliar forward caché `127.0.0.53` como el único servidor DNS y una lista de dominios de búsqueda. Este es el modo de operación recomendado. Normalmente el fichero `/etc/resolv.conf` es un enlace simbólico a este fichero. Este servidor DNS es forward, es decir, reenvía las consultas DNS a los servidores que hayamos configurado en la configurado de red, por ejemplo los servidores DNS recibidos por un servidor DHCP. Esta es método que encontramos en la configuración de la distribución Linux Ubuntu 22.04.
+* **Utilizar el archivo "stub" de DNS de systemd**: En el archivo "stub" de DNS de systemd `/run/systemd/resolve/stub-resolv.conf` nos encontramos la configuración del servido DNS auxiliar forward caché `127.0.0.53` como el único servidor DNS y una lista de dominios de búsqueda. Este es el modo de operación recomendado. Normalmente el fichero `/etc/resolv.conf` es un enlace simbólico a este fichero. Este servidor DNS es forward, es decir, reenvía las consultas DNS a los servidores que hayamos configurado en la configurado de red, por ejemplo los servidores DNS recibidos por un servidor DHCP. Esta es método que encontramos en la configuración de la distribución Linux Ubuntu 22.04.
 * **Utilizar los DNS configurados en el sistema**: En este modo el fichero `/etc/resolv.conf` es un enlace simbólico al fichero `/run/systemd/resolve/resolv.conf` donde `systemd-resolved` configura los servidores DNS que hemos indicados en la configuración de la red. Este es el método escogido en la configuración de la distribución Linux Debian 12.
 * **Preservar `resolv.conf`**: Este modo conserva `/etc/resolv.conf` y *systemd-resolved* es simplemente un cliente de aquel archivo. Este modo es menos disruptivo ya que `/etc/resolv.conf` puede continuar siendo administrado por otros paquetes.
 
@@ -218,7 +220,7 @@ www.josedomingo.org: 37.187.119.60             -- link: ens3
 
 #### Ubuntu 22.04
 
-En primer lugar vamos a ver la configuración de *systemd-resolved* en Ubuntu 22.04. Como hemos comentado anteriormente Ubuntu 22.04 usa ela configuración del "stub" DNS, es decir del DNS auxiliar forward caché. Veamos el fichero `/etc/resolv.conf`:
+En primer lugar vamos a ver la configuración de *systemd-resolved* en Ubuntu 22.04. Como hemos comentado anteriormente Ubuntu 22.04 usa la configuración del "stub" DNS, es decir, utiliza la configuración de un servidor DNS auxiliar forward caché. Veamos el fichero `/etc/resolv.conf`:
 
 ```
 ls -l /etc/resolv.conf 
@@ -286,7 +288,7 @@ nameserver 1.1.1.1
 nameserver 172.22.0.1
 ```
 
-En este caso el servidor DNs global es más preferente que el configurado específicamente para la interfaz `ens3`. 
+En este caso el servidor DNS global es más preferente que el configurado específicamente para la interfaz `ens3`. 
 
 Por último indicar que si queremos configurar nuestro equipo Debian con el servidor "stub" DNs como el de Ubuntu 22.04, solo tenemos que cambiar el enlace simbólico al que apunta `/etc/resolv.conf`:
 
