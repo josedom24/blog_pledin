@@ -44,6 +44,8 @@ En este caso no debemos cambiar directamente el fichero `/etc/resolv.conf` porqu
 
 Si queremos añadir contenido de forma estática al fichero `/etc/resolv.conf` es necesario escribir el contenido en el fichero `/etc/resolvconf/resolv.conf.d/head` si lo que queremos añadir se coloca antes de lo generado por `resolvconf`, o en el fichero `/etc/resolvconf/resolv.conf.d/tail` para añadirlo al final del fichero.
 
+<!--more-->
+
 ## El fichero nsswitch.conf
 
 Como hemos indicado este fichero nos permite configurar el orden de los distintos mecanismos que podemos utilizar para consultar distintas informaciones del sistema. En nuestro caso nos interesa la configuración del orden de los mecanismos de resolución de nombres de dominio, por lo tanto nos tenemos que fijar en la base de datos `hosts`. Por ejemplo en este fichero podemos encontrar una línea como está:
@@ -80,8 +82,6 @@ PING www.example.org (93.184.216.34) 56(84) bytes of data.
 ```
 
 Como podemos observar las direcciones IP resueltas son diferentes.
-
-<!--more-->
 
 ## Consultas de nombres de dominio utilizando NSS
 
