@@ -295,27 +295,7 @@ Por último indicar que si queremos configurar nuestro equipo Debian con el serv
 ```
 ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
-
-
-
-
-
 ## Conclusiones
 
-https://medium.com/@gabber12/explained-domain-name-resolutions-c85cd1acff91
-https://nelsonslog.wordpress.com/2016/10/29/ubuntu-name-lookup-dns-vs-nss/
-https://wiki.archlinux.org/title/Domain_name_resolution
+En este artículo he pretendido dos cosas: recordar conceptos más tradicionales sobre la resolución de nombres de dominios e introducir los nuevos mecanismos de resolución, como *systemd-resolved* y las implacaciones que tiene su uso. Lo presentado en este artículo simplemte es una introducción a estos conceptos y han quedado fuera muchos otros aspectos de la configuración de los distintos mecanismos. Si el lector comprueba que he introducido algún error o los datos ofrecidos no son exactos, por favor escríbeme para cambiar la información del artículo. Espero, como siempre, que sea de utilidad.
 
-
-
-
-
-
-
-
-# red
-
-https://unix.stackexchange.com/questions/475146/how-exactly-are-networkmanager-networkd-netplan-ifupdown2-and-iproute2-inter
-https://sio2sio2.github.io/doc-linux/02.conbas/09.admbasica/11.red.html
-https://unix.stackexchange.com/questions/239920/how-to-set-the-fully-qualified-hostname-on-centos-7-0
-https://unix.stackexchange.com/questions/186859/understand-hostname-and-etc-hosts
