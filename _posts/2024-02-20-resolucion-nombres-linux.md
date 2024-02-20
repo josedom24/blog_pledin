@@ -290,7 +290,7 @@ nameserver 172.22.0.1
 
 En este caso el servidor DNS global es más preferente que el configurado específicamente para la interfaz `ens3`. 
 
-Por último indicar que si queremos configurar nuestro equipo Debian con el servidor "stub" DNs como el de Ubuntu 22.04, solo tenemos que cambiar el enlace simbólico al que apunta `/etc/resolv.conf`:
+Por último indicar que si queremos configurar nuestro equipo Debian con el servidor "stub" DNS como el de Ubuntu 22.04, solo tenemos que cambiar el enlace simbólico al que apunta `/etc/resolv.conf`:
 
 ```
 ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
