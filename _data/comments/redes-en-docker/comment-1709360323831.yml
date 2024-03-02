@@ -1,0 +1,11 @@
+_id: b810be80-d85c-11ee-9106-cb0a945ab720
+message: >-
+  Hola José, tengo un apliacion java corriendo dentro docker ejemplo en un
+  server 0.59, la aplicacion trata de lanzar una peticion http get a otra
+  maquina 0.60 donde hay un jenkins, cabe mencionar que desde el server 0.59 si
+  se puede hacer curl y el servicio responde pero dentro del contenedor no.
+name: juan
+email: f5d26936e53482c2f7f1cf645825b170
+url: ''
+hidden: ''
+date: '2024-03-02T06:18:43.822Z'
