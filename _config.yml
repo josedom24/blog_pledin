@@ -85,6 +85,10 @@ author:
 #  twitter : "pledin_jd"
   location: "Utrera, Sevilla,ES" # null (default), "absolute or relative url to link to author home"
 
+collections:
+  microblog:
+    output: true
+    permalink: microblog/:year/:month/:title/
 
 defaults:
   # _posts
