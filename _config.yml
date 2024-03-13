@@ -106,6 +106,18 @@ defaults:
       excerpt_separator: <!--more-->
       sidebar:
         nav: "blog"
+  - scope:
+      path: ""
+      type: microblog
+    values:
+      layout: single
+      classes: wide
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "blog"
 
 
 
