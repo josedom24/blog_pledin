@@ -1,6 +1,6 @@
 ---
 title: Microblog
-layout: posts
+layout: compress
 permalink: /microblog/
 collection: microblog
 entries_layout: grid
