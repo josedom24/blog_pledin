@@ -19,7 +19,7 @@ layout: archive
   </section>
 {% endfor %}
 -->
-{% for post in site.posts limit:3 %}
+{% for post in site.microblog limit:3 %}
 <div class="page__inner-wrap-principal">
         <header>
           {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{>
