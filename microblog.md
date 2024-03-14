@@ -46,7 +46,7 @@ function loadNextPosts() {
                             <div class="content">{{ post.content}}</div>
                             <div class="tags">
                               {% for tag in post.tags %}
-                                  <a href="/tags/{{ tag | slugify }}" class="tag">{{ tag }}</a>
+                                  <a href="/pledin/microblog//tags/{{ tag | slugify }}" class="tag">{{ tag }}</a>
                               {% endfor %}
                             </div>
                             <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
