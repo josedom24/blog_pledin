@@ -137,6 +137,19 @@ feature_row4:
               <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
             </ul>
         </div>
+        <div class="archive__item-body">
+          <h2 class="archive__item-title">Microblog</h2>
+            <ul>
+              {% for post in site.microblog limit: 6%}
+                <li>
+                  <a href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                  </a>
+                  <small>({{ post.date | date: "%d-%m-%Y" }})</small>
+                </li>
+              {% endfor %}
+            </ul>
+        </div>   
 </div>
 
 <!--
