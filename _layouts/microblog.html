@@ -46,10 +46,6 @@ function loadNextPosts() {
                 loadedPosts++;
                 lastLoadedIndex++;
             }
-
-            if (loadedPosts >= batchSize) {
-                break; // Salir del bucle una vez que se hayan cargado los siguientes 10 posts
-            }
         {% endfor %}
     }, 500); // Simulación de tiempo de carga
 }
