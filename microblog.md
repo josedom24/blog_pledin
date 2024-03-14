@@ -25,13 +25,7 @@ author_profile: true
     </ul>
 </div>
 
-<div id="list-container">
-  <ul id="infinite-list">
-    {% for post in site.microblog %}
-      <li>{{ post.content }}</li>
-    {% endfor %}
-  </ul>
-</div>
+
 
 <script>
   // Número de elementos para agregar en cada carga
