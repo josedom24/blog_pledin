@@ -29,7 +29,7 @@ author_profile: true
 
 <script>
   // Número de elementos para agregar en cada carga
-  const batchSize = 3;
+  const batchSize = 10;
 
   // Función para agregar elementos a la lista
   function addItems() {
