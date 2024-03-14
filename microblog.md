@@ -1,8 +1,10 @@
 ---
 title: Microblog
-layout: default
-permalink: /microblog/
+layout: posts
 classes: wide
+sidebar:
+  nav: "blog"
+author_profile: true
 ---
 <div id="list-container">
   <ul id="infinite-list">
