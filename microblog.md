@@ -16,7 +16,6 @@ author_profile: true
                 <img src="{{post.photo}}" alt="Avatar">
             </div>
             <div class="tweet-content">
-                <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
                 <div class="author">{{post.author}}</div>
                 <div class="content">{{ post.content }}</div>
                 <div class="date">{{ post.date| date: "%d-%m-%Y" }}</div>
@@ -31,7 +30,7 @@ author_profile: true
 
 <script>
   // Número de elementos para agregar en cada carga
-  const batchSize = 3;
+  const batchSize = 10;
 
   // Función para agregar elementos a la lista
   function addItems() {
