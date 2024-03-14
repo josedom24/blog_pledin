@@ -8,13 +8,15 @@ author_profile: true
 ---
 <div id="list-container">
     <ul id="infinite-list">
-        {% for post in site.microblog %}
+      {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
+        {% for post in sorted_posts %}
     
         <li class="tweet">
             <div class="author-image">
                 <img src="{{post.photo}}" alt="Avatar">
             </div>
             <div class="tweet-content">
+                <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
                 <div class="author">{{post.author}}</div>
                 <div class="content">{{ post.content }}</div>
                 <div class="date">{{ post.date| date: "%d-%m-%Y" }}</div>
