@@ -113,7 +113,7 @@ defaults:
       layout: single
       classes: wide
       read_time: false
-      author_profile: false
+      author_profile: true
       share: false
       comments: false
       photo: 'https://www.josedomingo.org/pledin/assets/images/bio-photo.jpg'
