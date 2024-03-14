@@ -10,53 +10,45 @@ layout: default
 
 
   <script>
-// Variable para controlar si se está cargando más contenido
-let isLoading = false;
-
 function addItems() {
     const list = document.getElementById('infinite-list');
 
-    // Verificar si ya se está cargando contenido
-    if (!isLoading) {
-        isLoading = true; // Marcar que se está cargando
+    // Simulando carga de datos
+    setTimeout(() => {
+        // Obtener el último índice de la lista de posts
+        const batchSize = 3; // Número de elementos para agregar en cada carga
 
-        // Simulando carga de datos
-        setTimeout(() => {
-            // Obtener el último índice de la lista de posts
-            const batchSize = 3; // Número de elementos para agregar en cada carga
-
-            {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
-            {% for post in sorted_posts limit: batchSize %}
-                let listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <div class="tweet">
-                        <div class="author-image">
-                            <img src="{{ post.photo }}" alt="Avatar">
-                        </div>
-                        <div class="tweet-content">
-                            <div class="author">{{ post.author }}</div>
-                            <div class="content">{{ post.content }}</div>
-                            <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
-                        </div>
-                    </div>`;
-                list.appendChild(listItem);
-            {% endfor %}
-
-            isLoading = false; // Marcar que la carga ha finalizado
-        }, 500); // Simulación de tiempo de carga
-    }
+        {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
+        {% for post in sorted_posts limit: batchSize %}
+            // Crear un identificador único para cada elemento
+            
+            listItem = document.createElement('li');
+            
+            listItem.innerHTML = `
+                <div class="tweet">
+                    <div class="author-image">
+                        <img src="{{ post.photo }}" alt="Avatar">
+                    </div>
+                    <div class="tweet-content">
+                        <div class="author">{{ post.author }}</div>
+                        <div class="content">{{ post.content }}</div>
+                        <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
+                    </div>
+                </div>`;
+            list.appendChild(listItem);
+        {% endfor %}
+    }, 1000); // Simulación de tiempo de carga
 }
 
 // Listener para detectar el scroll
 window.addEventListener('scroll', () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight - 5) {
-        // Agregar más elementos solo si no se está cargando ya y el usuario ha llegado al final de la página
+        // Agregar más elementos cuando se alcanza el final de la página
         addItems();
     }
 });
 
 // Agregar algunos elementos al cargar la página
 addItems();
-
   </script>
