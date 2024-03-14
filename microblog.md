@@ -8,6 +8,8 @@ author_profile: true
 ---
 <div id="list-container">
     <ul id="infinite-list">
+        {% for post in site.microblog %}
+    
         <li class="tweet">
             <div class="author-image">
                 <img src="https://www.josedomingo.org/pledin/assets/images/bio-photo.jpg" alt="Avatar">
@@ -18,11 +20,18 @@ author_profile: true
                 <div class="date">{{ post.date }}</div>
             </div>
         </li>
-        <!-- Agrega más tweets dentro de elementos <li> aquí -->
+        {% endfor %}
+        
     </ul>
 </div>
 
-
+<div id="list-container">
+  <ul id="infinite-list">
+    {% for post in site.microblog %}
+      <li>{{ post.content }}</li>
+    {% endfor %}
+  </ul>
+</div>
 
 <script>
   // Número de elementos para agregar en cada carga
