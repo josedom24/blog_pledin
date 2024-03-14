@@ -10,20 +10,21 @@ layout: default
 
 
   <script>
-        // Número de elementos para agregar en cada carga
-        const batchSize = 3;
-    // Función para agregar elementos a la lista
-    function addItems() {
+function addItems() {
     const list = document.getElementById('infinite-list');
 
     // Simulando carga de datos
     setTimeout(() => {
         // Obtener el último índice de la lista de posts
         const lastIndex = document.querySelectorAll('#infinite-list li').length;
+        const batchSize = 3; // Número de elementos para agregar en cada carga
+
         {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
         {% for post in sorted_posts limit: batchSize %}
-            // Reutilizar la misma constante listItem
-            const listItem = list.appendChild(document.createElement('li'));
+            // Crear un identificador único para cada elemento
+            const postId = 'post-' + lastIndex + '-{{ forloop.index }}';
+            const listItem = document.createElement('li');
+            listItem.id = postId; // Establecer el ID único para el elemento
             listItem.innerHTML = `
                 <div class="tweet">
                     <div class="author-image">
@@ -35,19 +36,20 @@ layout: default
                         <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
                     </div>
                 </div>`;
+            list.appendChild(listItem);
         {% endfor %}
     }, 500); // Simulación de tiempo de carga
 }
 
-    // Listener para detectar el scroll
-    window.addEventListener('scroll', () => {
-        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-        if (scrollTop + clientHeight >= scrollHeight - 5) {
-            // Agregar más elementos cuando se alcanza el final de la página
-            addItems();
-        }
-    });
+// Listener para detectar el scroll
+window.addEventListener('scroll', () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+        // Agregar más elementos cuando se alcanza el final de la página
+        addItems();
+    }
+});
 
-    // Agregar algunos elementos al cargar la página
-    addItems();
-</script>
+// Agregar algunos elementos al cargar la página
+addItems();
+  </script>
