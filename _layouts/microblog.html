@@ -10,34 +10,41 @@ layout: default
 
 
   <script>
-function addItems() {
-    const list = document.getElementById('infinite-list');
+// Obtener el elemento de la lista una vez al cargar el script
+const list = document.getElementById('infinite-list');
 
+// Variable para rastrear el número total de elementos agregados
+let totalItems = 0;
+
+// Función para agregar elementos a la lista
+function addItems() {
     // Simulando carga de datos
     setTimeout(() => {
         // Obtener el último índice de la lista de posts
-        const batchSize = 10; // Número de elementos para agregar en cada carga
+        const batchSize = 3; // Número de elementos para agregar en cada carga
 
         {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
-        {% for post in sorted_posts limit: batchSize %}
-            // Crear un identificador único para cada elemento
-            
-            listItem = document.createElement('li');
-            
-            listItem.innerHTML = `
-                <div class="tweet">
-                    <div class="author-image">
-                        <img src="{{ post.photo }}" alt="Avatar">
-                    </div>
-                    <div class="tweet-content">
-                        <div class="author">{{ post.author }}</div>
-                        <div class="content">{{ post.content }}</div>
-                        <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
-                    </div>
-                </div>`;
-            list.appendChild(listItem);
+        {% for post in sorted_posts %}
+            if (totalItems < batchSize) {
+                let listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div class="tweet">
+                        <div class="author-image">
+                            <img src="{{ post.photo }}" alt="Avatar">
+                        </div>
+                        <div class="tweet-content">
+                            <div class="author">{{ post.author }}</div>
+                            <div class="content">{{ post.content }}</div>
+                            <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
+                        </div>
+                    </div>`;
+                list.appendChild(listItem);
+                totalItems++;
+            } else {
+                break; // Salir del bucle una vez que se hayan agregado suficientes elementos
+            }
         {% endfor %}
-    }, 1000); // Simulación de tiempo de carga
+    }, 500); // Simulación de tiempo de carga
 }
 
 // Listener para detectar el scroll
