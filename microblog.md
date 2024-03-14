@@ -15,9 +15,9 @@ author_profile: true
                 <img src="{{post.photo}}" alt="Avatar">
             </div>
             <div class="tweet-content">
-                <div class="author">José Domingo Muñoz</div>
+                <div class="author">{{post.author}}</div>
                 <div class="content">{{ post.content }}</div>
-                <div class="date">{{ post.date| date: "%d-%m-%Y }}</div>
+                <div class="date">{{ post.date| date: "%d-%m-%Y" }}</div>
             </div>
         </li>
         {% endfor %}
