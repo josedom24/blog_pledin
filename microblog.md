@@ -17,7 +17,7 @@ author_profile: true
             <div class="tweet-content">
                 <div class="author">José Domingo Muñoz</div>
                 <div class="content">{{ post.content }}</div>
-                <div class="date">{{ post.date }}</div>
+                <div class="date">{{ post.date| date: "%d-%m-%Y }}</div>
             </div>
         </li>
         {% endfor %}
