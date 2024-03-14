@@ -3,7 +3,7 @@ title: Microblog
 layout: microblog
 classes: wide
 sidebar:
-  nav: "microblog"
+  nav: "blog"
 author_profile: true
 ---
 
