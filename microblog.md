@@ -38,7 +38,7 @@ function loadNextPosts() {
                 listItem.innerHTML = `
                     <div class="tweet">
                         <div class="author-image">
-                            <img class="img-tweet" src="{{ post.photo }}" alt="Avatar"></img>
+                            <img class="img-tweet" src="{{ post.photo }}" alt="Avatar"/>
                         </div>
                         <div class="tweet-content">
                             <div class="author">{{ post.author }}</div>
@@ -49,7 +49,7 @@ function loadNextPosts() {
                                   <a href="{{ site.url }}{{ site.baseurl }}/microblog/tags/{{ tag | slugify }}" class="tag">{{ tag }}</a>
                               {% endfor %}
                             </div>
-                            <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
+                            <div class="date">{{ post.date | date: "%d / %m / %Y" }}</div>
                         </div>
                     </div>`;
                 list.appendChild(listItem);
