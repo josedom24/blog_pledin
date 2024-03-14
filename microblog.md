@@ -3,16 +3,26 @@ title: Microblog
 layout: microblog
 classes: wide
 sidebar:
-  nav: "blog"
+  nav: "microblog"
 author_profile: true
 ---
 <div id="list-container">
-  <ul id="infinite-list">
-    {% for post in site.microblog %}
-      <li>{{ post.content }}</li>
-    {% endfor %}
-  </ul>
+    <ul id="infinite-list">
+        <li class="tweet">
+            <div class="author-image">
+                <img src="https://www.josedomingo.org/pledin/assets/images/bio-photo.jpg" alt="Avatar">
+            </div>
+            <div class="tweet-content">
+                <div class="author">José Domingo Muñoz</div>
+                <div class="content">{{ post.content }}</div>
+                <div class="date">{{ post.date }}</div>
+            </div>
+        </li>
+        <!-- Agrega más tweets dentro de elementos <li> aquí -->
+    </ul>
 </div>
+
+
 
 <script>
   // Número de elementos para agregar en cada carga
