@@ -146,10 +146,10 @@ a:link, a:visited, a:active {
     color: #14171a;
   }
 
-  .content strong,
-  .content span {
-    display: inline; /* Esto fuerza que estén en la misma línea */
-}
+  .tweet .content .titulo {
+    font-weight: bold;
+  }
+  
 
   
   .tweet .date {
