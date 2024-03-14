@@ -10,22 +10,22 @@ layout: default
 
 
   <script>
-// Obtener el elemento de la lista una vez al cargar el script
-const list = document.getElementById('infinite-list');
+// Variable para rastrear el índice del último post cargado
+let lastLoadedIndex = 0;
 
-// Variable para rastrear el número total de elementos agregados
-let totalItems = 0;
+// Función para cargar los siguientes 10 posts
+function loadNextPosts() {
+    const list = document.getElementById('infinite-list');
 
-// Función para agregar elementos a la lista
-function addItems() {
     // Simulando carga de datos
     setTimeout(() => {
-        // Obtener el último índice de la lista de posts
-        const batchSize = 3; // Número de elementos para agregar en cada carga
+        // Obtener los siguientes 10 posts
+        const batchSize = 10;
+        let loadedPosts = 0;
 
         {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
         {% for post in sorted_posts %}
-            if (totalItems < batchSize) {
+            if (loadedPosts >= batchSize && post.date > list.lastElementChild.querySelector('.date').textContent) {
                 let listItem = document.createElement('li');
                 listItem.innerHTML = `
                     <div class="tweet">
@@ -39,9 +39,8 @@ function addItems() {
                         </div>
                     </div>`;
                 list.appendChild(listItem);
-                totalItems++;
-            } else {
-                break; // Salir del bucle una vez que se hayan agregado suficientes elementos
+                loadedPosts++;
+                lastLoadedIndex++;
             }
         {% endfor %}
     }, 500); // Simulación de tiempo de carga
@@ -51,11 +50,12 @@ function addItems() {
 window.addEventListener('scroll', () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight - 5) {
-        // Agregar más elementos cuando se alcanza el final de la página
-        addItems();
+        // Cargar los siguientes 10 posts cuando se alcance el final de la página
+        loadNextPosts();
     }
 });
 
-// Agregar algunos elementos al cargar la página
-addItems();
+// Cargar los primeros 10 posts al cargar la página
+loadNextPosts();
+
   </script>
