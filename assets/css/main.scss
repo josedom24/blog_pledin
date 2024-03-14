@@ -154,15 +154,24 @@ a:link, a:visited, a:active {
     padding-top: 5px;
 }
 
+.tweet .title a {
+  color: #007bff; /* Cambia el color del enlace del título */
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+.tweet .title a:hover {
+  text-decoration: underline; /* Añade subrayado al pasar el mouse */
+}
 
 .tweet .tag {
   display: inline-block;
-  background-color: #f0f0f0;
+  background-color: #cadbdd;
   color: #333;
-  padding: 5px 10px;
+  padding: 5px 5px;
   margin-right: 5px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
+  border: 1px solid #d0dfea;
 }
 
 .tweet .tag:hover {

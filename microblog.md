@@ -42,7 +42,7 @@ function loadNextPosts() {
                         </div>
                         <div class="tweet-content">
                             <div class="author">{{ post.author }}</div>
-                            <div class="title">{{ post.title }}</div>
+                            <div class="title"><a href="{{ post.url }}">{{ post.title }}</a></div>
                             <div class="content">{{ post.content}}</div>
                             <div class="tags">
                               {% for tag in post.tags %}
