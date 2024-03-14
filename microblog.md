@@ -7,7 +7,7 @@ classes: wide
 <div id="list-container">
   <ul id="infinite-list">
     {% for post in site.microblog %}
-      <li>{{ post.title }}</li>
+      <li>{{ post.content }}</li>
     {% endfor %}
   </ul>
 </div>
