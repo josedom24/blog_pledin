@@ -38,7 +38,7 @@ function loadNextPosts() {
                 listItem.innerHTML = `
                     <div class="tweet">
                         <div class="author-image">
-                            <img class="img-tweet" src="{{ post.photo }}" alt="Avatar"/>
+                            <img class="img-tweet" src="{{ post.photo }}" alt="Avatar"></img>
                         </div>
                         <div class="tweet-content">
                             <div class="author">{{ post.author }}</div>
