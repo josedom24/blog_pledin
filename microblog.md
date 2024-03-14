@@ -2,21 +2,46 @@
 title: Microblog
 layout: default
 permalink: /microblog/
-collection: microblog
 classes: wide
 ---
-{% for post in paginator.microblog %}
-  <!-- Aquí va el código para mostrar cada publicación -->
-{{post.date}}
-{% endfor %}
-
-<!-- Enlaces de navegación -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Anterior</a>
-  {% endif %}
-  
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Siguiente</a>
-  {% endif %}
+<div id="list-container">
+  <ul id="infinite-list">
+    {% for post in site.microblog %}
+      <li>{{ post.title }}</li>
+    {% endfor %}
+  </ul>
 </div>
+
+<script>
+  // Número de elementos para agregar en cada carga
+  const batchSize = 10;
+
+  // Función para agregar elementos a la lista
+  function addItems() {
+    const list = document.getElementById('infinite-list');
+
+    // Simulando carga de datos
+    setTimeout(() => {
+      // Obtener el último índice de la lista de posts
+      const lastIndex = document.querySelectorAll('#infinite-list li').length;
+
+      {% for post in site.microblog limit: batchSize %}
+        const listItem = document.createElement('li');
+        listItem.textContent = '{{ post.title }}';
+        list.appendChild(listItem);
+      {% endfor %}
+    }, 500); // Simulación de tiempo de carga
+  }
+
+  // Listener para detectar el scroll
+  window.addEventListener('scroll', () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+      // Agregar más elementos cuando se alcanza el final de la página
+      addItems();
+    }
+  });
+
+  // Agregar algunos elementos al cargar la página
+  addItems();
+</script>
