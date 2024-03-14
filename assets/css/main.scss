@@ -118,19 +118,7 @@ a:link, a:visited, a:active {
     font-family: Arial, sans-serif; /* Fuentes alternativas */
   }
   
-  .tweet .author-image {
-    width: 110px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 10px;
-  }
   
-  .tweet .author-image img.img-tweet {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
   
   .tweet .tweet-content {
     flex-grow: 1;
@@ -139,10 +127,7 @@ a:link, a:visited, a:active {
   margin-bottom: 0px;
   }
 
-  .tweet .author {
-    font-weight: bold;
-    color: #1da1f2;
-  }
+ 
   
   .tweet .content {
     margin-top: 5px;
@@ -155,7 +140,7 @@ a:link, a:visited, a:active {
 }
 
 .tweet .title a {
-  color: #007bff; /* Cambia el color del enlace del título */
+  color: #1da1f2;; /* Cambia el color del enlace del título */
   text-decoration: none; /* Elimina el subrayado predeterminado */
 }
 
