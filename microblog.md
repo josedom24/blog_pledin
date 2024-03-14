@@ -12,7 +12,7 @@ author_profile: true
     
         <li class="tweet">
             <div class="author-image">
-                <img src="https://www.josedomingo.org/pledin/assets/images/bio-photo.jpg" alt="Avatar">
+                <img src="{{post.photo}}" alt="Avatar">
             </div>
             <div class="tweet-content">
                 <div class="author">José Domingo Muñoz</div>
