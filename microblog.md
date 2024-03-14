@@ -5,6 +5,7 @@ classes: wide
 sidebar:
   nav: "blog"
 author_profile: true
+regenerate: true
 ---
 
 <div id="list-container">
