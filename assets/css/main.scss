@@ -136,22 +136,22 @@ a:link, a:visited, a:active {
     flex-grow: 1;
   }
   
-  .tweet .author {
+  .tweet .tweet-content .author {
     font-weight: bold;
     color: #1da1f2;
   }
   
-  .tweet .content {
+  .tweet .tweet-content .content {
     margin-top: 5px;
     color: #14171a;
   }
 
-  .tweet .content span{
+  .tweet .tweet-content .content .texto{
     display: inline;
   }
 
   
-  .tweet .date {
+  .tweet .tweet-content .date {
     font-size: 0.8em;
     color: #8899a6;
   }

@@ -42,7 +42,7 @@ function loadNextPosts() {
                         </div>
                         <div class="tweet-content">
                             <div class="author">{{ post.author }}</div>
-                            <div class="content"><strong>{{post.title}}</strong> <span>{{ post.content }}</span></div>
+                            <div class="content"><strong>{{post.title}}</strong> <span class="texto">{{ post.content }}</span></div>
                             <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
                         </div>
                     </div>`;
