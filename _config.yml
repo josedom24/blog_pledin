@@ -117,6 +117,8 @@ defaults:
       author_profile: true
       share: false
       comments: false
+      photo: 'https://www.josedomingo.org/pledin/assets/images/bio-photo.jpg'
+      author: 'José Domingo Muñoz'
       sidebar:
         nav: "blog"
 
