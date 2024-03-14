@@ -10,10 +10,6 @@ layout: default
 
 
   <script>
-// Variable para rastrear el índice del último post cargado
-let lastLoadedIndex = 0;
-
-// Función para cargar los siguientes 10 posts
 function loadNextPosts() {
     const list = document.getElementById('infinite-list');
 
@@ -25,22 +21,30 @@ function loadNextPosts() {
 
         {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
         {% for post in sorted_posts %}
-            if (loadedPosts >= batchSize && post.date > list.lastElementChild.querySelector('.date').textContent) {
-                let listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <div class="tweet">
-                        <div class="author-image">
-                            <img src="{{ post.photo }}" alt="Avatar">
-                        </div>
-                        <div class="tweet-content">
-                            <div class="author">{{ post.author }}</div>
-                            <div class="content">{{ post.content }}</div>
-                            <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
-                        </div>
-                    </div>`;
-                list.appendChild(listItem);
-                loadedPosts++;
-                lastLoadedIndex++;
+            // Omitir este post si ya ha sido cargado
+            if (loadedPostIds.includes(post.id)) {
+                continue;
+            }
+
+            let listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <div class="tweet">
+                    <div class="author-image">
+                        <img src="{{ post.photo }}" alt="Avatar">
+                    </div>
+                    <div class="tweet-content">
+                        <div class="author">{{ post.author }}</div>
+                        <div class="content">{{ post.content }}</div>
+                        <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
+                    </div>
+                </div>`;
+            list.appendChild(listItem);
+            loadedPostIds.push(post.id);
+            loadedPosts++;
+            lastLoadedIndex++;
+
+            if (loadedPosts >= batchSize) {
+                break; // Salir del bucle una vez que se hayan cargado los siguientes 10 posts
             }
         {% endfor %}
     }, 500); // Simulación de tiempo de carga
@@ -57,5 +61,4 @@ window.addEventListener('scroll', () => {
 
 // Cargar los primeros 10 posts al cargar la página
 loadNextPosts();
-
   </script>
