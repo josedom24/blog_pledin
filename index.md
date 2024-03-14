@@ -140,7 +140,8 @@ feature_row4:
         <div class="archive__item-body">
           <h2 class="archive__item-title">Microblog</h2>
             <ul>
-              {% for post in site.microblog limit: 6%}
+            {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
+            {% for post in sorted_posts limit: 6% %}
                 <li>
                   <a href="{{ site.baseurl }}{{ post.url }}">
                     {{ post.title }}
