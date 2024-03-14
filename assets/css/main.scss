@@ -135,6 +135,9 @@ a:link, a:visited, a:active {
   .tweet .tweet-content {
     flex-grow: 1;
   }
+  .tweet .tweet-content p {
+  margin-bottom: 0px;
+  }
   
   .tweet .author {
     font-weight: bold;
