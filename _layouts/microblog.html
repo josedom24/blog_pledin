@@ -23,7 +23,7 @@ function addItems() {
         {% for post in sorted_posts limit: batchSize %}
             // Crear un identificador único para cada elemento
             const postId = 'post-' + lastIndex + '-{{ forloop.index }}';
-            const listItem = document.createElement('li');
+            listItem = document.createElement('li');
             listItem.id = postId; // Establecer el ID único para el elemento
             listItem.innerHTML = `
                 <div class="tweet">
