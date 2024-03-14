@@ -44,6 +44,11 @@ function loadNextPosts() {
                             <div class="author">{{ post.author }}</div>
                             <div class="title">{{ post.title }}</div>
                             <div class="content">{{ post.content}}</div>
+                            <div class="tags">
+                              {% for tag in post.tags %}
+                                  <a href="/tags/{{ tag | slugify }}" class="tag">{{ tag }}</a>
+                              {% endfor %}
+                            </div>
                             <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
                         </div>
                     </div>`;
