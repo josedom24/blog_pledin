@@ -89,6 +89,7 @@ collections:
   microblog:
     output: true
     permalink: microblog/:year/:month/:title/
+    tags: true
 
 defaults:
   # _posts
