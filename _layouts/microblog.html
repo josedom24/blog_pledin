@@ -28,7 +28,7 @@ function loadNextPosts() {
         {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
         {% for post in sorted_posts %}
             // Omitir este post si ya ha sido cargado
-            if (!loadedPostIds.includes(post.id)) {
+            if (!loadedPostIds.includes('{{ post.id }}')) {
                 let listItem = document.createElement('li');
                 listItem.innerHTML = `
                     <div class="tweet">
@@ -42,9 +42,12 @@ function loadNextPosts() {
                         </div>
                     </div>`;
                 list.appendChild(listItem);
-                loadedPostIds.push(post.id);
+                loadedPostIds.push('{{ post.id }}');
                 loadedPosts++;
                 lastLoadedIndex++;
+            }
+            if (loadedPosts >= batchSize) {
+                return; // Salir de la función una vez que se hayan cargado los siguientes 10 posts
             }
         {% endfor %}
     }, 500); // Simulación de tiempo de carga
@@ -59,8 +62,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Cargar los primeros 10 posts al cargar la página
-loadNextPosts();
+// Cargar los primeros 10 posts al cargar
 
 
 </script>
