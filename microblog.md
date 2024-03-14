@@ -1,6 +1,6 @@
 ---
 title: Microblog
-layout: posts
+layout: microblog
 classes: wide
 sidebar:
   nav: "blog"

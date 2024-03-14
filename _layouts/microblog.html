@@ -3,31 +3,4 @@ layout: archive
 ---
 {{ content }}
 
-<!--
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-{% assign postsByYear = site.microblog | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-{% for year in postsByYear %}
-  <section id="{{ year.name }}" class="taxonomy__section">
-    <h2 class="archive__subtitle">{{ year.name }}</h2>
-    <div class="entries-{{ entries_layout }}">
-      {% for post in year.items %}
-        {% include archive-single.html type=entries_layout %}
-        <hr/>
-      {% endfor %}
-    </div>
-    <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Arriba' }} &uarr;</a>
-  </section>
-{% endfor %}
--->
-{% for post in site.microblog limit:3 %}
-<div class="page__inner-wrap-principal">
-        <header>
-          {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
-        </header>
-      <section class="page__content" itemprop="text">
-        {{ post.excerpt}}
-        <a href="{{ site.baseurl }}{{post.url}}">Seguir leyendo...</a><br/>
-      </section>
-  </div>
-  
-{% endfor %}
+
