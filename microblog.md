@@ -42,11 +42,11 @@ function loadNextPosts() {
                         </div>
                         <div class="tweet-content">
                             <div class="author">{{ post.author }}</div>
-                            <div class="title"><a href="{{ post.url }}">{{ post.title }}</a></div>
+                            <div class="title"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></div>
                             <div class="content">{{ post.content}}</div>
                             <div class="tags">
                               {% for tag in post.tags %}
-                                  <a href="/pledin/microblog//tags/{{ tag | slugify }}" class="tag">{{ tag }}</a>
+                                  <a href="{{ site.url }}/microblog/tags/{{ tag | slugify }}" class="tag">{{ tag }}</a>
                               {% endfor %}
                             </div>
                             <div class="date">{{ post.date | date: "%d-%m-%Y" }}</div>
