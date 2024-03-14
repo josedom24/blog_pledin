@@ -114,16 +114,16 @@ a:link, a:visited, a:active {
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 20px;
-    display: flex;
-    font-family: Arial, sans-serif; /* Fuentes alternativas */
+    font-family: Arial, sans-serif;
   }
   
   .tweet .author-image {
-    width: 110px;
+    width: 50px;
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 10px;
+    float: left; 
   }
   
   .tweet .author-image img.img-tweet {
