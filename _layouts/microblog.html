@@ -16,15 +16,14 @@ function addItems() {
     // Simulando carga de datos
     setTimeout(() => {
         // Obtener el último índice de la lista de posts
-        const lastIndex = document.querySelectorAll('#infinite-list li').length;
         const batchSize = 3; // Número de elementos para agregar en cada carga
 
         {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
         {% for post in sorted_posts limit: batchSize %}
             // Crear un identificador único para cada elemento
-            const postId = 'post-' + lastIndex + '-{{ forloop.index }}';
+            
             listItem = document.createElement('li');
-            listItem.id = postId; // Establecer el ID único para el elemento
+            
             listItem.innerHTML = `
                 <div class="tweet">
                     <div class="author-image">
