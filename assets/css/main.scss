@@ -146,10 +146,13 @@ a:link, a:visited, a:active {
     color: #14171a;
   }
 
-  .tweet .titulo {
-    font-weight: bold;
-  }
-  
+  .tweet-content .titulo {
+    font-weight: bold; /* Estilo de negrita para el título */
+}
+
+.tweet-content .content {
+    display: inline; /* Para que el título y el contenido estén en la misma línea */
+}
 
   
   .tweet .date {
