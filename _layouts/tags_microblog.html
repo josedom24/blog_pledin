@@ -9,8 +9,9 @@ layout: archive
   {% for tag in post.tags %}
     {% if tag != null %}
       {% capture tag_count %}{{ site.microblog | where: 'tags', tag | size }}{% endcapture %}
-      {% if tag_count | times: 1 > tags_max %}
-        {% assign tags_max = tag_count | times: 1 %}
+      {% assign tag_count_numeric = tag_count | times: 1 %}
+      {% if tag_count_numeric > tags_max %}
+        {% assign tags_max = tag_count_numeric %}
       {% endif %}
     {% endif %}
   {% endfor %}
