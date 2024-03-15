@@ -118,7 +118,7 @@ defaults:
       share: false
       comments: false
       sidebar:
-        nav: "blog"
+        nav: "microblog"
 
 
 

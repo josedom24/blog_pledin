@@ -25,3 +25,15 @@ blog:
       - title: "Feed"
         url: https://www.josedomingo.org/pledin/feed/feed.xml
 
+
+microblog:
+  - title: Microblog
+    children:
+      - title: "Posts"
+        url: /microblog/
+      - title: "Historial"
+        url: #
+      - title: "Etiquetas"
+        url: #
+      - title: "Feed"
+        url: #
