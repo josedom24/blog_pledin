@@ -2,7 +2,6 @@
 layout: null
 sitemap: false
 ---
-{% assign posts = site.microblog | where_exp: "item", "item.date" | sort: "date" | reverse %}
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -12,6 +11,7 @@ sitemap: false
     <language>{{ site.language }}</language>
     <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    {% assign posts = site.microblog | where_exp: "item", "item.date" | sort: "date" | reverse %}
     {% for post in posts %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
