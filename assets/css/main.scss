@@ -134,6 +134,7 @@ a:link, a:visited, a:active {
   .tweet .title {
     font-weight: bold; /* Estilo de negrita para el título */
     padding-top: 5px;
+    font-size: 130%;
 }
 
 .tweet .title a {
@@ -164,5 +165,6 @@ a:link, a:visited, a:active {
   .tweet .date {
     font-size: 0.8em;
     color: #8899a6;
+    padding-top: 8px;
   }
   

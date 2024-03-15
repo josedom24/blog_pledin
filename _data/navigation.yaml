@@ -36,4 +36,4 @@ microblog:
       - title: "Etiquetas"
         url: /microblog/tags/
       - title: "Feed"
-        url: #
+        url: /microblog/feed.xml
