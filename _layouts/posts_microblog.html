@@ -21,7 +21,8 @@ layout: archive
   <section id="{{ year.name }}" class="taxonomy__section">
     <h2 class="archive__subtitle">{{ year.name }}</h2>
     <div class="entries-{{ entries_layout }}">
-      {% for post in year.items | reverse %}
+      {% assign reversed_microblog = year.items | reverse %}
+      {% for post in reversed_microblog  %}
         {% include archive-single.html type=entries_layout %}
       {% endfor %}
     </div>
