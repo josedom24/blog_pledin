@@ -11,12 +11,12 @@ layout: archive
   {% endif %}
 {% endfor %}
 
-{% assign microblog_collection = site.collections | where: "label", "microblog" | first %}
+
 
 
 <ul class="taxonomy__index">
   {% for i in (1..tags_max) reversed %}
-    {% for tag in microblog_collection.tags %}
+    {% for tag in microblog.tags %}
       {% if tag[1].size == i %}
         <li>
           <a href="#{{ tag[0] | slugify }}">
@@ -30,7 +30,7 @@ layout: archive
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 {% for i in (1..tags_max) reversed %}
-  {% for tag in microblog_collection.tags %}
+  {% for tag in microblog.tags %}
     {% if tag[1].size == i %}
       <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
         <h2 class="archive__subtitle">{{ tag[0] }}</h2>
