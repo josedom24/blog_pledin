@@ -137,7 +137,7 @@ feature_row4:
               <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
             </ul>
         </div>
-        <div class="archive__item-body">
+        <!--<div class="archive__item-body">
           <h2 class="archive__item-title">Microblog</h2>
             <ul>
             {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
@@ -150,7 +150,7 @@ feature_row4:
                 </li>
               {% endfor %}
             </ul>
-        </div>   
+        </div>   -->
 </div>
 
 <!--

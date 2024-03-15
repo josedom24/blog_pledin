@@ -3,7 +3,6 @@ id: 2
 title: Presentación
 date: 2010-03-25T19:46:43+00:00
 layout: single
-guid: http://www.josedomingo.org/pledin/?page_id=2
 permalink: /about/
 author_profile: true
 classes: wide
