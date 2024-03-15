@@ -34,6 +34,6 @@ microblog:
       - title: "Historial"
         url: /microblog/posts/
       - title: "Etiquetas"
-        url: /microblog/blogs/
+        url: /microblog/tags/
       - title: "Feed"
         url: #
