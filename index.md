@@ -91,10 +91,24 @@ feature_row4:
     btn_class: "btn--primary"
 ---
 
-{% include intro type="center" %}
+{% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
 
+
+<h1 id="page-title" class="page__title" itemprop="headline">Microblog</h1>
+{% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
+{% for post in sorted_posts limit: 6%}
+<div class="page__inner-wrap-principal">
+        <header>
+          {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+        </header>
+      <section class="page__content" itemprop="text">
+        {{ post.content}}
+      </section>
+  </div>
+  
+{% endfor %}
 
 
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
@@ -152,8 +166,6 @@ feature_row4:
             </ul>
         </div>   -->
 </div>
-
-
 
 
 {% include feature_row id="feature_row4" type="center" %}
