@@ -90,8 +90,6 @@ collections:
     output: true
     permalink: microblog/:year/:month/:title/
     tags: true
-    tag_archive:
-      path: microblog
 
 defaults:
   # _posts
@@ -113,7 +111,7 @@ defaults:
       path: ""
       type: microblog
     values:
-      layout: single
+      layout: single_microblog
       classes: wide
       read_time: false
       author_profile: true
