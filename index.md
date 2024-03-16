@@ -93,10 +93,6 @@ feature_row4:
 
 {% include feature_row id="intro" type="center" %}
 
-{% include feature_row %}
-
-
-
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
 <div class="page__inner-wrap-principal">
@@ -153,39 +149,6 @@ feature_row4:
         </div>   -->
 </div>
 
-<!--
-<table>
-<tr>
-<td>
-<h2>Más posts...</h2>
-<ul>
-  {% for post in site.posts offset: 3 limit: 6%}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-      <small>({{ post.date | date: "%d-%m-%Y" }})</small>
-    </li>
-  {% endfor %}
-</ul>
-
-
-</td>
-
-<td>
-<h2>Últimos cursos...</h2>
-<ul>
-<li><a href="https://josedom24.github.io/curso_docker_2022/">Curso: Introducción a  Docker. CPR Badajoz. (2022)</a></li>
-  <li><a href="https://github.com/iesgn/curso_kubernetes_cep">Curso; Introducción a Kubernetes. CEP Castilleja de la Cuesta (2022)</a></li>
-  <li><a href="https://www.josedomingo.org/pledin/2022/05/curso-cloud-iesgn">"Mini" Curso: Virtualización y Cloud Computing en el IES Gonzalo Nazareno (2022)</a></li>
-  <li><a href="https://iesgn.github.io/curso_docker_2021/">Curso: Introducción a  Docker. CPR Zafra. (2021)</a></li>
-  <li><a href="https://plataforma.josedomingo.org/pledin/cursos/curso_cpp1/">Curso de C++: Introducción a C++ (2020)</a></li>
-  <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
-  </ul>
-</td>
-</tr>
-</table>
--->
 
 
 
