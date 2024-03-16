@@ -91,7 +91,11 @@ feature_row4:
     btn_class: "btn--primary"
 ---
 
-{% include feature_row id="intro" type="center" %}
+{% include intro type="center" %}
+
+{% include feature_row %}
+
+
 
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
