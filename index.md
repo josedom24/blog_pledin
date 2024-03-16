@@ -98,7 +98,7 @@ feature_row4:
 
 <h1 id="page-title" class="page__title" itemprop="headline">Microblog</h1>
 {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
-{% for post in sorted_posts limit: 6%}
+{% for post in sorted_posts limit: 3%}
 <div class="page__inner-wrap-principal">
         <header>
           {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
