@@ -118,7 +118,7 @@ feature_row4:
   <div class="feature__item">
       <div class="archive__item">
           <header>
-          {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          <h1 id="page-title" class="page__title" itemprop="headline"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1></a>
         </header>
         <div class="archive__item-body">
             <div class="archive__item-excerpt">
@@ -170,11 +170,11 @@ feature_row4:
               <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
             </ul>
         </div>
-        <!--<div class="archive__item-body">
+        <div class="archive__item-body">
           <h2 class="archive__item-title">Microblog</h2>
             <ul>
             {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
-            {% for post in sorted_posts limit: 6%}
+            {% for post in sorted_posts offset: 3 limit: 6%}
                 <li>
                   <a href="{{ site.baseurl }}{{ post.url }}">
                     {{ post.title }}
