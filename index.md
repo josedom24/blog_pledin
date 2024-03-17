@@ -120,7 +120,7 @@ feature_row4:
           <h3 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h3>
         <div class="archive__item-body">
             <div class="archive__item-excerpt">
-              {{ post.content}}
+              {{ post.excerpt}}
             <a href="{{ site.baseurl }}{{ post.url }}">Detalle</a>
             </div>
             
