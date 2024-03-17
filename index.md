@@ -111,6 +111,25 @@ feature_row4:
 {% endfor %}
 
 -->
+<h1 id="page-title" class="page__title" itemprop="headline">Microblog</h1>
+<div class="feature__wrapper">
+{% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
+{% for post in sorted_posts limit: 3%}
+  <div class="feature__item">
+      <div class="archive__item">
+          <header>
+          {% if post.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+        </header>
+        <div class="archive__item-body">
+            <div class="archive__item-excerpt">
+              {{ post.excerpt}}
+            </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+</div>
+
 <h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
 {% for post in site.posts limit:3 %}
 <div class="page__inner-wrap-principal">
