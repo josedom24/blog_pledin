@@ -121,8 +121,10 @@ feature_row4:
         <div class="archive__item-body">
             <div class="archive__item-excerpt">
               {{ post.content}}
-            </div>
+            <br/>
             <a href="{{ site.baseurl }}{{ post.url }}">Detalle</a>
+            </div>
+            
         </div>
       </div>
     </div>
