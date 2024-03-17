@@ -117,9 +117,7 @@ feature_row4:
 {% for post in sorted_posts limit: 3%}
   <div class="feature__item">
       <div class="archive__item">
-          <header>
-          <h2 id="page-title" class="page__title" itemprop="headline"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h2>
-        </header>
+          <h3 id="page-title" class="page__title" itemprop="headline"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h3>
         <div class="archive__item-body">
             <div class="archive__item-excerpt">
               {{ post.content}}
@@ -147,7 +145,7 @@ feature_row4:
 
 <div class="feature__wrapper">
         <div class="archive__item-body">
-          <h2 class="archive__item-title">Más posts...</h2>
+          <h2 class="archive__item-title">Más posts en el Blog...</h2>
             <ul>
               {% for post in site.posts offset: 3 limit: 6%}
                 <li>
@@ -171,7 +169,7 @@ feature_row4:
             </ul>
         </div>
         <div class="archive__item-body">
-          <h2 class="archive__item-title">Microblog</h2>
+          <h2 class="archive__item-title">Más post en el Microblog...</h2>
             <ul>
             {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
             {% for post in sorted_posts offset: 3 limit: 6%}
@@ -183,7 +181,7 @@ feature_row4:
                 </li>
               {% endfor %}
             </ul>
-        </div>   -->
+        </div>   
 </div>
 
 
