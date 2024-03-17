@@ -117,7 +117,7 @@ feature_row4:
 {% for post in sorted_posts limit: 3%}
   <div class="feature__item">
       <div class="archive__item">
-          <h3 id="page-title" class="page__title" itemprop="headline"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h3>
+          <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h3>
         <div class="archive__item-body">
             <div class="archive__item-excerpt">
               {{ post.content}}
