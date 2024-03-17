@@ -121,7 +121,6 @@ feature_row4:
         <div class="archive__item-body">
             <div class="archive__item-excerpt">
               {{ post.content}}
-            <br/>
             <a href="{{ site.baseurl }}{{ post.url }}">Detalle</a>
             </div>
             
@@ -131,7 +130,7 @@ feature_row4:
 {% endfor %}
 </div>
 
-<h1 id="page-title" class="page__title" itemprop="headline">Últimos posts...</h1>
+<h1 id="page-title" class="page__title" itemprop="headline">Blog</h1>
 {% for post in site.posts limit:3 %}
 <div class="page__inner-wrap-principal">
         <header>
