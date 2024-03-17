@@ -122,7 +122,7 @@ feature_row4:
         </header>
         <div class="archive__item-body">
             <div class="archive__item-excerpt">
-              {{ post.excerpt}}
+              {{ post.content}}
             </div>
         </div>
       </div>
