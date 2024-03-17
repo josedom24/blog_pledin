@@ -118,7 +118,7 @@ feature_row4:
   <div class="feature__item">
       <div class="archive__item">
           <header>
-          <h2 id="page-title" class="page__title" itemprop="headline"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</h2></a>
+          <h2 id="page-title" class="page__title" itemprop="headline"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h2>
         </header>
         <div class="archive__item-body">
             <div class="archive__item-excerpt">
