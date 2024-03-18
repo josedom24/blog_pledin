@@ -13,3 +13,4 @@ podman run -d --name miweb -p 8080:80 quay.io/libpod/banner
 
 Y podemos acceder al contenedor:
 
+![ ]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/03/banner.png){: .align-center}
