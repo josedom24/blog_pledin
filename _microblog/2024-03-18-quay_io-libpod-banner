@@ -1,5 +1,5 @@
 ---
-title: 'Imagen quay.io/libpod/banner'
+title: 'Imagen OCI quay.io/libpod/banner'
 tags: 
   - Docker
   - Podman
