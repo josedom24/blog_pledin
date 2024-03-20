@@ -192,7 +192,6 @@ feature_row4:
           </div>
       </div>
     </div>
-{% endfor %}
 </div>
 
 <div class="feature__wrapper">
