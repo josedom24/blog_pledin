@@ -183,7 +183,7 @@ feature_row4:
     </div>
     <div class="feature__item">
       <div class="archive__item">
-          <h2 class="archive__item-title">Últimos cursos...</h2>
+          <h3 id="page-title" class="page__title" itemprop="headline">Últimos cursos...</h3>
           <div class="archive__item-body">
             <ul>
               <li><a href="https://plataforma.josedomingo.org/pledin/cursos/osv4_paas/index.html">Curso: OpenShift v4 como PaaS (2023)</a></li>
