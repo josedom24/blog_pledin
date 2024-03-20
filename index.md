@@ -146,6 +146,56 @@ feature_row4:
 
 
 <div class="feature__wrapper">
+  <div class="feature__item">
+      <div class="archive__item">
+          <h2 class="archive__item-title">Más posts en el Blog...</h2>
+          <div class="archive__item-body">
+            <ul>
+              {% for post in site.posts offset: 3 limit: 6%}
+                <li>
+                  <a href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                  </a>
+                  <small>({{ post.date | date: "%d-%m-%Y" }})</small>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+      </div>
+      <div class="archive__item">
+          <h2 class="archive__item-title">Más post en el Microblog...</h2>
+          <div class="archive__item-body">
+            <ul>
+            {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
+            {% for post in sorted_posts offset: 3 limit: 6%}
+                <li>
+                  <a href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                  </a>
+                  <small>({{ post.date | date: "%d-%m-%Y" }})</small>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+      </div>
+      <div class="archive__item">
+          <h2 class="archive__item-title">Últimos cursos...</h2>
+          <div class="archive__item-body">
+            <ul>
+              <li><a href="https://plataforma.josedomingo.org/pledin/cursos/osv4_paas/index.html">Curso: OpenShift v4 como PaaS (2023)</a></li>
+              <li><a href="https://plataforma.josedomingo.org/pledin/cursos/osv4_k8s/index.html">Aprende Kubernetes con OpenShift v4 (2023)</a></li>
+              <li><a href="https://josedom24.github.io/curso_docker_2022/">Curso: Introducción a  Docker. CPR Badajoz. (2022)</a></li>
+              <li><a href="https://github.com/iesgn/curso_kubernetes_cep">Curso: Introducción a Kubernetes. CEP Castilleja de la Cuesta (2022)</a></li>
+              <li><a href="https://www.josedomingo.org/pledin/2022/05/curso-cloud-iesgn">"Mini" Curso: Virtualización y Cloud Computing en el IES Gonzalo Nazareno (2022)</a></li>
+              <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+{% endfor %}
+</div>
+
+<div class="feature__wrapper">
         <div class="archive__item-body">
           <h2 class="archive__item-title">Más posts en el Blog...</h2>
             <ul>
