@@ -148,7 +148,7 @@ feature_row4:
 <div class="feature__wrapper">
   <div class="feature__item">
       <div class="archive__item">
-          <h2 class="archive__item-title">Más posts en el Blog...</h2>
+        <h3 id="page-title" class="page__title" itemprop="headline">Más posts en el Blog...</h3>
           <div class="archive__item-body">
             <ul>
               {% for post in site.posts offset: 3 limit: 6%}
@@ -162,8 +162,10 @@ feature_row4:
             </ul>
           </div>
       </div>
+    </div>
+    <div class="feature__item">
       <div class="archive__item">
-          <h2 class="archive__item-title">Más post en el Microblog...</h2>
+          <h3 id="page-title" class="page__title" itemprop="headline">Más post en el Microblog...</h3>
           <div class="archive__item-body">
             <ul>
             {% assign sorted_posts = site.microblog | sort: 'date' | reverse %}
@@ -178,6 +180,8 @@ feature_row4:
             </ul>
           </div>
       </div>
+    </div>
+    <div class="feature__item">
       <div class="archive__item">
           <h2 class="archive__item-title">Últimos cursos...</h2>
           <div class="archive__item-body">
@@ -192,6 +196,7 @@ feature_row4:
           </div>
       </div>
     </div>
+  </div>
 </div>
 
 <div class="feature__wrapper">
