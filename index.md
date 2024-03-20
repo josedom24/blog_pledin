@@ -197,7 +197,7 @@ feature_row4:
       </div>
     </div>
   </div>
-</div>
+
 
 <div class="feature__wrapper">
         <div class="archive__item-body">
