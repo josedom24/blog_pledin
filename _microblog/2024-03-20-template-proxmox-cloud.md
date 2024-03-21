@@ -6,11 +6,11 @@ tags:
 ---
 Script que nos permite, a partir de una imagen cloud de un sistema operativo, crear un template de Proxmox:
 
-```bash
+```sh
 virt-customize --install qemu-guest-agent -a debian-12-genericcloud-amd64.qcow2
 virt-customize --run-command \
-"sed -i 's\PasswordAuthentication no\PasswordAuthentication yes\g' /etc/ssh/sshd_config" \
--a debian-12-genericcloud-amd64.qcow2
+  "sed -i 's\PasswordAuthentication no\PasswordAuthentication yes\g' /etc/ssh/sshd_config" \
+  -a debian-12-genericcloud-amd64.qcow2
 
 qm create 10000 --name debian12-cloud --memory 1024 --net0 virtio,bridge=vmbr0
 qm importdisk 10000 debian-12-genericcloud-amd64.qcow2 local-lvm
