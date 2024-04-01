@@ -1,5 +1,5 @@
 ---
-title: 'Visualizar contextos de SELinux'
+title: 'Contextos de seguridad SELinux'
 tags: 
   - SELinux
   - Podman
