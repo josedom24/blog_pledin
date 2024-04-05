@@ -1,5 +1,5 @@
 ---
-title: 'OpensStack 2024.1 Caracal'
+title: 'OpenStack 2024.1 Caracal'
 tags: 
   - Virtualización
   - OpenStack
