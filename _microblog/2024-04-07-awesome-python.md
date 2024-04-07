@@ -2,7 +2,6 @@
 title: 'Awesome Python'
 tags: 
   - Python
-published: false
 ---
 [Awesome Python](https://github.com/vinta/awesome-python) es una lista de frameworks, bibliotecas, software y recursos de Python.
 
