@@ -34,7 +34,7 @@ Antes de definir las distintas aplicaciones que nos proporciona Red Hat para tra
 
 * **Entorno de ejecución de contenedores (runtime container)**: Software encargado de configurar el sistema para ejecutar los contenedores. Lo más utilizados son **runc** y **crun**. Otros ejemplos de entornos de ejecución puedes ser **Kata** y **gVisor**.
 
-![entorno]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/04/entorno.png){: .align-center }
+![entorno]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/04/entornos.png){: .align-center }
 
 
 <!--more-->
