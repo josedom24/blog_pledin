@@ -2,8 +2,8 @@
 title: 'Cursos sobre OpenShift v4'
 permalink: /2023/11/cursos-openshift/
 tags:
-  - Openshift
-  - Kubernetes
+  - OpenShift
+  - kubernetes
   - Cursos
 ---
 

@@ -3,7 +3,7 @@ title: 'Introducción a Podman'
 permalink: /2024/04/introduccion-podman/
 tags:
   - Podman
- 
+  - Virtualización
 ---
 
 ![podman]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/04/podman-logo.png){: .align-center }
@@ -35,6 +35,9 @@ Antes de definir las distintas aplicaciones que nos proporciona Red Hat para tra
 * **Entorno de ejecución de contenedores (runtime container)**: Software encargado de configurar el sistema para ejecutar los contenedores. Lo más utilizados son **runc** y **crun**. Otros ejemplos de entornos de ejecución puedes ser **Kata** y **gVisor**.
 
 ![entorno]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/04/entorno.png){: .align-center }
+
+
+<!--more-->
 
 ### Conceptos relacionados con el trabajo con contenedores
 
@@ -76,8 +79,6 @@ Podman, Buildah y Skopeo son tres herramientas relacionadas que se utilizan en e
 * **Buildah**: Es una herramienta para la **construcción de imágenes de contenedores** sin necesidad de ejecutar un demonio. Permite a los usuarios construir imágenes de contenedores OCI desde cero o a partir de un contenedor existente sin necesidad de un fichero `Dockerfile`. 
 * **Skopeo**: Es una herramienta que facilita la **gestión de imágenes de contenedores**. Permite a los usuarios copiar imágenes de un registro a otro, inspeccionar imágenes y firmas, y realizar otras operaciones relacionadas con imágenes sin necesidad de descargarlas en el sistema local. 
 
-<!--more-->
-
 ## Podman
 
 [**Podman (the POD MANager)**](https://podman.io/) es una herramienta para gestionar contenedores e imágenes OCI, volúmenes montados en esos contenedores y Pods (grupos de contenedores). Podman ejecuta contenedores en **Linux**, pero también puede utilizarse en sistemas **Mac y Windows** utilizando una máquina virtual gestionada por Podman. 
@@ -94,13 +95,13 @@ Podman se ha desarrollado después de Docker, por lo que sus creadores se han ba
 
 Por ejemplo para crear un servidor web en un contenedor Podman, podemos ejecutar:
 
-```bash
+```
 $ podman run -d -p 8080:80 --name servidor_web quay.io/libpod/banner
 ```
 
 Y podemos ver el contenedor en ejecución:
 
-```bash
+```
 $ podman ps
 CONTAINER ID  IMAGE                           COMMAND               CREATED        STATUS        PORTS                 NAMES
 45beec76a967  quay.io/libpod/banner:latest    nginx -g daemon o...  4 seconds ago  Up 4 seconds  0.0.0.0:8080->80/tcp  servidor_web
@@ -108,7 +109,7 @@ CONTAINER ID  IMAGE                           COMMAND               CREATED     
 
 Y podemos acceder al servidor web en el puerto 8080/tcp accediendo a la dirección IP del servidor donde tenemos instalado Podman:
 
-```bash
+```
 $ curl http://localhost:8080
    ___          __              
   / _ \___  ___/ /_ _  ___ ____ 
