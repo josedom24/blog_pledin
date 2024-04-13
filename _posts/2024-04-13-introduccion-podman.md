@@ -6,7 +6,7 @@ tags:
  
 ---
 
-![podman]({{ site.url }}{{ site.baseurl }}/assets/images/podman-logo.png){: .align-center }
+![podman]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/04/podman-logo.png){: .align-center }
 
 ## Open Container Initiative
 
@@ -26,15 +26,15 @@ Antes de definir las distintas aplicaciones que nos proporciona Red Hat para tra
 
 * **Orquestador de contenedores**: es un programa que gestiona los contenedores que se ejecutan en un clúster de servidores. Nos ofrece muchas características: actualizaciones automáticas, balanceo de carga, tolerancia a fallos, escalabilidad,...
 
-![orquestadores](img/orquestador.png)
+![orquestadores]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/04/orquestador.png){: .align-center }
 
 * **Motor de contenedores**: Software que nos permite gestionar contenedores en un nodo local. Los contenedores puedes ser creados por orquestadores, en ese caso se usan motores como **containerd** o **cri-o**, o pueden ser gestionados por usuarios, en este caso se utilizan motores como **Docker** o **Podman**.
 
-![motores](img/motor.png)
+![motores]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/04/motor.png){: .align-center }
 
 * **Entorno de ejecución de contenedores (runtime container)**: Software encargado de configurar el sistema para ejecutar los contenedores. Lo más utilizados son **runc** y **crun**. Otros ejemplos de entornos de ejecución puedes ser **Kata** y **gVisor**.
 
-![entornos](img/entornos.png)
+![entorno]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2024/04/entorno.png){: .align-center }
 
 ### Conceptos relacionados con el trabajo con contenedores
 
@@ -75,6 +75,8 @@ Podman, Buildah y Skopeo son tres herramientas relacionadas que se utilizan en e
 * **Podman**: Es un **motor de contenedores OCI**, que permite a los usuarios crear, ejecutar y gestionar contenedores sin necesidad de un demonio (daemon) centralizado. Podman utiliza un enfoque basado en procesos, lo que lo hace más seguro y adecuado para entornos donde se requiere aislamiento y seguridad. 
 * **Buildah**: Es una herramienta para la **construcción de imágenes de contenedores** sin necesidad de ejecutar un demonio. Permite a los usuarios construir imágenes de contenedores OCI desde cero o a partir de un contenedor existente sin necesidad de un fichero `Dockerfile`. 
 * **Skopeo**: Es una herramienta que facilita la **gestión de imágenes de contenedores**. Permite a los usuarios copiar imágenes de un registro a otro, inspeccionar imágenes y firmas, y realizar otras operaciones relacionadas con imágenes sin necesidad de descargarlas en el sistema local. 
+
+<!--more-->
 
 ## Podman
 
