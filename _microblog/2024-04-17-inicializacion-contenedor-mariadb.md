@@ -3,7 +3,7 @@ title: 'Inicialización de un contenedor con mariadb'
 tags: 
   - Docker
   - Podman
-  - contenedor
+  - Contenedor
   - mariadb
 ---
 
