@@ -7,9 +7,8 @@ tags:
   - mariadb
 ---
 
-En la [documentación](https://hub.docker.com/_/mariadb) de la imagen `mariadb` encontramos que para inicializar la base de datos al crear un contenedor podemos copiar un fichero con extensión `sql` con las instrucciones SQL para la creación de las tablas de la base de datos en el directorio `/docker-entrypoint-initdb.d`. Por lo tanto, si tenemos un fichero con el script de creación de la base de datos en el fichero `schema.sql` podríamos usar un fichero `Dockerfile` con el siguiente contenido:
-
-```Dockerfile
+En la [documentación](https://hub.docker.com/_/mariadb) de la imagen `mariadb` encontramos que para inicializar la base de datos al crear un contenedor podemos copiar un fichero con extensión `sql` (por ejemplo, `schema.sql` con las instrucciones SQL para la creación de las tablas de la base de datos en el directorio `/docker-entrypoint-initdb.d`. Podemos usar un fichero `Dockerfile` con el siguiente contenido:
+```
 FROM docker.io/mariadb:10.5
 COPY schema.sql /docker-entrypoint-initdb.d/
 ENV MARIADB_DATABASE=nombre_basedatos
