@@ -5,7 +5,7 @@ date: 2010-11-10T16:51:53+00:00
 
 
 guid: http://www.josedomingo.org/pledin/?p=361
-permalink: /2010/11/ccursos-sobre-rede/
+permalink: /2010/11/cursos-sobre-redes/
 
   
 tags:
@@ -14,7 +14,7 @@ tags:
   - Redes
 ---
 <p style="text-align: justify;">
-  Este año estoy impartiendo el módulo de Servicios de Internet del segundo curso del ciclo medio de formación profesional de Sistemas Microinformáticos y Redes (puedes seguirlo en este <a href="http://informatica.gonzalonazareno.org/plataforma/course/view.php?id=31">enlace</a>). Mis compañeros y yo estamos buscando diferentes materiales para preparar los cursos, y el otro día, <a href="http://sw-libre.blogspot.com/">Jesús Moreno</a> me envió una página que me parece muy interesante, con un curso de la Junta de Andalucia de dormación profecsional ocupacional sobre Admninistración de Servidores. El curso lo puedes encontrar en la siguiente dirección:
+  Este año estoy impartiendo el módulo de Servicios de Internet del segundo curso del ciclo medio de formación profesional de Sistemas Microinformáticos y Redes (puedes seguirlo en este <a href="http://informatica.gonzalonazareno.org/plataforma/course/view.php?id=31">enlace</a>). Mis compañeros y yo estamos buscando diferentes materiales para preparar los cursos, y el otro día, <a href="http://sw-libre.blogspot.com/">Jesús Moreno</a> me envió una página que me parece muy interesante, con un curso de la Junta de Andalucia de Formación Profesional ocupacional sobre Admninistración de Servidores. El curso lo puedes encontrar en la siguiente dirección:
 </p>
 
 <p style="text-align: center;">
