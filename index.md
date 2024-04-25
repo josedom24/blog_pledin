@@ -201,3 +201,4 @@ feature_row4:
 
 
 {% include feature_row id="feature_row4" type="center" %}
+<a rel="me" href="https://masto.es/@pledin_jd" class="invisible-link">Mastodon</a>
