@@ -1,5 +1,5 @@
 ---
-title: 'Introducción a los contenedores rootles con Podman'
+title: 'Introducción a los contenedores rootless con Podman'
 permalink: /2024/04/rootless-podman/
 tags:
   - Podman
