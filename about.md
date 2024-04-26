@@ -19,9 +19,9 @@ Bienvenid@s a la página personal de José Domingo Muñoz. Soy de [Utrera](http:
 
 En esta página quiero ir recopilando información y recursos sobre informática y sobre la aplicación de las nuevas técnologias en la educación.
 
-Si cualquier material o documento colgado en esta página no tiene la licencia necesaria para su libre distribución, por favor [escríbeme](mailto:clasinfo@gmail.com) inmediatamente para retirarlo del sitio.
+Si cualquier material o documento colgado en esta página no tiene la licencia necesaria para su libre distribución, por favor [escríbeme](mailto:josedom24@josedomingo.org) inmediatamente para retirarlo del sitio.
 
-Espero que os guste y que os sea útil, si quereis colaborar con este proyecto o simplemente hacerme cualquier comentario, por favor, [escríbeme](mailto:clasinfo@gmail.com).
+Espero que os guste y que os sea útil, si quereis colaborar con este proyecto o simplemente hacerme cualquier comentario, por favor, [escríbeme](mailto:josedom24@josedomingo.org).
 
 ![presentación]({{ site.url }}{{ site.baseurl }}/assets/images/logo3.png)
 
