@@ -43,6 +43,8 @@ Sin embargo, cuando se trata de otros directorios que no están configurados de 
 
 Deberemos aplicar etiquetas de contexto adecuadas a los directorios para permitir el acceso de los contenedores según sea necesario. 
 
+<!--more-->
+
 ## Uso de almacenamiento en contenedores
 
 En la creación de contenedores con `podman run` puedo indicar que vamos a usar almacenamiento para guardar la información de ciertos directorios. Tanto en el caso de uso de volúmenes como en el caso del uso de bind mount podemos indicar el uso de almacenamiento en la creación de un contenedor con las siguientes parámetros del comando `podman run`:
