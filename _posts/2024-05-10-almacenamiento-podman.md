@@ -1,5 +1,5 @@
 ---
-title: 'Almacenamiento en los contenedores rootless con Podman'
+title: 'Almacenamiento en contenedores rootless con Podman'
 permalink: /2024/05/almacenamiento-rootless-podman/
 tags:
   - Podman
