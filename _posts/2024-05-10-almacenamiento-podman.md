@@ -1,6 +1,6 @@
 ---
 title: 'Almacenamiento en los contenedores rootless con Podman'
-permalink: /2024/04/rootless-podman/
+permalink: /2024/05/almacenamiento-rootless-podman/
 tags:
   - Podman
   - Virtualización
@@ -42,8 +42,6 @@ SELinux configura ciertos directorios de manera adecuada para que puedan ser acc
 Sin embargo, cuando se trata de otros directorios que no están configurados de forma predeterminada para ser accesibles por Podman y los contenedores, es posible que estos no puedan acceder a ellos debido a las políticas de seguridad de SELinux. SELinux puede aplicar restricciones sobre qué procesos pueden acceder a qué recursos, y si un directorio no está configurado adecuadamente o si está fuera del contexto permitido por SELinux, los contenedores pueden tener dificultades para acceder a él.
 
 Deberemos aplicar etiquetas de contexto adecuadas a los directorios para permitir el acceso de los contenedores según sea necesario. 
-
-<!--more-->
 
 ## Uso de almacenamiento en contenedores
 

@@ -1,6 +1,6 @@
 ---
 title: 'Almacenamiento en los contenedores rootless con Podman'
-permalink: /2024/04/rootless-podman/
+permalink: /2024/05/almacenamiento-rootless-podman/
 tags:
   - Podman
   - Virtualización
@@ -311,3 +311,4 @@ Para que el usuario con UID 123 pueda acceder al directorio tenemos que asegurar
      -rw-r--r--    1 ntp      ntp              0 Apr  2 14:39 fichero2
 
      $ podman exec -it alpine5 touch destino/fichero3
+     ```
