@@ -209,7 +209,9 @@ $ podman pod ps
 POD ID        NAME        STATUS      CREATED         INFRA ID      # OF CONTAINERS
 1f6ed1602460  pod2        Created     6 minutes ago   be8baecabdc2  1
 $  podman pod start pod2
+{% raw %}
 $ podman inspect --format='{{range \.NetworkSettings.Networks }}{{.IPAddress}}{{end}}' be8baecabdc2
+{% endraw %}
 10.89.0.2
 ```
 
