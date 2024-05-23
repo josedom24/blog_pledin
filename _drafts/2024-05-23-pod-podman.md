@@ -210,7 +210,7 @@ POD ID        NAME        STATUS      CREATED         INFRA ID      # OF CONTAIN
 1f6ed1602460  pod2        Created     6 minutes ago   be8baecabdc2  1
 $  podman pod start pod2
 {% raw %}
-$ podman inspect --format='{{range \.NetworkSettings.Networks }}{{.IPAddress}}{{end}}' be8baecabdc2
+$ podman inspect --format='{{range .NetworkSettings.Networks }}{{.IPAddress}}{{end}}' be8baecabdc2
 {% endraw %}
 10.89.0.2
 ```
@@ -306,10 +306,14 @@ $ podman run --pod pod5 -d --name sidecar docker.io/debian bash -c "while true; 
 Podemos comprobar que los dos contenedores tienen el volumen montado en el directorio indicado:
 
 ```
-$ podman inspect --format='{{json .Mounts | escape_once}}' web
+{% raw %}
+$ podman inspect --format='{{json .Mounts}}' web
+{% endraw %}
 [{"Type":"volume","Name":"vol1","Source":"/var/lib/containers/storage/volumes/vol1/_data","Destination":"/usr/share/nginx/html","Driver":"local","Mode":"","Options":["nosuid","nodev","rbind"],"RW":true,"Propagation":"rprivate"}]
 
-$ podman inspect --format='{{json .Mounts | escape_once}}' sidecar
+{% raw %}
+$ podman inspect --format='{{json .Mounts}}' sidecar
+{% endraw %}
 [{"Type":"volume","Name":"vol1","Source":"/var/lib/containers/storage/volumes/vol1/_data","Destination":"/usr/share/nginx/html","Driver":"local","Mode":"","Options":["nosuid","nodev","rbind"],"RW":true,"Propagation":"rprivate"}]
 ```
 
