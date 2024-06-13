@@ -56,7 +56,7 @@ Sin embargo, esta opción no es la recomendada, y actualmente se prefiere el uso
 * Redes
 * Pods 
 
-<!-- more -->
+<!--more-->
 
 #### ¿Cómo funciona Quadlet?
 
