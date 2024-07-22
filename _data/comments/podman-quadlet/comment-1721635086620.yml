@@ -1,0 +1,7 @@
+_id: 20d53be0-4800-11ef-9da4-a71398e6a802
+message: "Hola! En mi servidor RHEL 9.4, si no le lanzo el siguiente comando como root (o con sudo)\r\nloginctl enable-linger admin\r\nsiendo el usuario admin quien tiene los podman, al reiniciarse el servidor, los podman no inician automáticamente, se inician únicamente cuando hago login en el server por ssh."
+name: Xavier
+email: 43807767157d454c2615b060460ddf80
+url: ''
+hidden: ''
+date: '2024-07-22T07:58:06.602Z'
