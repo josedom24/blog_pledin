@@ -1,7 +1,7 @@
 ---
 title: 'Recuperar entornos virtuales de Python'
 tags: 
-  - python
+  - Python
   
 ---
 En ocasiones, quizás porque hayamos actualizado el sistema y ha cambiado la versión de Python, al trabajar con un entorno virtual obtenemos el siguiente error:
