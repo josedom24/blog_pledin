@@ -1,5 +1,5 @@
 ---
-title: 'recueprar entornos virtuales de Python'
+title: 'Recuperar entornos virtuales de Python'
 tags: 
   - python
   
