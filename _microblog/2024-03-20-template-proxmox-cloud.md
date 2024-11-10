@@ -1,7 +1,7 @@
 ---
 title: 'Template Proxmox desde una imagen cloud'
 tags: 
-  - Cloud
+  - Cloud Computing
   - Proxmox
 ---
 Script que nos permite, a partir de una imagen cloud de un sistema operativo, crear un template de Proxmox:
