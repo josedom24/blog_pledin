@@ -1,0 +1,7 @@
+_id: 0037ef40-99ff-11ee-9106-cb0a945ab720
+message: "Hola José, felicitaciones por la explicación detallada, actualmente tengo un problemita y recién me paso al reconstruir las imagenes de mi proyecto, no es posible conectarse a la base de datos. Según entiendo puedo pasar en vez de la ip, el nombre del servicio como variable de entorno para que pueda conectarse, aún haciendo eso no se conecta con la BD - postgresql. Si tendrias algo de tiempo para compartirte mi archivo docker-compose.yml y ver si esta algo mal que no puedo ver.\r\nSaludos y éxitos"
+name: Ronald E. Aybar Duno
+email: 3060bbf6bb358b7696f21cca04c4f2cb
+url: ''
+hidden: ''
+date: '2023-12-13T21:31:40.139Z'
