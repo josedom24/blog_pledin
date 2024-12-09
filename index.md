@@ -186,11 +186,11 @@ feature_row4:
           <h3 id="page-title" class="page__title" itemprop="headline">Últimos cursos...</h3>
           <div class="archive__item-body">
             <ul class="resumen">
+              <li><a href="https://plataforma.josedomingo.org/pledin/cursos/podman2024/index.html">Introducción a Podman (2024)</a></li>
               <li><a href="https://plataforma.josedomingo.org/pledin/cursos/docker2024/index.html">Introducción a Docker (2024)</a></li>
               <li><a href="https://plataforma.josedomingo.org/pledin/cursos/osv4_paas/index.html">Curso: OpenShift v4 como PaaS (2023)</a></li>
               <li><a href="https://plataforma.josedomingo.org/pledin/cursos/osv4_k8s/index.html">Aprende Kubernetes con OpenShift v4 (2023)</a></li>
               <li><a href="https://josedom24.github.io/curso_docker_2022/">Curso: Introducción a  Docker. CPR Badajoz. (2022)</a></li>
-              <li><a href="https://github.com/iesgn/curso_kubernetes_cep">Curso: Introducción a Kubernetes. CEP Castilleja de la Cuesta (2022)</a></li>
               <li><a href="https://plataforma.josedomingo.org/">Más cursos...</a></li>
             </ul>
           </div>
