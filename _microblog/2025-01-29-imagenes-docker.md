@@ -7,6 +7,7 @@ tags:
 Dejo por aquí un pequeño script bash que nos lista las imágenes Docker que no tienen ningún contenedor creado:
 
 ```bash
+{% raw %}
 #!/bin/bash
 
 echo "Imágenes sin contenedores:"
@@ -15,4 +16,5 @@ docker images --format '{{.ID}} {{.Repository}}:{{.Tag}}' | while read img repo;
         echo "- $repo"
     fi
 done
+{% endraw %}
 ```
