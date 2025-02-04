@@ -8,4 +8,4 @@ Lets Encrypt dejará de enviar correos de notificación para avisar de la fecha 
 
 Nos recomiendan el uso de un servicio de supervisión llamado [Red Sift Certificates Lite ](https://redsift.com/pulse-platform/certificates-lite) que monitoriza nuestros certificados y nos envía correos electrónicos de notificación avisando de la necesidad de renovación.
 
-![ ]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2025/02/redsiftpdf.png){: .align-center}
+![ ]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2025/02/redsiftpng.png){: .align-center}
