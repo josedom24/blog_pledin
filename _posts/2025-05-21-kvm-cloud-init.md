@@ -121,5 +121,5 @@ Password:
 ubuntu@ubuntu-vm:~$
 ```
 
-
+El uso de **imágenes cloud** configuradas con **cloud-init** nos permite el despliegue automatizado de nuevas máquinas virtuales de manera rápida y sencilla.
 
