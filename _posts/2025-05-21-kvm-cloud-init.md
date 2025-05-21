@@ -59,15 +59,15 @@ Con este fichero se van a hacer tres configuraciones en la máquina: se cambia s
 
 La mayoría de las distribuciones Linux nos ofrecen un repositorio de descargas de imágenes cloud:
 
-* Ubuntu Cloud Images: https://cloud-images.ubuntu.com
-* Debian Cloud Images: https://cloud.debian.org/images/cloud/
-* Fedora Cloud Images: https://alt.fedoraproject.org/cloud/
-* CentOS Cloud Images: https://cloud.centos.org/centos/
-* AlmaLinux Cloud Images: https://repo.almalinux.org/cloud/
-* Rocky Linux Cloud Images: https://dl.rockylinux.org/pub/rocky/
-* openSUSE Cloud Images: https://download.opensuse.org/repositories/Cloud:/Images:/
-* Arch Linux Cloud Images (comunidad): https://gitlab.archlinux.org/archlinux/arch-boxes
-* Amazon Linux Cloud Images: https://cdn.amazonlinux.com/os-images/latest/
+* Ubuntu Cloud Images: [https://cloud-images.ubuntu.com](https://cloud-images.ubuntu.com)
+* Debian Cloud Images: [https://cloud.debian.org/images/cloud/](https://cloud.debian.org/images/cloud/)
+* Fedora Cloud Images: [https://alt.fedoraproject.org/cloud/](https://alt.fedoraproject.org/cloud/)
+* CentOS Cloud Images: [https://cloud.centos.org/centos/](https://cloud.centos.org/centos/)
+* AlmaLinux Cloud Images: [https://repo.almalinux.org/cloud/](https://repo.almalinux.org/cloud/)
+* Rocky Linux Cloud Images: [https://dl.rockylinux.org/pub/rocky/](https://dl.rockylinux.org/pub/rocky/)
+* openSUSE Cloud Images: [https://download.opensuse.org/repositories/Cloud:/Images:/](https://download.opensuse.org/repositories/Cloud:/Images:/)
+* Arch Linux Cloud Images (comunidad): [https://gitlab.archlinux.org/archlinux/arch-boxes](https://gitlab.archlinux.org/archlinux/arch-boxes)
+* Amazon Linux Cloud Images: [https://cdn.amazonlinux.com/os-images/latest/](https://cdn.amazonlinux.com/os-images/latest/)
 
 Nosotros vamos a trabajar con una imagen cloud de Ubuntu. Descargamos la imagen cloud y la guardamos en el directorio de trabajo:
 
