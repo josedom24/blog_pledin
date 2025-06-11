@@ -62,32 +62,32 @@ Esta configuración se tiene que realizar en el Servidor Web. Veamos los pasos q
 
 1.  Vamos a crear una nueva tabla de enrutamiento que llamaremos **vpnroute**. Para ello editamos el fichero `/etc/iproute2/rt_tables` y añadimos la siguiente línea:
 
-  ```
-  100 vpnroute
-  ```
+    ```
+    100 vpnroute
+    ```
 
 2. Añadimos una ruta por defecto para esta tabla.Indicamos que para la tabla `vpnroute`, la salida por defecto es la interfaz VPN `tun0`:
 
-  ```
-  sudo ip route add default dev tun0 table vpnroute
-  ```
+    ```
+    sudo ip route add default dev tun0 table vpnroute
+    ```
 
 3. Añadimos una regla de enrutamiento condicional. Configuramos la siguiente regla: **Si un paquete viene desde la IP de la VPN, usa la tabla `vpnroute`.**
 
-  ```
-  sudo ip rule add from 192.168.100.2 lookup vpnroute
-  ```
+    ```
+    sudo ip rule add from 192.168.100.2 lookup vpnroute
+    ```
 
 4. Verificamos la configuración:
 
-  ```
-  ip rule
-  ...
-  32765:	from 192.168.98.2 lookup vpnroute
+    ```
+    ip rule
+    ...
+    32765:	from 192.168.98.2 lookup vpnroute
 
-  ip route show table vpnroute
-  default dev tun0 scope link 
-  ```
+    ip route show table vpnroute
+    default dev tun0 scope link 
+    ```
 
 Ya estaría funcionando, pero esta configuración no es persistente. Para hacer la persistente si estamos usando la configuración de red con la herramienta **ifupdown**, podríamos hacer un script ejecutable que guardaríamos en el directorio`/etc/network/if-up.d/` para que se ejecutase al levantar la interfaz. El fichero se puede llamar `/etc/network/if-up.d/policy-routing-vpn` con el siguiente contenido:
 
