@@ -10,12 +10,12 @@ Recientemente me he encontrado un escenario concreto donde se presenta. Lo podem
 
 ![enrutamiento](https://www.josedomingo.org/pledin/assets/wp-content/uploads/2025/06/asimetrico1.png){: .align-center }
 
-* No puedo acceder a un servidor web que tengo en mi red local porque no tengo acceso a la configuración del router y no puedo configurar las reglas DNAT para abrir los puertos de navegación Web.
+No puedo acceder a un servidor web que tengo en mi red local porque no tengo acceso a la configuración del router y no puedo configurar las reglas DNAT para abrir los puertos de navegación Web.
   
-  ![enrutamiento](https://www.josedomingo.org/pledin/assets/wp-content/uploads/2025/06/asimetrico2.png){: .align-center }
+![enrutamiento](https://www.josedomingo.org/pledin/assets/wp-content/uploads/2025/06/asimetrico2.png){: .align-center }
 
-* La **solución** pasa por evitar el acceso directo al router local. En su lugar, accedemos a una máquina remota (VPS) con dirección IP pública. Esta máquina actúa como router intermedio, ya que le configuramos una regla DNAT que redirige los paquetes al servidor web local, conectado a la VPS a través de una VPN. Es decir, los paquetes entrantes llegan al servidor web por la interfaz de la VPN (tun0).
-* El **problema**: La ruta por defecto del servidor web está configurada para enviar el tráfico saliente a través del router físico local, no por la VPN. Como resultado, la respuesta no vuelve por el mismo camino, y el cliente no puede acceder correctamente al servidor web. Esto ocurre porque el router local no puede realizar el cambio de dirección de origen (SNAT) para paquetes que no vio llegar. Lo vemos claramente en este esquema:
+La **solución** pasa por evitar el acceso directo al router local. En su lugar, accedemos a una máquina remota (VPS) con dirección IP pública. Esta máquina actúa como router intermedio, ya que le configuramos una regla DNAT que redirige los paquetes al servidor web local, conectado a la VPS a través de una VPN. Es decir, los paquetes entrantes llegan al servidor web por la interfaz de la VPN (tun0).
+El **problema**: La ruta por defecto del servidor web está configurada para enviar el tráfico saliente a través del router físico local, no por la VPN. Como resultado, la respuesta no vuelve por el mismo camino, y el cliente no puede acceder correctamente al servidor web. Esto ocurre porque el router local no puede realizar el cambio de dirección de origen (SNAT) para paquetes que no vio llegar. Lo vemos claramente en este esquema:
 
 ![enrutamiento](https://www.josedomingo.org/pledin/assets/wp-content/uploads/2025/06/asimetrico3.png){: .align-center }
 
