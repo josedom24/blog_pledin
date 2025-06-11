@@ -42,7 +42,7 @@ De esta forma, el servidor responde por la misma VPN (`tun0`), y la respuesta ll
 En este caso en la VPN tendríamos dos reglas NAT:
 
 * Una **Destination NAT (DNAT)**: para redirigir el tráfico entrante (puertos 80 y 443) al servidor web local por la VPN.
-* Otra **SNAT**:     para modificar la IP de origen del cliente por la IP VPN del VPS, asegurando así que el servidor devuelva la respuesta por la misma VPN.
+* Otra **SNAT**: para modificar la IP de origen del cliente por la IP VPN del VPS, asegurando así que el servidor devuelva la respuesta por la misma VPN.
 
 
 ```
