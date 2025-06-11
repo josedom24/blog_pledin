@@ -115,12 +115,6 @@ sudo chmod +x /etc/network/if-up.d/policy-routing-vpn
 
 ## Conclusión
 
-Claro, aquí tienes una versión ampliada y bien redactada de la conclusión, manteniendo el estilo técnico y claro:
-
----
-
-## Conclusión
-
 Aunque podríamos explorar otras soluciones, como instalar un **proxy inverso** en el VPS o modificar directamente la **ruta por defecto** del servidor web (lo cual podría afectar otras comunicaciones), con esta descripción queda claro cuáles son las **dos soluciones principales** al problema del enrutamiento asimétrico en este escenario concreto.
 
 * Por un lado, la solución basada en **SNAT** es sencilla de implementar y permite resolver el problema de forma rápida, aunque con la **limitación de perder la IP real del cliente**.
