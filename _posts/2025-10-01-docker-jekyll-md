@@ -67,7 +67,7 @@ De manera gráfica sería:
 
 Para simplificar la creación y actualización de contenedores, usamos un **wrapper bash** llamado `run.sh`. Cuando usemos este script tendremos que indicar 3 parámetros en la línea de comandos:
 
-* El **nombre del contenedor**: de esta manera podremos tener distintos contenedores para gestionaar distintos proyectos Jekyll, cada uno de ellos podrá requerir dependencias distintas.
+* El **nombre del contenedor**: de esta manera podremos tener distintos contenedores para gestionar distintos proyectos Jekyll, cada uno de ellos podrá requerir dependencias distintas.
 * El **directorio del proyecto**.
 * El **directorio de salida**.
 
@@ -117,11 +117,11 @@ fi
 
 ## Scripts para gestionar proyectos
 
-Sólo nos queda explicar el funcionamiento de los dos script que hemos cpoiado en la imagen y nos ayudan a gestionar nuestros proyectos Jekyll.
+Sólo nos queda explicar el funcionamiento de los dos script que hemos copiado en la imagen y nos ayudan a gestionar nuestros proyectos Jekyll.
 
 ### `install-gem.sh`
 
-Este script se encarga de instalar las gemas que cada proyecto Jekyll necesita según su `Gemfile`. Sñolo se ejecuta, como hemos visto, cuando se crea el contenedor.
+Este script se encarga de instalar las gemas que cada proyecto Jekyll necesita según su `Gemfile`. Solo se ejecuta, como hemos visto, cuando se crea el contenedor.
 
 ```bash
 #!/bin/bash
@@ -208,11 +208,11 @@ Este enfoque permite gestionar múltiples proyectos Jekyll con distintas version
 
 ## Ventajas de este enfoque
 
-1. **Aislamiento completo**: cada proyecto Jekyll tiene su propio contenedor con gemas específicas.
-2. **Evita conflictos de versión**: distintas gemas o versiones de Jekyll no interfieren entre proyectos.
-3. **Portabilidad**: basta con Docker para levantar el entorno, sin necesidad de instalar Ruby ni Jekyll en el host.
-4. **Reutilización**: la misma imagen sirve para cualquier proyecto Jekyll futuro.
-5. **Flexibilidad**: puedes mantener contenedores “vivos” listos para actualizar o regenerar sitios en cualquier momento.
+* **Aislamiento completo**: cada proyecto Jekyll tiene su propio contenedor con gemas específicas.
+* **Evita conflictos de versión**: distintas gemas o versiones de Jekyll no interfieren entre proyectos.
+* **Portabilidad**: basta con Docker para levantar el entorno, sin necesidad de instalar Ruby ni Jekyll en el host.
+* **Reutilización**: la misma imagen sirve para cualquier proyecto Jekyll futuro.
+* **Flexibilidad**: puedes mantener contenedores “vivos” listos para actualizar o regenerar sitios en cualquier momento.
 
 ## Trucos y buenas prácticas
 
