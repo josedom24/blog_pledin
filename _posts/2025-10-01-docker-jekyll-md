@@ -1,0 +1,251 @@
+---
+title: 'Contenedores Docker para la creación de páginas web estáticas usando Jekyll'
+permalink: /2025/10/docker-jekyll/
+tags:
+  - Jekyll
+  - docker
+  
+---
+![docker](https://www.josedomingo.org/pledin/assets/wp-content/uploads/2025/10/docker-jekyll.png){: .align-center }
+
+[Como ya saben](https://www.josedomingo.org/pledin/2018/09/bienvenidos-a-pledin30/), mis páginas web son **páginas estáticas** que genero utilizando **Jekyll**, una herramienta muy popular en el ecosistema de Ruby. Para quienes no estén familiarizados, **Jekyll** es un generador de sitios estáticos que toma contenido escrito en Markdown o HTML y lo convierte en un sitio web completo, listo para ser servido en cualquier servidor web. Entre sus principales ventajas se encuentran la simplicidad, la velocidad de carga de las páginas generadas, la facilidad para trabajar con plantillas y layouts, y la posibilidad de mantener el contenido separado del diseño.
+
+Hasta ahora, en mi servidor tenía instalado **Ruby** y **Jekyll** directamente, lo que me permitía generar mis sitios sin problemas. Sin embargo, al manejar **distintos proyectos Jekyll**, este enfoque puede traer ciertos inconvenientes: diferentes proyectos pueden requerir **versiones distintas de gemas**, que son librerías o paquetes de Ruby que Jekyll y sus extensiones utilizan para funcionar correctamente. Además, las actualizaciones de Ruby, Jekyll o de las gemas siempre pueden complicarse, generando conflictos o problemas de compatibilidad.
+
+En este artículo vamos a presentar una alternativa más **flexible y ordenada**: la construcción de una **imagen Docker con Jekyll ya instalado**, que nos permitirá crear distintos contenedores para generar cada uno de nuestros proyectos de manera aislada.
+
+Este enfoque tiene varias ventajas: garantiza que cada proyecto use la versión exacta de Jekyll y de sus gemas, evita conflictos entre proyectos, simplifica el proceso de actualización y facilita la portabilidad del entorno de desarrollo o generación de sitios, ya que basta con tener Docker instalado para ponerlo en marcha.
+
+<!--more-->
+
+## Construyendo la imagen Docker para Jekyll
+
+Para gestionar múltiples proyectos Jekyll de forma aislada, construimos una imagen basada en **Ruby 3.2** que incluya Jekyll y Bundler (herramienta de gestión de dependencias (**gemas**) para proyectos Ruby). Esta imagen servirá como base para todos nuestros contenedores.
+
+### Dockerfile explicado
+
+```dockerfile
+FROM ruby:3.2
+
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    TZ=UTC
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    nodejs \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /srv/jekyll
+
+RUN gem install jekyll bundler
+
+COPY build-site.sh /usr/local/bin/build-site.sh
+RUN chmod +x /usr/local/bin/build-site.sh
+COPY install-gem.sh /usr/local/bin/install-gem.sh
+RUN chmod +x /usr/local/bin/install-gem.sh
+
+CMD ["bash"]
+```
+
+Esta imagen se crea a partir de la imagen base `ruby:3.2` para asegurar compatibilidad con Jekyll, instalamos los paquetes necesarios para construir gemas y manejar proyectos Jekyll. Lo más importante,  instalamos **Jekyll y Bundler**. En esta imagen copiamos dos scripts bash que utilizaremos para gestionar nuestros proyectos Jekyll: 
+
+* `install-gem.sh`: Será el encargado de instalar las gemas a partir del fichero `Gemfile` del proyecto Jekyll. Se ejecuta sólo una vez, cuando se crea el contenedor.
+* `build-site.sh`: Lo ejecutaremos cada vez que que queramos generar nuestra página estática a partir del proyecto Jekyll.
+
+Hay que tener en cuenta que el contenedor que vamos a crear tendrá dos volúmenes:
+
+* El **directorio del proyecto**: que será la ruta al repositorio donde se encuentra el proyecto Jekyll.
+* El **directorio de salida**: que será la ruta del directorio donde hay que guardar el contenido estático generado.
+
+De manera gráfica sería:
+
+![docker](https://www.josedomingo.org/pledin/assets/wp-content/uploads/2025/10/docker-jekyll2.png){: .align-center }
+
+## Gestión de contenedores con `run.sh`
+
+Para simplificar la creación y actualización de contenedores, usamos un **wrapper bash** llamado `run.sh`. Cuando usemos este script tendremos que indicar 3 parámetros en la línea de comandos:
+
+* El **nombre del contenedor**: de esta manera podremos tener distintos contenedores para gestionaar distintos proyectos Jekyll, cada uno de ellos podrá requerir dependencias distintas.
+* El **directorio del proyecto**.
+* El **directorio de salida**.
+
+El script hace las siguientes operaciones:
+
+1. Si no existe la imagen, la genera a partir del fichero `Dockerfile`.
+2. Si el contenedor ya existe, se arranca si estaba parado y se ejecuta `build-site.sh`. Es decir, se genera la página estática.
+3. Si no existe el contenedor, se crea un contenedor con el nombre indicado y los volúmenes del proyecto y del HTML, se ejecuta `install-gem.sh` y luego `build-site.sh`. Es decir, se crea el contenedor, se instalan las gemas a partir del fichero `Gemfile` del proyecto y se genera, por primera vez, la página estática.
+
+Para mantener el contenedor activo se ejecuta `bash -c "tail -f /dev/null"`, permitiendo ejecutar comandos adicionales mediante `docker exec` sin detenerlo.
+
+El contenido del fichero `run.sh` es:
+
+```bash
+#!/bin/bash
+set -e
+
+if [ $# -lt 3 ]; then
+  echo "Uso: $0 <nombre-contenedor> <ruta-repositorio-jekyll> <ruta-salida-html>"
+  exit 1
+fi
+
+CONTAINER_NAME="$1"
+REPO_DIR=$(realpath "$2")
+OUT_DIR=$(realpath "$3")
+
+docker image inspect docker-jekyll >/dev/null 2>&1 || \
+  docker build -t docker-jekyll .
+
+if docker ps -a --format '{{.Names}}' | grep -q "^$CONTAINER_NAME\$"; then
+  echo "Contenedor existente '$CONTAINER_NAME', ejecutando build-site.sh..."
+  if ! docker ps --format '{{.Names}}' | grep -q "^$CONTAINER_NAME\$"; then
+    docker start "$CONTAINER_NAME"
+  fi
+  docker exec -i "$CONTAINER_NAME" /usr/local/bin/build-site.sh "$REPO_DIR" "$OUT_DIR"
+else
+  echo "Creando contenedor '$CONTAINER_NAME' y ejecutando install-gem.sh..."
+  docker run -dit --name "$CONTAINER_NAME" \
+    -v "$REPO_DIR":"$REPO_DIR" \
+    -v "$OUT_DIR":"$OUT_DIR" \
+    docker-jekyll \
+    bash -c "tail -f /dev/null"
+  docker exec -i "$CONTAINER_NAME" /usr/local/bin/install-gem.sh "$REPO_DIR" 
+  docker exec -i "$CONTAINER_NAME" /usr/local/bin/build-site.sh "$REPO_DIR" "$OUT_DIR"
+fi
+```
+
+## Scripts para gestionar proyectos
+
+Sólo nos queda explicar el funcionamiento de los dos script que hemos cpoiado en la imagen y nos ayudan a gestionar nuestros proyectos Jekyll.
+
+### `install-gem.sh`
+
+Este script se encarga de instalar las gemas que cada proyecto Jekyll necesita según su `Gemfile`. Sñolo se ejecuta, como hemos visto, cuando se crea el contenedor.
+
+```bash
+#!/bin/bash
+set -e
+
+if [ $# -lt 1 ]; then
+  echo "Uso: $0 <ruta-repositorio-jekyll>"
+  exit 1
+fi
+
+SRC_DIR="$1"
+
+echo "Instalando Gemfile de: $SRC_DIR"
+
+cd "$SRC_DIR"
+
+if [ -f "Gemfile" ]; then
+  bundle install
+fi
+```
+
+### `build-site.sh`
+
+Este script genera el HTML estático del proyecto Jekyll en el directorio de salida. Se ejecuta **cada vez que queremos generar la página**. Permite mantener separados el código fuente y el resultado generado, usando un volumen para la salida HTML.
+
+
+```bash
+#!/bin/bash
+set -e
+
+if [ $# -lt 2 ]; then
+  echo "Uso: $0 <ruta-repositorio-jekyll> <ruta-salida-html>"
+  exit 1
+fi
+
+SRC_DIR="$1"
+DEST_DIR="$2"
+
+echo "Usando repositorio en: $SRC_DIR"
+echo "Generando HTML en: $DEST_DIR"
+
+cd "$SRC_DIR"
+
+bundle exec jekyll build -d "$DEST_DIR"
+```
+
+## Ejemplo de uso
+
+Supongamos que tenemos un proyecto Jekyll llamado `proyecto-jekyll` y queremos generar el HTML resultante en el directorio `html`. Además, queremos crear un contenedor llamado `contenedor-jekyll` para gestionar este proyecto de forma aislada.
+
+Con el script `run.sh` que hemos definido, el proceso es muy sencillo. Basta con ejecutar:
+
+```bash
+./run.sh contenedor-jekyll ./proyecto-jekyll ./html
+```
+
+El comportamiento será el siguiente:
+
+1. **Creación de la imagen Docker (si no existe):**
+   El script comprobará si la imagen `docker-jekyll` ya existe. Si no, la construirá a partir del `Dockerfile`.
+
+2. **Creación del contenedor (si no existe):**
+   Si el contenedor `contenedor-jekyll` no existe, se creará, montando los volúmenes:
+
+   * `./proyecto-jekyll` dentro del contenedor, para acceder al código fuente.
+   * `./html` dentro del contenedor, para guardar el HTML generado.
+
+   A continuación se ejecutará `install-gem.sh` para instalar las gemas necesarias según el `Gemfile` del proyecto.
+
+3. **Generación del sitio:**
+   Finalmente, se ejecutará `build-site.sh`, generando el HTML en el directorio `./html`.
+
+4. **Contenedor activo para futuras ejecuciones:**
+   El contenedor permanecerá en ejecución en segundo plano, lo que permite generar de nuevo el sitio simplemente volviendo a ejecutar `run.sh` o utilizando `docker exec` para ejecutar comandos adicionales dentro del contenedor.
+
+Después de ejecutar el comando, el directorio `./html` contendrá todo el sitio estático generado por Jekyll, listo para ser servido por cualquier servidor web. Además, el contenedor `contenedor-jekyll` estará disponible para regenerar el sitio cuando hagamos cambios en el proyecto.
+
+```bash
+ls html
+# index.html  about.html  css/  assets/ ...
+```
+
+Este enfoque permite gestionar múltiples proyectos Jekyll con distintas versiones de gemas sin que haya conflictos entre ellos, manteniendo cada proyecto completamente aislado dentro de su propio contenedor Docker.
+
+## Ventajas de este enfoque
+
+1. **Aislamiento completo**: cada proyecto Jekyll tiene su propio contenedor con gemas específicas.
+2. **Evita conflictos de versión**: distintas gemas o versiones de Jekyll no interfieren entre proyectos.
+3. **Portabilidad**: basta con Docker para levantar el entorno, sin necesidad de instalar Ruby ni Jekyll en el host.
+4. **Reutilización**: la misma imagen sirve para cualquier proyecto Jekyll futuro.
+5. **Flexibilidad**: puedes mantener contenedores “vivos” listos para actualizar o regenerar sitios en cualquier momento.
+
+## Trucos y buenas prácticas
+
+* **Regenerar el sitio tras cambios:**
+  Si modificas el contenido del proyecto Jekyll, basta con ejecutar de nuevo:
+
+  ```bash
+  ./run.sh contenedor-jekyll ./proyecto-jekyll ./html
+  ```
+
+  Esto ejecutará `build-site.sh` dentro del contenedor, actualizando el HTML.
+
+* **Actualizar gemas o dependencias:**
+  Si quieres instalar nuevas gemas o actualizar las existentes, puedes ejecutar:
+
+  ```bash
+  docker exec -i contenedor-jekyll /usr/local/bin/install-gem.sh ./proyecto-jekyll
+  ```
+
+* **Eliminar contenedores antiguos:**
+  Para borrar un contenedor sin perder los datos generados en los volúmenes:
+
+  ```bash
+  docker rm -f contenedor-jekyll
+  ```
+
+* **Inspeccionar o ejecutar comandos adicionales:**
+  Puedes abrir una shell dentro del contenedor:
+
+  ```bash
+  docker exec -it contenedor-jekyll bash
+  ```
+
+## Conclusiones
+
+El uso de **contenedores Docker** para gestionar proyectos Jekyll ofrece una solución flexible, ordenada y reproducible. Cada proyecto puede mantenerse aislado, evitando conflictos de versiones de gemas o problemas de compatibilidad con Ruby y Jekyll. Además, la portabilidad y la facilidad de regenerar sitios estáticos hacen que este enfoque sea ideal tanto para desarrollo como para despliegue. Con esta metodología, se logra un flujo de trabajo más limpio, seguro y escalable, permitiendo concentrarse en el contenido y el diseño de las páginas, sin preocuparse por el entorno subyacente. Puedes encontrar los ficheros listos para probarlo en el siguiente [repositorio de GitHub](https://github.com/josedom24/docker-jekyll).
