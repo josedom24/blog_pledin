@@ -81,6 +81,7 @@ Para mantener el contenedor activo se ejecuta `bash -c "tail -f /dev/null"`, per
 
 El contenido del fichero `run.sh` es:
 
+{% raw %}
 ```bash
 #!/bin/bash
 set -e
@@ -97,9 +98,9 @@ OUT_DIR=$(realpath "$3")
 docker image inspect docker-jekyll >/dev/null 2>&1 || \
   docker build -t docker-jekyll .
 
-if docker ps -a --format '\{\{.Names\}\}' | grep -q "^$CONTAINER_NAME\$"; then
+if docker ps -a --format '{{.Names}}' | grep -q "^$CONTAINER_NAME\$"; then
   echo "Contenedor existente '$CONTAINER_NAME', ejecutando build-site.sh..."
-  if ! docker ps --format '\{\{.Names\}\}' | grep -q "^$CONTAINER_NAME\$"; then
+  if ! docker ps --format '{{.Names}}' | grep -q "^$CONTAINER_NAME\$"; then
     docker start "$CONTAINER_NAME"
   fi
   docker exec -i "$CONTAINER_NAME" /usr/local/bin/build-site.sh "$REPO_DIR" "$OUT_DIR"
@@ -114,6 +115,7 @@ else
   docker exec -i "$CONTAINER_NAME" /usr/local/bin/build-site.sh "$REPO_DIR" "$OUT_DIR"
 fi
 ```
+{% endraw %}
 
 ## Scripts para gestionar proyectos
 
