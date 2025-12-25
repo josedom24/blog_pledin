@@ -1,5 +1,5 @@
 ---
-title: 'Contenedores Docker para la creación de páginas web estáticas usando Jekyll'
+title: 'Cursos de preparación para obtener las certificaciones Python PCEP y PCAP'
 permalink: /2025/12/curso-python-pcep-pcap/
 tags:
   - Python
@@ -49,23 +49,17 @@ Para cubrir ambos niveles he desarrollado **dos cursos completos de preparación
 
 ### Curso de preparación para el examen **PCEP**
 
-* Repositorio del curso:
-  [https://github.com/josedom24/python_pcep_pcap/tree/main/PCEP](https://github.com/josedom24/python_pcep_pcap/tree/main/PCEP)
-* Repositorio de ejercicios:
-  [https://github.com/josedom24/ejercicios_python_pcep](https://github.com/josedom24/ejercicios_python_pcep)
-* Curso en OpenWebinars:
-  [https://openwebinars.net/cursos/certificacion-python-pcep/](https://openwebinars.net/cursos/certificacion-python-pcep/)
+* Repositorio del curso: [https://github.com/josedom24/python_pcep_pcap/tree/main/PCEP](https://github.com/josedom24/python_pcep_pcap/tree/main/PCEP)
+* Repositorio de ejercicios: [https://github.com/josedom24/ejercicios_python_pcep](https://github.com/josedom24/ejercicios_python_pcep)
+* Curso en OpenWebinars: [https://openwebinars.net/cursos/certificacion-python-pcep/](https://openwebinars.net/cursos/certificacion-python-pcep/)
 
 Este curso está pensado para quienes se inician en Python y quieren una preparación guiada, clara y práctica para afrontar el examen PCEP con garantías.
 
 ### Curso de preparación para el examen **PCAP**
 
-* Repositorio del curso:
-  [https://github.com/josedom24/python_pcep_pcap/tree/main/PCAP](https://github.com/josedom24/python_pcep_pcap/tree/main/PCAP)
-* Repositorio de ejercicios:
-  [https://github.com/josedom24/ejercicios_python_pcap](https://github.com/josedom24/ejercicios_python_pcap)
-* Curso en OpenWebinars:
-  [https://openwebinars.net/cursos/certificacion-python-pcap/](https://openwebinars.net/cursos/certificacion-python-pcap/)
+* Repositorio del curso: [https://github.com/josedom24/python_pcep_pcap/tree/main/PCAP](https://github.com/josedom24/python_pcep_pcap/tree/main/PCAP)
+* Repositorio de ejercicios: [https://github.com/josedom24/ejercicios_python_pcap](https://github.com/josedom24/ejercicios_python_pcap)
+* Curso en OpenWebinars: [https://openwebinars.net/cursos/certificacion-python-pcap/](https://openwebinars.net/cursos/certificacion-python-pcap/)
 
 En este segundo curso se profundiza en Python, con un enfoque más cercano al uso real del lenguaje y a los requisitos del examen PCAP.
 
