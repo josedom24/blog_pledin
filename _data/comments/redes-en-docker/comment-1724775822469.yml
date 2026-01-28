@@ -1,0 +1,7 @@
+_id: b93018e0-6490-11ef-9da4-a71398e6a802
+message: "Hola, tengo una duda, \r\nno puedo cambiar el direccionamiento IP de mi host donde tengo docker desktop, y mi pregunta es si yo puedo tener un contenedor ubuntu y poder asignarle la ip que necesite en cada momento para conectarme mediante SSH a diferentes dispositivos, sin necesidad de cambiar la ip del host ya que no puedo.\r\ngracias"
+name: davidroma
+email: 0a9f658e651e38daae1d73bfb4c50d50
+url: ''
+hidden: ''
+date: '2024-08-27T16:23:42.451Z'
