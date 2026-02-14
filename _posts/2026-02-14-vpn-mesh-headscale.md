@@ -38,7 +38,7 @@ El servidor donde instales Headscale (normalmente un VPS o un servidor dedicado)
 Para una configuración básica y funcional, no es necesario complicar el firewall. Según la [documentación oficial de requisitos de Headscale](https://headscale.net/stable/setup/requirements/), solo necesitas asegurar la apertura de los siguientes puertos:
 
 * **443/tcp**:Tráfico de control (API) y autenticación mediante **HTTPS**. 
-* **80/tcp**; Generalmente usado para la validación de certificados (Let's Encrypt).
+* **80/tcp**: Generalmente usado para la validación de certificados (Let's Encrypt).
 
 Headscale es extremadamente ligero. Para una red pequeña o mediana, una máquina con **1 vCPU y 1 GB de RAM** es más que suficiente para gestionar el panel de control.
 
