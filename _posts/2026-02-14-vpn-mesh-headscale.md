@@ -205,7 +205,7 @@ En headscale podemos ver los nodos registrados:
 ```
 docker exec headscale headscale nodes list
 ID | Hostname | Name    | MachineKey | NodeKey | User | Tags | IP addresses                  | Ephemeral | Last seen           | Expiration | Connected | Expired
-1  | penguin  | nodo1  | [qatKd]    | [fMe1N] | vpn1 |      | 100.64.0.1, fd7a:115c:a1e0::1 | false     | 2026-02-13 18:09:45 | N/A        | online    | no     ``` 
+1  |  nodo1   | nodo1  | [qatKd]    | [fMe1N] | vpn1 |      | 100.64.0.1, fd7a:115c:a1e0::1 | false     | 2026-02-13 18:09:45 | N/A        | online    | no     ``` 
 ```
 
 Y podemos comprobar que el cliente tiene la ip asignada en la VPN:
@@ -253,8 +253,8 @@ Y comprobamos que el cliente se ha conectado:
 ```
 docker exec headscale headscale nodes list
 ID | Hostname | Name    | MachineKey | NodeKey | User | Tags | IP addresses                  | Ephemeral | Last seen           | Expiration          | Connected | Expired
-1  | penguin  | nodo1 | [qatKd]    | [fMe1N] | vpn1 |      | 100.64.0.1, fd7a:115c:a1e0::1 | false     | 2026-02-13 18:09:45 | N/A                 | online    | no     
-2  | hoth     | nodo2 | [G1VUT]    | [9wBm+] | vpn1 |      | 100.64.0.2, fd7a:115c:a1e0::2 | false     | 2026-02-13 18:30:17 | 0001-01-01 00:00:00 | online    | no     
+1  |  nodo1   | nodo1 | [qatKd]    | [fMe1N] | vpn1 |      | 100.64.0.1, fd7a:115c:a1e0::1 | false     | 2026-02-13 18:09:45 | N/A                 | online    | no     
+2  |  nodo2   | nodo2 | [G1VUT]    | [9wBm+] | vpn1 |      | 100.64.0.2, fd7a:115c:a1e0::2 | false     | 2026-02-13 18:30:17 | 0001-01-01 00:00:00 | online    | no     
 ```
 
 ## Comprobación de la conectividad
@@ -267,7 +267,7 @@ Desde cualquier nodo (por ejemplo, desde `nodo1`), podemos verificar cómo ve es
 
 ```bash
 tailscale status
-tailscale status
+
 100.64.0.1  nodo1  vpn1  linux  -                      
 100.64.0.2  nodo2  vpn1  linux  idle, tx 468 rx 348 
 ```
