@@ -11,8 +11,6 @@ En `journalctl`, una etiqueta o **tag** (técnicamente llamado `SYSLOG_IDENTIFIE
 
 Podemos leer los dos logs de dos formas distintas:
 
-<!--more-->
-
 * **`journalctl -u` (Unit):** Se usa para filtrar por una **unidad de systemd** (normalmente archivos `.service`). Es ideal cuando quieres ver todo lo que ha pasado con un demonio específico (arranque, paradas y errores), como por ejemplo `apache2`, `mysql` o `nginx`.
 * **`journalctl -t` (Tag/Identifier):** Se usa para filtrar por el **identificador de syslog** (`SYSLOG_IDENTIFIER`). Es ideal para localizar mensajes enviados por scripts personalizados, comandos manuales (usando `logger`) o aplicaciones que no tienen un servicio propio pero "firman" sus logs con un nombre.
 
