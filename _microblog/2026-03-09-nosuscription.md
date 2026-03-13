@@ -1,7 +1,7 @@
 ---
 title: 'NoSubscription.org: Herramientas propias, no alquiladas'
 tags: 
-  - Apliación
+  - Aplicación
   - Open Source
 ---
 
