@@ -1,7 +1,8 @@
 ---
 title: 'Nuevo editor Zed'
 tags: 
-  - Aplicaciones
+  - Aplicación
+  - Editor
 ---
 
 ![ ]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2026/03/zed.jpg){: .align-center}
