@@ -6,7 +6,7 @@ tags:
   - Headscale
 ---
 
- ![vpn](https://www.josedomingo.org/pledin/assets/wp-content/uploads/2026/03/headscale3.png)
+ ![vpn](https://www.josedomingo.org/pledin/assets/wp-content/uploads/2026/03/headscale3.png){: .align-center }
 
 Hasta ahora, nuestra red mesh ha funcionado bajo una confianza total: cualquier dispositivo que uníamos a nuestra red podía comunicarse con los demás. Sin embargo, en entornos educativos o profesionales, necesitamos aplicar el principio de **mínimo privilegio**. En este artículo aprenderemos a usar las **ACLs** y los **Tags** para crear una red donde los alumnos puedan acceder a los recursos del aula, pero estén aislados entre sí.
 
