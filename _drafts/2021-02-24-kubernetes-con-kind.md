@@ -245,6 +245,36 @@ Como puedes observar para indicar el nombre del host, he usado el dominio [nip.i
 
 ![kind]({{ site.url }}{{ site.baseurl }}/assets/wp-content/uploads/2021/02/kind2.png){: .align-center }
 
+### Otra forma de instalar ingress
+
+Otra alternativa para instalar Ingress Controller en Kind es especificar que el Ingress se encuentre activado en la creación del Cluster. Para ello, lo crearemos de la siguiente manera:
+
+	kind: Cluster
+	apiVersion: kind.x-k8s.io/v1alpha4
+	nodes:
+  	- role: control-plane
+    	kubeadmConfigPatches:
+      	- |
+        	kind: InitConfiguration
+        	nodeRegistration:
+          	kubeletExtraArgs:
+            	node-labels: "ingress-ready=true"
+    	extraPortMappings:
+      	- containerPort: 80
+        	hostPort: 80
+        	protocol: TCP
+      	- containerPort: 443
+        	hostPort: 443
+        	protocol: TCP
+  	- role: worker
+  	- role: worker
+
+Una vez creado el nuevo clúster, instalaremos nuevamente Nginx Ingress con el siguiente comando:
+
+	$ kubectl apply --filename https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
+
+Con estas modificaciones, Ingress debería funcionar correctamente en Kind.
+
 
 ## Conclusiones
 
