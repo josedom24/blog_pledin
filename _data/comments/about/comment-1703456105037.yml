@@ -1,0 +1,7 @@
+_id: e37459d0-a2a9-11ee-9106-cb0a945ab720
+message: "Saludos Domingo,\r\n\r\nVer si me puedes ayudar ya veo que eres todos un experto, Tengo una aplicación desarrollada en Delphi y unigui, estoy distribuyendo con XAMP, todo funciona perfectamente. \r\nCon esta aplicación cargo información a mi base de datos desde un archivo Excel. \r\n¿Como lo hago?: Copio el archivo a cargar desde el lado del cliente hasta una carpeta (temp) que está dentro de la raíz de mi proyecto, desde ahí consumo el archivo Excel (tengo office instalado en el servidor), con XAMP todo funciona de las mil maravillas.\r\nMi problema es que por varias razones tengo que trabajar con apachehous (para Windows), lo configuro y toda mi aplicación funciona perfecto excepto la carga del archivo en Excel, este me arroja el siguiente error.\r\nMicrosoft Excel no puede obtener acceso al archivo ‘C:\\ApacheSigecob\\App\\temp\\plantilla cargar y actualizar casos.xlsx’. Puede haber varios motivos:\r\n•\tEl nombre o la ruta del archivo no existen.\r\n•\tOtro programa esté usando el archivo\r\n•\tEl libro que está intentando guardar tiene el mimo nombre que otro libro que está abierto en este momento\r\nCreo que debe ser algún ajuste al archivo de httpd.conf ya que le recuerdo que con XAMP todo funciona perfectamente.\r\nEspero haberme explicado bien,"
+name: JOSE ALCANTARA
+email: fbdd0c479131d4eeaccf0bdfd405dff1
+url: ''
+hidden: ''
+date: '2023-12-24T22:15:05.024Z'
